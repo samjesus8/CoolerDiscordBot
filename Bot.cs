@@ -8,6 +8,8 @@ using DiscordBotTest.Commands;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.EventArgs;
+using DSharpPlus.Interactivity;
+using DSharpPlus.Interactivity.Extensions;
 using Newtonsoft.Json;
 
 namespace DiscordBotTest
@@ -15,6 +17,7 @@ namespace DiscordBotTest
     public class Bot
     {
         public DiscordClient Client { get; private set; } 
+        public InteractivityExtension Interactivity { get; private set; }
         public CommandsNextExtension Commands { get; private set; }
 
         public async Task RunAsync() 
@@ -34,6 +37,11 @@ namespace DiscordBotTest
             };
 
             Client = new DiscordClient(config);
+
+            Client.UseInteractivity(new InteractivityConfiguration
+            {
+                Timeout = TimeSpan.FromMinutes(2)
+            });
 
             var commandsConfig = new CommandsNextConfiguration
             {

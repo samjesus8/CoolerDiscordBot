@@ -53,6 +53,8 @@ namespace DiscordBotTest
 
             Commands = Client.UseCommandsNext(commandsConfig);
             Commands.RegisterCommands<Help>();
+            Commands.RegisterCommands<Calculator>();
+            Commands.RegisterCommands<FunCommands>();
 
             await Client.ConnectAsync();
             await Task.Delay(-1);

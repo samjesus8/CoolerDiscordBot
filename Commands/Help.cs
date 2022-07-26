@@ -15,40 +15,29 @@ namespace DiscordBotTest.Commands
 {
     public class Help : BaseCommandModule
     {
-        [Command("cooler")]
-        public async Task TestCommand(CommandContext ctx) 
+        [Command("help")]
+        public async Task HelpMenu(CommandContext ctx) 
         {
-            ctx.Channel.SendMessageAsync("Cooler Is Gay").ConfigureAwait(false);
-        }
-
-        [Command("embed")]
-        public async Task TestEmbed(CommandContext ctx) 
-        {
-            var builder1 = new DiscordMessageBuilder()
+            var mainMenuBuilder = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("Test Embed")
-                .WithDescription("Use this command to show that cooler is indeed gay")
+                .WithTitle("Cooler Is Gay Bot - Made by Samuel J \n HELP MENU")
+                .WithDescription("This is a multi-utility bot which just features random stuff \n Click on a category to view its list of commands")
+                )
+                .AddComponents(new DiscordComponent[] 
+                {
+                    new DiscordButtonComponent(ButtonStyle.Primary, "calculatorFunction", "Calculator"),
+                    new DiscordButtonComponent(ButtonStyle.Primary, "funFunction", "Fun Commands"),
+                    new DiscordButtonComponent(ButtonStyle.Danger, "exitFunction", "Exit")
+                }
                 );
-            await ctx.Channel.SendMessageAsync(builder1);
-        }
 
-        [Command("timestamp")]
-        public async Task Response(CommandContext ctx) 
-        {
-            var interactivity = ctx.Client.GetInteractivity();
-           
-            var timestampBuilder = new DiscordMessageBuilder()
-                .AddEmbed(
-                new DiscordEmbedBuilder()
-                .WithTitle("Type in and send a message")
-                .WithDescription("The command will then send back the exact time you sent the message")
-                );
-            await ctx.Channel.SendMessageAsync(timestampBuilder);
+            await ctx.Channel.SendMessageAsync(mainMenuBuilder);
 
+            ctx.Client.ComponentInteractionCreated += async (a, b) =>
+            {
 
-            var message = await interactivity.WaitForMessageAsync(x => x.Channel == ctx.Channel).ConfigureAwait(false);
-            await ctx.Channel.SendMessageAsync("Your message was sent at: " + message.Result.Timestamp.ToString());
+            };
         }
     }
 }

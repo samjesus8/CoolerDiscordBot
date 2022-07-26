@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DiscordBotTest.Commands;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.EventArgs;
@@ -38,10 +39,12 @@ namespace DiscordBotTest
             {
                 StringPrefixes = new string[] { configJson.Prefix },
                 EnableMentionPrefix = true,
-                EnableDms = true
+                EnableDms = true,
+                EnableDefaultHelp = false,
             };
 
             Commands = Client.UseCommandsNext(commandsConfig);
+            Commands.RegisterCommands<Help>();
 
             await Client.ConnectAsync();
             await Task.Delay(-1);

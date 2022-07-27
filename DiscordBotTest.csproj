@@ -153,6 +153,7 @@
     <Compile Include="Commands\FunCommands.cs" />
     <Compile Include="Commands\Help.cs" />
     <Compile Include="ConfigJSON.cs" />
+    <Compile Include="NumberGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

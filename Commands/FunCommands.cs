@@ -17,7 +17,7 @@ namespace DiscordBotTest.Commands
         [Command("cooler")]
         public async Task TestCommand(CommandContext ctx)
         {
-            ctx.Channel.SendMessageAsync("Cooler Is Gay").ConfigureAwait(false);
+            await ctx.Channel.SendMessageAsync("Cooler Is Gay").ConfigureAwait(false);
         }
 
         [Command("embed")]
@@ -48,6 +48,47 @@ namespace DiscordBotTest.Commands
 
             var message = await interactivity.WaitForMessageAsync(x => x.Channel == ctx.Channel).ConfigureAwait(false);
             await ctx.Channel.SendMessageAsync("Your message was sent at: " + message.Result.Timestamp.ToString());
+        }
+
+        [Command("lottery")]
+        public async Task LotteryGame(CommandContext ctx, int num1, int num2, int num3, int num4, int num5) 
+        {
+            var random = new Random();
+            var interactivity = ctx.Client.GetInteractivity();
+
+            var rulesMessage = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Welcome to the Lottery!!")
+                .WithDescription("For single digit numbers like 1, you must type in '01' \n " +
+                                "The bot will then randomly generate 5 numbers. If any of your numbers match you win a prize \n\n" +
+                                "The prizes are as following: \n" +
+                                "1 number = $100 \n" +
+                                "2 numbers = $200 \n" +
+                                "3 numbers = $300 + Rusty Gets thrown off a cliff \n" +
+                                "4 numbers = $400 + Unlimited Bitches for life \n" +
+                                "5 numbers = $500 + Unlimited Bitches + Mad gets killed")
+                );
+            await ctx.Channel.SendMessageAsync(rulesMessage);
+
+            var yourNumbers = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Your numbers are:")
+                .WithDescription(num1.ToString() + "," + num2.ToString() + "," + num3.ToString() + "," + num4.ToString() + "," + num5.ToString())
+                );
+            await ctx.Channel.SendMessageAsync(yourNumbers);
+
+            var numberGen = new NumberGenerator();
+
+            var botNumbers = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("The winning numbers are:")
+                .WithDescription(numberGen.result.ToString())
+                );
+
+            await ctx.Channel.SendMessageAsync(botNumbers);
         }
     }
 }

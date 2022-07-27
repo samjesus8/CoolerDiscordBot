@@ -58,7 +58,8 @@ namespace DiscordBotTest.Commands
                         .WithTitle("Fun Commands")
                         .WithDescription("!cooler -> Returns 'Cooler is Gay' \n " +
                                         "!embed -> Returns an embedded message 'Cooler is Gay' \n " +
-                                        "!timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it")
+                                        "!timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n" +
+                                        "!lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck. Syntax: !lottery num1 num2 num3 num4 num5")
                         );
                     await ctx.Channel.SendMessageAsync(funFunctionMessage);
                 }

@@ -19,6 +19,16 @@ namespace DiscordBotTest.Commands
         {
             await ctx.Channel.SendMessageAsync("Cooler Is Gay").ConfigureAwait(false);
         }
+        [Command("tory")]
+        public async Task Tory(CommandContext ctx) 
+        {
+            await ctx.Channel.SendMessageAsync("Fuck boris, fuck the opps, fuck dem man, fuck flippin rishi sunak the dirkhead, fuck liz, fuck every man in that government");
+        }
+        [Command("delet")]
+        public async Task Delet(CommandContext ctx)
+        {
+            await ctx.Channel.SendMessageAsync("Midgends Middkan Midcha Mid Everything Midcord Mid Mid Mid L Bozo");
+        }
 
         [Command("embed")]
         public async Task TestEmbed(CommandContext ctx)

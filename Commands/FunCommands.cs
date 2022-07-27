@@ -90,5 +90,36 @@ namespace DiscordBotTest.Commands
 
             await ctx.Channel.SendMessageAsync(botNumbers);
         }
+
+        [Command("question")]
+        public async Task MathsGame(CommandContext ctx)
+        {
+            var message = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("What does cooler think STDs are?")
+                .WithDescription("Options are below:")
+                )
+                .AddComponents(
+                new DiscordButtonComponent(ButtonStyle.Primary, "dick", "Pussy"),
+                new DiscordButtonComponent(ButtonStyle.Primary, "plane", "Fuck knows he hasnt even heard of it")
+                );
+            await ctx.Channel.SendMessageAsync(message);
+
+            ctx.Client.ComponentInteractionCreated += async (a, b) =>
+            {
+                if (b.Interaction.Data.CustomId == "dick")
+                {
+                    await ctx.Channel.SendMessageAsync("Cooler cant get any");
+                    return;
+
+                }
+                if (b.Interaction.Data.CustomId == "plane")
+                {
+                    await ctx.Channel.SendMessageAsync("Correct. U think he knows that shit");
+                    return;
+                }
+            };
+        }
     }
 }

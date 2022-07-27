@@ -42,10 +42,10 @@ namespace DiscordBotTest.Commands
                         .AddEmbed(
                         new DiscordEmbedBuilder()
                         .WithTitle("Basic Calculator Functions")
-                        .WithDescription("!add -> Add 2 numbers together E.g: !add 2 2, returns 4 \n " +
-                                        "!subtract -> Subtract 2 numbers together E.g: !subtract 4 3, returns 1 \n " +
-                                        "!multiply -> Multiply 2 numbers together E.g: !multiply 6 4, returns 24 \n " +
-                                        "!divide -> Divide 2 numbers together E.g: !divide 5 2, returns 2.5")
+                        .WithDescription("&&&add -> Add 2 numbers together E.g: &&&add 2 2, returns 4 \n " +
+                                        "&&&subtract -> Subtract 2 numbers together E.g: &&&subtract 4 3, returns 1 \n " +
+                                        "&&&multiply -> Multiply 2 numbers together E.g: &&&multiply 6 4, returns 24 \n " +
+                                        "&&&divide -> Divide 2 numbers together E.g: &&&divide 5 2, returns 2.5")
                         );
                     await ctx.Channel.SendMessageAsync(basicFunctionMessage);
                 }
@@ -56,10 +56,10 @@ namespace DiscordBotTest.Commands
                         .AddEmbed(
                         new DiscordEmbedBuilder()
                         .WithTitle("Fun Commands")
-                        .WithDescription("!cooler -> Returns 'Cooler is Gay' \n " +
-                                        "!embed -> Returns an embedded message 'Cooler is Gay' \n " +
-                                        "!timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n" +
-                                        "!lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck. Syntax: !lottery num1 num2 num3 num4 num5")
+                        .WithDescription("&&&cooler -> Returns 'Cooler is Gay' \n " +
+                                        "&&&embed -> Returns an embedded message 'Cooler is Gay' \n " +
+                                        "&&&timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n" +
+                                        "&&&lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck. Syntax: &&&lottery num1 num2 num3 num4 num5")
                         );
                     await ctx.Channel.SendMessageAsync(funFunctionMessage);
                 }

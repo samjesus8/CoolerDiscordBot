@@ -22,7 +22,7 @@ namespace DiscordBotTest.Commands
                 .AddEmbed(
                 new DiscordEmbedBuilder()
                 .WithTitle("Cooler Is Gay Bot - Made by Samuel J \n HELP MENU")
-                .WithDescription("This is a multi-utility bot which just features random stuff \n Click on a category to view its list of commands")
+                .WithDescription("This is a multi-utility bot which just features random stuff \n Click on a category to view its list of commands \n The prefix is '&&&' ")
                 )
                 .AddComponents(new DiscordComponent[] 
                 {
@@ -56,12 +56,12 @@ namespace DiscordBotTest.Commands
                         .AddEmbed(
                         new DiscordEmbedBuilder()
                         .WithTitle("Fun Commands")
-                        .WithDescription("&&&cooler -> Returns 'Cooler is Gay' \n " +
-                                        "&&&embed -> Returns an embedded message 'Cooler is Gay' \n " +
+                        .WithDescription("&&&cooler -> Returns an embedded 'Cooler is Gay' message \n " +                                       
                                         "&&&timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n" +
                                         "&&&lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck. Syntax: &&&lottery num1 num2 num3 num4 num5 \n" +
                                         "&&&tory -> Slander the torys \n" +
-                                        "&&&delet -> Prove that everything is mid with this one command")
+                                        "&&&delet -> Prove that everything is mid with this one command \n " +
+                                        "&&&question -> Answer a random question about cooler")
                         );
                     await ctx.Channel.SendMessageAsync(funFunctionMessage);
                 }
@@ -71,7 +71,7 @@ namespace DiscordBotTest.Commands
                     var exitMessage = new DiscordMessageBuilder()
                         .AddEmbed(
                         new DiscordEmbedBuilder()
-                        .WithTitle("You have Exit this command \n Please type in !help again to use it again")
+                        .WithTitle("You have Exit this command \n Please type in &&&help to use the menu again")
                         );
                     await ctx.Channel.SendMessageAsync(exitMessage);
                 }

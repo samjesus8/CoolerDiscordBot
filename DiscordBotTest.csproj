@@ -179,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bot.cs" />
+    <Compile Include="CardGenerator.cs" />
     <Compile Include="Commands\Calculator.cs" />
     <Compile Include="Commands\FunCommands.cs" />
     <Compile Include="Commands\Games.cs" />

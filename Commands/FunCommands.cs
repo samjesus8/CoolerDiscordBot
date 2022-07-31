@@ -17,22 +17,6 @@ namespace DiscordBotTest.Commands
         [Command("cooler")]
         public async Task TestCommand(CommandContext ctx)
         {
-            await ctx.Channel.SendMessageAsync("Cooler Is Gay").ConfigureAwait(false);
-        }
-        [Command("tory")]
-        public async Task Tory(CommandContext ctx) 
-        {
-            await ctx.Channel.SendMessageAsync("Fuck boris, fuck the opps, fuck dem man, fuck flippin rishi sunak the dirkhead, fuck liz, fuck every man in that government");
-        }
-        [Command("delet")]
-        public async Task Delet(CommandContext ctx)
-        {
-            await ctx.Channel.SendMessageAsync("Midgends Middkan Midcha Mid Everything Midcord Mid Mid Mid L Bozo");
-        }
-
-        [Command("embed")]
-        public async Task TestEmbed(CommandContext ctx)
-        {
             var builder1 = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
@@ -40,6 +24,18 @@ namespace DiscordBotTest.Commands
                 .WithDescription("Use this command to show that cooler is indeed gay")
                 );
             await ctx.Channel.SendMessageAsync(builder1);
+        }
+
+        [Command("tory")]
+        public async Task Tory(CommandContext ctx) 
+        {
+            await ctx.Channel.SendMessageAsync("Fuck boris, fuck the opps, fuck dem man, fuck flippin rishi sunak the dirkhead, fuck liz, fuck every man in that government");
+        }
+
+        [Command("delet")]
+        public async Task Delet(CommandContext ctx)
+        {
+            await ctx.Channel.SendMessageAsync("Midgends Middkan Midcha Mid Everything Midcord Mid Mid Mid L Bozo");
         }
 
         [Command("timestamp")]
@@ -102,7 +98,7 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("question")]
-        public async Task MathsGame(CommandContext ctx)
+        public async Task Question(CommandContext ctx)
         {
             var message = new DiscordMessageBuilder()
                 .AddEmbed(

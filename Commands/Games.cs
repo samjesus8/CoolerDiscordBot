@@ -14,33 +14,67 @@ namespace DiscordBotTest.Commands
 {
     public class Games : BaseCommandModule
     {
-        [Command("maths")]
-        public async Task MathsGame(CommandContext ctx) 
+        [Command("simplecardgame")]
+        public async Task SimpleCardGame(CommandContext ctx) 
         {
-            var message = new DiscordMessageBuilder()
+            var drawCard = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("According to Cooler, what does pussy look like")
-                .WithDescription("Options are below:")
+                .WithTitle("Press the Draw Button to draw a card!!!")
+                .WithDescription("If you draw higher than the Bot, you win")
                 )
                 .AddComponents(
-                new DiscordButtonComponent(ButtonStyle.Primary, "dick", "Dick"),
-                new DiscordButtonComponent(ButtonStyle.Primary, "plane", "Plane")
+                new DiscordButtonComponent(ButtonStyle.Primary, "drawButton", "Draw Card")
                 );
-            await ctx.Channel.SendMessageAsync(message);
+            await ctx.Channel.SendMessageAsync(drawCard);
 
             ctx.Client.ComponentInteractionCreated += async (a, b) =>
             {
-                if (b.Interaction.Data.CustomId == "dick")
+                if (b.Interaction.Data.CustomId == "drawButton") 
                 {
-                    await ctx.Channel.SendMessageAsync("Correct Answer");
-                    Environment.Exit(0);
-                    
-                }
-                if (b.Interaction.Data.CustomId == "plane")
-                {
-                    await ctx.Channel.SendMessageAsync("The hell how does pussy look like planes. Oh wait cooler fucks planes");
-                    Environment.Exit(0);
+                    var cardGen = new CardGenerator();
+                    var yourCard = new DiscordMessageBuilder()
+                        .AddEmbed(
+                        new DiscordEmbedBuilder()
+                        .WithTitle("Your Card")
+                        .WithDescription("You drew a: " + cardGen.cardHit)
+                        );
+
+                    await ctx.Channel.SendMessageAsync(yourCard);
+
+
+                    var botCardGen = new CardGenerator();
+                    var botCard = new DiscordMessageBuilder()
+                        .AddEmbed(
+                        new DiscordEmbedBuilder()
+                        .WithTitle("The bot drew a: ")
+                        .WithDescription(botCardGen.cardHit)
+                        );
+
+                    await ctx.Channel.SendMessageAsync(botCard);
+
+                    if (cardGen.GenNoRes > botCardGen.GenNoRes)
+                    {
+                        var winner = new DiscordMessageBuilder()
+                            .AddEmbed(
+                            new DiscordEmbedBuilder()
+                            .WithTitle("YOU WIN")
+                            );
+
+                        await ctx.Channel.SendMessageAsync(winner);
+                        return;
+                    }
+                    else 
+                    {
+                        var lose = new DiscordMessageBuilder()
+                            .AddEmbed(
+                            new DiscordEmbedBuilder()
+                            .WithTitle("YOU LOSE")
+                            );
+
+                        await ctx.Channel.SendMessageAsync(lose);
+                        return;
+                    }
                 }
             };
         }

@@ -18,6 +18,7 @@ namespace DiscordBotTest.Commands
         [Command("add")]
         public async Task Addition(CommandContext ctx, int number1, int number2) 
         {
+            await ctx.Channel.SendMessageAsync("I can't do maths cause im a dumb fuck");
             await ctx.Channel.SendMessageAsync((number1 + number2).ToString());
         }
 

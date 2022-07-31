@@ -26,6 +26,30 @@ namespace DiscordBotTest.Commands
             await ctx.Channel.SendMessageAsync(builder1);
         }
 
+        [Command("ducky")]
+        public async Task Ducky(CommandContext ctx)
+        {
+            var builder1 = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Ducky")
+                .WithDescription("Shut the fuck up, noone asked")
+                );
+            await ctx.Channel.SendMessageAsync(builder1);
+        }
+
+        [Command("stfu")]
+        public async Task ShutTheFuckUp(CommandContext ctx)
+        {
+            var builder1 = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Shut The Fuck Up")
+                .WithDescription("I dont recall the universe ever asking bozo ffs")
+                );
+            await ctx.Channel.SendMessageAsync(builder1);
+        }
+
         [Command("tory")]
         public async Task Tory(CommandContext ctx) 
         {

@@ -39,12 +39,12 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("stfu")]
-        public async Task ShutTheFuckUp(CommandContext ctx)
+        public async Task ShutTheFuckUp(CommandContext ctx, string UserName)
         {
             var builder1 = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("Shut The Fuck Up")
+                .WithTitle("Shut The Fuck Up " + UserName)
                 .WithDescription("I dont recall the universe ever asking bozo ffs")
                 );
             await ctx.Channel.SendMessageAsync(builder1);

@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DSharpPlus;
+﻿using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
-using DSharpPlus.EventArgs;
-using DSharpPlus.Interactivity.Extensions;
-using Newtonsoft.Json;
+using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
 {
@@ -62,7 +55,8 @@ namespace DiscordBotTest.Commands
                                         ">lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck. Syntax: >lottery num1 num2 num3 num4 num5 \n" +
                                         ">tory -> Slander the torys \n" +
                                         ">delet -> Prove that everything is mid with this one command \n " +
-                                        ">question -> Answer a random question about cooler")
+                                        ">question -> Answer a random question about cooler \n " +
+                                        ">dialogue -> The bot will send you a DM, type anything random to send it back to the channel where you used the command")
                         );
                     await ctx.Channel.SendMessageAsync(funFunctionMessage);
                 }

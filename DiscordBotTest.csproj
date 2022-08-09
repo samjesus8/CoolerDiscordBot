@@ -185,6 +185,10 @@
     <Compile Include="Commands\Games.cs" />
     <Compile Include="Commands\Help.cs" />
     <Compile Include="ConfigJSON.cs" />
+    <Compile Include="Handlers\Dialogue\Steps\DialogueStepBase.cs" />
+    <Compile Include="Handlers\Dialogue\DialougeHandler.cs" />
+    <Compile Include="Handlers\Dialogue\Steps\IDialogueStep.cs" />
+    <Compile Include="Handlers\Dialogue\Steps\TextStep.cs" />
     <Compile Include="NumberGenerator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

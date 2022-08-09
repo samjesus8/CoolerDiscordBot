@@ -1,4 +1,6 @@
-﻿using DSharpPlus;
+﻿using DiscordBotTest.Handlers.Dialogue;
+using DiscordBotTest.Handlers.Dialogue.Steps;
+using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
@@ -150,6 +152,23 @@ namespace DiscordBotTest.Commands
                     return;
                 }
             };
+        }
+
+        [Command("dialogue")]
+        public async Task Dialogue(CommandContext ctx) 
+        {
+            var inputStep = new TextStep("Enter something", null); //Input from the user
+            string input = string.Empty; //Storage for the data
+            inputStep.OnValidResult += (result) => input = result; //If input is valid, store in the input variable
+
+            var userDM = await ctx.Member.CreateDmChannelAsync(); //Creating User DM
+
+            var dialogueHandler = new DialougeHandler(ctx.Client, userDM, ctx.User, inputStep);
+
+            bool sucess = await dialogueHandler.ProcessDialogue();
+            if (!sucess) { return; }
+
+            await ctx.Channel.SendMessageAsync("Cooler said: " + input);
         }
     }
 }

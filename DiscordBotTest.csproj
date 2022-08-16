@@ -184,6 +184,7 @@
     <Compile Include="Commands\FunCommands.cs" />
     <Compile Include="Commands\Games.cs" />
     <Compile Include="Commands\Help.cs" />
+    <Compile Include="Commands\Tools.cs" />
     <Compile Include="ConfigJSON.cs" />
     <Compile Include="Handlers\Dialogue\Steps\DialogueStepBase.cs" />
     <Compile Include="Handlers\Dialogue\DialougeHandler.cs" />

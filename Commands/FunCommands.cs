@@ -246,7 +246,7 @@ namespace DiscordBotTest.Commands
             bool sucess = await dialogueHandler.ProcessDialogue();
             if (!sucess) { return; }
 
-            await ctx.Channel.SendMessageAsync("Cooler said: " + input);
+            await ctx.Channel.SendMessageAsync(input);
         }
     }
 }

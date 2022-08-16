@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DiscordBotTest.Commands;
+﻿using DiscordBotTest.Commands;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
 using Newtonsoft.Json;
+using System;
+using System.IO;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DiscordBotTest
 {
@@ -56,6 +54,7 @@ namespace DiscordBotTest
             Commands.RegisterCommands<Calculator>();
             Commands.RegisterCommands<FunCommands>();
             Commands.RegisterCommands<Games>();
+            Commands.RegisterCommands<Tools>();
 
             await Client.ConnectAsync();
             await Task.Delay(-1);

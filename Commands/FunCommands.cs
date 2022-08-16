@@ -83,6 +83,7 @@ namespace DiscordBotTest.Commands
         {
             var random = new Random();
             var interactivity = ctx.Client.GetInteractivity();
+            int[] playerNumbers = { num1, num2, num3, num4, num5 };
 
             var rulesMessage = new DiscordMessageBuilder()
                 .AddEmbed(
@@ -113,10 +114,26 @@ namespace DiscordBotTest.Commands
                 .AddEmbed(
                 new DiscordEmbedBuilder()
                 .WithTitle("The winning numbers are:")
-                .WithDescription(numberGen.result.ToString())
+                .WithDescription(numberGen.result[0] + "," + numberGen.result[1] + "," + numberGen.result[2] + "," + numberGen.result[3] + "," + numberGen.result[4])
                 );
 
             await ctx.Channel.SendMessageAsync(botNumbers);
+
+            for (int i = 0; i < 5; i++) 
+            {
+                for (int j = 0; j < 5; j++) 
+                {
+                    if (playerNumbers[i] == int.Parse(numberGen.result[j]))
+                    {
+                        Console.WriteLine("Number " + i + "matches in " + j + "th slot");
+                        j++;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Number " + i + "was not matched in " + j + "th slot");
+                    }
+                }
+            }
         }
 
         [Command("question")]

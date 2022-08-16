@@ -89,7 +89,7 @@ namespace DiscordBotTest.Commands
                 .AddEmbed(
                 new DiscordEmbedBuilder()
                 .WithTitle("Welcome to the Lottery!!")
-                .WithDescription("For single digit numbers like 1, you must type in '01' \n " +
+                .WithDescription("Pick any 5 numbers from 1-50 and test your luck \n " +
                                 "The bot will then randomly generate 5 numbers. If any of your numbers match you win a prize \n\n" +
                                 "The prizes are as following: \n" +
                                 "1 number = $100 \n" +
@@ -104,7 +104,7 @@ namespace DiscordBotTest.Commands
                 .AddEmbed(
                 new DiscordEmbedBuilder()
                 .WithTitle("Your numbers are:")
-                .WithDescription(num1.ToString() + "," + num2.ToString() + "," + num3.ToString() + "," + num4.ToString() + "," + num5.ToString())
+                .WithDescription(num1.ToString() + ", " + num2.ToString() + ", " + num3.ToString() + ", " + num4.ToString() + ", " + num5.ToString())
                 );
             await ctx.Channel.SendMessageAsync(yourNumbers);
 
@@ -114,26 +114,91 @@ namespace DiscordBotTest.Commands
                 .AddEmbed(
                 new DiscordEmbedBuilder()
                 .WithTitle("The winning numbers are:")
-                .WithDescription(numberGen.result[0] + "," + numberGen.result[1] + "," + numberGen.result[2] + "," + numberGen.result[3] + "," + numberGen.result[4])
+                .WithDescription(numberGen.result[0] + ", " + numberGen.result[1] + ", " + numberGen.result[2] + ", " + numberGen.result[3] + ", " + numberGen.result[4])
                 );
 
             await ctx.Channel.SendMessageAsync(botNumbers);
-
+            
+            int count = 0;
             for (int i = 0; i < 5; i++) 
             {
                 for (int j = 0; j < 5; j++) 
                 {
                     if (playerNumbers[i] == int.Parse(numberGen.result[j]))
                     {
-                        Console.WriteLine("Number " + i + "matches in " + j + "th slot");
+                        Console.WriteLine("Number " + i + " matches in " + j + "th slot");
                         j++;
+                        count++;
+                        Console.WriteLine("Matches: " + count);
                     }
                     else
                     {
-                        Console.WriteLine("Number " + i + "was not matched in " + j + "th slot");
+                        Console.WriteLine("Number " + i + " was not matched in " + j + "th slot");
                     }
                 }
             }
+
+            if (count == 0) 
+            {
+                var endMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("Your Winnings: ")
+                    .WithDescription("You lose as you didn't get any matching numbers, try again with different numbers!!")
+                    );
+                await ctx.Channel.SendMessageAsync(endMessage);
+            }
+            if (count == 1) 
+            {
+                var endMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("You Lose ")
+                    .WithDescription("You matched 1 number. You win $100")
+                    );
+                await ctx.Channel.SendMessageAsync(endMessage);
+            }
+            if (count == 2) 
+            {
+                var endMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("Your Winnings: ")
+                    .WithDescription("You matched 2 numbers. You win $200")
+                    );
+                await ctx.Channel.SendMessageAsync(endMessage);
+            }
+            if (count == 3) 
+            {
+                var endMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("Your Winnings: ")
+                    .WithDescription("You matched 3 numbers. You win $300 and you get to Throw '@Rus D. Lation#6905' off a cliff")
+                    );
+                await ctx.Channel.SendMessageAsync(endMessage);
+            }
+            if (count == 4) 
+            {
+                var endMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("Your Winnings: ")
+                    .WithDescription("You matched 4 numbers. You win $400 and Unlimited Bitches for life")
+                    );
+                await ctx.Channel.SendMessageAsync(endMessage);
+            }
+            if (count == 5) 
+            {
+                var endMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("YOU WON THE LOTTERY!!!")
+                    .WithDescription("You matched all 5 numbers. You win $500, Unlimited Bitches and '@Solz#2652' gets killed")
+                    );
+                await ctx.Channel.SendMessageAsync(endMessage);
+            }
+
         }
 
         [Command("question")]

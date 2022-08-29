@@ -22,6 +22,7 @@ namespace DiscordBotTest.Commands
                     new DiscordButtonComponent(ButtonStyle.Primary, "calculatorFunction", "Calculator"),
                     new DiscordButtonComponent(ButtonStyle.Primary, "funFunction", "Fun Commands"),
                     new DiscordButtonComponent(ButtonStyle.Primary, "gamesFunction", "Games"),
+                    new DiscordButtonComponent(ButtonStyle.Primary, "toolsFunction", "Tools"),
                     new DiscordButtonComponent(ButtonStyle.Danger, "exitFunction", "Exit")
                 }
                 );
@@ -51,7 +52,6 @@ namespace DiscordBotTest.Commands
                         new DiscordEmbedBuilder()
                         .WithTitle("Fun Commands")
                         .WithDescription(">cooler -> Returns an embedded 'Cooler is Gay' message \n " +                                       
-                                        ">timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n" +
                                         ">lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck. Syntax: >lottery num1 num2 num3 num4 num5 \n" +
                                         ">tory -> Slander the torys \n" +
                                         ">delet -> Prove that everything is mid with this one command \n " +
@@ -71,6 +71,19 @@ namespace DiscordBotTest.Commands
                                                                 "If your card is higher than what the bot draws, You Win \n")
                         );
                     await ctx.Channel.SendMessageAsync(gamesFunctionMessage);
+                }
+
+                if (b.Interaction.Data.CustomId == "toolsFunction") 
+                {
+                    var toolsFunctionMessage = new DiscordMessageBuilder()
+                        .AddEmbed(
+                        new DiscordEmbedBuilder()
+                        .WithTitle("Tools Commands")
+                        .WithDescription(">timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n" +
+                        ">status -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text. There cannot be any spaces \n" +
+                        ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice")
+                        );
+                    await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
                 }
 
                 if (b.Interaction.Data.CustomId == "exitFunction") 

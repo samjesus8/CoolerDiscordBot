@@ -4,8 +4,6 @@ using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
-using DSharpPlus.Interactivity.Extensions;
-using System;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -49,7 +47,7 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("tory")]
-        public async Task Tory(CommandContext ctx) 
+        public async Task Tory(CommandContext ctx)
         {
             await ctx.Channel.SendMessageAsync("Fuck boris, fuck the opps, fuck dem man, fuck flippin rishi sunak the dirkhead, fuck liz, fuck every man in that government");
         }
@@ -98,7 +96,7 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("dialogue")]
-        public async Task Dialogue(CommandContext ctx) 
+        public async Task Dialogue(CommandContext ctx)
         {
             var inputStep = new TextStep("Enter something", null); //Input from the user
             string input = string.Empty; //Storage for the data
@@ -112,6 +110,20 @@ namespace DiscordBotTest.Commands
             if (!sucess) { return; }
 
             await ctx.Channel.SendMessageAsync(input);
+        }
+
+        [Command("watchyourtone")]
+        public async Task WatchYourTone(CommandContext ctx, DiscordUser user) 
+        {
+            var toneMessage = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle(user.Username)
+                .WithDescription("WATCH YOUR FUCKING TONE MFER")
+                .WithImageUrl("https://cdn.discordapp.com/emojis/1001335925655212062.png?size=1024")
+                .WithAuthor("From: " + ctx.User.Username)
+                );
+            await ctx.Channel.SendMessageAsync(toneMessage);
         }
     }
 }

@@ -2,6 +2,7 @@
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
+using System;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -11,6 +12,7 @@ namespace DiscordBotTest.Commands
         [Command("help")]
         public async Task HelpMenu(CommandContext ctx) 
         {
+            Console.WriteLine("Working");
             var mainMenuBuilder = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()

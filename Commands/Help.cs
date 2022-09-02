@@ -16,7 +16,7 @@ namespace DiscordBotTest.Commands
             var mainMenuBuilder = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("Cooler Is Gay Bot - Made by Samuel J \n Copyright ©SamuelJesuthas \n\n HELP MENU")
+                .WithTitle("Cooler Is Gay Bot | Made by Samuel J \n ©SamuelJesuthas \n\n Help Menu")
                 .WithDescription("This is a multi-utility bot which just features random stuff \n Click on a category to view its list of commands \n The prefix is '>' ")
                 )
                 .AddComponents(new DiscordComponent[] 
@@ -90,7 +90,8 @@ namespace DiscordBotTest.Commands
                         .WithDescription(">cardgame -> Play a simple card game. Press the button to draw a card \n " +
                                                        "If your card is higher than what the bot draws, You Win \n\n" +
                                         ">lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck. " +
-                                        "Syntax: >lottery num1 num2 num3 num4 num5")
+                                        "Syntax: >lottery num1 num2 num3 num4 num5 \n\n " +
+                                        ">lottorules -> Displays information on how to play the '>lottery' command")
                         );
                     await ctx.Channel.SendMessageAsync(gamesFunctionMessage);
                 }

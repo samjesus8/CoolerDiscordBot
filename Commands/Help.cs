@@ -35,6 +35,12 @@ namespace DiscordBotTest.Commands
             {
                 if (b.Interaction.Data.CustomId == "calculatorFunction") 
                 {
+                    await b.Interaction.CreateResponseAsync(
+                    InteractionResponseType.UpdateMessage,
+                    new DiscordInteractionResponseBuilder()
+                    .WithContent("Opening Calculator Commands")
+                    );
+
                     var basicFunctionMessage = new DiscordMessageBuilder()
                         .AddEmbed(
                         new DiscordEmbedBuilder()
@@ -49,6 +55,12 @@ namespace DiscordBotTest.Commands
 
                 if (b.Interaction.Data.CustomId == "funFunction") 
                 {
+                    await b.Interaction.CreateResponseAsync(
+                    InteractionResponseType.UpdateMessage,
+                    new DiscordInteractionResponseBuilder()
+                    .WithContent("Opening Fun Commands")
+                    );
+
                     var funFunctionMessage = new DiscordMessageBuilder()
                         .AddEmbed(
                         new DiscordEmbedBuilder()
@@ -65,6 +77,12 @@ namespace DiscordBotTest.Commands
 
                 if (b.Interaction.Data.CustomId == "gamesFunction") 
                 {
+                    await b.Interaction.CreateResponseAsync(
+                    InteractionResponseType.UpdateMessage,
+                    new DiscordInteractionResponseBuilder()
+                    .WithContent("Opening Game Commands")
+                    );
+
                     var gamesFunctionMessage = new DiscordMessageBuilder()
                         .AddEmbed(
                         new DiscordEmbedBuilder()
@@ -79,6 +97,12 @@ namespace DiscordBotTest.Commands
 
                 if (b.Interaction.Data.CustomId == "toolsFunction") 
                 {
+                    await b.Interaction.CreateResponseAsync(
+                    InteractionResponseType.UpdateMessage,
+                    new DiscordInteractionResponseBuilder()
+                    .WithContent("Opening Tools Commands")
+                    );
+
                     var toolsFunctionMessage = new DiscordMessageBuilder()
                         .AddEmbed(
                         new DiscordEmbedBuilder()
@@ -92,12 +116,11 @@ namespace DiscordBotTest.Commands
 
                 if (b.Interaction.Data.CustomId == "exitFunction") 
                 {
-                    var exitMessage = new DiscordMessageBuilder()
-                        .AddEmbed(
-                        new DiscordEmbedBuilder()
-                        .WithTitle("You have Exit this command \n Please type in >help to use the menu again")
-                        );
-                    await ctx.Channel.SendMessageAsync(exitMessage);
+                    await b.Interaction.CreateResponseAsync(
+                    InteractionResponseType.UpdateMessage,
+                    new DiscordInteractionResponseBuilder()
+                    .WithContent("You have exit the menu. Type in >help to use it again")
+                    );
                 }
             };
         }

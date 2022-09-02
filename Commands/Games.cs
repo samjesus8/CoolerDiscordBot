@@ -28,6 +28,12 @@ namespace DiscordBotTest.Commands
             {
                 if (b.Interaction.Data.CustomId == "drawButton" && b.Interaction.User == ctx.User)
                 {
+                    await b.Interaction.CreateResponseAsync(
+                    InteractionResponseType.UpdateMessage,
+                    new DiscordInteractionResponseBuilder()
+                    .WithContent("Drawing Cards")
+                    );
+
                     var cardGen = new CardGenerator();
                     var yourCard = new DiscordMessageBuilder()
                         .AddEmbed(

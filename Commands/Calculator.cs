@@ -9,7 +9,6 @@ namespace DiscordBotTest.Commands
         [Command("add")]
         public async Task Addition(CommandContext ctx, int number1, int number2) 
         {
-            await ctx.Channel.SendMessageAsync("I can't do maths cause im a dumb fuck");
             await ctx.Channel.SendMessageAsync((number1 + number2).ToString());
         }
 
@@ -29,6 +28,16 @@ namespace DiscordBotTest.Commands
         public async Task Divide(CommandContext ctx, double number1, double number2) 
         {
             await ctx.Channel.SendMessageAsync((number1 / number2).ToString());
+        }
+
+        [Command("circlearea")]
+        public async Task AreaOfCircle(CommandContext ctx, double radius) 
+        {
+            double pie = 3.1415926;
+            double area = (radius * radius) * pie;
+
+            await ctx.Channel.SendMessageAsync("Daily reminder that cooler can't do maths. He would have a mental breakdown trying to do this");
+            await ctx.Channel.SendMessageAsync(area.ToString());
         }
     }
 }

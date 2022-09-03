@@ -69,6 +69,6 @@ namespace DiscordBotTest.Commands
         public async Task DiscordAccountCreator(CommandContext ctx)
         {
             await ctx.Channel.SendMessageAsync("Starting...");
-        }
+        }//UNDER CONSTRUCTION
     }
 }

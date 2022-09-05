@@ -98,7 +98,7 @@ namespace DiscordBotTest.Commands
                 .AddEmbed(
                 new DiscordEmbedBuilder()
                 .WithTitle("Welcome to the Lottery!!")
-                .WithDescription("Pick any 5 numbers from 1-50 and test your luck \n " +
+                .WithDescription("Pick any 5 numbers from 1-100 and test your luck. For example: >lottery 1 2 3 4 5 \n " +
                                     "The bot will then randomly generate 5 numbers. If any of your numbers match you win a prize \n\n" +
                                     "The prizes are as following: \n" +
                                     "1 number = $100 \n" +
@@ -210,7 +210,7 @@ namespace DiscordBotTest.Commands
                 var endMessage = new DiscordMessageBuilder()
                     .AddEmbed(
                     new DiscordEmbedBuilder()
-                    .WithTitle("YOU WON THE LOTTERY!!!")
+                    .WithTitle("YOU WON THE LOTTERY!!! " + ctx.User.Username.ToString())
                     .WithDescription("You matched all 5 numbers. You win $500, Unlimited Bitches and '@Solz#2652' gets killed")
                     );
                 await ctx.Channel.SendMessageAsync(endMessage);

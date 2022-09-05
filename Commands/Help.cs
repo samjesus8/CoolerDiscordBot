@@ -12,7 +12,6 @@ namespace DiscordBotTest.Commands
         [Command("help")]
         public async Task HelpMenu(CommandContext ctx) 
         {
-            Console.WriteLine("Working");
             var mainMenuBuilder = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
@@ -66,12 +65,13 @@ namespace DiscordBotTest.Commands
                         .AddEmbed(
                         new DiscordEmbedBuilder()
                         .WithTitle("Fun Commands")
-                        .WithDescription(">cooler -> Returns an embedded 'Cooler is Gay' message \n\n " +                                       
+                        .WithDescription(">ducky -> Tell Ducky to shut the fuck up \n\n" +                                      
                                         ">tory -> Slander the torys \n\n" +
                                         ">delet -> Prove that everything is mid with this one command \n\n " +
                                         ">question -> Answer a random question about cooler \n\n " +
                                         ">dialogue -> The bot will send you a DM, type anything random to send it back to the channel where you used the command \n\n" +
-                                        ">watchyourtone -> Tell someone to watch their tone | Syntax: >watchyourtone @User")
+                                        ">watchyourtone -> Tell someone to watch their tone | Syntax: >watchyourtone @User \n\n" +
+                                        ">fortune -> See if your fate is lucky or will it be hell")
                         );
                     await ctx.Channel.SendMessageAsync(funFunctionMessage);
                 }
@@ -116,7 +116,7 @@ namespace DiscordBotTest.Commands
                     await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
                 }
 
-                if (b.Interaction.Data.CustomId == "exitFunction") 
+                if (b.Interaction.Data.CustomId == "exitFunction")
                 {
                     await b.Interaction.CreateResponseAsync(
                     InteractionResponseType.UpdateMessage,

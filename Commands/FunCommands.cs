@@ -54,37 +54,6 @@ namespace DiscordBotTest.Commands
             await ctx.Channel.SendMessageAsync(deletMessage);
         }
 
-        [Command("question")]
-        public async Task Question(CommandContext ctx)
-        {
-            var message = new DiscordMessageBuilder()
-                .AddEmbed(
-                new DiscordEmbedBuilder()
-                .WithTitle("What does cooler think STDs are?")
-                .WithDescription("Options are below:")
-                )
-                .AddComponents(
-                new DiscordButtonComponent(ButtonStyle.Primary, "dick", "Pussy"),
-                new DiscordButtonComponent(ButtonStyle.Primary, "plane", "Fuck knows he hasnt even heard of it")
-                );
-            await ctx.Channel.SendMessageAsync(message);
-
-            ctx.Client.ComponentInteractionCreated += async (a, b) =>
-            {
-                if (b.Interaction.Data.CustomId == "dick")
-                {
-                    await ctx.Channel.SendMessageAsync("Cooler cant get any");
-                    return;
-
-                }
-                if (b.Interaction.Data.CustomId == "plane")
-                {
-                    await ctx.Channel.SendMessageAsync("Correct. U think he knows that shit");
-                    return;
-                }
-            };
-        }
-
         [Command("dialogue")]
         public async Task Dialogue(CommandContext ctx)
         {
@@ -108,10 +77,11 @@ namespace DiscordBotTest.Commands
             var toneMessage = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle(user.Username)
+                .WithTitle("To " + user.Username)
                 .WithDescription("WATCH YOUR FUCKING TONE MFER")
                 .WithImageUrl("https://cdn.discordapp.com/emojis/1001335925655212062.png?size=1024")
                 .WithAuthor("From: " + ctx.User.Username)
+                .WithColor(DiscordColor.Black)
                 );
             await ctx.Channel.SendMessageAsync(toneMessage);
         }
@@ -148,14 +118,28 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("The person who sent the latest message in edcord. You're fucking gay, leave the server u bozo");
             fortuneList.Add("If you do link-levelling, you won't get any units to LL10 in 50 years");
             fortuneList.Add("If you play legends, you will end up uninstalling the game next month");
+            fortuneList.Add("Because of you, Main will get shafted in the next multi he does on dokkan");
+            fortuneList.Add("Because of you, Vein will get shafted in the next multi he does on dokkan");
+            fortuneList.Add("Because of you, Coola will get shafted in the next multi he does on dokkan");
+            fortuneList.Add("If you managed to get this fortune, Loved has a skill issue");
+            fortuneList.Add("The next multi you do in dokkan, you will get STR Beerus");
+            fortuneList.Add("Find the person who got kicked recently and kick them again");
+            fortuneList.Add("The Queen's revive skill will now activate");
+            fortuneList.Add("If you get this fortune, you are able to create your own fortune and add it to this list. Please ping @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825 with your fortune");
+            fortuneList.Add("If you have Legends installed, you are a moron");
+            fortuneList.Add("One day, Cooler will return to Discord because of something really dumb");
+            fortuneList.Add("The next anime you watch, will have a trap in it");
+            fortuneList.Add("If you get this fortune, unlucky, cause Delet is gonna ban you");
+            fortuneList.Add("You will inevitably get banned from this server because of something stupid");
 
             int index = random.Next(fortuneList.Count);
 
             var fortuneMessage = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("Cooler's Daily Fortunes")
+                .WithTitle("Cooler's Daily Fortunes for " + ctx.User.Username.ToString())
                 .WithDescription(fortuneList[index])
+                .WithColor(DiscordColor.Blue)
                 );
 
             await ctx.Channel.SendMessageAsync(fortuneMessage);

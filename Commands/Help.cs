@@ -68,7 +68,6 @@ namespace DiscordBotTest.Commands
                         .WithDescription(">ducky -> Tell Ducky to shut the fuck up \n\n" +                                      
                                         ">tory -> Slander the torys \n\n" +
                                         ">delet -> Prove that everything is mid with this one command \n\n " +
-                                        ">question -> Answer a random question about cooler \n\n " +
                                         ">dialogue -> The bot will send you a DM, type anything random to send it back to the channel where you used the command \n\n" +
                                         ">watchyourtone -> Tell someone to watch their tone | Syntax: >watchyourtone @User \n\n" +
                                         ">fortune -> See if your fate is lucky or will it be hell")
@@ -125,6 +124,65 @@ namespace DiscordBotTest.Commands
                     );
                 }
             };
+        }
+
+        [Command("changelog")]
+        public async Task ChangeLog(CommandContext ctx) 
+        {
+            var changeLogEmbed = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithAuthor("This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825")
+                .WithColor(DiscordColor.Azure)
+                .WithTitle("Changelog")
+                .WithDescription("V1.2: \n\n" +
+                                    "Cleanup of the code -> Removed unnecesary usings \n" +
+                                    "Removed the button to draw the card on >cardgame. You just have to call the command and it'll start automatically \n" +
+                                    "Added more fortunes to the >fortune command \n" +
+                                    "Addition of the >mid, >midrules & >changelog commands \n\n" +
+                                 "V1.1: \n\n" +
+                                    "Code Cleanup \n" +
+                                    "Removed the >cooler command \n" +
+                                    "Addition of the >fortune command \n" +
+                                    "Increased the number limit from 50 to 100 in the >lottery command \n")                                    
+                );
+            await ctx.Channel.SendMessageAsync(changeLogEmbed);
+        }
+
+        [Command("lottorules")]
+        public async Task LotteryRules(CommandContext ctx)
+        {
+            var rulesMessage = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Welcome to the Lottery!!")
+                .WithColor(DiscordColor.Azure)
+                .WithDescription("Pick any 5 numbers from 1-100 and test your luck. For example: >lottery 1 2 3 4 5 \n " +
+                                    "The bot will then randomly generate 5 numbers. If any of your numbers match you win a prize \n\n" +
+                                    "The prizes are as following: \n" +
+                                    "1 number = $100 \n" +
+                                    "2 numbers = $200 \n" +
+                                    "3 numbers = $300 + Rusty Gets thrown off a cliff \n" +
+                                    "4 numbers = $400 + Unlimited Bitches for life \n" +
+                                    "5 numbers = $500 + Unlimited Bitches + Mad gets killed")
+                            );
+            await ctx.Channel.SendMessageAsync(rulesMessage);
+        }
+
+        [Command("midrules")]
+        public async Task MidOrNotMidRules(CommandContext ctx) 
+        {
+            var rules = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Mid or Not Mid Instructions")
+                .WithColor(DiscordColor.Azure)
+                .WithDescription("The premise of the game is simple, a good looking anime girl will be displayed on screen \n" +
+                                    "If you think she's mid, vote mid. The most votes wins the game \n\n" +
+                                        "Have fun and remember, don't make it serious, its just a fucking cartoon figure")
+                );
+
+            await ctx.Channel.SendMessageAsync(rules);
         }
     }
 }

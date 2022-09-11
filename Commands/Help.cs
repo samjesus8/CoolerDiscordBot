@@ -9,121 +9,94 @@ namespace DiscordBotTest.Commands
 {
     public class Help : BaseCommandModule
     {
-        [Command("help")]
+        [Command("help")] //This command displays the Categories to use the actual help command
         public async Task HelpMenu(CommandContext ctx) 
         {
             var mainMenuBuilder = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Azure)
                 .WithTitle("Cooler Is Gay Bot | Made by Samuel J \n ©SamuelJesuthas \n\n Help Menu")
-                .WithDescription("This is a multi-utility bot which just features random stuff \n Click on a category to view its list of commands \n The prefix is '>' ")
-                )
-                .AddComponents(new DiscordComponent[] 
-                {
-                    new DiscordButtonComponent(ButtonStyle.Primary, "calculatorFunction", "Calculator"),
-                    new DiscordButtonComponent(ButtonStyle.Primary, "funFunction", "Fun Commands"),
-                    new DiscordButtonComponent(ButtonStyle.Primary, "gamesFunction", "Games"),
-                    new DiscordButtonComponent(ButtonStyle.Primary, "toolsFunction", "Tools"),
-                    new DiscordButtonComponent(ButtonStyle.Danger, "exitFunction", "Exit")
-                }
+                .WithDescription("This is a multi-utility bot which just features random stuff \n" +
+                                    "Click on a category to view its list of commands \n " +
+                                        "The prefix is '>' \n\n" +
+
+                                        "To use the help command you have to specify the type of help you want to use after you type in the command. Here is the list of categories: \n\n" +
+                                        "Calculator Help -> '>help Calculator' \n" +
+                                        "Fun Commands Help -> '>help Fun' \n" +
+                                        "Games Help -> '>help Games' \n" +
+                                        "Tools/Utility Help -> '>help Tools'")
+                .WithImageUrl("https://media.discordapp.net/attachments/969707624784338995/1017188281819086940/unknown.png?width=479&height=268")
+                .WithFooter("The day Cooler left Discord for good")
                 );
-
             await ctx.Channel.SendMessageAsync(mainMenuBuilder);
+        }
 
-            ctx.Client.ComponentInteractionCreated += async (a, b) =>
+        [Command("help")]
+        public async Task HelpMenu(CommandContext ctx, string helpType)
+        {
+            if (helpType == "Calculator" || helpType == "calculator") 
             {
-                if (b.Interaction.Data.CustomId == "calculatorFunction") 
-                {
-                    await b.Interaction.CreateResponseAsync(
-                    InteractionResponseType.UpdateMessage,
-                    new DiscordInteractionResponseBuilder()
-                    .WithContent("Opening Calculator Commands")
+                var basicFunctionMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("Basic Calculator Functions")
+                    .WithDescription(">add -> Add 2 numbers together | E.g: >add 2 2, returns 4 \n\n " +
+                                    ">subtract -> Subtract 2 numbers together | E.g: >subtract 4 3, returns 1 \n\n " +
+                                    ">multiply -> Multiply 2 numbers together | E.g: >multiply 6 4, returns 24 \n\n " +
+                                    ">divide -> Divide 2 numbers together | E.g: >divide 5 2, returns 2.5 \n\n " +
+                                    ">circlearea -> Gives you the area of a circle with any radius | E.g: >circlearea 2, returns 12.57")
                     );
+                await ctx.Channel.SendMessageAsync(basicFunctionMessage);
+            }
 
-                    var basicFunctionMessage = new DiscordMessageBuilder()
-                        .AddEmbed(
-                        new DiscordEmbedBuilder()
-                        .WithTitle("Basic Calculator Functions")
-                        .WithDescription(">add -> Add 2 numbers together | E.g: >add 2 2, returns 4 \n\n " +
-                                        ">subtract -> Subtract 2 numbers together | E.g: >subtract 4 3, returns 1 \n\n " +
-                                        ">multiply -> Multiply 2 numbers together | E.g: >multiply 6 4, returns 24 \n\n " +
-                                        ">divide -> Divide 2 numbers together | E.g: >divide 5 2, returns 2.5 \n\n " +
-                                        ">circlearea -> Gives you the area of a circle with any radius | E.g: >circlearea 2, returns 12.57")
-                        );
-                    await ctx.Channel.SendMessageAsync(basicFunctionMessage);
-                }
-
-                if (b.Interaction.Data.CustomId == "funFunction") 
-                {
-                    await b.Interaction.CreateResponseAsync(
-                    InteractionResponseType.UpdateMessage,
-                    new DiscordInteractionResponseBuilder()
-                    .WithContent("Opening Fun Commands")
+            if (helpType == "Fun" || helpType == "fun") 
+            {
+                var funFunctionMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("Fun Commands")
+                    .WithDescription(">ducky -> Tell Ducky to shut the fuck up \n\n" +
+                                    ">tory -> Slander the torys \n\n" +
+                                    ">delet -> Prove that everything is mid with this one command \n\n " +
+                                    ">dialogue -> The bot will send you a DM, type anything random to send it back to the channel where you used the command \n\n" +
+                                    ">watchyourtone -> Tell someone to watch their tone | Syntax: >watchyourtone @User \n\n" +
+                                    ">fortune -> See if your fate is lucky or will it be hell")
                     );
+                await ctx.Channel.SendMessageAsync(funFunctionMessage);
+            }
 
-                    var funFunctionMessage = new DiscordMessageBuilder()
-                        .AddEmbed(
-                        new DiscordEmbedBuilder()
-                        .WithTitle("Fun Commands")
-                        .WithDescription(">ducky -> Tell Ducky to shut the fuck up \n\n" +                                      
-                                        ">tory -> Slander the torys \n\n" +
-                                        ">delet -> Prove that everything is mid with this one command \n\n " +
-                                        ">dialogue -> The bot will send you a DM, type anything random to send it back to the channel where you used the command \n\n" +
-                                        ">watchyourtone -> Tell someone to watch their tone | Syntax: >watchyourtone @User \n\n" +
-                                        ">fortune -> See if your fate is lucky or will it be hell")
-                        );
-                    await ctx.Channel.SendMessageAsync(funFunctionMessage);
-                }
-
-                if (b.Interaction.Data.CustomId == "gamesFunction") 
-                {
-                    await b.Interaction.CreateResponseAsync(
-                    InteractionResponseType.UpdateMessage,
-                    new DiscordInteractionResponseBuilder()
-                    .WithContent("Opening Game Commands")
+            if (helpType == "Games" || helpType == "games") 
+            {
+                var gamesFunctionMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("Game Commands")
+                    .WithDescription(">cardgame -> Play a simple card game. Press the button to draw a card \n " +
+                                                   "If your card is higher than what the bot draws, You Win \n\n" +
+                                    ">lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck | " +
+                                    "Syntax: >lottery num1 num2 num3 num4 num5 \n\n " +
+                                    ">lottorules -> Displays information on how to play the '>lottery' command")
                     );
+                await ctx.Channel.SendMessageAsync(gamesFunctionMessage);
+            }
 
-                    var gamesFunctionMessage = new DiscordMessageBuilder()
-                        .AddEmbed(
-                        new DiscordEmbedBuilder()
-                        .WithTitle("Game Commands")
-                        .WithDescription(">cardgame -> Play a simple card game. Press the button to draw a card \n " +
-                                                       "If your card is higher than what the bot draws, You Win \n\n" +
-                                        ">lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck | " +
-                                        "Syntax: >lottery num1 num2 num3 num4 num5 \n\n " +
-                                        ">lottorules -> Displays information on how to play the '>lottery' command")
-                        );
-                    await ctx.Channel.SendMessageAsync(gamesFunctionMessage);
-                }
-
-                if (b.Interaction.Data.CustomId == "toolsFunction") 
-                {
-                    await b.Interaction.CreateResponseAsync(
-                    InteractionResponseType.UpdateMessage,
-                    new DiscordInteractionResponseBuilder()
-                    .WithContent("Opening Tools Commands")
+            if (helpType == "Tools" || helpType == "tools") 
+            {
+                var toolsFunctionMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("Tools Commands")
+                    .WithDescription(">timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n\n " +
+                    ">status -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text. There cannot be any spaces \n\n " +
+                    ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice")
                     );
-
-                    var toolsFunctionMessage = new DiscordMessageBuilder()
-                        .AddEmbed(
-                        new DiscordEmbedBuilder()
-                        .WithTitle("Tools Commands")
-                        .WithDescription(">timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n\n " +
-                        ">status -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text. There cannot be any spaces \n\n " +
-                        ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice")
-                        );
-                    await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
-                }
-
-                if (b.Interaction.Data.CustomId == "exitFunction")
-                {
-                    await b.Interaction.CreateResponseAsync(
-                    InteractionResponseType.UpdateMessage,
-                    new DiscordInteractionResponseBuilder()
-                    .WithContent("You have exit the menu. Type in >help to use it again")
-                    );
-                }
-            };
+                await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
+            }
         }
 
         [Command("changelog")]
@@ -136,10 +109,11 @@ namespace DiscordBotTest.Commands
                 .WithColor(DiscordColor.Azure)
                 .WithTitle("Changelog")
                 .WithDescription("V1.2: \n\n" +
+                                    "Redesigned the >help command -> Removed the buttons and instead added a condition for each category \n" +
                                     "Cleanup of the code -> Removed unnecesary usings \n" +
                                     "Removed the button to draw the card on >cardgame. You just have to call the command and it'll start automatically \n" +
                                     "Added more fortunes to the >fortune command \n" +
-                                    "Addition of the >mid, >midrules & >changelog commands \n\n" +
+                                    "Addition of the >changelog command \n\n" +
                                  "V1.1: \n\n" +
                                     "Code Cleanup \n" +
                                     "Removed the >cooler command \n" +

@@ -90,34 +90,29 @@ namespace DiscordBotTest.Commands
         public async Task FortuneTeller(CommandContext ctx) 
         {
             var random = new Random();
+            string[] badUnits = { "STR Beerus", "TEQ Corrupted Zamasu", "PHY Buu", "STR Janemba", "INT Janemba", "STR Broly (OLD TUR)",
+                                    "PHY Broly"};
+            int badUnitsIndex = random.Next(badUnits.Length);
 
             List<string> fortuneList = new List<string>();
 
             fortuneList.Add("You will have zero bitches");
-            fortuneList.Add("Tommorow you will get shafted");
             fortuneList.Add("You will get SSBE on your next multi in Dokkan");
             fortuneList.Add("Joku is gonna come to your house tommorow at 5AM");
             fortuneList.Add("You will get shafted when your favorite unit comes out in either Dokkan/Legends");
             fortuneList.Add("There's an autistic baboon at your window");
-            fortuneList.Add("Person below will get LF Beerus in their next multi on a Step Up Banner");
             fortuneList.Add("The person above and below should watch their tone");
             fortuneList.Add("The next Dokkan-Fest Banner you summon on, you will get unfeatured SSRs no matter what");
             fortuneList.Add("The next time you summon on genshin, you will not get a 5* unit");
             fortuneList.Add("You will get bitches");
             fortuneList.Add("You will pull the new LR that's currently out");
-            fortuneList.Add("You will ratio someone");
-            fortuneList.Add("You will get ratioed by someone you hate");
             fortuneList.Add("Raditz will come to your house and rad all over your struggles");
             fortuneList.Add("You will do a radillion damage next turn on Red Zone");
             fortuneList.Add("You don't deserve any fortunes");
-            fortuneList.Add("You will one day be able to ratio everyone in this server");
-            fortuneList.Add("The person who previously got banned will one day be richer than all of us");
             fortuneList.Add("Your predictions for the next LR/Dokkan-Fest will be true");
             fortuneList.Add("Joku will end up next to you in bed");
             fortuneList.Add("Tommorrow its gonna be morbin time, get ready to have the best day of your life");
             fortuneList.Add("The person who sent the latest message in edcord. You're fucking gay, leave the server u bozo");
-            fortuneList.Add("If you do link-levelling, you won't get any units to LL10 in 50 years");
-            fortuneList.Add("If you play legends, you will end up uninstalling the game next month");
 
             fortuneList.Add("Because of you, Main will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Vein will get shafted in the next multi he does on dokkan");
@@ -128,8 +123,7 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Because of you, Sam will get shafted in the next multi he does on dokkan");
 
             fortuneList.Add("If you managed to get this fortune, Loved has a skill issue");
-            fortuneList.Add("The next multi you do in dokkan, you will get STR Beerus");
-            fortuneList.Add("Find the person who got kicked recently and kick them again");
+            fortuneList.Add("The next multi you do in dokkan, you will get " + badUnits[badUnitsIndex]);
             fortuneList.Add("The Queen's revive skill will now activate");
             fortuneList.Add("If you get this fortune, you are able to create your own fortune and add it to this list. Please ping @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825 with your fortune");
             fortuneList.Add("If you have Legends installed, you are a moron");
@@ -140,6 +134,23 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Delet will never pull Super Saiyan bros");
             fortuneList.Add("Ash will never pull Super Saiyan Bros");
             fortuneList.Add("You will get lucky for the entire WWDC Celebration in Dokkan");
+            fortuneList.Add("If you get this fortune, you will become as dumb as Cooler");
+            fortuneList.Add("Cooler will come to your house thinking there is pussy over there but instead it was just dicks");
+
+            fortuneList.Add("Instead of trying to blend in, Stand out and never blend in");
+            fortuneList.Add("Confuse them with your silence. Shock them with your actions");
+            fortuneList.Add("80% of boys have Girlfriends, the rest have a brain. Separate yourself from society and you will be above them");
+            fortuneList.Add("A true man denies society's standards and expectations");
+            fortuneList.Add("People say you can’t live without love… I think oxygen is more important!");
+            fortuneList.Add("Don’t avoid them when they’re angry. They’ll run to you when the temperature rises");
+            fortuneList.Add("You are already a king. It’s simply a matter of finding out the nature of your kingdom");
+            fortuneList.Add("Put more of your energy into listening than talking");
+            fortuneList.Add("Always be true to who you are, and ignore what other people have to say about you");
+            fortuneList.Add("Until his dream comes true, a man cannot relax");
+            fortuneList.Add("Everybody has to build something, but only the girls get to enjoy it. Be proud to be born a man");
+            fortuneList.Add("Never Fear Anyone, Never Trust Anyone, Never Depend On anyone");
+            fortuneList.Add("The future depends on what we do in the present");
+            fortuneList.Add("Don't Quit. Suffer now and live the rest of your life above those who made you suffer");
 
             int index = random.Next(fortuneList.Count);
 

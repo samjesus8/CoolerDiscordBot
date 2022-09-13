@@ -5,6 +5,7 @@ using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -179,28 +180,77 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("mid")]
-        public async Task MidOrNotMid(CommandContext ctx) 
+        public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration, params DiscordEmoji[] emojiOptions) 
         {
+            var interactivity = ctx.Client.GetInteractivity();
             var random = new Random();
-            List<DiscordEmbed> messages = new List<DiscordEmbed>();
 
-            messages.Add(new DiscordEmbedBuilder()
-                .WithTitle("Embed1"));
+            List<String[]> messages = new List<String[]>(); //[0] = Name, [1] = Anime Name, [2] = Image URL
 
-            messages.Add(new DiscordEmbedBuilder()
-                .WithTitle("Embed2"));
+            string[] riasGremory = { "Rias Gremory", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1019298372735221870/unknown.png?width=513&height=676" };
+            messages.Add(riasGremory);
+
+            string[] akenoHimejima = { "Akeno Himejima", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1019299165299277884/unknown.png?width=356&height=676" };
+            messages.Add(akenoHimejima);
+
+            string[] fsnKingArthur = { "King Arthur (Saber)", "Fate Stay/Night", "https://media.discordapp.net/attachments/735858039537795203/1019300735009165352/unknown.png?width=676&height=676" };
+            messages.Add(fsnKingArthur);
+
+            string[] joku = { "Mommy Joku", "NiggerBall Z", "https://media.discordapp.net/attachments/735858039537795203/1019332220231614464/unknown.png?width=472&height=676" };
+            messages.Add(joku);
+
+            string[] ssjJoku = { "Super Nigger Joku", "NiggerBall Z", "https://media.discordapp.net/attachments/969707624784338995/979460300287910008/8B34305B-3D29-4EBB-86B8-3FA210A01FD6.jpg?width=312&height=676" };
+            messages.Add(ssjJoku);
+
+            string[] ssj3Joku = { "Super Nigger 3 Joku", "NiggerBall Z", "https://media.discordapp.net/attachments/969707624784338995/979460751574073395/F5756B87-AD97-41A4-B5FD-CA6A7F8A14ED.jpg?width=320&height=676" };
+            messages.Add(ssj3Joku);
+
+            string[] ssbJoku = { "Super Nigger Blue Joku", "NiggerBall Z", "https://media.discordapp.net/attachments/969707624784338995/979461591835770910/2B282B59-48F7-46C9-9141-F1FBF3100B32.jpg?width=385&height=676" };
+            messages.Add(ssbJoku);
+
+            string[] spJoku = { "Spirit Bomb Joku", "NiggerBall Z", "https://media.discordapp.net/attachments/735858039537795203/1019333744097767504/unknown.png?width=395&height=676" };
+            messages.Add(spJoku);
+
+            string[] xenoJoku = { "Xeno Nigger", "NiggerBall Z", "https://media.discordapp.net/attachments/969707624784338995/1019344977119154207/XENO_NIGGER_DOT.png?width=471&height=676" };
+            messages.Add(xenoJoku);
+
+            string[] mommyGoku = { "Mommy Goku", "DragonBall Z", "https://media.discordapp.net/attachments/969707624784338995/1019332044796469358/Screenshot_20220913-204109_TikTok.jpg?width=502&height=676" };
+            messages.Add(mommyGoku);
+
+            string[] astolfoSaber = { "Astolfo (Saber)", "Fate Grand Order", "https://media.discordapp.net/attachments/735858039537795203/1019335359961780337/unknown.png?width=477&height=676" };
+            messages.Add(astolfoSaber);
 
             int index = random.Next(messages.Count);
+            var options = emojiOptions.Select(x => x.ToString());
 
-            var test1 = new DiscordMessageBuilder()
+            var testEmbed = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("Test")
-                .WithDescription(messages[index].ToString())
+                .WithAuthor("MID OR NOT MID?? | Cast your votes below") 
+                .WithTitle("***" + messages[index][0] + "***")
+                .WithDescription(messages[index][1])
+                .WithImageUrl(messages[index][2])
                 .WithColor(DiscordColor.Blue)
                 );
+            var pollMSG = await ctx.Channel.SendMessageAsync(testEmbed);
 
-            await ctx.Channel.SendMessageAsync(test1);
-        }//UNDER CONSTRUCITON
+            foreach (var option in emojiOptions) 
+            {
+                await pollMSG.CreateReactionAsync(option);
+            }
+
+            var result = await interactivity.CollectReactionsAsync(pollMSG, duration);
+            var dResult = result.Distinct();
+            var results = dResult.Select(x => $"{x.Emoji}: {x.Total}");
+
+            var resultsEmbed = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Results")
+                .WithDescription(string.Join("\n", results))
+                );
+
+            await ctx.Channel.SendMessageAsync(resultsEmbed);
+        }
     }
 }

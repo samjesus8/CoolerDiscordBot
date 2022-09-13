@@ -78,7 +78,10 @@ namespace DiscordBotTest.Commands
                     .WithDescription(">cardgame -> A simple card game. If you draw higher than the bot, you win the game \n\n " +
                                     ">lottery -> Play the lottery, pick 5 numbers from 1-100 and test your luck | " +
                                     "Syntax: >lottery num1 num2 num3 num4 num5 \n\n " +
-                                    ">lottorules -> Displays information on how to play the '>lottery' command")
+                                    ">lottorules -> Displays information on how to play the '>lottery' command \n\n " + 
+                                    ">mid -> Play a game of Mid or Not Mid. A girl will show up on the screen \n" +
+                                    "Server Members can vote if they think the girl is mid or not mid. After the time period, the most votes wins that round \n" +
+                                    "Syntax: >mid TIME EMOJIS (>mid 5s :thumbsup: :thumbsdown:)")
                     );
                 await ctx.Channel.SendMessageAsync(gamesFunctionMessage);
             }
@@ -105,23 +108,31 @@ namespace DiscordBotTest.Commands
             var changeLogEmbed = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithAuthor("This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825")
+                .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("Changelog | The latest version is V1.2.1")
-                .WithDescription("V1.2.1: \n\n" +
-                                    "Added JayVezzy's fortunes to the list of fortunes \n" +
-                                    "Fixed the Help command by correcting a few mistakes in the information \n\n" +
+                .WithTitle("***Changelog | The latest version is V1.3***")
+                .WithDescription("V1.3: \n\n" +
+                                    "-Added JayVezzy and Brandon's requested fortunes to the list as well as some new fortunes. Also removed certain fortunes" +
+                                    "as they are irrelavant or not needed \n\n" +
+                                    "-Introducing the '>mid' command -> This is a new game introduced into the bot. A anime girl will be shown on screen. Server members" +
+                                    " can vote if they think the girl is mid or not mid. \n" +
+                                    "You can set your own emojis for members to react to, as well as a custom time period (Normally 5-10s) \n" +
+                                    "Once the time period is over, results will be shown and the highest votes wins the round \n\n" +
+                                    "Over time, more entries will be added to the list for this gamemode. If you would like to submit an entry please DM @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825 \n\n" +
+                                 "V1.2.1: \n\n" +
+                                    "-Added JayVezzy's fortunes to the list of fortunes \n" +
+                                    "-Fixed the Help command by correcting a few mistakes in the information \n\n" +
                                  "V1.2: \n\n" +
-                                    "Redesigned the >help command -> Removed the buttons and instead added a condition for each category \n" +
-                                    "Cleanup of the code -> Removed unnecesary usings \n" +
-                                    "Removed the button to draw the card on >cardgame. You just have to call the command and it'll start automatically \n" +
-                                    "Added more fortunes to the >fortune command \n" +
-                                    "Addition of the >changelog command \n\n" +
+                                    "-Redesigned the >help command -> Removed the buttons and instead added a condition for each category \n" +
+                                    "-Cleanup of the code -> Removed unnecesary usings \n" +
+                                    "-Removed the button to draw the card on >cardgame. You just have to call the command and it'll start automatically \n" +
+                                    "-Added more fortunes to the >fortune command \n" +
+                                    "-Addition of the >changelog command \n\n" +
                                  "V1.1: \n\n" +
-                                    "Code Cleanup \n" +
-                                    "Removed the >cooler command \n" +
-                                    "Addition of the >fortune command \n" +
-                                    "Increased the number limit from 50 to 100 in the >lottery command \n")                                    
+                                    "-Code Cleanup \n" +
+                                    "-Removed the >cooler command \n" +
+                                    "-Addition of the >fortune command \n" +
+                                    "-Increased the number limit from 50 to 100 in the >lottery command \n")                                    
                 );
             await ctx.Channel.SendMessageAsync(changeLogEmbed);
         }

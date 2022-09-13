@@ -118,9 +118,15 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("The person who sent the latest message in edcord. You're fucking gay, leave the server u bozo");
             fortuneList.Add("If you do link-levelling, you won't get any units to LL10 in 50 years");
             fortuneList.Add("If you play legends, you will end up uninstalling the game next month");
+
             fortuneList.Add("Because of you, Main will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Vein will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Coola will get shafted in the next multi he does on dokkan");
+            fortuneList.Add("Because of you, Cloud will get shafted in the next multi he does on dokkan");
+            fortuneList.Add("Because of you, Delet will get shafted in the next multi he does on dokkan");
+            fortuneList.Add("Because of you, Ducky will get shafted in the next multi he does on dokkan");
+            fortuneList.Add("Because of you, Sam will get shafted in the next multi he does on dokkan");
+
             fortuneList.Add("If you managed to get this fortune, Loved has a skill issue");
             fortuneList.Add("The next multi you do in dokkan, you will get STR Beerus");
             fortuneList.Add("Find the person who got kicked recently and kick them again");
@@ -131,6 +137,9 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("The next anime you watch, will have a trap in it");
             fortuneList.Add("If you get this fortune, unlucky, cause Delet is gonna ban you");
             fortuneList.Add("You will inevitably get banned from this server because of something stupid");
+            fortuneList.Add("Delet will never pull Super Saiyan bros");
+            fortuneList.Add("Ash will never pull Super Saiyan Bros");
+            fortuneList.Add("You will get lucky for the entire WWDC Celebration in Dokkan");
 
             int index = random.Next(fortuneList.Count);
 

@@ -22,10 +22,10 @@ namespace DiscordBotTest.Commands
                                         "The prefix is '>' \n\n" +
 
                                         "To use the help command you have to specify the type of help you want to use after you type in the command. Here is the list of categories: \n\n" +
-                                        "Calculator Help -> '>help Calculator' \n" +
-                                        "Fun Commands Help -> '>help Fun' \n" +
-                                        "Games Help -> '>help Games' \n" +
-                                        "Tools/Utility Help -> '>help Tools'")
+                                        "**Calculator Help -> '>help Calculator'** \n" +
+                                        "**Fun Commands Help -> '>help Fun'** \n" +
+                                        "**Games Help -> '>help Games'** \n" +
+                                        "**Tools/Utility Help -> '>help Tools'**")
                 .WithImageUrl("https://media.discordapp.net/attachments/969707624784338995/1017188281819086940/unknown.png?width=479&height=268")
                 .WithFooter("The day Cooler left Discord for good")
                 );
@@ -41,7 +41,7 @@ namespace DiscordBotTest.Commands
                     .AddEmbed(
                     new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithTitle("Basic Calculator Functions")
+                    .WithTitle("Basic Calculator Functions | **Imagine Cooler trying to do maths seriously!!!**")
                     .WithDescription(">add -> Add 2 numbers together | E.g: >add 2 2, returns 4 \n\n " +
                                     ">subtract -> Subtract 2 numbers together | E.g: >subtract 4 3, returns 1 \n\n " +
                                     ">multiply -> Multiply 2 numbers together | E.g: >multiply 6 4, returns 24 \n\n " +
@@ -75,9 +75,8 @@ namespace DiscordBotTest.Commands
                     new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("Game Commands")
-                    .WithDescription(">cardgame -> Play a simple card game. Press the button to draw a card \n " +
-                                                   "If your card is higher than what the bot draws, You Win \n\n" +
-                                    ">lottery -> Play the lottery, pick 5 numbers from 1-50 and test your luck | " +
+                    .WithDescription(">cardgame -> A simple card game. If you draw higher than the bot, you win the game \n\n " +
+                                    ">lottery -> Play the lottery, pick 5 numbers from 1-100 and test your luck | " +
                                     "Syntax: >lottery num1 num2 num3 num4 num5 \n\n " +
                                     ">lottorules -> Displays information on how to play the '>lottery' command")
                     );
@@ -93,7 +92,8 @@ namespace DiscordBotTest.Commands
                     .WithTitle("Tools Commands")
                     .WithDescription(">timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n\n " +
                     ">status -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text. There cannot be any spaces \n\n " +
-                    ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice")
+                    ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice \n\n" + 
+                    ">changelog -> View the bot changelog. Shows what changed in every update")
                     );
                 await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
             }
@@ -107,8 +107,11 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithAuthor("This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825")
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("Changelog")
-                .WithDescription("V1.2: \n\n" +
+                .WithTitle("Changelog | The latest version is V1.2.1")
+                .WithDescription("V1.2.1: \n\n" +
+                                    "Added JayVezzy's fortunes to the list of fortunes \n" +
+                                    "Fixed the Help command by correcting a few mistakes in the information \n\n" +
+                                 "V1.2: \n\n" +
                                     "Redesigned the >help command -> Removed the buttons and instead added a condition for each category \n" +
                                     "Cleanup of the code -> Removed unnecesary usings \n" +
                                     "Removed the button to draw the card on >cardgame. You just have to call the command and it'll start automatically \n" +

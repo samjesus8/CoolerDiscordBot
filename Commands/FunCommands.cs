@@ -121,8 +121,10 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Because of you, Delet will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Ducky will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Sam will get shafted in the next multi he does on dokkan");
+            fortuneList.Add("Because of you brandon will never pull metal cooler");
 
             fortuneList.Add("If you managed to get this fortune, Loved has a skill issue");
+            fortuneList.Add("If you get this then Rak should watch his tone");
             fortuneList.Add("The next multi you do in dokkan, you will get " + badUnits[badUnitsIndex]);
             fortuneList.Add("The Queen's revive skill will now activate");
             fortuneList.Add("If you get this fortune, you are able to create your own fortune and add it to this list. Please ping @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825 with your fortune");
@@ -136,6 +138,8 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("You will get lucky for the entire WWDC Celebration in Dokkan");
             fortuneList.Add("If you get this fortune, you will become as dumb as Cooler");
             fortuneList.Add("Cooler will come to your house thinking there is pussy over there but instead it was just dicks");
+            fortuneList.Add("If you get this fortune, you will never enjoy a Dragon Ball Game again");
+            fortuneList.Add("Joku will now get attacked by a wild bear");
 
             fortuneList.Add("Instead of trying to blend in, Stand out and never blend in");
             fortuneList.Add("Confuse them with your silence. Shock them with your actions");

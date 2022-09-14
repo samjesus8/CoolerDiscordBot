@@ -61,6 +61,26 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("lottery")]
+        public async Task LotteryRules(CommandContext ctx)
+        {
+            var rulesMessage = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Welcome to the Lottery!!")
+                .WithColor(DiscordColor.Azure)
+                .WithDescription("Pick any 5 numbers from 1-100 and test your luck. For example: >lottery 1 2 3 4 5 \n " +
+                                    "The bot will then randomly generate 5 numbers. If any of your numbers match you win a prize \n\n" +
+                                    "The prizes are as following: \n" +
+                                    "1 number = $100 \n" +
+                                    "2 numbers = $200 \n" +
+                                    "3 numbers = $300 + Rusty Gets thrown off a cliff \n" +
+                                    "4 numbers = $400 + Unlimited Bitches for life \n" +
+                                    "5 numbers = $500 + Unlimited Bitches + Mad gets killed")
+                            );
+            await ctx.Channel.SendMessageAsync(rulesMessage);
+        }
+
+        [Command("lottery")]
         public async Task LotteryGame(CommandContext ctx, int num1, int num2, int num3, int num4, int num5)
         {
             var random = new Random();
@@ -180,7 +200,7 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("mid")]
-        public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration, params DiscordEmoji[] emojiOptions) 
+        public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration, params DiscordEmoji[] emojiOptions)  
         {
             var interactivity = ctx.Client.GetInteractivity();
             var random = new Random();
@@ -246,7 +266,8 @@ namespace DiscordBotTest.Commands
             var resultsEmbed = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("Results")
+                .WithTitle("***Results***")
+                .WithColor(DiscordColor.Azure)
                 .WithDescription(string.Join("\n", results))
                 );
 

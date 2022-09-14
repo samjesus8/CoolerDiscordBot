@@ -77,8 +77,8 @@ namespace DiscordBotTest.Commands
                     .WithTitle("Game Commands")
                     .WithDescription(">cardgame -> A simple card game. If you draw higher than the bot, you win the game \n\n " +
                                     ">lottery -> Play the lottery, pick 5 numbers from 1-100 and test your luck | " +
-                                    "Syntax: >lottery num1 num2 num3 num4 num5 \n\n " +
-                                    ">lottorules -> Displays information on how to play the '>lottery' command \n\n " + 
+                                    "Syntax: >lottery num1 num2 num3 num4 num5 \n " +
+                                    "Do >lottery on its own to view the instructions \n\n" +
                                     ">mid -> Play a game of Mid or Not Mid. A girl will show up on the screen \n" +
                                     "Server Members can vote if they think the girl is mid or not mid. After the time period, the most votes wins that round \n" +
                                     "Syntax: >mid TIME EMOJIS (>mid 5s :thumbsup: :thumbsdown:)")
@@ -110,8 +110,16 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("***Changelog | The latest version is V1.3***")
-                .WithDescription("V1.3: \n\n" +
+                .WithTitle("***Changelog | The latest version is V1.3.1***")
+                .WithDescription("V1.3.1: \n\n" + 
+                                    "-Added any requested fortunes from users \n" +
+                                    "-Added more entries to the >mid command and fixed errors pertaining to the results: \n\n" +
+                                    
+                                    "Fixed and redesigned the way results are shown \n" +
+                                    "Removed the need to add your own emotes as a paramater in the command. Users only need to set the time \n" +
+                                    "Added a cancel function to cancel any votes (May be required for voting periods longer than 1m) \n\n" +
+                                    "Removed >lottorules and integrated it with >lottery to view the rules and play the game on the same command \n\n" +
+                                 "V1.3: \n\n" +
                                     "-Added JayVezzy and Brandon's requested fortunes to the list as well as some new fortunes. Also removed certain fortunes" +
                                     "as they are irrelavant or not needed \n\n" +
                                     "-Introducing the '>mid' command -> This is a new game introduced into the bot. A anime girl will be shown on screen. Server members" +
@@ -137,26 +145,6 @@ namespace DiscordBotTest.Commands
             await ctx.Channel.SendMessageAsync(changeLogEmbed);
         }
 
-        [Command("lottorules")]
-        public async Task LotteryRules(CommandContext ctx)
-        {
-            var rulesMessage = new DiscordMessageBuilder()
-                .AddEmbed(
-                new DiscordEmbedBuilder()
-                .WithTitle("Welcome to the Lottery!!")
-                .WithColor(DiscordColor.Azure)
-                .WithDescription("Pick any 5 numbers from 1-100 and test your luck. For example: >lottery 1 2 3 4 5 \n " +
-                                    "The bot will then randomly generate 5 numbers. If any of your numbers match you win a prize \n\n" +
-                                    "The prizes are as following: \n" +
-                                    "1 number = $100 \n" +
-                                    "2 numbers = $200 \n" +
-                                    "3 numbers = $300 + Rusty Gets thrown off a cliff \n" +
-                                    "4 numbers = $400 + Unlimited Bitches for life \n" +
-                                    "5 numbers = $500 + Unlimited Bitches + Mad gets killed")
-                            );
-            await ctx.Channel.SendMessageAsync(rulesMessage);
-        }
-
         [Command("midrules")]
         public async Task MidOrNotMidRules(CommandContext ctx) 
         {
@@ -165,11 +153,12 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithTitle("Mid or Not Mid Instructions")
                 .WithColor(DiscordColor.Azure)
-                .WithDescription("The premise of the game is simple, a good looking anime girl will be displayed on screen \n" +
-                                    "If you think she's mid, vote mid. The most votes wins the game \n\n" +
-                                        "Have fun and remember, don't make it serious, its just a fucking cartoon figure")
+                .WithDescription("IMPORTANT: THE SYNTAX OF THE COMMAND IS \n ***'>mid TimeLimit YourEmojis'*** \n\n" +
+                                    "The premise of the game is simple, a good looking anime girl will be displayed on screen \n" +
+                                        "If you think she's mid, vote mid. The most votes wins the game \n\n" +
+                                            "Have fun and remember, don't make it serious, its just a fucking cartoon figure")
+                .WithImageUrl("https://media.discordapp.net/attachments/735858039537795203/1019733895526219826/unknown.png?width=514&height=537")
                 );
-
             await ctx.Channel.SendMessageAsync(rules);
         }
     }

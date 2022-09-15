@@ -10,7 +10,7 @@ namespace DiscordBotTest.Commands
     public class Help : BaseCommandModule
     {
         [Command("help")] //This command displays the Categories to use the actual help command
-        public async Task HelpMenu(CommandContext ctx) 
+        public async Task HelpMenu(CommandContext ctx)
         {
             var mainMenuBuilder = new DiscordMessageBuilder()
                 .AddEmbed(
@@ -35,7 +35,7 @@ namespace DiscordBotTest.Commands
         [Command("help")]
         public async Task HelpMenu(CommandContext ctx, string helpType)
         {
-            if (helpType == "Calculator" || helpType == "calculator") 
+            if (helpType == "Calculator" || helpType == "calculator")
             {
                 var basicFunctionMessage = new DiscordMessageBuilder()
                     .AddEmbed(
@@ -51,7 +51,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(basicFunctionMessage);
             }
 
-            if (helpType == "Fun" || helpType == "fun") 
+            if (helpType == "Fun" || helpType == "fun")
             {
                 var funFunctionMessage = new DiscordMessageBuilder()
                     .AddEmbed(
@@ -68,7 +68,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(funFunctionMessage);
             }
 
-            if (helpType == "Games" || helpType == "games") 
+            if (helpType == "Games" || helpType == "games")
             {
                 var gamesFunctionMessage = new DiscordMessageBuilder()
                     .AddEmbed(
@@ -86,7 +86,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(gamesFunctionMessage);
             }
 
-            if (helpType == "Tools" || helpType == "tools") 
+            if (helpType == "Tools" || helpType == "tools")
             {
                 var toolsFunctionMessage = new DiscordMessageBuilder()
                     .AddEmbed(
@@ -95,15 +95,17 @@ namespace DiscordBotTest.Commands
                     .WithTitle("Tools Commands")
                     .WithDescription(">timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n\n " +
                     ">status -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text. There cannot be any spaces \n\n " +
-                    ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice \n\n" + 
-                    ">changelog -> View the bot changelog. Shows what changed in every update")
+                    ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice \n\n" +
+                    ">changelog -> View the bot changelog. Shows what changed in every update \n\n" +
+                    "Use >changelog on its own to view the full list or type in a version to view its specific changes like ***'>changelog 1.1'*** \n" +
+                    "Type in ***>changelog latest'*** to view the changelog of the latest version")
                     );
                 await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
             }
         }
 
         [Command("changelog")]
-        public async Task ChangeLog(CommandContext ctx) 
+        public async Task ChangeLogFull(CommandContext ctx)
         {
             var changeLogEmbed = new DiscordMessageBuilder()
                 .AddEmbed(
@@ -111,14 +113,17 @@ namespace DiscordBotTest.Commands
                 .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithColor(DiscordColor.Azure)
                 .WithTitle("***Changelog | The latest version is V1.3.1***")
-                .WithDescription("V1.3.1: \n\n" + 
+                .WithDescription("V1.3.1: \n\n" +
                                     "-Added any requested fortunes from users \n" +
+                                    "-Added a new changelog feature where you can view specific versions or the full log (See ***>help tools*** for more info) \n" +
                                     "-Added more entries to the >mid command and fixed errors pertaining to the results: \n\n" +
-                                    
+
                                     "Fixed and redesigned the way results are shown \n" +
-                                    "Removed the need to add your own emotes as a paramater in the command. Users only need to set the time \n" +
-                                    "Added a cancel function to cancel any votes (May be required for voting periods longer than 1m) \n\n" +
-                                    "Removed >lottorules and integrated it with >lottery to view the rules and play the game on the same command \n\n" +
+                                    "Removed the need to add your own emotes as a paramater in the command. Users only need to set the time \n\n" +
+
+                                    "Removed >lottorules and integrated it with >lottery to view the rules and play the game on the same command \n" +
+                                    "Removed >midrules and integrated with >mid to view instructions for same command \n\n" +
+
                                  "V1.3: \n\n" +
                                     "-Added JayVezzy and Brandon's requested fortunes to the list as well as some new fortunes. Also removed certain fortunes" +
                                     "as they are irrelavant or not needed \n\n" +
@@ -127,39 +132,126 @@ namespace DiscordBotTest.Commands
                                     "You can set your own emojis for members to react to, as well as a custom time period (Normally 5-10s) \n" +
                                     "Once the time period is over, results will be shown and the highest votes wins the round \n\n" +
                                     "Over time, more entries will be added to the list for this gamemode. If you would like to submit an entry please DM @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825 \n\n" +
+
                                  "V1.2.1: \n\n" +
                                     "-Added JayVezzy's fortunes to the list of fortunes \n" +
                                     "-Fixed the Help command by correcting a few mistakes in the information \n\n" +
+
                                  "V1.2: \n\n" +
                                     "-Redesigned the >help command -> Removed the buttons and instead added a condition for each category \n" +
                                     "-Cleanup of the code -> Removed unnecesary usings \n" +
                                     "-Removed the button to draw the card on >cardgame. You just have to call the command and it'll start automatically \n" +
                                     "-Added more fortunes to the >fortune command \n" +
                                     "-Addition of the >changelog command \n\n" +
+
                                  "V1.1: \n\n" +
                                     "-Code Cleanup \n" +
                                     "-Removed the >cooler command \n" +
                                     "-Addition of the >fortune command \n" +
-                                    "-Increased the number limit from 50 to 100 in the >lottery command \n")                                    
+                                    "-Increased the number limit from 50 to 100 in the >lottery command \n")
                 );
             await ctx.Channel.SendMessageAsync(changeLogEmbed);
         }
 
-        [Command("midrules")]
-        public async Task MidOrNotMidRules(CommandContext ctx) 
+        [Command("changelog")]
+        public async Task ChangeLogSpecific(CommandContext ctx, string version) 
         {
-            var rules = new DiscordMessageBuilder()
-                .AddEmbed(
-                new DiscordEmbedBuilder()
-                .WithTitle("Mid or Not Mid Instructions")
-                .WithColor(DiscordColor.Azure)
-                .WithDescription("IMPORTANT: THE SYNTAX OF THE COMMAND IS \n ***'>mid TimeLimit YourEmojis'*** \n\n" +
-                                    "The premise of the game is simple, a good looking anime girl will be displayed on screen \n" +
-                                        "If you think she's mid, vote mid. The most votes wins the game \n\n" +
-                                            "Have fun and remember, don't make it serious, its just a fucking cartoon figure")
-                .WithImageUrl("https://media.discordapp.net/attachments/735858039537795203/1019733895526219826/unknown.png?width=514&height=537")
-                );
-            await ctx.Channel.SendMessageAsync(rules);
+            if (version == "1.1") 
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.1 Changelog")
+                    .WithDescription("-Code Cleanup \n" +
+                                    "-Removed the >cooler command \n" +
+                                    "-Addition of the >fortune command \n" +
+                                    "-Increased the number limit from 50 to 100 in the >lottery command")
+                                   
+                    );
+
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "1.2") 
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.2 Changelog")
+                    .WithDescription("-Redesigned the >help command -> Removed the buttons and instead added a condition for each category \n" +
+                                    "-Cleanup of the code -> Removed unnecesary usings \n" +
+                                    "-Removed the button to draw the card on >cardgame. You just have to call the command and it'll start automatically \n" +
+                                    "-Added more fortunes to the >fortune command \n" +
+                                    "-Addition of the >changelog command")
+                    );
+
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "1.2.1") 
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.2.1 Changelog")
+                    .WithDescription("-Added JayVezzy's fortunes to the list of fortunes \n" +
+                                    "-Fixed the Help command by correcting a few mistakes in the information")
+                    );
+
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "1.3") 
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.3 Changelog")
+                    .WithDescription("-Added JayVezzy and Brandon's requested fortunes to the list as well as some new fortunes. Also removed certain fortunes" +
+                                    "as they are irrelavant or not needed \n\n" +
+                                    "-Introducing the '>mid' command -> This is a new game introduced into the bot. A anime girl will be shown on screen. Server members" +
+                                    " can vote if they think the girl is mid or not mid. \n" +
+                                    "You can set your own emojis for members to react to, as well as a custom time period (Normally 5-10s) \n" +
+                                    "Once the time period is over, results will be shown and the highest votes wins the round \n\n" +
+                                    "Over time, more entries will be added to the list for this gamemode. If you would like to submit an entry please DM @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825")
+                    );
+
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "1.3.1") 
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.3.1 Changelog")
+                    .WithDescription("-Added any requested fortunes from users \n" +
+                                    "-Added more entries to the >mid command and fixed errors pertaining to the results: \n\n" +
+
+                                    "Fixed and redesigned the way results are shown \n" +
+                                    "Removed the need to add your own emotes as a paramater in the command. Users only need to set the time \n\n" +
+
+                                    "Removed >lottorules and integrated it with >lottery to view the rules and play the game on the same command \n" +
+                                    "Removed >midrules and integrated with >mid to view instructions for same command")
+                    );
+
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "Latest" || version == "latest") 
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithAuthor("***The latest version is V1.3.1***")
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.3.1 Changelog")
+                    .WithDescription("-Added any requested fortunes from users \n" +
+                                    "-Added more entries to the >mid command and fixed errors pertaining to the results: \n\n" +
+
+                                    "Fixed and redesigned the way results are shown \n" +
+                                    "Removed the need to add your own emotes as a paramater in the command. Users only need to set the time \n\n" +
+
+                                    "Removed >lottorules and integrated it with >lottery to view the rules and play the game on the same command \n" +
+                                    "Removed >midrules and integrated with >mid to view instructions for same command")
+                    );
+
+                await ctx.Channel.SendMessageAsync(message);
+            }
         }
     }
 }

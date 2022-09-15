@@ -6,6 +6,8 @@ using DSharpPlus.Interactivity.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using System.Reflection.Emit;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -200,12 +202,32 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("mid")]
-        public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration, params DiscordEmoji[] emojiOptions)  
+        public async Task MidOrNotMidRules(CommandContext ctx)
         {
+            var rules = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Mid or Not Mid Instructions")
+                .WithColor(DiscordColor.Azure)
+                .WithDescription("IMPORTANT: THE SYNTAX OF THE COMMAND IS \n ***'>mid TimeLimit YourEmojis'*** \n\n" +
+                                    "The premise of the game is simple, a good looking anime girl will be displayed on screen \n" +
+                                        "If you think she's mid, vote mid. The most votes wins the game \n\n" +
+                                            "Have fun and remember, don't make it serious, its just a fucking cartoon figure")
+                .WithImageUrl("https://media.discordapp.net/attachments/735858039537795203/1019733895526219826/unknown.png?width=514&height=537")
+                );
+            await ctx.Channel.SendMessageAsync(rules);
+        }
+
+        [Command("mid")]
+        public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration)  
+        {
+            DiscordEmoji[] emojiOptions = { DiscordEmoji.FromName(ctx.Client, ":thumbsup:", true), DiscordEmoji.FromName(ctx.Client, ":thumbsdown:", true) };
             var interactivity = ctx.Client.GetInteractivity();
             var random = new Random();
 
             List<String[]> messages = new List<String[]>(); //[0] = Name, [1] = Anime Name, [2] = Image URL
+
+            //DxD
 
             string[] riasGremory = { "Rias Gremory", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1019298372735221870/unknown.png?width=513&height=676" };
             messages.Add(riasGremory);
@@ -213,8 +235,48 @@ namespace DiscordBotTest.Commands
             string[] akenoHimejima = { "Akeno Himejima", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1019299165299277884/unknown.png?width=356&height=676" };
             messages.Add(akenoHimejima);
 
-            string[] fsnKingArthur = { "King Arthur (Saber)", "Fate Stay/Night", "https://media.discordapp.net/attachments/735858039537795203/1019300735009165352/unknown.png?width=676&height=676" };
-            messages.Add(fsnKingArthur);
+            string[] asiaArgento = { "Asia Argento", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104142989041734/unknown.png?width=504&height=676" };
+            messages.Add(asiaArgento);
+
+            string[] koneko = { "Koneko Toujou", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104269287927818/unknown.png?width=260&height=260" };
+            messages.Add(koneko);
+
+            string[] tsubaki = { "Tsubaki", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104400045355058/unknown.png?width=207&height=311" };
+            messages.Add(tsubaki);
+
+            string[] kuroka = { "Kuroka", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104592022843402/unknown.png?width=528&height=675" };
+            messages.Add(kuroka);
+
+            string[] irina = { "Irina Shidou", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104826270519346/unknown.png?width=332&height=461" };
+            messages.Add(irina);
+
+            string[] xenovia = { "Xenovia Quarta", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104878636421201/unknown.png?width=314&height=461" };
+            messages.Add(xenovia);
+
+            //DAL
+
+            string[] tohka;
+            string[] kurumi;
+            string[] kotori;
+            string[] yoshino;
+            string[] ellen;
+            string[] kaguyaYamai;
+            string[] yuzuruYamai;
+            string[] natsumiAdult;
+            string[] drMurasume;
+
+            //DBZ, Super, GT
+
+            string[] a18;
+            string[] a21;
+            string[] caulifla;
+            string[] kale;
+            string[] kefla;
+            string[] launch;
+            string[] yurin;
+            string[] fasha;
+
+            //Joku Forms
 
             string[] joku = { "Mommy Joku", "NiggerBall Z", "https://media.discordapp.net/attachments/735858039537795203/1019332220231614464/unknown.png?width=472&height=676" };
             messages.Add(joku);
@@ -234,14 +296,32 @@ namespace DiscordBotTest.Commands
             string[] xenoJoku = { "Xeno Nigger", "NiggerBall Z", "https://media.discordapp.net/attachments/969707624784338995/1019344977119154207/XENO_NIGGER_DOT.png?width=471&height=676" };
             messages.Add(xenoJoku);
 
-            string[] mommyGoku = { "Mommy Goku", "DragonBall Z", "https://media.discordapp.net/attachments/969707624784338995/1019332044796469358/Screenshot_20220913-204109_TikTok.jpg?width=502&height=676" };
-            messages.Add(mommyGoku);
+            //Fate Characters
+
+            string[] fsnKingArthur = { "King Arthur (Saber)", "Fate Stay/Night", "https://media.discordapp.net/attachments/735858039537795203/1019300735009165352/unknown.png?width=676&height=676" };
+            messages.Add(fsnKingArthur);
 
             string[] astolfoSaber = { "Astolfo (Saber)", "Fate Grand Order", "https://media.discordapp.net/attachments/735858039537795203/1019335359961780337/unknown.png?width=477&height=676" };
             messages.Add(astolfoSaber);
 
+            string[] neroClaudius = { "Nero Claudius", "Fate/EXTRA", "https://media.discordapp.net/attachments/735858039537795203/1020103687261130762/unknown.png?width=320&height=676" };
+            messages.Add(neroClaudius);
+
+            string[] neroClaudiusBride = { "Nero Claudius (Bride)", "Fate/EXTRA", "https://media.discordapp.net/attachments/735858039537795203/1020100866902073364/3ae2e463de874c3c450518f382c44f3d.jpg?width=483&height=676" };
+            messages.Add(neroClaudiusBride);
+
+            string[] neroClaudiusCaster = { "Nero Claudius (Caster)", "Fate Grand Order", "https://media.discordapp.net/attachments/735858039537795203/1020100787197714493/ed8b02c3f1635b964f79a3b6698bc1ecb6244471v2_hq.jpg?width=626&height=676" };
+            messages.Add(neroClaudiusCaster);
+
+            string[] kamaFGO;
+            string[] astolfoRider;
+            string[] rinToshaka;
+            string[] ishtarFGO;
+            string[] ereshFGO;
+            string[] trueKingArthur;
+
+
             int index = random.Next(messages.Count);
-            var options = emojiOptions.Select(x => x.ToString());
 
             var testEmbed = new DiscordMessageBuilder()
                 .AddEmbed(
@@ -270,7 +350,6 @@ namespace DiscordBotTest.Commands
                 .WithColor(DiscordColor.Azure)
                 .WithDescription(string.Join("\n", results))
                 );
-
             await ctx.Channel.SendMessageAsync(resultsEmbed);
         }
     }

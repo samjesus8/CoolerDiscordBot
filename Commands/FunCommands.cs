@@ -90,7 +90,7 @@ namespace DiscordBotTest.Commands
         public async Task FortuneTeller(CommandContext ctx) 
         {
             var random = new Random();
-            string[] badUnits = { "STR Beerus", "TEQ Corrupted Zamasu", "PHY Buu", "STR Janemba", "INT Janemba", "STR Broly (OLD TUR)",
+            string[] badUnits = { "STR Beerus", "TEQ Corrupted Zamasu", "PHY Buu", "STR Janemba", "INT Janemba", "STR Broly (Not the LR)",
                                     "PHY Broly"};
             int badUnitsIndex = random.Next(badUnits.Length);
 
@@ -101,9 +101,7 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Joku is gonna come to your house tommorow at 5AM");
             fortuneList.Add("You will get shafted when your favorite unit comes out in either Dokkan/Legends");
             fortuneList.Add("There's an autistic baboon at your window");
-            fortuneList.Add("The person above and below should watch their tone");
             fortuneList.Add("The next Dokkan-Fest Banner you summon on, you will get unfeatured SSRs no matter what");
-            fortuneList.Add("The next time you summon on genshin, you will not get a 5* unit");
             fortuneList.Add("You will get bitches");
             fortuneList.Add("You will pull the new LR that's currently out");
             fortuneList.Add("Raditz will come to your house and rad all over your struggles");
@@ -113,6 +111,7 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Joku will end up next to you in bed");
             fortuneList.Add("Tommorrow its gonna be morbin time, get ready to have the best day of your life");
             fortuneList.Add("The person who sent the latest message in edcord. You're fucking gay, leave the server u bozo");
+            fortuneList.Add("Joku will go beyond Super Nigger Blue");
 
             fortuneList.Add("Because of you, Main will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Vein will get shafted in the next multi he does on dokkan");
@@ -121,7 +120,7 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Because of you, Delet will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Ducky will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Sam will get shafted in the next multi he does on dokkan");
-            fortuneList.Add("Because of you brandon will never pull metal cooler");
+            fortuneList.Add("Because of you Brandon will never pull metal cooler");
 
             fortuneList.Add("If you managed to get this fortune, Loved has a skill issue");
             fortuneList.Add("If you get this then Rak should watch his tone");
@@ -133,13 +132,12 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("The next anime you watch, will have a trap in it");
             fortuneList.Add("If you get this fortune, unlucky, cause Delet is gonna ban you");
             fortuneList.Add("You will inevitably get banned from this server because of something stupid");
-            fortuneList.Add("Delet will never pull Super Saiyan bros");
-            fortuneList.Add("Ash will never pull Super Saiyan Bros");
             fortuneList.Add("You will get lucky for the entire WWDC Celebration in Dokkan");
             fortuneList.Add("If you get this fortune, you will become as dumb as Cooler");
             fortuneList.Add("Cooler will come to your house thinking there is pussy over there but instead it was just dicks");
             fortuneList.Add("If you get this fortune, you will never enjoy a Dragon Ball Game again");
             fortuneList.Add("Joku will now get attacked by a wild bear");
+            fortuneList.Add("Ash will never get shafted in any gacha game");
 
             fortuneList.Add("Instead of trying to blend in, Stand out and never blend in");
             fortuneList.Add("Confuse them with your silence. Shock them with your actions");
@@ -165,7 +163,6 @@ namespace DiscordBotTest.Commands
                 .WithDescription(fortuneList[index])
                 .WithColor(DiscordColor.Blue)
                 );
-
             await ctx.Channel.SendMessageAsync(fortuneMessage);
         }
     }

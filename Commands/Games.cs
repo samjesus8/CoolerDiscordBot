@@ -219,7 +219,7 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("mid")]
-        public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration)  
+        public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration)
         {
             DiscordEmoji[] emojiOptions = { DiscordEmoji.FromName(ctx.Client, ":thumbsup:", true), DiscordEmoji.FromName(ctx.Client, ":thumbsdown:", true) };
             var interactivity = ctx.Client.GetInteractivity();
@@ -255,15 +255,32 @@ namespace DiscordBotTest.Commands
 
             //DAL
 
-            string[] tohka;
-            string[] kurumi;
-            string[] kotori;
-            string[] yoshino;
-            string[] ellen;
-            string[] kaguyaYamai;
-            string[] yuzuruYamai;
-            string[] natsumiAdult;
-            string[] drMurasume;
+            string[] tohka = { "Tohka", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130641154678784/tohka.jpg?width=500&height=669" };
+            messages.Add(tohka);
+
+            string[] kurumi = { "Kurumi Tokisaki", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130640030597130/kurumi.jpg?width=558&height=670" };
+            messages.Add(kurumi);
+
+            string[] kotori = { "Kotori Itsuka", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130639632158771/kotori.jpg?width=376&height=669" };
+            messages.Add(kotori);
+
+            string[] yoshino = { "Yoshino", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130641490219088/yoshino.jpg?width=463&height=669" };
+            messages.Add(yoshino);
+
+            string[] ellen = { "Ellen Mathers", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130639074299904/ellen_mathers.jpg?width=658&height=670" };
+            messages.Add(ellen);
+
+            string[] kaguyaYamai = { "Kaguya Yamai", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130639317565533/kaguya.jpg" };
+            messages.Add(kaguyaYamai);
+
+            string[] yuzuruYamai = { "Yuzuru Yamai", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130641846730762/yuzuru.jpg" };
+            messages.Add(yuzuruYamai);
+
+            string[] natsumiAdult = { "Natsumi", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130640814936167/natsumi.jpg?width=376&height=669"};
+            messages.Add(natsumiAdult);
+
+            string[] drMurasume = { "Reine Murasume", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130640575864842/murasume.jpg?width=376&height=669" };
+            messages.Add(drMurasume);
 
             //DBZ, Super, GT
 

@@ -235,22 +235,22 @@ namespace DiscordBotTest.Commands
             string[] akenoHimejima = { "Akeno Himejima", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1019299165299277884/unknown.png?width=356&height=676" };
             messages.Add(akenoHimejima);
 
-            string[] asiaArgento = { "Asia Argento", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104142989041734/unknown.png?width=504&height=676" };
+            string[] asiaArgento = { "Asia Argento", "High School DxD", "https://media.discordapp.net/attachments/1020110665161113610/1020111383964172358/asia.png?width=499&height=670" };
             messages.Add(asiaArgento);
 
-            string[] koneko = { "Koneko Toujou", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104269287927818/unknown.png?width=260&height=260" };
+            string[] koneko = { "Koneko Toujou", "High School DxD", "https://media.discordapp.net/attachments/1020110665161113610/1020111385377640448/koneko.png" };
             messages.Add(koneko);
 
-            string[] tsubaki = { "Tsubaki", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104400045355058/unknown.png?width=207&height=311" };
+            string[] tsubaki = { "Tsubaki", "High School DxD", "https://media.discordapp.net/attachments/1020110665161113610/1020111387223150682/tsubaki.png" };
             messages.Add(tsubaki);
 
-            string[] kuroka = { "Kuroka", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104592022843402/unknown.png?width=528&height=675" };
+            string[] kuroka = { "Kuroka", "High School DxD", "https://media.discordapp.net/attachments/1020110665161113610/1020111385960665139/kuroka.png?width=523&height=670" };
             messages.Add(kuroka);
 
-            string[] irina = { "Irina Shidou", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104826270519346/unknown.png?width=332&height=461" };
+            string[] irina = { "Irina Shidou", "High School DxD", "https://cdn.discordapp.com/attachments/1020110665161113610/1020111384916271135/ireena.png" };
             messages.Add(irina);
 
-            string[] xenovia = { "Xenovia Quarta", "High School DxD", "https://media.discordapp.net/attachments/735858039537795203/1020104878636421201/unknown.png?width=314&height=461" };
+            string[] xenovia = { "Xenovia Quarta", "High School DxD", "https://media.discordapp.net/attachments/1020110665161113610/1020111387592245318/xenovia.png" };
             messages.Add(xenovia);
 
             //DAL
@@ -267,14 +267,29 @@ namespace DiscordBotTest.Commands
 
             //DBZ, Super, GT
 
-            string[] a18;
-            string[] a21;
-            string[] caulifla;
-            string[] kale;
-            string[] kefla;
-            string[] launch;
-            string[] yurin;
-            string[] fasha;
+            string[] a18 = { "Android 18", "DragonBall Z", "https://media.discordapp.net/attachments/1020110665161113610/1020122369836191785/a18.jpg?width=376&height=669" };
+            messages.Add(a18);
+
+            string[] a21 = { "Android 21", "DragonBall FighterZ", "https://media.discordapp.net/attachments/1020110665161113610/1020122370125594784/a21.jpg?width=376&height=669" };
+            messages.Add(a21);
+
+            string[] caulifla = { "Caulifla", "DragonBall Super", "https://media.discordapp.net/attachments/1020110665161113610/1020122370435981322/caulifla.png?width=566&height=670" };
+            messages.Add(caulifla);
+
+            string[] kale = { "Kale", "DragonBall Super", "https://media.discordapp.net/attachments/1020110665161113610/1020122371052544021/kale.jpg?width=376&height=669" };
+            messages.Add(kale);
+
+            string[] kefla = { "Kefla", "DragonBall Super", "https://media.discordapp.net/attachments/1020110665161113610/1020122371371307088/kefla.jpg?width=502&height=669" };
+            messages.Add(kefla);
+
+            string[] launch = { "Launch", "DragonBall", "https://media.discordapp.net/attachments/1020110665161113610/1020122371727831091/launch.jpg?width=502&height=669" };
+            messages.Add(launch);
+
+            string[] yurin = { "Yurin", "DragonBall Super", "https://media.discordapp.net/attachments/1020110665161113610/1020122372038213703/yuin.jpg?width=376&height=669" };
+            messages.Add(yurin);
+
+            string[] fasha = { "Fasha", "DragonBall Z", "https://media.discordapp.net/attachments/1020110665161113610/1020122370800877688/fasha.jpg?width=521&height=670" };
+            messages.Add(fasha);
 
             //Joku Forms
 
@@ -304,13 +319,13 @@ namespace DiscordBotTest.Commands
             string[] astolfoSaber = { "Astolfo (Saber)", "Fate Grand Order", "https://media.discordapp.net/attachments/735858039537795203/1019335359961780337/unknown.png?width=477&height=676" };
             messages.Add(astolfoSaber);
 
-            string[] neroClaudius = { "Nero Claudius", "Fate/EXTRA", "https://media.discordapp.net/attachments/735858039537795203/1020103687261130762/unknown.png?width=320&height=676" };
+            string[] neroClaudius = { "Nero Claudius", "Fate/EXTRA", "https://media.discordapp.net/attachments/1020110665161113610/1020111386384285768/nero.jpg?width=317&height=670" };
             messages.Add(neroClaudius);
 
-            string[] neroClaudiusBride = { "Nero Claudius (Bride)", "Fate/EXTRA", "https://media.discordapp.net/attachments/735858039537795203/1020100866902073364/3ae2e463de874c3c450518f382c44f3d.jpg?width=483&height=676" };
+            string[] neroClaudiusBride = { "Nero Claudius (Bride)", "Fate/EXTRA", "https://media.discordapp.net/attachments/1020110665161113610/1020111386765955192/nerobride.jpg?width=478&height=669" };
             messages.Add(neroClaudiusBride);
 
-            string[] neroClaudiusCaster = { "Nero Claudius (Caster)", "Fate Grand Order", "https://media.discordapp.net/attachments/735858039537795203/1020100787197714493/ed8b02c3f1635b964f79a3b6698bc1ecb6244471v2_hq.jpg?width=626&height=676" };
+            string[] neroClaudiusCaster = { "Nero Claudius (Caster)", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1020111384446505030/casternero.jpg?width=621&height=670" };
             messages.Add(neroClaudiusCaster);
 
             string[] kamaFGO;

@@ -159,8 +159,8 @@ namespace DiscordBotTest.Commands
             var fortuneMessage = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("Cooler's Daily Fortunes for " + ctx.User.Username.ToString())
-                .WithDescription(fortuneList[index])
+                .WithTitle("***Cooler's Daily Fortunes for " + ctx.User.Username.ToString() + "***")
+                .WithDescription("***" + fortuneList[index] + "***")
                 .WithColor(DiscordColor.Blue)
                 );
             await ctx.Channel.SendMessageAsync(fortuneMessage);

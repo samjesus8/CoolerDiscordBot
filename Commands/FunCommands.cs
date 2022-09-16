@@ -138,6 +138,10 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("If you get this fortune, you will never enjoy a Dragon Ball Game again");
             fortuneList.Add("Joku will now get attacked by a wild bear");
             fortuneList.Add("Ash will never get shafted in any gacha game");
+            fortuneList.Add("Next fortune you do will have the opposite effect");
+            fortuneList.Add("If you get this fortune, you will forever suffer from Copium");
+            fortuneList.Add("Yes");
+            fortuneList.Add("No");
 
             fortuneList.Add("Instead of trying to blend in, Stand out and never blend in");
             fortuneList.Add("Confuse them with your silence. Shock them with your actions");

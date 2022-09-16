@@ -209,9 +209,9 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithTitle("Mid or Not Mid Instructions")
                 .WithColor(DiscordColor.Azure)
-                .WithDescription("IMPORTANT: THE SYNTAX OF THE COMMAND IS \n ***'>mid TimeLimit YourEmojis'*** \n\n" +
+                .WithDescription("IMPORTANT: THE SYNTAX OF THE COMMAND IS \n ***'>mid TimeLimit'*** \n\n" +
                                     "The premise of the game is simple, a good looking anime girl will be displayed on screen \n" +
-                                        "If you think she's mid, vote mid. The most votes wins the game \n\n" +
+                                        "If you think she's mid, vote mid. Thumbs Down = Mid & Thumbs Up = Not Mid \n The most votes wins the game \n\n" +
                                             "Have fun and remember, don't make it serious, its just a fucking cartoon figure")
                 .WithImageUrl("https://media.discordapp.net/attachments/735858039537795203/1019733895526219826/unknown.png?width=514&height=537")
                 );

@@ -18,8 +18,7 @@ namespace DiscordBotTest.Commands
                 .WithColor(DiscordColor.Azure)
                 .WithTitle("Cooler Is Gay Bot | Made by Samuel J \n ©SamuelJesuthas \n\n Help Menu")
                 .WithDescription("This is a multi-utility bot which just features random stuff \n" +
-                                    "Click on a category to view its list of commands \n " +
-                                        "The prefix is '>' \n\n" +
+                                 "The prefix is '>' \n\n" +
 
                                         "To use the help command you have to specify the type of help you want to use after you type in the command. Here is the list of categories: \n\n" +
                                         "**Calculator Help -> '>help Calculator'** \n" +
@@ -81,7 +80,7 @@ namespace DiscordBotTest.Commands
                                     "Do >lottery on its own to view the instructions \n\n" +
                                     ">mid -> Play a game of Mid or Not Mid. A girl will show up on the screen \n" +
                                     "Server Members can vote if they think the girl is mid or not mid. After the time period, the most votes wins that round \n" +
-                                    "Syntax: >mid TIME EMOJIS (>mid 5s :thumbsup: :thumbsdown:)")
+                                    "Syntax: >mid TIMESPAN (>mid 5s)")
                     );
                 await ctx.Channel.SendMessageAsync(gamesFunctionMessage);
             }
@@ -112,8 +111,11 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("***Changelog | The latest version is V1.3.1***")
-                .WithDescription("V1.3.1: \n\n" +
+                .WithTitle("***Changelog | The latest version is V1.3.2***")
+                .WithDescription("V1.3.2: \n\n" +
+                                    "-Added any requested fortunes from users \n" +
+                                    "-Fixed any wrong info in the >help section \n" +
+                                 "V1.3.1: \n\n" +
                                     "-Added any requested fortunes from users \n" +
                                     "-Added a new changelog feature where you can view specific versions or the full log (See ***>help tools*** for more info) \n" +
                                     "-Added more entries to the >mid command and fixed errors pertaining to the results: \n\n" +
@@ -237,17 +239,12 @@ namespace DiscordBotTest.Commands
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
-                    .WithAuthor("***The latest version is V1.3.1***")
+                    .WithAuthor("***The latest version is V1.3.2***")
                     .WithColor(DiscordColor.Azure)
-                    .WithTitle("V1.3.1 Changelog")
-                    .WithDescription("-Added any requested fortunes from users \n" +
-                                    "-Added more entries to the >mid command and fixed errors pertaining to the results: \n\n" +
-
-                                    "Fixed and redesigned the way results are shown \n" +
-                                    "Removed the need to add your own emotes as a paramater in the command. Users only need to set the time \n\n" +
-
-                                    "Removed >lottorules and integrated it with >lottery to view the rules and play the game on the same command \n" +
-                                    "Removed >midrules and integrated with >mid to view instructions for same command")
+                    .WithTitle("V1.3.2 Changelog")
+                    .WithDescription("V1.3.2: \n\n" +
+                                    "-Added any requested fortunes from users \n" +
+                                    "-Fixed any wrong info in the >help section")
                     );
 
                 await ctx.Channel.SendMessageAsync(message);

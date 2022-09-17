@@ -91,10 +91,13 @@ namespace DiscordBotTest.Commands
         {
             var random = new Random();
             string[] badUnits = { "STR Beerus", "TEQ Corrupted Zamasu", "PHY Buu", "STR Janemba", "INT Janemba", "STR Broly (Not the LR)",
-                                    "PHY Broly"};
+                                    "PHY Broly", "TEQ Perfect Form Cell", "INT Boujack", "TEQ Raditz", "STR Kefla", "INT Android 16",
+                                        "AGL Super Vegito", "PHY Vegito Blue", "AGL Pan", "AGL SSJ3 Goku" };
             int badUnitsIndex = random.Next(badUnits.Length);
 
             List<string> fortuneList = new List<string>();
+
+            //Infinite Universe
 
             fortuneList.Add("You will have zero bitches");
             fortuneList.Add("You will get SSBE on your next multi in Dokkan");
@@ -111,8 +114,8 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Joku will end up next to you in bed");
             fortuneList.Add("Tommorrow its gonna be morbin time, get ready to have the best day of your life");
             fortuneList.Add("The person who sent the latest message in edcord. You're fucking gay, leave the server u bozo");
-            fortuneList.Add("Joku will go beyond Super Nigger Blue");
-
+            fortuneList.Add("If you get this fortune, Shallot ain't going SSB");
+            fortuneList.Add("Delet will get bitches once he graduates");
             fortuneList.Add("Because of you, Main will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Vein will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Coola will get shafted in the next multi he does on dokkan");
@@ -121,18 +124,19 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Because of you, Ducky will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Sam will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you Brandon will never pull metal cooler");
-
             fortuneList.Add("If you managed to get this fortune, Loved has a skill issue");
-            fortuneList.Add("If you get this then Rak should watch his tone");
             fortuneList.Add("The next multi you do in dokkan, you will get " + badUnits[badUnitsIndex]);
             fortuneList.Add("The Queen's revive skill will now activate");
             fortuneList.Add("If you get this fortune, you are able to create your own fortune and add it to this list. Please ping @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825 with your fortune");
             fortuneList.Add("If you have Legends installed, you are a moron");
             fortuneList.Add("One day, Cooler will return to Discord because of something really dumb");
             fortuneList.Add("The next anime you watch, will have a trap in it");
-            fortuneList.Add("If you get this fortune, unlucky, cause Delet is gonna ban you");
             fortuneList.Add("You will inevitably get banned from this server because of something stupid");
             fortuneList.Add("You will get lucky for the entire WWDC Celebration in Dokkan");
+
+            //Requested Fortunes
+
+            fortuneList.Add("Joku will go beyond Super Nigger Blue");
             fortuneList.Add("If you get this fortune, you will become as dumb as Cooler");
             fortuneList.Add("Cooler will come to your house thinking there is pussy over there but instead it was just dicks");
             fortuneList.Add("If you get this fortune, you will never enjoy a Dragon Ball Game again");
@@ -140,8 +144,11 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Ash will never get shafted in any gacha game");
             fortuneList.Add("Next fortune you do will have the opposite effect");
             fortuneList.Add("If you get this fortune, you will forever suffer from Copium");
+            fortuneList.Add("If you get this then Rak should watch his tone");
             fortuneList.Add("Yes");
             fortuneList.Add("No");
+
+            //Sigma Quotes
 
             fortuneList.Add("Instead of trying to blend in, Stand out and never blend in");
             fortuneList.Add("Confuse them with your silence. Shock them with your actions");
@@ -153,10 +160,21 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Put more of your energy into listening than talking");
             fortuneList.Add("Always be true to who you are, and ignore what other people have to say about you");
             fortuneList.Add("Until his dream comes true, a man cannot relax");
-            fortuneList.Add("Everybody has to build something, but only the girls get to enjoy it. Be proud to be born a man");
             fortuneList.Add("Never Fear Anyone, Never Trust Anyone, Never Depend On anyone");
             fortuneList.Add("The future depends on what we do in the present");
             fortuneList.Add("Don't Quit. Suffer now and live the rest of your life above those who made you suffer");
+            fortuneList.Add("Education wil make you a living. Self Education makes you a fortune");
+            fortuneList.Add("The worst thing for a rich person to have: \n\n A wife");
+            fortuneList.Add("The less we deserve good fortune, the more we hope for it");
+            fortuneList.Add("Never do things for the earth's pleasure. Do it for yourself");
+            fortuneList.Add("The day you disband yourself from today's society, you separate yourself from confinement into the truth");
+            fortuneList.Add("The best way out is always through");
+            fortuneList.Add("In a gentle way, you can shake the world. You don't have to be famous, or have a world changing idea");
+            fortuneList.Add("Today is the only day. Yesterday is gone");
+            fortuneList.Add("Give light and people will find the way");
+            fortuneList.Add("Believe in living today. Not in yesterday, nor in tomorrow");
+            fortuneList.Add("When deeds speak, words are nothing");
+            fortuneList.Add("Silence is the last thing the world will ever hear from you");
 
             int index = random.Next(fortuneList.Count);
 

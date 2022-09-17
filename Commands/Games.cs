@@ -80,7 +80,7 @@ namespace DiscordBotTest.Commands
                                     "5 numbers = $500 + Unlimited Bitches + Mad gets killed")
                             );
             await ctx.Channel.SendMessageAsync(rulesMessage);
-        }
+        } //Rules
 
         [Command("lottery")]
         public async Task LotteryGame(CommandContext ctx, int num1, int num2, int num3, int num4, int num5)
@@ -216,7 +216,7 @@ namespace DiscordBotTest.Commands
                 .WithImageUrl("https://media.discordapp.net/attachments/735858039537795203/1019733895526219826/unknown.png?width=514&height=537")
                 );
             await ctx.Channel.SendMessageAsync(rules);
-        }
+        } //Rules
 
         [Command("mid")]
         public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration)
@@ -345,12 +345,23 @@ namespace DiscordBotTest.Commands
             string[] neroClaudiusCaster = { "Nero Claudius (Caster)", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1020111384446505030/casternero.jpg?width=621&height=670" };
             messages.Add(neroClaudiusCaster);
 
-            string[] kamaFGO;
-            string[] astolfoRider;
-            string[] rinToshaka;
-            string[] ishtarFGO;
-            string[] ereshFGO;
-            string[] trueKingArthur;
+            string[] kamaFGO = { "Kama", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1020742165455978656/kama.jpg?width=478&height=676" };
+            messages.Add(kamaFGO);
+
+            string[] astolfoRider = { "Astolfo (Rider)", "Fate/Aprocypha", "https://media.discordapp.net/attachments/1020110665161113610/1020742164206059540/astolfo.jpg?width=478&height=676" };
+            messages.Add(astolfoRider);
+
+            string[] rinToshaka = { "Rin Toshaka", "Fate Stay/Night", "https://media.discordapp.net/attachments/1020110665161113610/1020742166181597184/rintoshaka.jpg?width=558&height=675" };
+            messages.Add(rinToshaka);
+
+            string[] ishtarFGO = { "Ishtar", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1020742165212713100/ishtar.jpg?width=380&height=675" };
+            messages.Add(ishtarFGO);
+
+            string[] ereshFGO = { "Ereshkigal", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1020742164621312121/ereshkigal.png?width=458&height=675" };
+            messages.Add(ereshFGO);
+
+            string[] trueKingArthur = { "Arthur Pendragon", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1020742165829271663/lionking.png?width=481&height=675" };
+            messages.Add(trueKingArthur);
 
 
             int index = random.Next(messages.Count);

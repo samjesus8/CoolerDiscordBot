@@ -16,7 +16,7 @@ namespace DiscordBotTest.Commands
                 .AddEmbed(
                 new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("Cooler Is Gay Bot | Made by Samuel J \n ©SamuelJesuthas \n\n Help Menu")
+                .WithTitle("Cooler Is Gay Bot | Made by 𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825")
                 .WithDescription("This is a multi-utility bot which just features random stuff \n" +
                                  "The prefix is '>' \n\n" +
 
@@ -75,7 +75,7 @@ namespace DiscordBotTest.Commands
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("Game Commands")
                     .WithDescription(">cardgame -> A simple card game. If you draw higher than the bot, you win the game \n\n " +
-                                    ">lottery -> Play the lottery, pick 5 numbers from 1-100 and test your luck | " +
+                                    ">lottery -> Play the lottery, pick 5 numbers from 1-100 and test your luck \n" +
                                     "Syntax: >lottery num1 num2 num3 num4 num5 \n " +
                                     "Do >lottery on its own to view the instructions \n\n" +
                                     ">mid -> Play a game of Mid or Not Mid. A girl will show up on the screen \n" +
@@ -111,10 +111,17 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("***Changelog | The latest version is V1.3.2***")
-                .WithDescription("V1.3.2: \n\n" +
+                .WithTitle("***Changelog | The latest version is V1.3.3***")
+                .WithDescription("V1.3.3: \n\n" +
+                                    "-Added any requested fortunes from users \n" +
+                                    "-Added some more fortunes to the list \n" +
+                                    "-Fixed any wrong info in any of the menus \n" +
+                                    "-Added some more characters to >mid list \n\n" +
+
+                                 "V1.3.2: \n\n" +
                                     "-Added any requested fortunes from users \n" +
                                     "-Fixed any wrong info in the >help section \n" +
+
                                  "V1.3.1: \n\n" +
                                     "-Added any requested fortunes from users \n" +
                                     "-Added a new changelog feature where you can view specific versions or the full log (See ***>help tools*** for more info) \n" +
@@ -235,7 +242,7 @@ namespace DiscordBotTest.Commands
 
                 await ctx.Channel.SendMessageAsync(message);
             }
-            if (version == "Latest" || version == "latest") 
+            if (version == "1.3.2") 
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
@@ -245,6 +252,21 @@ namespace DiscordBotTest.Commands
                     .WithDescription("V1.3.2: \n\n" +
                                     "-Added any requested fortunes from users \n" +
                                     "-Fixed any wrong info in the >help section")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "Latest" || version == "latest") 
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithAuthor("***The latest version is V1.3.3***")
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.3.3 Changelog")
+                    .WithDescription("V1.3.3: \n\n" +
+                                    "-Added any requested fortunes from users \n" +
+                                    "-Added some more fortunes to the list \n" +
+                                    "-Fixed any wrong info in any of the menus \n" +
+                                    "-Added some more characters to >mid list")
                     );
 
                 await ctx.Channel.SendMessageAsync(message);

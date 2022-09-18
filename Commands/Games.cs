@@ -1,14 +1,13 @@
-﻿using DSharpPlus;
-using DSharpPlus.CommandsNext;
+﻿using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection.Emit;
 using System.Threading.Tasks;
+using System.Data.OleDb;
+using System.Security.Cryptography.X509Certificates;
 
 namespace DiscordBotTest.Commands
 {
@@ -221,7 +220,7 @@ namespace DiscordBotTest.Commands
         [Command("mid")]
         public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration)
         {
-            DiscordEmoji[] emojiOptions = { DiscordEmoji.FromName(ctx.Client, ":thumbsup:", true), DiscordEmoji.FromName(ctx.Client, ":thumbsdown:", true) };
+            DiscordEmoji[] emojiOptions = { DiscordGuildEmoji.FromName(ctx.Client, ":MID_EMOTE:", true), DiscordGuildEmoji.FromName(ctx.Client, ":NOT_MID_EMOTE:", true) };
             var interactivity = ctx.Client.GetInteractivity();
             var random = new Random();
 
@@ -308,6 +307,12 @@ namespace DiscordBotTest.Commands
             string[] fasha = { "Fasha", "DragonBall Z", "https://media.discordapp.net/attachments/1020110665161113610/1020122370800877688/fasha.jpg?width=521&height=670" };
             messages.Add(fasha);
 
+            string[] towa = { "Towa", "DragonBall Xenoverse 2", "https://media.discordapp.net/attachments/1020110665161113610/1021134845386162176/Towa.png?width=348&height=676" };
+            messages.Add(towa);
+
+            string[] supremeKaiTime = { "Supreme Kai of Time", "DragonBall Heroes", "https://media.discordapp.net/attachments/1020110665161113610/1021134844647968768/supremekaioftime.png?width=225&height=300" };
+            messages.Add(supremeKaiTime);
+
             //Joku Forms
 
             string[] joku = { "Mommy Joku", "NiggerBall Z", "https://media.discordapp.net/attachments/735858039537795203/1019332220231614464/unknown.png?width=472&height=676" };
@@ -360,8 +365,78 @@ namespace DiscordBotTest.Commands
             string[] ereshFGO = { "Ereshkigal", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1020742164621312121/ereshkigal.png?width=458&height=675" };
             messages.Add(ereshFGO);
 
-            string[] trueKingArthur = { "Arthur Pendragon", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1020742165829271663/lionking.png?width=481&height=675" };
+            string[] trueKingArthur = { "Arthur Pendragon (Lancer)", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1020742165829271663/lionking.png?width=481&height=675" };
             messages.Add(trueKingArthur);
+
+            string[] jeanneDArc = { "Jeanne D'Arc", "Fate/Aprocypha", "https://media.discordapp.net/attachments/1020110665161113610/1021133189168758934/jeanne_darc.jpg?width=328&height=675" };
+            messages.Add(jeanneDArc);
+
+            string[] jeanneDArcAlter = { "Jeanne D'Arc (Alter)", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1021133189776945152/JeanneAlter.png?width=461&height=652" };
+            messages.Add(jeanneDArcAlter);
+
+            string[] arthurAlter = { "King Arthur (Saber Alter)", "Fate Stay/Night", "https://media.discordapp.net/attachments/1020110665161113610/1021133190217355364/kingarthuralter.png?width=481&height=675" };
+            messages.Add(arthurAlter);
+
+            string[] sakura = { "Sakura Matou", "Fate Stay/Night", "https://media.discordapp.net/attachments/1020110665161113610/1021133190968123554/sakura.png?width=475&height=676" };
+            messages.Add(sakura);
+
+            string[] nitocris = { "Nitocris", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1021133190632570992/Nitocris.png?width=461&height=652" };
+            messages.Add(nitocris);
+
+            string[] spaceIshtar = { "Space Ishtar", "Fate Grand Order", "https://media.discordapp.net/attachments/1020110665161113610/1021133191387545670/spaceishtar.png?width=380&height=676" };
+            messages.Add(spaceIshtar);
+
+            //Genshin
+
+            string[] lumine = { "Lumine (Traveller)", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1020792605816135801/lumine_art.png?width=479&height=676" };
+            messages.Add(lumine);
+
+            string[] amber = { "Amber", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1020792605526720563/amber.jpg?width=477&height=676" };
+            messages.Add(amber);
+
+            string[] jean = { "Jean", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137635630137374/jean.png?width=422&height=675" };
+            messages.Add(jean);
+
+            string[] babara = { "Babara", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137634736750693/babara.jpg?width=515&height=675" };
+            messages.Add(babara);
+
+            string[] ganyu = { "Ganyu", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137635344912494/ganyu.jpg?width=1059&height=676" };
+            messages.Add(ganyu);
+
+            string[] venti = { "Venti", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137665795571803/venti.jpg?width=478&height=676" };
+            messages.Add(venti);
+
+            string[] yelan = { "Yelan", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137666043031803/yelan.jpg?width=422&height=675" };
+            messages.Add(yelan);
+
+            string[] ayaka = { "Kamisato Ayaka", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137634480889947/ayaka.jpg?width=478&height=676" };
+            messages.Add(ayaka);
+
+            string[] raidenShogun = { "Raiden Shogun", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137637639200919/raiden.jpg?width=1201&height=676" };
+            messages.Add(raidenShogun);
+
+            string[] paimon = { "Paimon", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137637253316618/paimon.png?width=380&height=676" };
+            messages.Add(paimon);
+
+            string[] nilou = { "Nilou", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137636552872057/nilou.png?width=448&height=675" };
+            messages.Add(nilou);
+
+            string[] eula = { "Eula", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137635084882041/eula.jpg?width=380&height=675" };
+            messages.Add(eula);
+
+            string[] ningguang = { "Ningguang", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137636942950460/ningguang.jpg?width=380&height=676" };
+            messages.Add(ningguang);
+
+            string[] klee = { "Klee", "Genshin Impact", "https://media.discordapp.net/attachments/1020110665161113610/1021137636024385776/klee.jpg?width=478&height=676" };
+            messages.Add(klee);
+
+            //Other
+
+            string[] walter = { "Walter White", "Breaking Bad", "https://media.discordapp.net/attachments/1020110665161113610/1020783882594942976/walter.png?width=175&height=234" };
+            messages.Add(walter);
+
+            string[] saulGoodman = { "Saul", "Breaking Bad", "https://media.discordapp.net/attachments/1020110665161113610/1020784615989968906/saul.png?width=461&height=461" };
+            messages.Add(saulGoodman);
 
 
             int index = random.Next(messages.Count);
@@ -394,6 +469,50 @@ namespace DiscordBotTest.Commands
                 .WithDescription(string.Join("\n", results))
                 );
             await ctx.Channel.SendMessageAsync(resultsEmbed);
+        }
+
+        [Command("passive")]
+        public async Task GuessThePassive(CommandContext ctx) 
+        {
+            var random = new Random();
+            var interactivity = ctx.Client.GetInteractivity();
+            var timeLimit = TimeSpan.FromSeconds(20);
+
+            List<string[]> passivesList = new List<string[]>(); //[0] = Name of Unit, [1] = Passive, [2] ImageURL
+
+            //LRs
+
+            string[] tapionMinosha = { "True Heroes: Tapion & Minotia", "ATK & DEF +130%; Storied Figures Category allies' Ki +2 and ATK & DEF +20%; " +
+                                                                            "Siblings' Bond Category allies' Ki +2 and ATK & DEF +20%; medium chance of launching an additional Super Attack when performing an Ultra Super Attack; " +
+                                                                                "reduces damage received by 13% within the same turn with each Super Attack performed", 
+                                                 "https://media.discordapp.net/attachments/1020832099068018748/1020832124074467348/unknown.png?width=382&height=527" };
+
+            passivesList.Add(tapionMinosha);
+
+            string[] brolyTrio = { "A new life on Vampa: Broly, Cheelai & Lemo", "ATK & DEF +15% per Ki Sphere obtained; plus an additional ATK & DEF +5% and Ki +2 per Ki Sphere with 2 or more PHY Ki Spheres obtained; " +
+                                                                                    "all allies' ATK +39% with 2 or more AGL or STR Ki Spheres obtained; all allies' DEF +39% with 2 or more TEQ or INT Ki Spheres obtained; " +
+                                                                                        "evades enemy's attack (including Super Attack) with 7 or more Ki Spheres obtained",
+                                                    "https://media.discordapp.net/attachments/1020832099068018748/1020836752434417714/unknown.png?width=365&height=516"};
+            passivesList.Add(brolyTrio);
+
+            var index = random.Next(passivesList.Count);
+
+            var messageBuilder = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("Guess this passive")
+                .WithDescription(passivesList[index][1])
+                );
+            var messageCheck = await ctx.Channel.SendMessageAsync(messageBuilder);
+
+            var wait = await interactivity.CollectReactionsAsync(messageCheck, timeLimit);
+
+            var answer = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+                .WithTitle("The unit was: " + passivesList[index][0])
+                .WithImageUrl(passivesList[index][2])
+                );
+            await ctx.Channel.SendMessageAsync(answer);
         }
     }
 }

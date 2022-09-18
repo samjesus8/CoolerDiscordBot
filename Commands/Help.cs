@@ -111,8 +111,13 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("***Changelog | The latest version is V1.3.3***")
-                .WithDescription("V1.3.3: \n\n" +
+                .WithTitle("***Changelog | The latest version is V1.3.4***")
+                .WithDescription("V1.3.4: \n\n" +
+                                    "-Added some more characters to the list for the >mid command \n" +
+                                    "-Changed the reactions for the >mid command to custom emotes \n" +
+                                    "-Started Development for the >passive command (COMING SOON) \n\n" +
+
+                                 "V1.3.3: \n\n" +
                                     "-Added any requested fortunes from users \n" +
                                     "-Added some more fortunes to the list \n" +
                                     "-Fixed any wrong info in any of the menus \n" +
@@ -255,11 +260,10 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
-            if (version == "Latest" || version == "latest") 
+            if (version == "1.3.3") 
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
-                    .WithAuthor("***The latest version is V1.3.3***")
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("V1.3.3 Changelog")
                     .WithDescription("V1.3.3: \n\n" +
@@ -268,7 +272,20 @@ namespace DiscordBotTest.Commands
                                     "-Fixed any wrong info in any of the menus \n" +
                                     "-Added some more characters to >mid list")
                     );
-
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "Latest" || version == "latest") 
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithAuthor("***The latest version is V1.3.4***")
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.3.4 Changelog")
+                    .WithDescription("V1.3.4: \n\n" +
+                                    "-Added some more characters to the list for the >mid command \n" +
+                                    "-Changed the reactions for the >mid command to custom emotes \n" +
+                                    "-Started Development for the >passive command (COMING SOON)")
+                    );
                 await ctx.Channel.SendMessageAsync(message);
             }
         }

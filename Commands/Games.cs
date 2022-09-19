@@ -474,7 +474,7 @@ namespace DiscordBotTest.Commands
         {
             var random = new Random();
             var interactivity = ctx.Client.GetInteractivity();
-            var timeLimit = TimeSpan.FromSeconds(20);
+            var timeLimit = TimeSpan.FromSeconds(30);
 
             List<string[]> passivesList = new List<string[]>(); //[0] = Name of Unit, [1] = Passive, [2] ImageURL
 
@@ -488,16 +488,18 @@ namespace DiscordBotTest.Commands
             var messageBuilder = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("Guess this passive skill | You have 20 seconds till the answer is shown")
+                .WithColor(DiscordColor.Azure)
+                .WithTitle("Guess this passive skill | You have 30 seconds till the answer is shown")
                 .WithDescription(passivesList[index][1]) //Displays Passive
                 );
             var messageCheck = await ctx.Channel.SendMessageAsync(messageBuilder);
 
-            var wait = await interactivity.CollectReactionsAsync(messageCheck, timeLimit); //Waits for 20s
+            var wait = await interactivity.CollectReactionsAsync(messageCheck, timeLimit); //Waits for 30s
 
             var answer = new DiscordMessageBuilder()
                 .AddEmbed(new DiscordEmbedBuilder()
-                .WithTitle("The unit was: " + passivesList[index][0]) //Name
+                .WithColor(DiscordColor.Green)
+                .WithTitle("The unit was -> " + passivesList[index][0]) //Name
                 .WithImageUrl(passivesList[index][2])//ImageURL
                 );
             await ctx.Channel.SendMessageAsync(answer);

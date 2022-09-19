@@ -111,8 +111,14 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("***Changelog | The latest version is V1.3.4***")
-                .WithDescription("V1.3.4: \n\n" +
+                .WithTitle("***Changelog | The latest version is V1.4***")
+                .WithDescription("V1.4: \n\n" +
+                                    "-Introducting the '>passive' command!!!!! \n\n" +
+                                    "This command was requested by the man Delet#9054 himself. It is a guessing game based off Dokkan Unit Passive Skills \n" +
+                                    "All you have to do is simply call the command. You will be displayed a random passive skill of a UR/LR unit. Server members have 20 seconds to guess \n" +
+                                    "After 20 seconds the answer will be displayed in an embedded message. Have fun testing your dokkan knowledge!!!! \n\n " +
+
+                                 "V1.3.4: \n\n" +
                                     "-Added some more characters to the list for the >mid command \n" +
                                     "-Changed the reactions for the >mid command to custom emotes \n" +
                                     "-Started Development for the >passive command (COMING SOON) \n\n" +
@@ -274,17 +280,31 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
-            if (version == "Latest" || version == "latest") 
+            if (version == "1.3.4") 
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
-                    .WithAuthor("***The latest version is V1.3.4***")
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("V1.3.4 Changelog")
                     .WithDescription("V1.3.4: \n\n" +
                                     "-Added some more characters to the list for the >mid command \n" +
                                     "-Changed the reactions for the >mid command to custom emotes \n" +
                                     "-Started Development for the >passive command (COMING SOON)")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithAuthor("***The latest version is V1.4***")
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.4 Changelog")
+                    .WithDescription("V1.4: \n\n" +
+                                    "-Introducting the '>passive' command!!!!! \n\n" +
+                                    "This command was requested by the man Delet#9054 himself. It is a guessing game based off Dokkan Unit Passive Skills \n" +
+                                    "All you have to do is simply call the command. You will be displayed a random passive skill of a UR/LR unit. Server members have 20 seconds to guess \n" +
+                                    "After 20 seconds the answer will be displayed in an embedded message. Have fun testing your dokkan knowledge!!!!")
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }

@@ -6,8 +6,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Data.OleDb;
-using System.Security.Cryptography.X509Certificates;
 
 namespace DiscordBotTest.Commands
 {
@@ -480,37 +478,27 @@ namespace DiscordBotTest.Commands
 
             List<string[]> passivesList = new List<string[]>(); //[0] = Name of Unit, [1] = Passive, [2] ImageURL
 
-            //LRs
+            var dokkanCard = new DokkanCardBuilder();
 
-            string[] tapionMinosha = { "True Heroes: Tapion & Minotia", "ATK & DEF +130%; Storied Figures Category allies' Ki +2 and ATK & DEF +20%; " +
-                                                                            "Siblings' Bond Category allies' Ki +2 and ATK & DEF +20%; medium chance of launching an additional Super Attack when performing an Ultra Super Attack; " +
-                                                                                "reduces damage received by 13% within the same turn with each Super Attack performed", 
-                                                 "https://media.discordapp.net/attachments/1020832099068018748/1020832124074467348/unknown.png?width=382&height=527" };
+            string[] testUnit = { dokkanCard.Name, dokkanCard.Passive, dokkanCard.ImageURL };
+            passivesList.Add(testUnit);
 
-            passivesList.Add(tapionMinosha);
-
-            string[] brolyTrio = { "A new life on Vampa: Broly, Cheelai & Lemo", "ATK & DEF +15% per Ki Sphere obtained; plus an additional ATK & DEF +5% and Ki +2 per Ki Sphere with 2 or more PHY Ki Spheres obtained; " +
-                                                                                    "all allies' ATK +39% with 2 or more AGL or STR Ki Spheres obtained; all allies' DEF +39% with 2 or more TEQ or INT Ki Spheres obtained; " +
-                                                                                        "evades enemy's attack (including Super Attack) with 7 or more Ki Spheres obtained",
-                                                    "https://media.discordapp.net/attachments/1020832099068018748/1020836752434417714/unknown.png?width=365&height=516"};
-            passivesList.Add(brolyTrio);
-
-            var index = random.Next(passivesList.Count);
+            var index = random.Next(passivesList.Count); //Chooses from list at random
 
             var messageBuilder = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithTitle("Guess this passive")
-                .WithDescription(passivesList[index][1])
+                .WithTitle("Guess this passive skill | You have 20 seconds till the answer is shown")
+                .WithDescription(passivesList[index][1]) //Displays Passive
                 );
             var messageCheck = await ctx.Channel.SendMessageAsync(messageBuilder);
 
-            var wait = await interactivity.CollectReactionsAsync(messageCheck, timeLimit);
+            var wait = await interactivity.CollectReactionsAsync(messageCheck, timeLimit); //Waits for 20s
 
             var answer = new DiscordMessageBuilder()
                 .AddEmbed(new DiscordEmbedBuilder()
-                .WithTitle("The unit was: " + passivesList[index][0])
-                .WithImageUrl(passivesList[index][2])
+                .WithTitle("The unit was: " + passivesList[index][0]) //Name
+                .WithImageUrl(passivesList[index][2])//ImageURL
                 );
             await ctx.Channel.SendMessageAsync(answer);
         }

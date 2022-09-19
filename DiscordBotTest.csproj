@@ -188,6 +188,7 @@
     <Compile Include="Commands\Help.cs" />
     <Compile Include="Commands\Tools.cs" />
     <Compile Include="ConfigJSON.cs" />
+    <Compile Include="DokkanCardBuilder.cs" />
     <Compile Include="Handlers\Dialogue\Steps\DialogueStepBase.cs" />
     <Compile Include="Handlers\Dialogue\DialougeHandler.cs" />
     <Compile Include="Handlers\Dialogue\Steps\IDialogueStep.cs" />
@@ -199,6 +200,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="config.json" />
+    <None Include="LRPassives.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

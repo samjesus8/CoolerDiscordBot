@@ -1,0 +1,95 @@
+﻿{
+	"categoryName": "LRs",
+	"members": [
+		{
+			"name": "New Life on Vampa: Broly, Cheelai & Lemo",
+			"passive": "ATK & DEF +15% per Ki Sphere obtained; plus an additional ATK & DEF +5% and Ki +2 per Ki Sphere with 2 or more PHY Ki Spheres obtained; all allies' ATK +39% with 2 or more AGL or STR Ki Spheres obtained; all allies' DEF +39% with 2 or more TEQ or INT Ki Spheres obtained; evades enemy's attack (including Super Attack) with 7 or more Ki Spheres obtained",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021400776305815672/LR_Broly_Trio.png?width=252&height=448"
+		},
+		{
+			"name": "A Promise Made to Kakarot Super Saiyan 2 Vegeta (Angel)",
+			"passive": "ATK & DEF +70%; plus an additional ATK & DEF +4% each time Ki rises by 1 (up to 70%); Ki +3 when the name of an ally who is attacking in the same turn or an enemy includes 'Goku'' (Youth, Captain Ginyu, Jr., etc. excluded); plus an additional Ki +3 when there is a 'Majin Buu Saga' Category ally whose name includes 'Goku' attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021455489097277521/LR_Angel_SSJ2_Vegeta.png?width=301&height=676"
+		},
+		{
+			"name": "True Heroes: Tapion & Minotia",
+			"passive": "ATK & DEF +130%; 'Storied Figures' Category allies' Ki +2 and ATK & DEF +20%; 'Siblings' Bond' Category allies' Ki +2 and ATK & DEF +20%; medium chance of launching an additional Super Attack when performing an Ultra Super Attack; reduces damage received by 13% within the same turn with each Super Attack performed",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021460482596540416/LR_Tapion__Minotia.png?width=305&height=675"
+		},
+		{
+			"name": "The Androids' Journey: Androids #17 & #18/Android #16",
+			"passive": "Ki +1 and ATK & DEF +78%; medium chance of evading enemy's attack (including Super Attack) when HP is 66% or more; 'Androids' Category allies' Ki +2 and ATK +40%",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021461125017116723/LR_Androids.png?width=301&height=676"
+		},
+		{
+			"name": "Dilemma on the Battlefield: Krillin & Gohan (Kid)",
+			"passive": "ATK & DEF +130% and medium chance of evading enemy's attack (including Super Attack); plus an additional Ki +1 per Ki Sphere obtained; plus an additional ATK +50% when performing a Super Attack; launches an additional attack that has a high chance of becoming a Super Attack when Ki is 24; changes into a battle suit when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021461125402996856/LR_Gohan__Krillin.png?width=303&height=676"
+		},
+		{
+			"name": "Rampaging Vicious Saiyans: Nappa/Vegeta",
+			"passive": "ATK & DEF +78%; Ki +5 when HP is 78% or more; plus an additional ATK +78% within the same turn after evading an attack (including Super Attack); plus an additional ATK & DEF +7800 at start of turn per existing enemy; Exchanges with Vegeta when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021461125742739657/LR_Vegeta__Nappa.png?width=299&height=676"
+		},
+		{
+			"name": "Rivals Acting in Concert: Goku & Piccolo",
+			"passive": "ATK & DEF +120% when performing a Super Attack; high chance of launching up to 2 additional attacks; plus an additional Ki +1 (up to +6) and ATK & DEF +10% (up to 59%) with each attack performed; launches an additional Super Attack every time the character attacked 6 or more times in battle when HP is 59% or less",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021463689502658610/LR_Goku__Piccolo.png?width=304&height=675"
+		},
+		{
+			"name": "Mark of Almighty Power: Goku Black (Super Saiyan Rosé)",
+			"passive": "ATK & DEF +66%; plus an additional ATK +6% each time Ki rises by 1 (up to 120%); Ki +2 with each final blow delivered (up to +6); recovers 6% HP at the end of turn in which attack was received",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021463690123411527/LR_INT_Rose.png?width=302&height=675"
+		},
+		{
+			"name": "Invincible Absorption: Majin Buu (Gotenks)",
+			"passive": "Recovers 12% HP at start of turn; ATK & DEF +120%; plus an additional Ki +1 per Type Ki Sphere obtained; medium chance of launching an additional Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021463690635129006/LR_PHY_Buuhan_PRETRANSFORMED.png?width=307&height=675"
+		},
+		{
+			"name": "Very Last Possibility: Golden Frieza (Angel) & Android #17",
+			"passive": "ATK & DEF +70%; great chance of launching up to 2 additional attacks; plus an additional ATK & DEF +7% (up to 70%) and Ki +1 (up to +7) with each attack performed; chance of performing a critical hit +7% and reduces damage received by 7% within the same turn with each attack performed",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021463691104878682/LR_PHY_Frieza17.png?width=301&height=676"
+		},
+		{
+			"name": "Nightmarish Impact: Super Saiyan Broly",
+			"passive": "ATK & DEF +90% when performing a Super Attack, plus an additional ATK +50% if it is an Ultra Super Attack; launches an additional Super Attack when facing 2 or more enemies; Transform when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021463691549495386/LR_TEQ_Broly.png?width=306&height=676"
+		},
+		{
+			"name": "Nightmarish Impact: Legendary Super Saiyan Broly",
+			"passive": "ATK & DEF +100% when performing a Super Attack, plus an additional ATK +88% if it is an Ultra Super Attack; launches an additional attack that has a medium chance of becoming a Super Attack when facing only 1 enemy; launches an additional Super Attack when facing 2 or more enemies",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021466010127171584/LR_TEQ_Broly_Giant_Form.png?width=301&height=675"
+		},
+		{
+			"name": "Ultimate Malign Being: Super Baby 2 (Giant Ape)",
+			"passive": "Ki +3 and ATK & DEF +100%; plus an additional Ki +3 and ATK +50% when there is a 'Pure Saiyans' Category enemy; plus an additional Ki +3 and ATK +50% when there is a 'Hybrid Saiyans' Category enemy; turns into Giant Ape when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021466007178580019/LR_AGL_Baby.png?width=305&height=676"
+		},
+		{
+			"name": "Two Makes the Strongest of All Universes: Super Saiyan 2 Caulifla & Super Saiyan 2 Kale",
+			"passive": "ATK & DEF +66% and launches an additional attack; Ki +1 (up to +6) and chance of evading enemy's attack (including Super Attack) +6% (up to 66%) with each attack performed; ATK +10% per 'Universe 6', 'Joined Forces' or 'Pure Saiyans'' Category ally on the team; launches an additional Super Attack when there is a 'Universe Survival Saga' or 'Pure Saiyans' Category enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021466007757389874/LR_AGL_Kale__Caulifla.png?width=301&height=675"
+		},
+		{
+			"name": "Miracle-Making Super Saiyan: Super Saiyan Goku",
+			"passive": "ATK & DEF +59%; randomly changes Ki Spheres of a certain Type to Rainbow Ki Spheres; plus an additional Ki +2 per Rainbow Ki Sphere obtained; ATK & DEF +7% per Ki Sphere obtained, plus an additional ATK +7% per 'Super Saiyans' Category ally (self excluded) attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021466008332025989/LR_AGL_SBA_Goku.png?width=303&height=675"
+		},
+		{
+			"name": "The True Value of Perfect Form: Perfect Cell",
+			"passive": "Fully recovers HP (once only); Ki +4 and ATK & DEF +120%; ATK & DEF +20% when attacking with 4 or more Ki Spheres obtained, plus an additional ATK & DEF +20% with 6 or more Ki Spheres obtained and an additional ATK +20% with 8 or more Ki Spheres obtained",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021466008713703565/LR_INT_Cell_AFER.png?width=300&height=675"
+		},
+		{
+			"name": "The True Value of Perfect Form: Cell (Perfect Form)",
+			"passive": "ATK & DEF +80%; raises DEF by up to 80% (the more HP remaining, the greater the DEF boost); plus an additional Ki +1 and ATK +20% per existing enemy; Evolve when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021466009179258891/LR_INT_Cell_PRE.png?width=302&height=675"
+		},
+		{
+			"name": "Universe 7's All-Out Offensive: Android #17 (Team Universe 7)",
+			"passive": "ATK & DEF +70%; plus an additional ATK & DEF +70% when there are 5 or more 'Representatives of Universe 7' Category allies on the team; plus an additional ATK +70% when Ki is 22 or more; plus an additional Ki +2 per Rainbow Ki Sphere obtained; chance of performing a critical hit +7% per Rainbow Ki Sphere obtained",
+			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021466009690980425/LR_INT_Universe_7.png?width=301&height=675"
+		}
+	]
+}

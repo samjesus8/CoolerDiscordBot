@@ -112,8 +112,17 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("***Changelog | The latest version is V1.4.1***")
-                .WithDescription("V1.4.1: \n\n" +
+                .WithTitle("***Changelog | The latest version is V1.4.2***")
+                .WithDescription("V1.4.2: \n\n" +
+                                    "-Added ALL Dokkan LRs into the >passive command \n" +
+                                    "-Added Cooldowns on certain commands: \n\n " +
+                                    ">fortune: 5 Uses every 30 seconds PER USER \n" +
+                                    ">passive: 1 Use every 32 seconds PER USER \n" +
+                                    ">mid: 10 Uses every 5 min PER USER \n\n" +
+                                    "Although a message will not be shown when the command is in cooldown, a solution is being worked on and will come in the next update \n" +
+                                    "Make sure to keep these cooldowns in mind when using the commands until a notification system can be put in place \n\n" +
+
+                                 "V1.4.1: \n\n" +
                                     "-Added some more characters into the >passive command \n\n" +
 
                                  "V1.4: \n\n" +
@@ -311,15 +320,31 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.4.1")
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
-                    .WithAuthor("***The latest version is V1.4.1***")
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("V1.4.1 Changelog")
                     .WithDescription("V1.4.1: \n\n" +
                                     "-Added some more characters into the >passive command")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithAuthor("***The latest version is V1.4.2***")
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("V1.4.2 Changelog")
+                    .WithDescription("-Added ALL Dokkan LRs into the >passive command \n" +
+                                    "-Added Cooldowns on certain commands: \n\n " +
+                                    ">fortune: 5 Uses every 30 seconds PER USER \n" +
+                                    ">passive: 1 Use every 32 seconds PER USER \n" +
+                                    ">mid: 10 Uses every 5 min PER USER \n\n" +
+                                    "Although a message will not be shown when the command is in cooldown, a solution is being worked on and will come in the next update \n" +
+                                    "Make sure to keep these cooldowns in mind when using the commands until a notification system can be put in place")
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }

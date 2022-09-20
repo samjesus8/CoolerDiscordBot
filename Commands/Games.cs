@@ -216,6 +216,7 @@ namespace DiscordBotTest.Commands
         } //Rules
 
         [Command("mid")]
+        [Cooldown(10, 300, CooldownBucketType.User)]
         public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration)
         {
             DiscordEmoji[] emojiOptions = { DiscordGuildEmoji.FromName(ctx.Client, ":MID_EMOTE:", true), DiscordGuildEmoji.FromName(ctx.Client, ":NOT_MID_EMOTE:", true) };
@@ -470,6 +471,7 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("passive")]
+        [Cooldown(1, 32, CooldownBucketType.User)]
         public async Task GuessThePassive(CommandContext ctx) 
         {
             var random = new Random();

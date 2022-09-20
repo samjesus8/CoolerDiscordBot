@@ -4,6 +4,7 @@ using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
+using DSharpPlus.Interactivity.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -87,6 +88,7 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("fortune")]
+        [Cooldown(5, 30, CooldownBucketType.User)]
         public async Task FortuneTeller(CommandContext ctx) 
         {
             var random = new Random();
@@ -147,6 +149,7 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("If you get this then Rak should watch his tone");
             fortuneList.Add("Yes");
             fortuneList.Add("No");
+            fortuneList.Add("If you get this fortune, Watch Your Tone");
 
             //Sigma Quotes
 

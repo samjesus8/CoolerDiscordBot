@@ -413,7 +413,7 @@
 		},
 		{
 			"name": "Courage to the Max!: Goku",
-			"passive": "ATK & DEF +59%; Super Class allies' Ki +2 and ATK & DEF +30%; medium chance[3] of evading enemy's attack (including Super Attack); plus an additional ATK & DEF +20% for Super Class allies when HP is 59% or less; Ki +3 and chance of performing a critical hit +59% when there is an ally whose name includes 'Gohan (Kid)' attacking in the same turn",
+			"passive": "ATK & DEF +59%; Super Class allies' Ki +2 and ATK & DEF +30%; medium chance of evading enemy's attack (including Super Attack); plus an additional ATK & DEF +20% for Super Class allies when HP is 59% or less; Ki +3 and chance of performing a critical hit +59% when there is an ally whose name includes 'Gohan (Kid)' attacking in the same turn",
 			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021854843847057540/LR_INT_SBR_Goku.png?width=301&height=675"
 		},
 		{
@@ -478,7 +478,7 @@
 		},
 		{
 			"name": "Remaining Hope: Super Saiyan Gohan (Future) & Trunks (Youth) (Future)/Super Saiyan Gohan (Future) ",
-			"passive": "ATK & DEF +150%; randomly changes Ki Spheres of a certain Type (AGL excluded) to AGL icon.png Ki Spheres when HP is 58% or more; plus an additional DEF +58%, chance of peforming a critical hit and reduces damage received by 8% with 5 or more Ki Spheres obtained; plus an additional ATK +58%, an additional chance of peforming a critical hit and and an additional damage reduction of 8% with 5 or more AGL Ki Spheres obtained; launches an additional Super Attack with 8 or more Ki Spheres obtained",
+			"passive": "ATK & DEF +150%; randomly changes Ki Spheres of a certain Type (AGL excluded) to AGL Ki Spheres when HP is 58% or more; plus an additional DEF +58%, chance of peforming a critical hit and reduces damage received by 8% with 5 or more Ki Spheres obtained; plus an additional ATK +58%, an additional chance of peforming a critical hit and and an additional damage reduction of 8% with 5 or more AGL Ki Spheres obtained; launches an additional Super Attack with 8 or more Ki Spheres obtained",
 			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021870663163715714/LR_AGL_Gohan__Trunks.png?width=217&height=394"
 		},
 		{
@@ -570,6 +570,624 @@
 			"name": "Furious Last Resort: Vegeta (Giant Ape)",
 			"passive": "If there is an enemy whose name includes 'Goku' (Youth, Ginyu, Jr., etc. excluded) at start of character's attacking turn, activates the Entrance Animation (once only) and Ki +3 and ATK +60% for the rest of battle; Ki +3 and ATK & DEF +100%; plus an additional ATK & DEF +60% when performing a Super Attack; plus an additional DEF +60% if it is an Ultra Super Attack; guards all attacks; plus an additional Ki +3 and ATK +30% within the same turn when guard is activated",
 			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021870707287801866/LR_TEQ_Vegeta_Giant_Ape.png?width=217&height=390"
+		},
+
+
+
+		{
+			"name": "30 Minutes of Mayhem: Veku",
+			"passive": "ATK +150% and DEF +50%; ATK -10% with each turn passed (no more than -50%); medium chance of performing a critical hit when performing a Super Attack; DEF and chance of evading enemy's attack (including Super Attack) +10% with each attack received (up to 50%)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022533431797760010/AGL_Veku.png?width=507&height=676"
+		},
+		{
+			"name": "A Friend's Decision: Hercule/Majin Buu (Good) ",
+			"passive": "Medium chance[4] of evading enemy's attack (including Super Attack); reduces damage received by 40% when HP is 40% or more; 'Majin Buu Saga' Category allies' Ki +2 and ATK & DEF +20%; Exchanges with Majin Buu (Good) when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022533431353159790/AGL_HerculeBuu.png?width=507&height=676"
+		},
+		{
+			"name": "A Friend's Decision: Majin Buu (Good)",
+			"passive": "ATK & DEF +100%; 'Majin Buu Saga' Category allies' Ki +2 and ATK & DEF +30%; guards all attacks when there is a 'Majin Buu Saga' Category ally whose name includes 'Hercule' or 'Goku' attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022533430971486280/AGL_HerculeBuu_Exchanged.png?width=507&height=676"
+		},
+		{
+			"name": "A Promise to Master: Super Saiyan Cabba",
+			"passive": "ATK & DEF +130%; ATK & DEF +6% per 'Universe Survival Saga' Category ally on the team; 'Universe Survival Saga' Category allies Ki +3 and ATK & DEF +40%; plus an additional ATK +60% when attacking when your team has an ally whose name includes 'Vegeta' ('Kid', 'Jr.', etc. excluded) attacking on the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022533432254943232/INT_SSJ_Cabba.png?width=382&height=508"
+		},
+		{
+			"name": "A Lesson in Good and Evil: Gowasu & Zamasu",
+			"passive": "All allies' Ki +2 and DEF +70%; high chance of evading enemy's attack (including Super Attack); Ki +5 and ATK +100% when attacking Extreme Class enemies",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022533432703717546/PHY_GowasuZamasu.png?width=405&height=539"
+		},
+		{
+			"name": "A Shot at Victory: Piccolo",
+			"passive": "ATK & DEF +200%; randomly changes Ki Spheres of a certain Type (STR excluded) to STR; plus an additional ATK & DEF +20% per Ki Sphere obtained; Ki +2 plus an additional ATK & DEF +50% and chance of performing a critical hit +20% when facing only 1 enemy; performs a critical hit (once only) and Ki +6 when facing 2 or more enemies",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022533433097994320/STR_Piccolo.png?width=507&height=676"
+		},
+		{
+			"name": "A Monster with Goku's Ki: Cell (1st Form)",
+			"passive": "ATK & DEF +15000; Ki +1 with each Super Attack performed (up to +4)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022533433530011649/TEQ_1st_Form_Cell.png?width=507&height=676"
+		},
+		{
+			"name": "A New Destination: Ultimate Gohan",
+			"passive": "ATK & DEF +70%; Ki +3 plus an additional ATK & DEF +30% when HP is 50% or above",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022533433987174441/TEQ_Ulthan.png?width=384&height=511"
+		},
+		{
+			"name": "A Will Beyond Time: Super Saiyan Trunks (Future)",
+			"passive": "Ki +2 and ATK & DEF +30% for all allies; ATK & DEF +70% when there are 2 or more 'Vegeta's Family' Category allies on the team",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022536074813263953/PHY_SSJ_Trunks.png?width=509&height=676"
+		},
+		{
+			"name": "Absolute Power: Jiren",
+			"passive": "ATK & DEF +130% and medium chance to stun all enemies at start of turn; performs critical hit on stunned enemies",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022536075442401382/STR_Jiren.png?width=507&height=676"
+		},
+		{
+			"name": "Absolute Suppression: Turles",
+			"passive": "Ki +3 and ATK & DEF +60% for 7 turns from start of turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022536075987648542/TEQ_Turles.png?width=507&height=676"
+		},
+		{
+			"name": "Absolute Loss: Yamcha",
+			"passive": "DEF reduced to 0 at start of turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022536076478394449/TEQ_Yamcha.png?width=507&height=676"
+		},
+		{
+			"name": "Absolute Defiance: Android #18",
+			"passive": "ATK & DEF +100%; chance of evading enemy's attack (including Super Attack) +18%; chance of performing a critical hit +18%; plus an additional ATK & DEF +80%, chance of evading enemy's attack (including Super Attack) +18% and chance of performing a critical hit +18% when your team has 'Android #16' or 'Android #17' attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022536076902010900/AGL_A18.png?width=507&height=676"
+		},
+		{
+			"name": "Accelerated Battle: Super Saiyan God Goku",
+			"passive": "ATK & DEF +80% when HP is 30% or above",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022536077245948034/INT_SSG_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Accrued Strength: Super Saiyan Goku",
+			"passive": "Changes AGL Ki to INT Ki, ATK +40%",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022536077631828008/INT_SSJ_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "A True Master's Dignity: Piccolo",
+			"passive": "All allies' DEF +77%; Ki +1 and ATK +20% per 'Bond of Master and Disciple' Category ally on the team",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022536078168707205/PHY_Piccolo.png?width=507&height=676"
+		},
+		{
+			"name": "All-New Power: Super Saiyan 3 Trunks (Teen)",
+			"passive": "ATK & DEF +120%; disables enemy's guard; high chance of guarding all attacks; plus an additional ATK +30% within the same turn when guard is activated; plus an additional ATK +12% with each attack received (up to 60%); plus an additional ATK +12% with each attack performed (up to 60%)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022538078918803546/AGL_SSJ3_Trunks.png?width=507&height=676"
+		},
+		{
+			"name": "Accumulated Bloodlust: Dr. Gero & Android #19",
+			"passive": "ATK +200% and DEF +190%; plus an additional ATK & DEF +39% and disables enemy's guard when performing a Super Attack; 'Androids' Category allies Ki +3 and ATK & DEF +40%; foresees enemy's Super Attack when HP is 39% or less; absorbs Ki Blast Super Attacks directed at the character and recovers 39% of the damage absorbed as HP",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022538079753486387/INT_Android_1920.png?width=383&height=511"
+		},
+		{
+			"name": "All-or-nothing Punch: Goku (Youth)",
+			"passive": "ATK & DEF +77%; plus an additional ATK boost by up to 59% (the more HP remaining, the greater the ATK boost) and an additional DEF boost by up to 59% (the less HP remaining, the greater the DEF boost); Ki +1 and ATK & DEF +10% at start of each turn (ATK & DEF up to +59%); performs a critical hit when HP is 59% or less (once only)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022538080214843513/INT_Kid_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Adventure in Another World: Pan (Xeno)",
+			"passive": "ATK & DEF +140%; 'Dragon Ball Heroes' Category allies Ki +3 and ATK & DEF +40%; high chance of performing a critical hit; high chance[4] of evading enemy's attack (including Super Attack); plus an additional DEF +50% within the same turn with each attack evaded (including Super Attack); plus an additional ATK & DEF +50% per 'Dragon Ball Heroes' Category ally (self excluded) attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022538080755916830/INT_Xeno_Pan.png?width=507&height=676"
+		},
+		{
+			"name": "All-Out Showdown!: Goku (Dokkan Butoden)",
+			"passive": "ATK +88% at start of turn; DEF +88% when performing a Super Attack; plus an additional ATK +88% when attacking Extreme Class enemies",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022538081250852864/PHY_Budoken_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Agent of Destruction: Syn Shenron",
+			"passive": "All enemies' DEF -50%; ATK & DEF +100%; DEF and chance of performing a critical hit +7% per 'GT Bosses' Category ally on the team; performs a critical hit with 7 or more Ki Spheres obtained",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022538081796104223/PHY_Syn_Shenron.png?width=507&height=676"
+		},
+		{
+			"name": "All-Out Resistance: Great Saiyaman (SS)",
+			"passive": "ATK & DEF +120%; high chance of sealing the attacked enemy's Super Attack for 2 turns; 'Majin Buu Saga' Category Super Class allies' Ki +2 and ATK & DEF +30%",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022538082362343474/STR_Great_Saiyaman.png?width=507&height=676"
+		},
+		{
+			"name": "All-Out Focus: Tien",
+			"passive": "TEQ Type Ki +3 plus an additional ATK & DEF +50% for TEQ Type; randomly changes Ki Spheres of a certain Type (TEQ excluded) to TEQ Ki Spheres; ATK & DEF +20% per Ki Sphere obtained",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022538082815324200/TEQ_Tien.png?width=507&height=676"
+		},
+		{
+			"name": "Almighty Cleave: Cooler",
+			"passive": "ATK & DEF +100%; attacks effective against all Types, all allies' Ki +2 and enemy's ATK & DEF -20% when there is a 'Goku's Family' Category enemy; launches an additional attack that has a medium chance of becoming a Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022540521039740989/AGL_Cooler.png?width=507&height=676"
+		},
+		{
+			"name": "Angelic Instruction: Whis",
+			"passive": "Ki +2 and DEF +100%; plus an additional DEF +20% with each attack performed (up to 100%); high chance of launching an additional Super Attack; fully recovers HP and great chance of evading enemy's attack (including Super Attack) when HP is 30% or less (once only)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022540521975066624/AGL_Whis.png?width=507&height=676"
+		},
+		{
+			"name": "Ascending to Godhood: Super Saiyan God SS Vegeta",
+			"passive": "Change Rainbow Ki Spheres to PHY Ki Spheres; Ki +3 and ATK & DEF +120% and plus an additional ATK & DEF +120% when performing a Super Attack; PHY Type allies' ATK +20% and chance of performing a Critical Hit +10% when all allies attacking in the same turn are PHY Type",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022540915849568266/PHY_SSB_Vegeta.png?width=507&height=676"
+		},
+		{
+			"name": "Astonishing Reincarnation: Uub (Youth)",
+			"passive": "Ki +1 and ATK & DEF +30% at start of each turn (Ki up to +4 and ATK & DEF up to +120%); plus an additional ATK +100% within the same turn after receiving attack; guards all attacks when there is a 'World Tournament' Category enemy or an enemy whose name includes 'Goku' (Youth, Captain Ginyu, Jr., etc. excluded)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022540522822324224/PHY_Uub.png?width=507&height=676"
+		},
+		{
+			"name": "All-Piercing Fusion Power: Super Saiyan 4 Vegito (Xeno)",
+			"passive": "ATK & DEF +140%; 'Crossover' Category allies' Ki +1 and ATK & DEF +20%; 'Giant Ape Power' Category allies' Ki +1 and ATK & DEF +20%; high chance of evading enemy's Super Attack and countering with tremendous power",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022540523283681310/PHY_Xeno_Vegito.png?width=507&height=676"
+		},
+		{
+			"name": "Ally of Love and Friendship: Videl",
+			"passive": "ATK & DEF +158%; high chance of evading enemy's attack (including Super Attack) before attacking; plus an additional ATK +58% when attacking; attacks effective against all Types within the same turn after evading an attack; plus an additional ATK +58% within the same turn after receiving attack; launches an additional Super Attack as the 1st or 2nd attacker in a turn; plus an additional ATK +58% and high chance of evading enemy's attack (including Super Attack) as the 3rd attacker in a turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022540523677958276/STR_Videl.png?width=507&height=676"
+		},
+		{
+			"name": "Assassin's Ultimate Technique: Hit",
+			"passive": "ATK & DEF +20% per 'Universe 6' Category ally attacking in the same turn; medium chance of stunning all enemies when all allies attacking in the same turn are of 'Universe 6' Category characters; plus an additional ATK & DEF +160% when performing a Super Attack; plus an additional ATK +80% and attacks effective against all Types when the target enemy is stunned; attacked enemy's ATK -20% and DEF -80% for 2 turns; high chance of stunning the attacked enemy for 1 turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022540524093181962/TEQ_Hit.png?width=507&height=676"
+		},
+		{
+			"name": "Answers Found in Training: Super Saiyan Goku/Super Saiyan Gohan (Youth)",
+			"passive": "ATK & DEF +50% at start of turn; 'Goku's Family' Category allies' Ki +2 and ATK & DEF +30%",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022540524504227962/TEQ_SSJ_GokuGohan.png?width=507&height=676"
+		},
+		{
+			"name": "Astounding Fusion Power: Gotenks",
+			"passive": "Ki +1 and ATK & DEF +100%; Transforms when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022543147076702218/INT_Gotenks.png?width=507&height=676"
+		},
+		{
+			"name": "Astounding Fusion Power: Super Saiyan Gotenks",
+			"passive": "Ki +2 and ATK & DEF +100%; high chance of ATK +50% and an additional high chance of ATK +50%; high chance of DEF +50% and an additional high chance of DEF +50%; medium chance of launching an additional Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022543572953735248/INT_Gotenks_SSJ.png?width=507&height=676"
+		},
+		{
+			"name": "Astounding Fusion Power: Super Saiyan 3 Gotenks",
+			"passive": "ATK & DEF +100%, plus an additional ATK +100% when performing a Super Attack; Ki +3 and great chance of launching an additional Super Attack for 4 turns from start of turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022543573373161532/INT_Gotenks_SSJ3.png?width=507&height=676"
+		},
+		{
+			"name": "Awakened Berserker: Kale (Berserk)",
+			"passive": "ATK +160%; launches an additional attack that has a great chance of becoming a Super Attack; reduces damage received by 60% for 6 turns from start of turn; reduces damage received by 60% with 6 or more PHY Ki Spheres obtained starting from the 7th turn from the start of battle",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022543147550646332/PHY_SSJ2_Kale.png?width=507&height=676"
+		},
+		{
+			"name": "Azure Omnipotence: Super Saiyan God SS Vegito",
+			"passive": "ATK & DEF +40% at start of turn; great chance of launching up to 2 additional attacks, each of which has a medium chance of becoming a Super Attack; damage received from normal attacks -40% and counters with tremendous power",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022543147944914974/PHY_Vegito_Blue.png?width=507&height=676"
+		},
+		{
+			"name": "Astounding Fusion Technique: Yamhan",
+			"passive": "ATK & DEF +180%; plus an additional ATK +80% and launches an additional attack which has a medium chance of becoming a Super Attack when performing a Super Attack when HP is 80% or less; Ki +6, plus an additional ATK +80% and high chance of performing a critical hit when HP is 80% or less (once only)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022543149152882840/PHY_Yamhan.png?width=383&height=511"
+		},
+		{
+			"name": "Atrocious Crackdown: Raditz (Giant Ape)",
+			"passive": "ATK & DEF +80%; plus an additional ATK & DEF +15% per Ki Sphere obtained; plus an additional ATK +80% when performing a Super Attack if HP is 80% or less; turns into Giant Ape when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022543149643608104/STR_Ape_Raditz.png?width=507&height=676"
+		},
+		{
+			"name": "Astounding Transformation: Super Saiyan 3 Goku (Angel)",
+			"passive": "ATK & DEF +130%; high chance of randomly changing Ki Spheres of a certain Type (TEQ excluded) to Rainbow Ki Spheres; ATK & DEF +30% per Rainbow  Ki Sphere obtained; attacks effective against all Types for 7 turns from start of turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022543150037881003/TEQ_SSJ3_Goku.png?width=507&height=676"
+		},
+
+
+
+		{
+			"name": "Battle as a Namekian: Piccolo",
+			"passive": "ATK & DEF +60%; ATK +12% and Ki +2 in addition per Rainbow Ki Sphere obtained; Assimilate when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552796689612880/AGL_Piccolo.png?width=507&height=676"
+		},
+		{
+			"name": "Battle as a Namekian: Piccolo (Assimilation with Nail)",
+			"passive": "Recovers 30% HP (once only); changes AGL Ki Spheres to Rainbow Ki Spheres; ATK & DEF +70%; ATK +15% and Ki +3 in addition and recovers 18000 HP per Rainbow Ki Sphere obtained",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022553354590752869/AGL_Piccolo_Assimilated.png?width=507&height=676"
+		},
+		{
+			"name": "Becoming a Furious God: Super Saiyan God SS Goku",
+			"passive": "ATK & DEF +77%; Ki +4 and plus an additional DEF +50% when there is a 'Movie Bosses' Category enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552797163552768/AGL_SSB_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Battle to Reach the Top: Super Saiyan Vegeta (GT)",
+			"passive": "ATK +180% and DEF +120%; randomly changes Ki Spheres of a certain Type to Rainbow Ki Spheres; plus an additional ATK & DEF +10% when performing a Super Attack per Ki Sphere obtained; plus an additional ATK +50% per 'GT Heroes' Category ally (self excluded) attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552797662691478/INT_SSJ_Vegeta.png?width=507&height=676"
+		},
+		{
+			"name": "Battle to Become the Strongest: Super Saiyan Goku (GT)",
+			"passive": "ATK +180% and DEF +120%; randomly changes Ki Spheres of a certain Type to Rainbow Ki Spheres; plus an additional ATK +20% when performing a Super Attack per Ki Sphere obtained; plus an additional DEF +50% per 'GT Heroes' Category ally (self excluded) attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552798040170567/PHY_SSJ_Kid_Goku_GT.png?width=507&height=676"
+		},
+		{
+			"name": "Battle to Protect Tomorrow: Super Saiyan 2 Goku",
+			"passive": "Ki +2 and ATK & DEF +180%; plus an additional ATK & DEF +50% when performing a Super Attack; launches an additional attack that has a medium chance of becoming a Super Attack; high chance to perform a critical hit",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552798891622532/PHY_SSJ2_Goku.png?width=383&height=511"
+		},
+		{
+			"name": "Battle to Protect Tomorrow: Super Saiyan 3 Goku",
+			"passive": "Ki +3 and ATK & DEF +200%; plus an additional ATK & DEF +50% when performing a Super Attack; launches 2 additional attacks, each of which have a medium chance of becoming a Super Attack; plus an additional ATK +50% when attacking and great chance to perform a critical hit for 6 turns from start of turn; high chance to perform a critical hit starting from the 7th turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552798438633502/PHY_SSJ2_Goku_Transformed.png?width=383&height=511"
+		},
+		{
+			"name": "Battle in Another World: Trunks (Xeno)",
+			"passive": "Ki +4 and ATK +5000 when HP is 80% or below",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552799327821824/PHY_Xeno_Trunks.png?width=507&height=676"
+		},
+		{
+			"name": "Battle-Hardened Hero: Bardock",
+			"passive": "ATK & DEF +150%; plus an additional ATK & DEF +20% per Ki Sphere obtained; chance of performing a critical hit +7% per Rainbow Ki Sphere obtained; reduces damage received by 10% per 'Team Bardock' Category ally on the team (up to 50%)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552799692730388/STR_Bardock.png?width=507&height=676"
+		},
+		{
+			"name": "Battle of Epic Proportions: Super Saiyan Goku (GT)",
+			"passive": "ATK & DEF +9000 when Ki is 7 or more",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552800128942211/STR_GT_Kid_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Battle Expert: Krillin",
+			"passive": "ATK & DEF +70%; high chance of guarding all attacks within the same turn as the 1st attacker in a turn, and medium chance of guarding all attacks within the same turn as the 2nd or 3rd attacker in a turn; reduces damage received by 50% when guard is activated",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552800594505798/STR_Krillin.png?width=507&height=676"
+		},
+		{
+			"name": "Back on the Front Line: Krillin",
+			"passive": "TEQ Type Ki +2; great chance of ATK & DEF +30%",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552805539586079/TEQ_Krillin.png?width=507&height=676"
+		},
+		{
+			"name": "Black-Stained Power: Goku Black",
+			"passive": "ATK & DEF +100%; plus an additional ATK & DEF +25% with each attack received (up to 100%); attacks effective against all types after receiving 5 or more attacks during battle; 'Future Saga' Category allies' Ki +3 and ATK & DEF +40%",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556053621186620/AGL_Goku_Black.png?width=383&height=511"
+		},
+		{
+			"name": "Boiling Power: Super Saiyan Goku",
+			"passive": "ATK & DEF +110%; Ki +3 plus an additional ATK +10% and DEF +40% when attacking Extreme Class enemies; reduces damage received by 21%; Transforms when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556054854312056/AGL_SSJ_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Boiling Power: Super Saiyan 2 Goku",
+			"passive": "ATK & DEF +120%; Ki +3 plus an additional ATK +20% and DEF +30% when attacking Extreme Class enemies; reduces damage received by 22%; Transforms when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556055332458606/AGL_SSJ2_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Boiling Power: Super Saiyan 3 Goku",
+			"passive": "ATK & DEF +130%; Ki +3 plus an additional ATK +30% and DEF +20% when attacking Extreme Class enemies; reduces damage received by 23%; Transforms when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556055705759786/AGL_SSJ3_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Boiling Power: Super Saiyan God Goku",
+			"passive": "ATK & DEF +140%; Ki +3 plus an additional ATK +40% and DEF +10% when attacking Extreme Class enemies; reduces damage received by 24%; Transforms when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556054413914233/AGL_SSG_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Boiling Power: Super Saiyan Blue Goku",
+			"passive": "ATK & DEF +150%; Ki +3 plus an additional ATK +50% when attacking Extreme Class enemies; reduces damage received by 25%; Ki +12 and performs a critical hit (once only)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556054036418620/AGL_SSB_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Blast of Fury: Super Saiyan Gohan (Teen)",
+			"passive": "ATK +120% and DEF +60% when performing a Super Attack; plus an additional ATK & DEF +30%, medium chance of performing a critical hit and medium chance of evading enemy's attack (including Super Attack) starting from the turn in which the character has performed a third Super Attack in battle",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556056095834163/INT_SSJ_Gohan.png?width=507&height=676"
+		},
+		{
+			"name": "Blade of Hope and Dreams: Super Saiyan Trunks (Future)",
+			"passive": "Changes STR Ki Spheres to INT Ki Spheres; ATK & DEF +20% per Ki Sphere obtained; randomly changes Ki Spheres of a certain Type (INT & STR excluded) to Rainbow Ki Spheres when there is a 'Realm of Gods' Category enemy; attacks effective against all Types with 7 or more Ki Spheres obtained",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556056477519943/INT_SSJ_Trunks.png?width=507&height=676"
+		},
+		{
+			"name": "Blazing Clash: Paikuhan (Global STR Version)",
+			"passive": "ATK +70%; all enemies' DEF -30%",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556056922095636/STR_Pikkon.png?width=507&height=676"
+		},
+		{
+			"name": "Best Measure: Whis",
+			"passive": "ATK & DEF +100%; great chance of evading enemy's attack (including Super Attack), plus an additional DEF +50% within the same turn with each attack evaded (including Super Attack); all allies' ATK +50% and recovers 10% HP at the end of turn when there is an ally whose name includes 'Beerus' (Whirus excluded) attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556057291202621/STR_Whis.png?width=507&height=676"
+		},
+		{
+			"name": "Birth of a Hero: Gohan (Teen)",
+			"passive": "ATK +15000 and Ki +3 when facing 2 or more enemies",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556081085501511/STR_Z_Sword_Gohan.png?width=507&height=676"
+		},
+		{
+			"name": "Beyond Destiny: Karoly",
+			"passive": "ATK & DEF +260%; launches an additional attack that has a great chance of becoming a Super Attack; ATK +59% when the target enemy is stunned",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556081471369379/TEQ_Karoly.png?width=507&height=676"
+		},
+		{
+			"name": "Blazing Fusion Warrior: Super Saiyan 3 Gotenks (Teen)",
+			"passive": "ATK & DEF +100%; plus an additional ATK +100% when performing a Super Attack; Ki +1 (up to +3) plus an additional ATK & DEF +10% (up to 30%) with each Super Attack performed; high chance of launching an additional Super Attack for 5 turns from start of turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022556081941118996/TEQ_Xeno_SSJ3_Gotenks.png?width=507&height=676"
+		},
+		{
+			"name": "Boundless Potential: Super Saiyan 2 Caulifla",
+			"passive": "ATK +120% and DEF +60%; high chance of evading enemy's attack (including Super Attack); medium chance of evading enemy's Super Attack and countering with tremendous power; attacks effective against all Types when there is an ally whose name includes 'Kale' attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022559521169739826/AGL_SSJ2_Caulifla.png?width=507&height=676"
+		},
+		{
+			"name": "Breathless Struggle: Android #18",
+			"passive": "Changes Rainbow Ki Spheres to INT Ki Spheres, ATK & DEF +80% and reduces damage received by 18%; plus an additional ATK & DEF +70% and medium chance of evading enemy's attack (including Super Attack) when your team has 'Android #17' attacking in the same turn; weakens Regeneration",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022559521572388894/INT_A18.png?width=507&height=676"
+		},
+		{
+			"name": "Brave Pair: Gohan (Teen) & Videl",
+			"passive": "ATK & DEF +158%; DEF +20% with each attack performed (up to 58%); great chance of launching up to 2 additional attacks, each of which has a great chance of becoming a Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022559522193154078/INT_GohanVidel.png?width=507&height=676"
+		},
+		{
+			"name": "Brief Paternal Moment: Majin Vegeta",
+			"passive": "Activates the Entrance Animation (once only) and reduces damage received by 30% for the rest of battle when there is an ally whose name includes 'Trunks' on the team at start of character's attacking turn; ATK & DEF +180%; plus an additional ATK & DEF +50% when performing a Super Attack; plus an additional DEF +50% with 3 or more Ki Spheres obtained and reduces damage received by 20% with 6 or more Ki Spheres obtained; plus an additional ATK +88% and randomly changes Ki Spheres of a certain Type (INT excluded) to INT Ki Spheres when HP is 88% or less",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022559522784542800/INT_Majin_Vegeta.png?width=383&height=511"
+		},
+		{
+			"name": "Boundless Divine Power: Whirus",
+			"passive": "Changes TEQ and INT Ki Spheres to PHY Ki Spheres; ATK & DEF +150%; 'Fusion' or 'Realm of Gods' Category allies' ATK & DEF +30% with 3 or more Ki Spheres obtained; high chance of evading enemy's attack (including Super Attack) with 5 or more Ki Spheres obtained; plus an additional ATK & DEF +70% when attacking with 7 or more Ki Spheres obtained",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022559523438862386/PHY_Whirrus.png?width=383&height=511"
+		},
+		{
+			"name": "Brains and Brawn Combined: Super Saiyan Trunks (GT)",
+			"passive": "ATK +100% when performing a Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022559523979919380/STR_GT_SSJ_Trunks.png?width=507&height=676"
+		},
+		{
+			"name": "Bright Hope: Super Saiyan 2 Trunks (Teen)",
+			"passive": "ATK & DEF +150% when performing a Super Attack; plus an additional ATK +30% and DEF & chance of performing a critical hit +15% per 'Crossover' Category ally (self excluded) attacking in the same turn; all allies' Ki +1 and ATK & DEF +25%, plus an additional Ki +1 and ATK & DEF +15% for 'Crossover' Category allies",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022559524365807647/STR_SSJ2_Trunks.png?width=507&height=676"
+		},
+		{
+			"name": "Bond Forged by Master and Disciple: Ultimate Gohan & Piccolo",
+			"passive": "ATK & DEF +20% at start of each turn (up to 80%); plus an additional ATK & DEF +120% and a great chance of stunning the attacked enemy when performing a Super Attack; performs a critical hit when the target enemy is stunned; disables enemy's guard when performing a Super Attack and 'Representatives of Universe 7' Category allies' Ki +2 and ATK & DEF +20% if there is another 'Representatives of Universe 7' Category ally attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022559524785225748/TEQ_GohanPiccolo.png?width=507&height=676"
+		},
+		{
+			"name": "Bonds Beyond Time: Super Saiyan God SS Vegeta",
+			"passive": "Ki +2 and ATK & DEF +90%; all allies' ATK & DEF +30% when there are 2 or more 'Vegeta's Family' Category allies on the team",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022559527402483813/TEQ_SSB_Vegeta.png?width=509&height=676"
+		},
+		{
+			"name": "Burst of Fighting Spirit: Piccolo",
+			"passive": "DEF +8000, and allies' DEF +4000",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022561980596367360/INT_Piccolo.png?width=507&height=676"
+		},
+		{
+			"name": "Burning Soul: Super Saiyan Bardock",
+			"passive": "ATK +7000 and Ki +3 when facing only 1 enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022561981015806002/INT_SSJ_Bardock.png?width=507&height=676"
+		},
+		{
+			"name": "Burning to the Last: Super Saiyan Goku (Angel) (Super Kaioken) Global Version",
+			"passive": "Ki +3 and ATK +100% when HP is 50% or above",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022561981720444978/PHY_Kaioken_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Burgeoning Strength: Super Saiyan 3 Goku (Angel)",
+			"passive": "Ki +3 and ATK & DEF +7000 at start of turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022561982194393119/PHY_SSJ3_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Brutal Power and Psychokinesis: Recoome & Guldo",
+			"passive": "ATK & DEF +180%; plus an additional ATK & DEF +10% with each attack received (up to 50%); high chance of guarding all attacks; plus an additional DEF +50% within the same turn when guard is activated; seals the attacked enemy's Super Attack; guards all attacks and high chance of stunning the attacked enemy when there is an ally whose name includes 'Ginyu' attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022561982878072863/STR_RecoomeGuldo.png?width=383&height=511"
+		},
+		{
+			"name": "Brutal Bind: Guldo",
+			"passive": "ATK & DEF +80%; plus an additional ATK & DEF +40% when Ki is 12; attacked enemy's ATK & DEF -20% for 2 turns and seals the attacked enemy's Super Attack; plus an additional ATK & DEF +10% per 'Ginyu Force' Category ally on the team (up to 50%)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022561983360421989/TEQ_Guldo.png?width=507&height=676"
+		},
+		{
+			"name": "Burning Hot Tenacity: Super Saiyan Vegeta",
+			"passive": "ATK & DEF +200% and chance of performing a critical hit +20%; plus an additional ATK & DEF +50% and chance of performing a critical hit +20% when there is another 'Movie Heroes' Category ally attacking in the same turn; Ki +2 plus an additional ATK & DEF +50% and chance of performing a critical hit +30% when HP is 80% or less; plus an additional Ki +2, ATK +50% and chance of performing a critical hit +30% when HP is 50% or less",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022561983851147335/TEQ_SSJ_Vegeta.png?width=507&height=676"
+		},
+		{
+			"name": "Brutal Berserker: Super Saiyan 4 Broly",
+			"passive": "ATK & DEF +140% when performing a Super Attack; launches an additional attack that has a high chance of becoming a Super Attack when there is another 'Giant Ape Power' Category ally attacking in the same turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022561984308334652/TEQ_SSJ4_Broly.png?width=507&height=676"
+		},
+
+
+		{
+			"name": "Captain's Ace in the Hole: Captain Ginyu",
+			"passive": "ATK & DEF +180%; plus an additional ATK +50% when performing a Super Attack; launches an additional attack that has a medium chance of becoming a Super Attack; plus an additional ATK & DEF +10% per 'Ginyu Force' Category ally on the team (up to 50%); 'Ginyu Force' Category allies' ATK & DEF +30%; attacks effective against all types when there is another 'Ginyu Force' Category ally on the team",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022894935713796149/AGL_Ginyu.png?width=383&height=511"
+		},
+		{
+			"name": "Captain's Ace in the Hole: Ginyu (Goku)",
+			"passive": "Recover 59% HP (once only); ATK & DEF +200%; plus an additional ATK +50% when performing a Super Attack; launches an additional attack that has a medium chance of becoming a Super Attack; plus an additional ATK & DEF +10% (up to 50%) and chance of performing a critical hit & chance of evading enemy's attack (including Super Attack) +10% with each attack performed (up to 50%); high chance of foreseeing enemy's Super Attack when there is an ally whose name includes 'Jeice' on the team",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022897722216427621/AGL_Ginyu_Goku.png?width=383&height=511"
+		},
+		{
+			"name": "Cheerful Scouting Lifestyle: Cheelai",
+			"passive": "Ki +3 and DEF +139%; foresees Super Attack; randomly changes Ki Spheres of a certain type to Rainbow Ki Spheres; great chance of evading enemy's attack (including Super Attack), plus an additional DEF +39% with each attack evaded within the same turn; recovers 39% at end of turn in which the character evades an attack 3 or more times during battle (3 times only); all allies' Ki +3 and ATK & DEF +39% (self excluded)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022894936099664046/INT_Cheelai.png?width=383&height=511"
+		},
+		{
+			"name": "Ceaseless Terror: Perfect Cell",
+			"passive": "ATK & DEF +90% at start of turn; recovers 20% HP whenever HP is 30% or below",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022894936464560270/INT_Perfect_Form_Cell.png?width=507&height=676"
+		},
+		{
+			"name": "Caught Between Illness and Adversary: Super Saiyan Goku",
+			"passive": "ATK & DEF +100%; raises ATK & DEF by up to 200% (the more HP remaining, the greater the stats boost); Ki +5, chance of performing a critical hit +59%, reduces damage received by 59% and a 59% chance of performing an additional Super Attack for 5 turns from start of turn; reduces damage received by 59% when HP is 59% or less plus an additional DEF +59% starting from the 6th turn from the start of battle",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022894936863027250/PHY_Heart_Virus_Goku.png?width=383&height=511"
+		},
+		{
+			"name": "Captivating Dance: Para Para Brothers",
+			"passive": "Ki +1 and DEF +120%; all allies' ATK & DEF +25% (self excluded); plus an additional Ki +2 and all allies' (self excluded) ATK +25% when the character is the 1st or 2nd to obtain Ki Spheres in a turn; plus an additional DEF +120% and all allies' Ki +2 and DEF +25% when the character is the 3rd to obtain Ki Spheres in a turn; high chance of sealing all enemies' Super Attacks at start of turn when there is a 'GT Heroes' Category enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022894937269878855/PHY_Para_Para_Brothers.png?width=383&height=511"
+		},
+		{
+			"name": "Catastrophic Rage: Frieza (Final Form)",
+			"passive": "ATK & DEF +80%; plus an additional ATK +100% within the same turn after receiving attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022894937706074112/STR_FF_Frieza.png?width=507&height=676"
+		},
+		{
+			"name": "Charming Girl's Dance: Super Ribrianne",
+			"passive": "Raises ATK & DEF for 1 turn, causes supreme damage to enemy and lowers DEF; Raises ATK & DEF for 1 turn, causes supreme damage to enemy with greater power and lowers DEF",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022894938083569724/STR_Ribrianne.png?width=507&height=676"
+		},
+		{
+			"name": "Chance of a Super Evolution: Super Saiyan 2 Bardock",
+			"passive": "ATK +30% for all allies when HP is 30% or above",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022894938440089701/STR_SSJ2_Bardock.png?width=507&height=676"
+		},
+		{
+			"name": "Casual Refreshment: Android #18",
+			"passive": "ATK & DEF +18% per 'Peppy Gals' Category ally on the team; ATK & DEF +18% per Ki Sphere obtained, plus an additional ATK & DEF +2% per 'Peppy Gals' Category ally on the team; evades enemy's attack (including Super Attack) and stuns the attacked enemy when HP is 18% or less",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022894938838552677/TEQ_A18.png?width=507&height=676"
+		},
+		{
+			"name": "Comrade in the Pursuit of Dreams: Pinich",
+			"passive": "Ki +3 and ATK & DEF +150%; plus an ATK +120% when performing a Super Attack; launches an additional attack which has a medium chance of becoming a Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898460954992711/AGL_Pinch.png?width=383&height=511"
+		},
+		{
+			"name": "Confidence-Imbuing Moment: Super Saiyan Trunks (GT)",
+			"passive": "ATK +20% and DEF +10% per Ki Sphere obtained; plus an additional ATK +7% and Ki +1 per Rainbow Ki Sphere obtained",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898461298917406/AGL_SSJ_GT_Trunks.png?width=507&height=676"
+		},
+		{
+			"name": "Concentrated Power: Android #17",
+			"passive": "Changes AGL Ki Spheres to Rainbow Ki Spheres, ATK & DEF +70% and chance of performing a critical hit +17%; plus an additional ATK & DEF +80% and medium chance of launching an additional Super Attack when your team has 'Android #18' attacking in the same turn; weakens Regeneration",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898461663838349/STR_A17.png?width=507&height=676"
+		},
+		{
+			"name": "Clever Tactics: Android #18",
+			"passive": "ATK & DEF +100% at start of turn; plus an additional ATK +100% when performing a Super Attack; chance of performing a critical hit +18%, reduces damage received by 18% and all allies' Ki +3 and ATK & DEF +30% when there is an ally whose name includes 'Trunks (Kid)', 'Goten (Kid)' or 'Krillin' on the team",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898462137786378/STR_A18.png?width=507&height=676"
+		},
+		{
+			"name": "Concentrated Spirit: Super Saiyan Goku",
+			"passive": "Ki +2 and ATK +100% at start of turn; DEF +100% when performing a Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898462615941210/STR_SSJ_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Collision With Disaster: Great Saiyaman (SS2)",
+			"passive": "ATK & DEF +70%; plus an additional ATK & DEF +10% with each attack performed (up to 58%); Super Class allies' Ki +3 and ATK & DEF +30%; plus an additional Ki +3 and ATK & DEF +58% when there is an Extreme Class enemy; Extreme Class enemies' DEF -58%",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898463282843668/STR_SSJ_Great_Saiyaman.png?width=507&height=676"
+		},
+		{
+			"name": "Clutching Victory: Super Saiyan 3 Goku",
+			"passive": "DEF +40%; ATK +80% when HP is 30% or above; plus an additional ATK +30% when HP is 50% or above; plus an additional ATK +30% when HP is 80% or above",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898463744209147/STR_SSJ3_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Clever Strategy: Paikuhan",
+			"passive": "ATK +81%; plus an additional ATK & DEF +98% when attacking; Ki +3 when facing only 1 enemy; 'Otherworld Warriors' Category allies' DEF +40%",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898464125886554/TEQ_Pikkon.png?width=507&height=676"
+		},
+		{
+			"name": "Cold-Hearted Warrior: Raditz",
+			"passive": "ATK & DEF +100%; Ki +1 plus an additional ATK & DEF +100% when facing only 1 enemy; Ki +2, stuns the attacked enemy and reduces damage received by 50% when facing 2 or more enemies; plus an additional ATK +50% and high chance of performing a critical hit when there is a 'Goku's Family' or 'Namekians' Category enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898464524341268/TEQ_Raditz.png?width=507&height=676"
+		},
+		{
+			"name": "Combat Ability Beyond Calculations: Super Saiyan Goku (GT)",
+			"passive": "ATK & DEF +59%; plus an additional ATK & DEF +14% per Ki Sphere obtained; plus an additional ATK & DEF +59% with 3 or more Ki Spheres obtained; high chance of performing a critical hit with 5 or more Ki Spheres obtained; plus an additional ATK & DEF +59% when performing a Super Attack for 7 turns from start of turn; randomly changes 1 Ki Spheres of a certain Type to Rainbow Ki Spheres when there is a 'GT Bosses' category enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022898464964755576/TEQ_SSJ_GT_Goku.png?width=383&height=511"
+		},
+		{
+			"name": "Corroding Menace: Super Baby 1",
+			"passive": "ATK & DEF +5000 at start of turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901422586609675/AGL_Baby_1.png?width=507&height=676"
+		},
+		{
+			"name": "Countdown to Despair: Majin Buu (Ultimate Gohan)",
+			"passive": "ATK +17%, DEF +10% and recovers 10000 HP per Ki Sphere obtained; deliver the final blow to recover 15% HP at the end of turn",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901422955692142/INT_Buuhan.png?width=507&height=676"
+		},
+		{
+			"name": "Courage Awakened: Super Saiyan Goku Jr",
+			"passive": "Ki +2 at start of turn; ATK +60% with a great chance of an additional ATK & DEF +60% when performing a Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901423337381938/INT_SSJ_Goku_JR.png?width=507&height=676"
+		},
+		{
+			"name": "Confrontation with Unknown Enemies: Super Saiyan Vegeta (Xeno)",
+			"passive": "ATK & DEF +120%; plus an additional ATK +100% when there is another 'Vegeta's Family' Category ally on the team; 'Vegeta's Family' Category allies' Ki +2 and ATK & DEF +40%",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901423899431002/INT_Xeno_Vegeta.png?width=507&height=676"
+		},
+		{
+			"name": "Courage to Confront Evil: Gohan (Kid)/Goku",
+			"passive": "ATK & DEF +150%; plus an additional ATK & DEF +30% and great chance of evading enemy's attack (including Super Attack) for 5 turns from start of turn; high chance of evading enemy's attack (including Super Attack) starting from the 6th turn; plus an additional ATK & DEF +50% starting from the turn in which the character evades the 3rd attack in battle; target enemy's ATK & DEF -25% for 3 turns after the character evades the 6th attack in battle (once only)",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901424658583552/PHY_GokuGohan.png?width=383&height=511"
+		},
+		{
+			"name": "Courage to Confront Evil: Goku",
+			"passive": "Recovers 50% HP (once only); ATK & DEF +180%; guards all attacks when HP is 77% or more; stuns the attacked enemy for 1 turn (once only) plus an additional ATK & DEF +59% for 5 turns after receiving an attack; launches an additional attack that has a medium chance of becoming a Super Attack when there is a 'Terrifying Conquerors' Category enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901424310464594/PHY_GokuGohan_Goku_Exchanged.png?width=507&height=675"
+		},
+		{
+			"name": "Courage in the Heat of Battle: Super Saiyan Bardock",
+			"passive": "Ki +2 and ATK +20% for all allies when HP is 30% or above",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901425166090250/PHY_SSJ_Bardock.png?width=507&height=676"
+		},
+		{
+			"name": "Convergent Fury: Super Trunks",
+			"passive": "Ki +4 and ATK & DEF +200%; disables enemy's guard; weakens Regeneration",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901425568759848/PHY_Super_Trunks.png?width=507&height=676"
+		},
+		{
+			"name": "Counterattack of Light: Super Saiyan Trunks (Teen)",
+			"passive": "Greatly raises ATK for 1 turn, raises DEF and causes immense damage with a high chance of stunning the enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901426004951051/STR_SSJ_Trunks.png?width=507&height=676"
+		},
+		{
+			"name": "Confident of Victory: Super Trunks",
+			"passive": "ATK & DEF +100%; plus an additional Ki +2 (up to +4) and ATK & DEF +50% (up to 100%) at start of each turn; disables enemy's guard; plus an additional DEF +100% for 10 turns from start of turn; high chance of stunning the attacked enemy when there is an ally whose name includes 'Vegeta' (Kid, Jr., etc. excluded) on the team",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022901426407612458/STR_Super_Trunks.png?width=507&height=676"
+		},
+		{
+			"name": "Creeping Conspiracy: Yamu & Spopovich",
+			"passive": "ATK & DEF +90%; Ki +2 plus an additional ATK +20% with each Super Attack performed; plus an additional DEF +20% with each attack received (up to 160%); disables enemy's guard when attacking Super Class enemies",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906066700357672/AGL_YamuSpoppovich.png?width=507&height=676"
+		},
+		{
+			"name": "Cunning Moves: Fasha",
+			"passive": "ATK & DEF +150% and high chance of evading enemy's attack (including Super Attack); randomly changes Ki Spheres of a certain Type to Rainbow Ki Spheres when there is an ally whose name includes 'Bardock' (Team Bardock excluded) on the team; all allies Ki +3 and 'Team Bardock' category allies ATK & DEF +30% within the same turn after evading an attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906067098796052/INT_Fasha.png?width=507&height=676"
+		},
+		{
+			"name": "Courageous Clash: Captain Ginyu",
+			"passive": "ATK & DEF +170%; Ki +3 plus an additional ATK & DEF +100% when facing only 1 enemy; ATK +50% and reduces damage received by 50% when facing 2 or more enemies; plus an additional ATK +50% and disables enemy's guard when there is another 'Ginyu Force' Category ally on the team",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906067526635611/INT_Ginyu.png?width=507&height=676"
+		},
+		{
+			"name": "Culmination of Hope: Goku (GT)",
+			"passive": "ATK & DEF +12% per Ki Sphere obtained; plus an additional ATK +20% and Ki +2 per Rainbow Ki Sphere obtained; randomly changes Ki Spheres of a certain Type to Rainbow Ki Spheres when there is a 'Shadow Dragon Saga' Category enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906067920896080/INT_GT_Kid_Goku.png?width=507&height=676"
+		},
+		{
+			"name": "Cunning Counterattack: Bergamo (Giant Form)",
+			"passive": "ATK & DEF +30% with each attack received (up to 300%); turns into Giant Form when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906068466143284/PHY_Bergamo.png?width=507&height=676"
+		},
+		{
+			"name": "Crashing Maelstrom: Omega Shenron",
+			"passive": "All enemies' ATK & DEF -20%; ATK & DEF +150%; plus an additional ATK & DEF +10% with each attack performed (up to 70%); launches an additional attack that has a medium chance of becoming a Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906070370361424/PHY_Omega_Shenron.png?width=507&height=676"
+		},
+		{
+			"name": "Cruel Pursuit: Nappa",
+			"passive": "ATK +178%; raises DEF by up to 780% (the more HP remaining, the greater the stats boost); ATK +78% when facing only one enemy; 'Saiyan Saga' Category allies Ki +2 and ATK & DEF +30%; plus an additional ATK +7% and DEF +8% for 'Saiyan Saga' Category allies per existing Super Class enemy",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906070814953604/STR_Nappa.png?width=383&height=511"
+		},
+		{
+			"name": "Creation of a New History: Sealas",
+			"passive": "ATK & DEF +100% when performing a Super Attack; 'Artificial Life Forms' Category allies' Ki +1 and ATK +20%; 'Time Travelers' Category allies' Ki +1 and ATK +20%; Fuse when conditions are met",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906071796420668/STR_Sealas.png?width=507&height=676"
+		},
+		{
+			"name": "Creation of a New History: Sealas (Fused)",
+			"passive": "Ki +3 and ATK & DEF +60%; ATK & DEF +120% when performing a Super Attack",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906071414743060/STR_Sealas_Fused.png?width=507&height=676"
+		},
+		{
+			"name": "Cyan Juggernaut: Super Saiyan God SS Goku",
+			"passive": "Changes Rainbow Ki Spheres to TEQ Ki Spheres; ATK & DEF +100%; plus an additional ATK & DEF +59% and all allies' chance of performing a critical hit +7% when all allies attacking in the same turn are TEQ Type",
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022906072136155277/TEQ_SSB_Goku.png?width=507&height=676"
 		}
 	]
 }

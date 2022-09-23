@@ -1,12 +1,16 @@
 ﻿using DiscordBotTest.Commands;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
+using DSharpPlus.CommandsNext.Attributes;
+using DSharpPlus.CommandsNext.Exceptions;
+using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
 using Newtonsoft.Json;
 using System;
 using System.IO;
+using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -55,6 +59,7 @@ namespace DiscordBotTest
             Commands.RegisterCommands<FunCommands>();
             Commands.RegisterCommands<Games>();
             Commands.RegisterCommands<Tools>();
+            Commands.CommandErrored += OnCommandError;
 
             await Client.ConnectAsync();
             await Task.Delay(-1);
@@ -63,6 +68,21 @@ namespace DiscordBotTest
         private Task OnClientReady(ReadyEventArgs e) 
         {
             return Task.CompletedTask;
+        }
+
+        private async Task OnCommandError(CommandsNextExtension sender, CommandErrorEventArgs e)
+        {
+            if (e.Exception is ChecksFailedException) 
+            {
+                Console.Error.WriteLine("Error " + e.Exception);
+
+                var cooldownErrorMessage = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithTitle("You must wait for the cooldown to end")
+                    );
+
+                await e.Context.Channel.SendMessageAsync(cooldownErrorMessage);
+            }
         }
     }
 }

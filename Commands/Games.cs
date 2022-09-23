@@ -1,5 +1,6 @@
 ﻿using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
+using DSharpPlus.CommandsNext.Exceptions;
 using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using System;
@@ -274,7 +275,7 @@ namespace DiscordBotTest.Commands
             string[] yuzuruYamai = { "Yuzuru Yamai", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130641846730762/yuzuru.jpg" };
             messages.Add(yuzuruYamai);
 
-            string[] natsumiAdult = { "Natsumi", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130640814936167/natsumi.jpg?width=376&height=669"};
+            string[] natsumiAdult = { "Natsumi", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130640814936167/natsumi.jpg?width=376&height=669" };
             messages.Add(natsumiAdult);
 
             string[] drMurasume = { "Reine Murasume", "Date A Live", "https://media.discordapp.net/attachments/1020110665161113610/1020130640575864842/murasume.jpg?width=376&height=669" };
@@ -443,7 +444,7 @@ namespace DiscordBotTest.Commands
             var testEmbed = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithAuthor("MID OR NOT MID?? | Cast your votes below") 
+                .WithAuthor("MID OR NOT MID?? | Cast your votes below")
                 .WithTitle("***" + messages[index][0] + "***")
                 .WithDescription(messages[index][1])
                 .WithImageUrl(messages[index][2])
@@ -451,7 +452,7 @@ namespace DiscordBotTest.Commands
                 );
             var pollMSG = await ctx.Channel.SendMessageAsync(testEmbed);
 
-            foreach (var option in emojiOptions) 
+            foreach (var option in emojiOptions)
             {
                 await pollMSG.CreateReactionAsync(option);
             }
@@ -472,7 +473,7 @@ namespace DiscordBotTest.Commands
 
         [Command("passive")]
         [Cooldown(1, 32, CooldownBucketType.User)]
-        public async Task GuessThePassive(CommandContext ctx) 
+        public async Task GuessThePassive(CommandContext ctx)
         {
             var random = new Random();
             var interactivity = ctx.Client.GetInteractivity();
@@ -482,8 +483,8 @@ namespace DiscordBotTest.Commands
 
             var dokkanCard = new DokkanCardBuilder();
 
-            string[] testUnit = { dokkanCard.Name, dokkanCard.Passive, dokkanCard.ImageURL };
-            passivesList.Add(testUnit);
+            string[] dokkanUnit = { dokkanCard.Name, dokkanCard.Passive, dokkanCard.ImageURL };
+            passivesList.Add(dokkanUnit);
 
             var index = random.Next(passivesList.Count); //Chooses from list at random
 

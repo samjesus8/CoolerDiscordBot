@@ -112,8 +112,16 @@ namespace DiscordBotTest.Commands
                 new DiscordEmbedBuilder()
                 .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithColor(DiscordColor.Azure)
-                .WithTitle("***Changelog | The latest version is V1.4.3***")
-                .WithDescription("V1.4.3 \n\n " +
+                .WithTitle("***Changelog | The latest version is V1.4.4***")
+                .WithDescription("V1.4.4: \n\n" +
+                                    "-Redesigned the whole of the >mid command: \n\n" +
+                                     "Although everything on the user end is the same, the whole database of characters are moved into a JSON file rather than string[] arrays" +
+                                     "in order to improve efficiency of the bot as well as reduce the amount of code written for the command \n\n" +
+                                     "-Added all TURs from range 'D, E, F' into the >passive command \n" +
+                                     "-Increased the cooldown of >fortune from 30s to 60s \n" +
+                                     "-Moved all generators to a separate folder in the Bot Project Files \n\n" +
+
+                                 "V1.4.3: \n\n " +
                                     "-Added a message to show if cooldown is active for commands \n" +
                                      "-Added any requested fortunes from users \n" +
                                      "-Added all TURs from range 'A, B, C' into the >passive command \n\n" +
@@ -351,7 +359,7 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
-            if (version == "Latest" || version == "latest") 
+            if (version == "1.4.3") 
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
@@ -363,6 +371,29 @@ namespace DiscordBotTest.Commands
                                      "-Added all TURs from range 'A, B, C' into the >passive command")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithFooter("The latest version is V1.4.4")
+                    .WithTitle("V1.4.4 Changelog")
+                    .WithDescription("-Redesigned the whole of the >mid command: \n\n" +
+                                     "Although everything on the user end is the same, the whole database of characters are moved into a JSON file rather than string[] arrays" +
+                                     " in order to improve efficiency of the bot as well as reduce the amount of code written for the command \n\n" +
+                                     "-Added all TURs from range 'D, E, F' into the >passive command \n" +
+                                     "-Increased the cooldown of >fortune from 30s to 60s \n" +
+                                     "-Moved all generators to a separate folder in the Bot Project Files")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+            }
+
+            else 
+            {
+                await ctx.Channel.SendMessageAsync("Sorry, I didn't recognise that version... \n" +
+                    "List of versions: \n" +
+                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3");
             }
         }
     }

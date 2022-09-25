@@ -1,0 +1,351 @@
+﻿{
+	"categoryName": "WaifuCards",
+	"members": [
+		{
+			"name": "Rias Gremory",
+			"animeName": "High School DxD",
+			"imageURL": "https://media.discordapp.net/attachments/735858039537795203/1019298372735221870/unknown.png?width=513&height=676"
+		},
+		{
+			"name": "Akeno Himejima",
+			"animeName": "High School DxD",
+			"imageURL": "https://media.discordapp.net/attachments/735858039537795203/1019299165299277884/unknown.png?width=356&height=676"
+		},
+		{
+			"name": "Asia Argento",
+			"animeName": "High School DxD",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020111383964172358/asia.png?width=499&height=670"
+		},
+		{
+			"name": "Koneko Toujou",
+			"animeName": "High School DxD",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020111385377640448/koneko.png"
+		},
+		{
+			"name": "Tsubaki",
+			"animeName": "High School DxD",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020111387223150682/tsubaki.png"
+		},
+		{
+			"name": "Kuroka",
+			"animeName": "High School DxD",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020111385960665139/kuroka.png?width=523&height=670"
+		},
+		{
+			"name": "Irina Shidou",
+			"animeName": "High School DxD",
+			"imageURL": "https://cdn.discordapp.com/attachments/1020110665161113610/1020111384916271135/ireena.png"
+		},
+		{
+			"name": "Xenovia Quarta",
+			"animeName": "High School DxD",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020111387592245318/xenovia.png"
+		},
+
+
+		{
+			"name": "Tohka",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130641154678784/tohka.jpg?width=500&height=669"
+		},
+		{
+			"name": "Kurumi Tokisaki",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130640030597130/kurumi.jpg?width=558&height=670"
+		},
+		{
+			"name": "Kotori Itsuka",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130639632158771/kotori.jpg?width=376&height=669"
+		},
+		{
+			"name": "Yoshino",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130641490219088/yoshino.jpg?width=463&height=669"
+		},
+		{
+			"name": "Ellen Mathers",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130639074299904/ellen_mathers.jpg?width=658&height=670"
+		},
+		{
+			"name": "Kaguya Yamai",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130639317565533/kaguya.jpg"
+		},
+		{
+			"name": "Yuzuru Yamai",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130641846730762/yuzuru.jpg"
+		},
+		{
+			"name": "Natsumi",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130640814936167/natsumi.jpg?width=376&height=669"
+		},
+		{
+			"name": "Reine Murasume",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130640575864842/murasume.jpg?width=376&height=669"
+		},
+
+
+		{
+			"name": "Android 18",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122369836191785/a18.jpg?width=376&height=669"
+		},
+		{
+			"name": "Android 21",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122370125594784/a21.jpg?width=376&height=669"
+		},
+		{
+			"name": "Caulifla",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122370435981322/caulifla.png?width=566&height=670"
+		},
+		{
+			"name": "Kale",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122371052544021/kale.jpg?width=376&height=669"
+		},
+		{
+			"name": "Kefla",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122371371307088/kefla.jpg?width=502&height=669"
+		},
+		{
+			"name": "Launch",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122371727831091/launch.jpg?width=502&height=669"
+		},
+		{
+			"name": "Yurin",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122372038213703/yuin.jpg?width=376&height=669"
+		},
+		{
+			"name": "Fasha",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122370800877688/fasha.jpg?width=521&height=670"
+		},
+		{
+			"name": "Towa",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021134845386162176/Towa.png?width=348&height=676"
+		},
+		{
+			"name": "Supreme Kai of Time",
+			"animeName": "DragonBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021134844647968768/supremekaioftime.png?width=225&height=300"
+		},
+
+
+		{
+			"name": "Mommy Joku",
+			"animeName": "NiggerBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/735858039537795203/1019332220231614464/unknown.png?width=472&height=676"
+		},
+		{
+			"name": "Super Nigger Joku",
+			"animeName": "NiggerBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/969707624784338995/979460300287910008/8B34305B-3D29-4EBB-86B8-3FA210A01FD6.jpg?width=312&height=676"
+		},
+		{
+			"name": "Super Nigger 3 Joku",
+			"animeName": "NiggerBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/969707624784338995/979460751574073395/F5756B87-AD97-41A4-B5FD-CA6A7F8A14ED.jpg?width=320&height=676"
+		},
+		{
+			"name": "Super Nigger Blue Joku",
+			"animeName": "NiggerBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/969707624784338995/979461591835770910/2B282B59-48F7-46C9-9141-F1FBF3100B32.jpg?width=385&height=676"
+		},
+		{
+			"name": "Spirit Bomb Joku",
+			"animeName": "NiggerBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/735858039537795203/1019333744097767504/unknown.png?width=395&height=676"
+		},
+		{
+			"name": "Xeno Nigger",
+			"animeName": "NiggerBall Z",
+			"imageURL": "https://media.discordapp.net/attachments/969707624784338995/1019344977119154207/XENO_NIGGER_DOT.png?width=471&height=676"
+		},
+
+
+		{
+			"name": "King Arthur (Saber)",
+			"animeName": "Fate Stay/Night",
+			"imageURL": "https://media.discordapp.net/attachments/735858039537795203/1019300735009165352/unknown.png?width=676&height=676"
+		},
+		{
+			"name": "Rin Toshaka",
+			"animeName": "Fate Stay/Night",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020742166181597184/rintoshaka.jpg?width=558&height=675"
+		},
+		{
+			"name": "King Arthur (Saber Alter)",
+			"animeName": "Fate Stay/Night",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021133190217355364/kingarthuralter.png?width=481&height=675"
+		},
+		{
+			"name": "Sakura Matou",
+			"animeName": "Fate Stay/Night",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021133190968123554/sakura.png?width=475&height=676"
+		},
+
+		{
+			"animeName": "Fate/EXTRA",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020111386384285768/nero.jpg?width=317&height=670",
+			"name": "Nero Claudius"
+		},
+		{
+			"name": "Nero Claudius (Bride)",
+			"animeName": "Fate/EXTRA",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020111386765955192/nerobride.jpg?width=478&height=669"
+		},
+
+
+		{
+			"name": "Astolfo (Saber)",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/735858039537795203/1019335359961780337/unknown.png?width=477&height=676"
+		},
+		{
+			"name": "Nero Claudius (Caster)",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020111384446505030/casternero.jpg?width=621&height=670"
+		},
+		{
+			"name": "Kama",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020742165455978656/kama.jpg?width=478&height=676"
+		},
+		{
+			"name": "Ishtar",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020742165212713100/ishtar.jpg?width=380&height=675"
+		},
+		{
+			"name": "Ereshkigal",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020742164621312121/ereshkigal.png?width=458&height=675"
+		},
+		{
+			"name": "Arthur Pendragon (Lancer)",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020742165829271663/lionking.png?width=481&height=675"
+		},
+		{
+			"name": "Jeanne D'Arc (Alter)",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021133189776945152/JeanneAlter.png?width=461&height=652"
+		},
+		{
+			"name": "Nitocris",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021133190632570992/Nitocris.png?width=461&height=652"
+		},
+		{
+			"name": "Space Ishtar",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021133191387545670/spaceishtar.png?width=380&height=676"
+		},
+
+
+		{
+			"name": "Astolfo (Rider)",
+			"animeName": "Fate/Aprocypha",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020742164206059540/astolfo.jpg?width=478&height=676"
+		},
+		{
+			"name": "Jeanne D'Arc",
+			"animeName": "Fate/Aprocypha",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021133189168758934/jeanne_darc.jpg?width=328&height=675"
+		},
+
+
+		{
+			"name": "Lumine (Traveller)",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020792605816135801/lumine_art.png?width=479&height=676"
+		},
+		{
+			"name": "Amber",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020792605526720563/amber.jpg?width=477&height=676"
+		},
+		{
+			"name": "Jean",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137635630137374/jean.png?width=422&height=675"
+		},
+		{
+			"name": "Babara",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137634736750693/babara.jpg?width=515&height=675"
+		},
+		{
+			"name": "Ganyu",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137635344912494/ganyu.jpg?width=1059&height=676"
+		},
+		{
+			"name": "Venti",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137665795571803/venti.jpg?width=478&height=676"
+		},
+		{
+			"name": "Yelan",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137666043031803/yelan.jpg?width=422&height=675"
+		},
+		{
+			"name": "Kamisato Ayaka",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137634480889947/ayaka.jpg?width=478&height=676"
+		},
+		{
+			"name": "Raiden Shogun",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137637639200919/raiden.jpg?width=1201&height=676"
+		},
+		{
+			"name": "Paimon",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137637253316618/paimon.png?width=380&height=676"
+		},
+		{
+			"name": "Nilou",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137636552872057/nilou.png?width=448&height=675"
+		},
+		{
+			"name": "Eula",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137635084882041/eula.jpg?width=380&height=675"
+		},
+		{
+			"name": "Ningguang",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137636942950460/ningguang.jpg?width=380&height=676"
+		},
+		{
+			"name": "Klee",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137636024385776/klee.jpg?width=478&height=676"
+		},
+
+		{
+			"name": "Walter White",
+			"animeName": "Breaking Bad",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020783882594942976/walter.png?width=175&height=234"
+		},
+		{
+			"name": "Saul",
+			"animeName": "Breaking Bad",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020784615989968906/saul.png?width=461&height=461"
+		}
+	]
+}

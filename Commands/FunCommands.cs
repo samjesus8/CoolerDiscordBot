@@ -88,7 +88,7 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("fortune")]
-        [Cooldown(5, 30, CooldownBucketType.User)]
+        [Cooldown(5, 60, CooldownBucketType.User)]
         public async Task FortuneTeller(CommandContext ctx) 
         {
             var random = new Random();

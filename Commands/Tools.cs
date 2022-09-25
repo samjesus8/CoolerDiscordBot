@@ -64,11 +64,5 @@ namespace DiscordBotTest.Commands
             var message = await interactivity.WaitForMessageAsync(x => x.Channel == ctx.Channel);
             await ctx.Channel.SendMessageAsync("Your message was sent at: " + message.Result.Timestamp.ToString());
         }
-
-        [Command("creatediscord")]
-        public async Task DiscordAccountCreator(CommandContext ctx)
-        {
-            await ctx.Channel.SendMessageAsync("Starting...");
-        }//UNDER CONSTRUCTION
     }
 }

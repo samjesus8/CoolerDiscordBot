@@ -105,100 +105,6 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("changelog")]
-        public async Task ChangeLogFull(CommandContext ctx)
-        {
-            var changeLogEmbed = new DiscordMessageBuilder()
-                .AddEmbed(
-                new DiscordEmbedBuilder()
-                .WithAuthor("***This bot was made by @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
-                .WithColor(DiscordColor.Azure)
-                .WithTitle("***Changelog | The latest version is V1.4.4***")
-                .WithDescription("V1.4.4: \n\n" +
-                                    "-Redesigned the whole of the >mid command: \n\n" +
-                                     "Although everything on the user end is the same, the whole database of characters are moved into a JSON file rather than string[] arrays" +
-                                     "in order to improve efficiency of the bot as well as reduce the amount of code written for the command \n\n" +
-                                     "-Added all TURs from range 'D, E, F' into the >passive command \n" +
-                                     "-Increased the cooldown of >fortune from 30s to 60s \n" +
-                                     "-Moved all generators to a separate folder in the Bot Project Files \n\n" +
-
-                                 "V1.4.3: \n\n " +
-                                    "-Added a message to show if cooldown is active for commands \n" +
-                                     "-Added any requested fortunes from users \n" +
-                                     "-Added all TURs from range 'A, B, C' into the >passive command \n\n" +
-                                 "V1.4.2: \n\n" +
-                                    "-Added ALL Dokkan LRs into the >passive command \n" +
-                                    "-Added Cooldowns on certain commands: \n\n " +
-                                    ">fortune: 5 Uses every 30 seconds PER USER \n" +
-                                    ">passive: 1 Use every 32 seconds PER USER \n" +
-                                    ">mid: 10 Uses every 5 min PER USER \n\n" +
-                                    "Although a message will not be shown when the command is in cooldown, a solution is being worked on and will come in the next update \n" +
-                                    "Make sure to keep these cooldowns in mind when using the commands until a notification system can be put in place \n\n" +
-
-                                 "V1.4.1: \n\n" +
-                                    "-Added some more characters into the >passive command \n\n" +
-
-                                 "V1.4: \n\n" +
-                                    "-Introducting the '>passive' command!!!!! \n\n" +
-                                    "This command was requested by the man Delet#9054 himself. It is a guessing game based off Dokkan Unit Passive Skills \n" +
-                                    "All you have to do is simply call the command. You will be displayed a random passive skill of a UR/LR unit. Server members have 20 seconds to guess \n" +
-                                    "After 20 seconds the answer will be displayed in an embedded message. Have fun testing your dokkan knowledge!!!! \n\n " +
-
-                                 "V1.3.4: \n\n" +
-                                    "-Added some more characters to the list for the >mid command \n" +
-                                    "-Changed the reactions for the >mid command to custom emotes \n" +
-                                    "-Started Development for the >passive command (COMING SOON) \n\n" +
-
-                                 "V1.3.3: \n\n" +
-                                    "-Added any requested fortunes from users \n" +
-                                    "-Added some more fortunes to the list \n" +
-                                    "-Fixed any wrong info in any of the menus \n" +
-                                    "-Added some more characters to >mid list \n\n" +
-
-                                 "V1.3.2: \n\n" +
-                                    "-Added any requested fortunes from users \n" +
-                                    "-Fixed any wrong info in the >help section \n\n" +
-
-                                 "V1.3.1: \n\n" +
-                                    "-Added any requested fortunes from users \n" +
-                                    "-Added a new changelog feature where you can view specific versions or the full log (See ***>help tools*** for more info) \n" +
-                                    "-Added more entries to the >mid command and fixed errors pertaining to the results: \n\n" +
-
-                                    "Fixed and redesigned the way results are shown \n" +
-                                    "Removed the need to add your own emotes as a paramater in the command. Users only need to set the time \n\n" +
-
-                                    "Removed >lottorules and integrated it with >lottery to view the rules and play the game on the same command \n" +
-                                    "Removed >midrules and integrated with >mid to view instructions for same command \n\n" +
-
-                                 "V1.3: \n\n" +
-                                    "-Added JayVezzy and Brandon's requested fortunes to the list as well as some new fortunes. Also removed certain fortunes" +
-                                    "as they are irrelavant or not needed \n\n" +
-                                    "-Introducing the '>mid' command -> This is a new game introduced into the bot. A anime girl will be shown on screen. Server members" +
-                                    " can vote if they think the girl is mid or not mid. \n" +
-                                    "You can set your own emojis for members to react to, as well as a custom time period (Normally 5-10s) \n" +
-                                    "Once the time period is over, results will be shown and the highest votes wins the round \n\n" +
-                                    "Over time, more entries will be added to the list for this gamemode. If you would like to submit an entry please DM @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825 \n\n" +
-
-                                 "V1.2.1: \n\n" +
-                                    "-Added JayVezzy's fortunes to the list of fortunes \n" +
-                                    "-Fixed the Help command by correcting a few mistakes in the information \n\n" +
-
-                                 "V1.2: \n\n" +
-                                    "-Redesigned the >help command -> Removed the buttons and instead added a condition for each category \n" +
-                                    "-Cleanup of the code -> Removed unnecesary usings \n" +
-                                    "-Removed the button to draw the card on >cardgame. You just have to call the command and it'll start automatically \n" +
-                                    "-Added more fortunes to the >fortune command \n" +
-                                    "-Addition of the >changelog command \n\n" +
-
-                                 "V1.1: \n\n" +
-                                    "-Code Cleanup \n" +
-                                    "-Removed the >cooler command \n" +
-                                    "-Addition of the >fortune command \n" +
-                                    "-Increased the number limit from 50 to 100 in the >lottery command \n")
-                );
-            await ctx.Channel.SendMessageAsync(changeLogEmbed);
-        }
-
-        [Command("changelog")]
         public async Task ChangeLogSpecific(CommandContext ctx, string version) 
         {
             if (version == "1.1") 
@@ -372,12 +278,11 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.4.4")
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithFooter("The latest version is V1.4.4")
                     .WithTitle("V1.4.4 Changelog")
                     .WithDescription("-Redesigned the whole of the >mid command: \n\n" +
                                      "Although everything on the user end is the same, the whole database of characters are moved into a JSON file rather than string[] arrays" +
@@ -388,12 +293,34 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
+            if (version == "Latest" || version == "latest")
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.4.5")
+                    .WithTitle("V1.4.5 Changelog")
+                    .WithDescription("-Added all TURs from range 'G, H, I, J, K, L' into the >passive command \n" +
+                                    "-Added some more characters into the >mid command and removed the timespan requirement. \n Users only need to enter >mid and the command will last for 20 seconds \n" +
+                                    "**The command now has a cooldown of 25 seconds per user,** eliminating the spamming of the command whilst a previous use is still active. " +
+                                    "So after the results are shown you have to wait 5 seconds before using it again \n\n" +
+                                    "-Removed the Full changelog command as it takes up too much space, also vunerable to spamming. Instead the new changelog command, you have to provide the version " +
+                                    "that you want to view like 1.1 \n\n" +
+                                    "-New command >autolottery CURRENTLY IN DEVELOPMENT: \n\n" +
+                                    "This is a command which calculates the sucess rate of any 5 numbers that you choose. All you need to do is pass in 5 numbers like you would in the normal lottery command" +
+                                    " but this time instead of showing if you won or not, the bot will loop the lottery command until it manages to match 1-5 numbers \n\n" +
+                                    "It will then give you a message saying how many attempts it took, and a success rate which tells you how lucky you managed to be \n\n" +
+                                    "You cannot use the command but you can do >autolottery on its own to view more info about how the command works")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+            }
 
-            else 
+            else
             {
                 await ctx.Channel.SendMessageAsync("Sorry, I didn't recognise that version... \n" +
                     "List of versions: \n" +
-                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3");
+                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3/1.4.4 \n" +
+                    "Or >changelog latest for the latest version info");
             }
         }
     }

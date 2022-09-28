@@ -78,6 +78,7 @@ namespace DiscordBotTest
 
                 var cooldownErrorMessage = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
                     .WithTitle("You must wait for the cooldown to end")
                     );
 

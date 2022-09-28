@@ -252,6 +252,11 @@
 			"animeName": "Fate Grand Order",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021133191387545670/spaceishtar.png?width=380&height=676"
 		},
+		{
+			"name": "Ushiwakamaru",
+			"animeName": "Fate Grand Order",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024735748039123024/ushiwakamaru_casual.png?width=576&height=407"
+		},
 
 
 		{
@@ -336,6 +341,11 @@
 			"animeName": "Genshin Impact",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021137636024385776/klee.jpg?width=478&height=676"
 		},
+		{
+			"name": "Hu Tao",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024736224562389204/hu_tao_twintail.png?width=447&height=676"
+		},
 
 		{
 			"name": "Walter White",
@@ -346,6 +356,90 @@
 			"name": "Saul",
 			"animeName": "Breaking Bad",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020784615989968906/saul.png?width=461&height=461"
+		},
+
+
+		{
+			"name": "Lowellmina 'Lowa' Earthwold",
+			"animeName": "The Genius Prince's Guide to Raising a Nation out of Debt",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024731313024020490/lowa.jpg?width=483&height=676"
+		},
+		{
+			"name": "Ninym Ralei",
+			"animeName": "The Genius Prince's Guide to Raising a Nation out of Debt",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024731313258905721/ninym.jpg?width=955&height=675"
+		},
+		{
+			"name": "Xenovia Marden",
+			"animeName": "The Genius Prince's Guide to Raising a Nation out of Debt",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024731313523150938/xenovia.png?width=360&height=472"
+		},
+
+
+		{
+			"name": "Nodoka Toyohama",
+			"animeName": "Rascal Does Not Dream of Bunny Girl Senpai",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024733187051638885/Nodoka_Toyohama.png?width=450&height=540"
+		},
+		{
+			"name": "Sakurajima Mai",
+			"animeName": "Rascal Does Not Dream of Bunny Girl Senpai",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024733187395559494/sakurajima_mai.png?width=380&height=675"
+		},
+
+
+		{
+			"name": "Yoshiko Hanabatake",
+			"animeName": "Aho Girl",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024734936139321454/aho_girl.jpg?width=1152&height=648"
+		},
+		{
+			"name": "Sayaka Sumino",
+			"animeName": "Aho Girl",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024734936902672514/sayaka.jpg?width=655&height=491"
+		},
+		{
+			"name": "Fuki Iincho",
+			"animeName": "Aho Girl",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024734936613261332/Fuki_Iincho.jpg?width=680&height=676"
+		},
+		{
+			"name": "Akane Eimura",
+			"animeName": "Aho Girl",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024734936369987694/Akane_Eimura.jpg?width=1152&height=648"
+		},
+
+
+		{
+			"name": "Yor Forger",
+			"animeName": "SPY X FAMILY",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024735489556750436/yor.jpg?width=541&height=676"
+		},
+
+		{
+			"name": "Nino Nakano",
+			"animeName": "The Quintessential Quintuplets",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024737250346536970/aZ03K9X_460s.jpg?width=380&height=675"
+		},
+		{
+			"name": "Miku Nakano",
+			"animeName": "The Quintessential Quintuplets",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024737250841468999/wd57uynrh7p61.png?width=380&height=676"
+		},
+		{
+			"name": "Ichika Nakano",
+			"animeName": "The Quintessential Quintuplets",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024737251290267729/ichika.jpg?width=380&height=675"
+		},
+		{
+			"name": "Itsuki Nakano",
+			"animeName": "The Quintessential Quintuplets",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024737251604836432/itsuki.jpg?width=426&height=676"
+		},
+		{
+			"name": "Yotsuba Nakano",
+			"animeName": "The Quintessential Quintuplets",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024737251881648128/yotsuba.jpg?width=476&height=675"
 		}
 	]
 }

@@ -198,30 +198,99 @@ namespace DiscordBotTest.Commands
             }
         }
 
-        [Command("mid")]
-        public async Task MidOrNotMidRules(CommandContext ctx)
+        [Command("autolottery")]
+        public async Task AutoLottoInfo(CommandContext ctx) 
         {
-            var rules = new DiscordMessageBuilder()
-                .AddEmbed(
-                new DiscordEmbedBuilder()
-                .WithTitle("Mid or Not Mid Instructions")
+            var info = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Azure)
-                .WithDescription("IMPORTANT: THE SYNTAX OF THE COMMAND IS \n ***'>mid TimeLimit'*** \n\n" +
-                                    "The premise of the game is simple, a good looking anime girl will be displayed on screen \n" +
-                                        "If you think she's mid, vote mid. Thumbs Down = Mid & Thumbs Up = Not Mid \n The most votes wins the game \n\n" +
-                                            "Have fun and remember, don't make it serious, its just a fucking cartoon figure")
-                .WithImageUrl("https://media.discordapp.net/attachments/735858039537795203/1019733895526219826/unknown.png?width=514&height=537")
+                .WithTitle("Auto Lotto command info")
+                .WithDescription("This is a command that calculates the success rate at any random 5 numbers in the >lottery command \n" +
+                                    "It loops infinitely through the command until it manages to find matching numbers of which you specify \n\n" +
+                                    "**IMPORTANT -> The syntax to use this command is \n >autolottery num1 num2 num3 num4 num5 matches** \n\n" +
+                                    "**Where num1 - num5 are your numbers & matches is the number of matches you want it to find, this has to be from 1-5 since there are 5 numbers you are checking for** \n\n" +
+                                    "You can choose to check for 3 matches and it will give you a success rate, same goes for 1-5 checks \n\n" +
+                                    "When the loop is done, you will eventually get an embedded message saying how many attempts it took to get X number of matches and the bot will calculate a success rate for you")
+                .WithImageUrl("https://media.discordapp.net/attachments/1020110665161113610/1024722576385257482/unknown.png?width=389&height=162")
                 );
-            await ctx.Channel.SendMessageAsync(rules);
+            await ctx.Channel.SendMessageAsync(info);
+        }
+
+        [Command("autolottery")]
+        [RequireOwner]
+        public async Task AutoLotto(CommandContext ctx, int n1, int n2, int n3, int n4, int n5, int matches) 
+        {
+            var random = new Random();
+            var interactivity = ctx.Client.GetInteractivity();
+            var numberGen = new NumberGenerator();
+            int[] playerNumbers = { n1, n2, n3, n4, n5 };
+
+            int count = 0;
+            int tries = 0;
+
+            while (count <= matches) 
+            {
+                for (int i = 0; i < 5; i++)
+                {
+                    for (int j = 0; j < 5; j++)
+                    {
+                        if (playerNumbers[i] == int.Parse(numberGen.result[j]))
+                        {
+                            j++;
+                            count++;
+                            tries++;
+                            Console.WriteLine("Matches: " + count);
+                            if (count == matches) { break; }
+                        }
+                        else
+                        {
+                            tries++;
+                            if (count == matches) { break; }
+                        }
+                    }
+                    if (count == matches) { break; }
+                }
+                if (count == matches) { break; }
+            }
+
+            if (count == matches) 
+            {
+                var results = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithTitle("Results for numbers " + n1 + " " + n2 + " " + n3 + " " + n4 + " " + n5)
+                    .WithDescription("It took " + tries + " times for your numbers to get " + matches + " matches")
+                    );
+                await ctx.Channel.SendMessageAsync(results);
+            }
+        }
+
+        [Command("mid")]
+        public async Task MidOrNotMidRules(CommandContext ctx, string input)
+        {
+            if (input == "rules" || input == "info" || input == "Info") 
+            {
+                var rules = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("Mid or Not Mid Instructions")
+                    .WithColor(DiscordColor.Azure)
+                    .WithDescription("The premise of the game is simple, a good looking anime girl will be displayed on screen \n" +
+                                            "If you think she's mid, vote mid. Thumbs Down = Mid & Thumbs Up = Not Mid \n The most votes wins the game \n\n" +
+                                                "Have fun and remember, don't make it serious, its just a fucking cartoon figure")
+                    .WithImageUrl("https://media.discordapp.net/attachments/735858039537795203/1019733895526219826/unknown.png?width=514&height=537")
+                    );
+                await ctx.Channel.SendMessageAsync(rules);
+            }
         } //Rules
 
         [Command("mid")]
-        [Cooldown(10, 300, CooldownBucketType.User)]
-        public async Task MidOrNotMid(CommandContext ctx, TimeSpan duration)
+        [Cooldown(1, 25, CooldownBucketType.User)]
+        public async Task MidOrNotMid(CommandContext ctx)
         {
             DiscordEmoji[] emojiOptions = { DiscordGuildEmoji.FromName(ctx.Client, ":MID_EMOTE:", true), DiscordGuildEmoji.FromName(ctx.Client, ":NOT_MID_EMOTE:", true) };
             var interactivity = ctx.Client.GetInteractivity();
             var random = new Random();
+            var duration = TimeSpan.FromSeconds(20);
 
             List<String[]> messages = new List<String[]>(); //[0] = Name, [1] = Anime Name, [2] = Image URL
 
@@ -235,11 +304,12 @@ namespace DiscordBotTest.Commands
             var testEmbed = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
-                .WithAuthor("MID OR NOT MID?? | Cast your votes below")
+                .WithAuthor("MID OR NOT MID?? | Cast your votes below | You have 20 seconds to vote")
                 .WithTitle("***" + messages[index][0] + "***")
                 .WithDescription(messages[index][1])
                 .WithImageUrl(messages[index][2])
                 .WithColor(DiscordColor.Blue)
+                .WithFooter("Use '>mid info' to view the instructions on this command")
                 );
             var pollMSG = await ctx.Channel.SendMessageAsync(testEmbed);
 

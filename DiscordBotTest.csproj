@@ -208,4 +208,5 @@
     <None Include="Builders\WaifuCards.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions />
 </Project>

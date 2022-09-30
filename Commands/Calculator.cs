@@ -36,7 +36,6 @@ namespace DiscordBotTest.Commands
             double pie = 3.1415926;
             double area = (radius * radius) * pie;
 
-            await ctx.Channel.SendMessageAsync("Daily reminder that cooler can't do maths. He would have a mental breakdown trying to do this");
             await ctx.Channel.SendMessageAsync(area.ToString());
         }
     }

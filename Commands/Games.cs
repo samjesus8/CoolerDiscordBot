@@ -4,7 +4,6 @@ using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -275,9 +274,9 @@ namespace DiscordBotTest.Commands
                     .WithTitle("Mid or Not Mid Instructions")
                     .WithColor(DiscordColor.Azure)
                     .WithDescription("The premise of the game is simple, a good looking anime girl will be displayed on screen \n" +
-                                            "If you think she's mid, vote mid. Thumbs Down = Mid & Thumbs Up = Not Mid \n The most votes wins the game \n\n" +
+                                            "If you think she's mid, vote mid. The most votes wins the game \n\n" +
                                                 "Have fun and remember, don't make it serious, its just a fucking cartoon figure")
-                    .WithImageUrl("https://media.discordapp.net/attachments/735858039537795203/1019733895526219826/unknown.png?width=514&height=537")
+                    .WithImageUrl("https://media.discordapp.net/attachments/1020110665161113610/1025399022845956126/unknown.png?width=572&height=597")
                     );
                 await ctx.Channel.SendMessageAsync(rules);
             }
@@ -319,17 +318,54 @@ namespace DiscordBotTest.Commands
             }
 
             var result = await interactivity.CollectReactionsAsync(pollMSG, duration);
-            var dResult = result.Distinct();
-            var results = dResult.Select(x => $"{x.Emoji}: {x.Total}");
 
+            int midCount = 0;
+            int notMidCount = 0;
+
+            foreach (var emoji in result) 
+            {
+                if (emoji.Emoji == emojiOptions[0]) 
+                {
+                    midCount++;
+                }
+                if (emoji.Emoji == emojiOptions[1]) 
+                {
+                    notMidCount++;
+                }
+            }
+
+            int totalVotes = midCount + notMidCount;
             var resultsEmbed = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
                 .WithTitle("***Results***")
                 .WithColor(DiscordColor.Azure)
-                .WithDescription(string.Join("\n", results))
+                .WithDescription(emojiOptions[0] + ": " + midCount + " Votes" + "\n" +
+                                 emojiOptions[1] + ": " + notMidCount + " Votes" + "\n\n" +
+                                 "A total of " + totalVotes + " users voted in this session")
                 );
             await ctx.Channel.SendMessageAsync(resultsEmbed);
+
+            if (midCount > notMidCount)
+            {
+                var midWin = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Green)
+                    .WithTitle("The winner for " + messages[index][0])
+                    .WithDescription("MID wins with " + midCount + " votes")
+                    );
+                await ctx.Channel.SendMessageAsync(midWin);
+            }
+            if (midCount < notMidCount)
+            {
+                var notMidWin = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Red)
+                    .WithTitle("The winner for " + messages[index][0])
+                    .WithDescription("NOT MID wins with " + notMidCount + " votes")
+                    );
+                await ctx.Channel.SendMessageAsync(notMidWin);
+            }
         }
 
         [Command("passive")]

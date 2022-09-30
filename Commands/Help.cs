@@ -79,8 +79,7 @@ namespace DiscordBotTest.Commands
                                     "Syntax: >lottery num1 num2 num3 num4 num5 \n " +
                                     "Do >lottery on its own to view the instructions \n\n" +
                                     ">mid -> Play a game of Mid or Not Mid. A girl will show up on the screen \n" +
-                                    "Server Members can vote if they think the girl is mid or not mid. After the time period, the most votes wins that round \n" +
-                                    "Syntax: >mid TIMESPAN (>mid 5s) \n\n" +
+                                    "Server Members can vote if they think the girl is mid or not mid. After the time period, the most votes wins that round \n\n " +
                                     ">passive -> Play a game of guess the Passive. A Dokkan Passive skill will be shown on screen. If you guess who the unit is correctly you win")
                     );
                 await ctx.Channel.SendMessageAsync(gamesFunctionMessage);
@@ -293,12 +292,11 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.4.5")
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.4.5")
                     .WithTitle("V1.4.5 Changelog")
                     .WithDescription("-Added all TURs from range 'G, H, I, J, K, L' into the >passive command \n" +
                                     "-Added some more characters into the >mid command and removed the timespan requirement. \n Users only need to enter >mid and the command will last for 20 seconds \n" +
@@ -314,12 +312,27 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
+            if (version == "Latest" || version == "latest")
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.4.6")
+                    .WithTitle("V1.4.6 Changelog")
+                    .WithDescription("-Fixed the Reaction errors in the >mid command after several weeks of debugging: \n\n" +
+                                        "The Results section now properly adds up all the reactions instead of displaying the same emoji X times each with 1 vote \n" +
+                                        "There may be some slight timing issues which still ruin the results but it works much better than before \n" +
+                                        "It also shows the total number of people who participated in the voting \n\n" +
+                                     "-Added all the TURs from range 'M, N, O' into the >passive command")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+            }
 
             else
             {
                 await ctx.Channel.SendMessageAsync("Sorry, I didn't recognise that version... \n" +
                     "List of versions: \n" +
-                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3/1.4.4 \n" +
+                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5 \n" +
                     "Or >changelog latest for the latest version info");
             }
         }

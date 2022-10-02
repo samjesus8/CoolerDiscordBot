@@ -312,12 +312,11 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.4.6")
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.4.6")
                     .WithTitle("V1.4.6 Changelog")
                     .WithDescription("-Fixed the Reaction errors in the >mid command after several weeks of debugging: \n\n" +
                                         "The Results section now properly adds up all the reactions instead of displaying the same emoji X times each with 1 vote \n" +
@@ -327,12 +326,32 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
+            if (version == "Latest" || version == "latest")
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.4.7")
+                    .WithTitle("V1.4.7 Changelog")
+                    .WithDescription("-Code cleanup: Removed any unneccesary packages that were installed on the project \n" +
+                                     "Also removed any unused 'Usings' to clean up the code \n\n" +
+                                     "-Added requested fortunes into the >fortune command \n" +
+                                     "-Added a separate version of the >watchyourtone command that accepts any form of text. Users can still use pings in the command too \n" +
+                                     "-Added all TURs from range 'P, Q, R' into the >passive command \n" +
+                                     "-Added characters from the following animes into the >mid command: \n\n" +
+                                     "(From now on, I will list any additions in this format) \n\n" +
+                                     "***My Stepmom's Daughter is my Ex*** \n" +
+                                     "***Shikimori is not just a Cutie*** \n" +
+                                     "***Kaguya-Sama: Love is War***")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+            }
 
             else
             {
                 await ctx.Channel.SendMessageAsync("Sorry, I didn't recognise that version... \n" +
                     "List of versions: \n" +
-                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5 \n" +
+                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6 \n" +
                     "Or >changelog latest for the latest version info");
             }
         }

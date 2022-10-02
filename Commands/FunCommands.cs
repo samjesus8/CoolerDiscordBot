@@ -72,13 +72,28 @@ namespace DiscordBotTest.Commands
             await ctx.Channel.SendMessageAsync(input);
         }
 
-        [Command("watchyourtone")]
+        [Command("watchyourtone")] //For user pings
         public async Task WatchYourTone(CommandContext ctx, DiscordUser user) 
         {
             var toneMessage = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
                 .WithTitle("To " + user.Username)
+                .WithDescription("WATCH YOUR FUCKING TONE MFER")
+                .WithImageUrl("https://cdn.discordapp.com/emojis/1001335925655212062.png?size=1024")
+                .WithAuthor("From: " + ctx.User.Username)
+                .WithColor(DiscordColor.Black)
+                );
+            await ctx.Channel.SendMessageAsync(toneMessage);
+        }
+
+        [Command("watchyourtone")] //For any string
+        public async Task WatchYourTone(CommandContext ctx, string user)
+        {
+            var toneMessage = new DiscordMessageBuilder()
+                .AddEmbed(
+                new DiscordEmbedBuilder()
+                .WithTitle("To " + user)
                 .WithDescription("WATCH YOUR FUCKING TONE MFER")
                 .WithImageUrl("https://cdn.discordapp.com/emojis/1001335925655212062.png?size=1024")
                 .WithAuthor("From: " + ctx.User.Username)
@@ -135,6 +150,8 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("The next anime you watch, will have a trap in it");
             fortuneList.Add("You will inevitably get banned from this server because of something stupid");
             fortuneList.Add("You will get lucky for the entire WWDC Celebration in Dokkan");
+            fortuneList.Add("ATK & DEF +150%; plus an additional ATK & DEF +50% when performing a Super Attack if facing only 1 enemy and if that enemy's HP is 50% or less when the character performs a Super Attack, " +
+                                "plus an additional ATK +100% and high chance of performing a critical hit; performs a critical hit within the same turn after receiving an attack plus an additional DEF +150% when facing 2 or more enemies; Ki +2 for the rest of battle after delivering a final blow");
 
             //Requested Fortunes
 
@@ -150,6 +167,9 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Yes");
             fortuneList.Add("No");
             fortuneList.Add("If you get this fortune, Watch Your Tone");
+            fortuneList.Add("Upon starting the day on a Sunday, you will gain the ability to ATK & DEF +140%; Ki +1 at start of each turn (up to +3); guards all attacks; " +
+                                "plus an additional ATK +40% within the same turn when guard is activated");
+            fortuneList.Add("If u get this fortune, tell coola to watch his damn tone for maining LoE");
 
             //Sigma Quotes
 

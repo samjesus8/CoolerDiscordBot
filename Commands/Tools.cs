@@ -53,6 +53,7 @@ namespace DiscordBotTest.Commands
             var discordMessage = new DiscordMessageBuilder()
                 .AddEmbed(new DiscordEmbedBuilder()
                 .WithTitle("Official Discord Server")
+                .WithColor(DiscordColor.Azure)
                 .WithDescription("Join the Official Discord server for the bot \n" +
                                     "Click the title to join!!")
                 .WithUrl("https://discord.gg/kfaVgHN7zv")

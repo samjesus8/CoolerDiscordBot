@@ -61,7 +61,11 @@ namespace DiscordBotTest.Commands
                                     ">tory -> Slander the torys \n\n" +
                                     ">delet -> Prove that everything is mid with this one command \n\n " +
                                     ">dialogue -> The bot will send you a DM, type anything random to send it back to the channel where you used the command \n\n" +
-                                    ">watchyourtone -> Tell someone to watch their tone | Syntax: >watchyourtone @User \n\n" +
+                                    ">watchyourtone -> Tell someone to watch their tone \n **Syntax: >watchyourtone @User OR RandomText** \n" +
+                                    "You can ping someone or use plaintext in the command \n\n" +
+                                    ">choosetone -> An extension of the >watchyourtone command requested by Coola#5784. \n" +
+                                    "***IMPORTANT: The syntax for this command is '>choosetone @User1 @User2 @User3.....' (You can have as many users as you want)*** \n\n" +
+                                    "This command takes your users that you passed in and itll choose one of them at random. The bot will tell that chosen person to watch their tone \n\n" +
                                     ">fortune -> See if your fate is lucky or will it be hell")
                     );
                 await ctx.Channel.SendMessageAsync(funFunctionMessage);
@@ -95,6 +99,7 @@ namespace DiscordBotTest.Commands
                     .WithDescription(">timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n\n " +
                     ">status -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text. There cannot be any spaces \n\n " +
                     ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice \n\n" +
+                    ">server -> Generated an invite link to join the Official Discord server for this bot \n\n" +
                     ">changelog -> View the bot changelog. Shows what changed in every update \n\n" +
                     "Use >changelog on its own to view the full list or type in a version to view its specific changes like ***'>changelog 1.1'*** \n" +
                     "Type in ***>changelog latest'*** to view the changelog of the latest version")
@@ -326,7 +331,7 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.4.7")
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
@@ -346,12 +351,34 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(message);
             }
+            if (version == "Latest" || version == "latest")
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.4.8")
+                    .WithTitle("V1.4.8 Changelog")
+                    .WithDescription("-Added a new command requested by Coola#5784 ***'>choosetone'***: \n\n" +
+                                     "The command is an extension of the alerady existing >watchyourtone command. Instead it is a random selector \n" +
+                                     "You can provide as many users as you want, the bot will then choose someone at random and tell them to watch their tone. See more info by doing '>help fun' \n\n" +
+                                     "-Added a new command '>server': \n\n This generates an invite link to join the official discord server for the bot. Here you can request support or suggest improvements for the bot \n\n" +
+                                     "-Removed certain fortunes as they may be irrelavant to the current time period \n" +
+                                     "-Added all TURs from range 'S - Z' into the passive command \n" +
+                                     "**ALL CHARACTERS IN DOKKAN ARE FINALLY IN THE PASSIVE COMMAND!!!!** \n\n" +
+                                     "-Added characters from the following shows into the >mid command: \n\n" +
+                                     "***Date A Live (Missing Characters Added)***\n" +
+                                     "***Horimiya*** \n" +
+                                     "***Harem in the Labyrinth of Another World*** \n" +
+                                     "***Haiyore: Nyaruko San***")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+            }
 
             else
             {
                 await ctx.Channel.SendMessageAsync("Sorry, I didn't recognise that version... \n" +
                     "List of versions: \n" +
-                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6 \n" +
+                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7 \n" +
                     "Or >changelog latest for the latest version info");
             }
         }

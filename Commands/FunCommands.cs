@@ -102,6 +102,30 @@ namespace DiscordBotTest.Commands
             await ctx.Channel.SendMessageAsync(toneMessage);
         }
 
+        [Command("choosetone")]
+        public async Task ToneChooser(CommandContext ctx, params DiscordUser[] users) 
+        {
+            var random = new Random();
+            List<DiscordUser> userList = new List<DiscordUser>();
+
+            foreach (var user in users) 
+            {
+                userList.Add(user);
+            }
+
+            int index = random.Next(userList.Count);
+
+            var toneMessage = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+                .WithTitle("Tone Chooser")
+                .WithColor(DiscordColor.Azure)
+                .WithDescription("Out of all the mfers that " + ctx.User.Username + " chose \n\n" + "***" + userList[index].Username + "***" + " should watch their tone!!!")
+                .WithImageUrl("https://cdn.discordapp.com/emojis/1001335925655212062.png?size=1024")
+                );
+
+            await ctx.Channel.SendMessageAsync(toneMessage);
+        }
+
         [Command("fortune")]
         [Cooldown(5, 60, CooldownBucketType.User)]
         public async Task FortuneTeller(CommandContext ctx) 
@@ -133,6 +157,7 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("The person who sent the latest message in edcord. You're fucking gay, leave the server u bozo");
             fortuneList.Add("If you get this fortune, Shallot ain't going SSB");
             fortuneList.Add("Delet will get bitches once he graduates");
+
             fortuneList.Add("Because of you, Main will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Vein will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Coola will get shafted in the next multi he does on dokkan");
@@ -140,7 +165,7 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("Because of you, Delet will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Ducky will get shafted in the next multi he does on dokkan");
             fortuneList.Add("Because of you, Sam will get shafted in the next multi he does on dokkan");
-            fortuneList.Add("Because of you Brandon will never pull metal cooler");
+
             fortuneList.Add("If you managed to get this fortune, Loved has a skill issue");
             fortuneList.Add("The next multi you do in dokkan, you will get " + badUnits[badUnitsIndex]);
             fortuneList.Add("The Queen's revive skill will now activate");
@@ -149,7 +174,6 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("One day, Cooler will return to Discord because of something really dumb");
             fortuneList.Add("The next anime you watch, will have a trap in it");
             fortuneList.Add("You will inevitably get banned from this server because of something stupid");
-            fortuneList.Add("You will get lucky for the entire WWDC Celebration in Dokkan");
             fortuneList.Add("ATK & DEF +150%; plus an additional ATK & DEF +50% when performing a Super Attack if facing only 1 enemy and if that enemy's HP is 50% or less when the character performs a Super Attack, " +
                                 "plus an additional ATK +100% and high chance of performing a critical hit; performs a critical hit within the same turn after receiving an attack plus an additional DEF +150% when facing 2 or more enemies; Ki +2 for the rest of battle after delivering a final blow");
 
@@ -169,7 +193,8 @@ namespace DiscordBotTest.Commands
             fortuneList.Add("If you get this fortune, Watch Your Tone");
             fortuneList.Add("Upon starting the day on a Sunday, you will gain the ability to ATK & DEF +140%; Ki +1 at start of each turn (up to +3); guards all attacks; " +
                                 "plus an additional ATK +40% within the same turn when guard is activated");
-            fortuneList.Add("If u get this fortune, tell coola to watch his damn tone for maining LoE");
+            fortuneList.Add("If u get this fortune, tell Coola#5784 to watch his damn tone for maining LoE");
+            fortuneList.Add("If you get this fortune then Coola#5784 should watch his tone");
 
             //Sigma Quotes
 

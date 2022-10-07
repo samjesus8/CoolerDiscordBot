@@ -88,6 +88,31 @@
 			"animeName": "Date A Live",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020130640575864842/murasume.jpg?width=376&height=669"
 		},
+		{
+			"name": "Nia Honjou",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027926544129196053/nia.png?width=320&height=676"
+		},
+		{
+			"name": "Mukuro",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027926543562965032/mukuro.png?width=380&height=675"
+		},
+		{
+			"name": "Miku Izaoi",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027926543198072862/miku.jpg?width=922&height=576"
+		},
+		{
+			"name": "Mana Takamia",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027926544829661216/mana.jpg?width=479&height=676"
+		},
+		{
+			"name": "Tobiichi Origami",
+			"animeName": "Date A Live",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027926544540250142/origami.jpg?width=345&height=676"
+		},
 
 
 		{
@@ -501,6 +526,88 @@
 			"name": "Tsubame Koyasu",
 			"animeName": "Kaguya-Sama: Love is War",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1026122573781676102/tsubame.jpg?width=333&height=676"
+		},
+
+
+		{
+			"name": "Kyoko Hori",
+			"animeName": "Horimiya",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027924104864616518/kyoko_hori.jpg?width=333&height=676"
+		},
+		{
+			"name": "Yuki Yoshikawa",
+			"animeName": "Horimiya",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027924104235466842/Yuki-Yoshikawa-2.jpg?width=1201&height=676"
+		},
+		{
+			"name": "Remi Ayasaki",
+			"animeName": "Horimiya",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027924105145618563/remi.jpg?width=379&height=675"
+		},
+		{
+			"name": "Iori Miyamura",
+			"animeName": "Horimiya",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027924104449376326/iori.png?width=360&height=476"
+		},
+		{
+			"name": "Sakura Kono",
+			"animeName": "Horimiya",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027924105393082378/Sakura_Birthday_Artwork_2016.png?width=225&height=287"
+		},
+		{
+			"name": "Honoka Sawada",
+			"animeName": "Horimiya",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027924105774780466/sawada.png?width=462&height=676"
+		},
+
+
+		{
+			"name": "Roxanne",
+			"animeName": "Harem in the Labyrinth of Another World",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027929449259352104/roxanne.jpg?width=504&height=676"
+		},
+		{
+			"name": "Sherry",
+			"animeName": "Harem in the Labyrinth of Another World",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027929450119184464/sherry.png?width=432&height=227"
+		},
+		{
+			"name": "Miria",
+			"animeName": "Harem in the Labyrinth of Another World",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027929448781193216/mina.png?width=575&height=675"
+		},
+		{
+			"name": "Vesta",
+			"animeName": "Harem in the Labyrinth of Another World",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027929450484093028/vesta.png?width=225&height=326"
+		},
+		{
+			"name": "Rutina",
+			"animeName": "Harem in the Labyrinth of Another World",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027929449691357256/rutina.png?width=467&height=676"
+		},
+
+
+		{
+			"name": "Nyaruko",
+			"animeName": "Haiyore Nyaruko San",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027931135893844009/Nyaruko.jpg?width=450&height=630"
+		},
+		{
+			"name": "Kuko",
+			"animeName": "Haiyore Nyaruko San",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027931135369547826/kuko.jpg?width=478&height=676"
+		},
+		{
+			"name": "Yoriko Yasaka",
+			"animeName": "Haiyore Nyaruko San",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027931136174858240/yoriko.jpg?width=450&height=254"
+		},
+		{
+			"name": "Tamao Kurei",
+			"animeName": "Haiyore Nyaruko San",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027931135612817468/kurei.jpg?width=454&height=676"
 		}
 	]
+
 }

@@ -47,6 +47,19 @@ namespace DiscordBotTest.Commands
             await ctx.Channel.SendMessageAsync(inviteMessage);
         }
 
+        [Command("server")]
+        public async Task SendServerLink(CommandContext ctx) 
+        {
+            var discordMessage = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+                .WithTitle("Official Discord Server")
+                .WithDescription("Join the Official Discord server for the bot \n" +
+                                    "Click the title to join!!")
+                .WithUrl("https://discord.gg/kfaVgHN7zv")
+                );
+            await ctx.Channel.SendMessageAsync(discordMessage);
+        }
+
         [Command("timestamp")]
         public async Task Response(CommandContext ctx)
         {

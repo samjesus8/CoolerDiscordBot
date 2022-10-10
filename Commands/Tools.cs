@@ -10,14 +10,15 @@ namespace DiscordBotTest.Commands
     public class Tools : BaseCommandModule
     {
         [Command("status")]
-        public async Task SetBotStatus(CommandContext ctx, string message) 
+        public async Task SetBotStatus(CommandContext ctx, params string[] message) 
         {
             if (ctx.User.Id == 572877986223751188 || ctx.User.Id == 327845261692895232) 
             {
+                string finalMessage = string.Join(" ", message);
                 DiscordActivity activity = new DiscordActivity();
                 DiscordClient discord = ctx.Client;
 
-                activity.Name = message;
+                activity.Name = finalMessage;
                 await discord.UpdateStatusAsync(activity);
                 return;
             }

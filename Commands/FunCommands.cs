@@ -102,7 +102,7 @@ namespace DiscordBotTest.Commands
             await ctx.Channel.SendMessageAsync(toneMessage);
         }
 
-        [Command("choosetone")]
+        [Command("choosetone")] //For user pings
         public async Task ToneChooser(CommandContext ctx, params DiscordUser[] users) 
         {
             var random = new Random();
@@ -126,8 +126,57 @@ namespace DiscordBotTest.Commands
             await ctx.Channel.SendMessageAsync(toneMessage);
         }
 
+        [Command("choosetone")] //For any string
+        public async Task ToneChooserString(CommandContext ctx, params string[] users) 
+        {
+            var random = new Random();
+            int index = random.Next(users.Length);
+
+            var toneMessage = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithTitle("Tone Chooser")
+                .WithColor(DiscordColor.Azure)
+                .WithDescription("Out of all the mfers that " + ctx.User.Username + " chose \n\n" + "***" + users[index] + "***" + " should watch their tone!!!")
+                .WithImageUrl("https://cdn.discordapp.com/emojis/1001335925655212062.png?size=1024")
+                );
+            await ctx.Channel.SendMessageAsync(toneMessage);
+        }
+
+        [Command("supernova")]
+        public async Task Cooler8Ball(CommandContext ctx, params string[] text) 
+        {
+            var random = new Random();
+            string completeText = string.Join(" ", text);
+
+            List<string> responses = new List<string>();
+
+            responses.Add("Probably");
+            responses.Add("Are u retarded");
+            responses.Add("Never in the history of the world");
+            responses.Add("Instead of answering you, imma tell u to WATCH YOUR TONE!!!!");
+            responses.Add("If its about Cooler, no");
+            responses.Add("If Coola#5784 is mentionned here, then the answer is never");
+            responses.Add("Maybe");
+            responses.Add("In 2 weeks, Yes");
+            responses.Add("Yes");
+            responses.Add("No");
+
+            int index = random.Next(responses.Count);
+
+            var message = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.DarkRed)
+                .WithTitle("Cooler's Supernova of Death")
+                .WithDescription("***Question:*** " + completeText + " \n" +
+                                 "***Answer:*** " + responses[index])
+                );
+            await ctx.Channel.SendMessageAsync(message);
+        }
+
         [Command("fortune")]
-        [Cooldown(5, 60, CooldownBucketType.User)]
+        [Cooldown(5, 720, CooldownBucketType.User)]
         public async Task FortuneTeller(CommandContext ctx) 
         {
             var random = new Random();

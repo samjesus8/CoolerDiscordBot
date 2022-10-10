@@ -97,11 +97,11 @@ namespace DiscordBotTest.Commands
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("Tools Commands")
                     .WithDescription(">timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n\n " +
-                    ">status -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text. There cannot be any spaces \n\n " +
+                    ">status -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text \n\n " +
                     ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice \n\n" +
                     ">server -> Generated an invite link to join the Official Discord server for this bot \n\n" +
                     ">changelog -> View the bot changelog. Shows what changed in every update \n\n" +
-                    "Use >changelog on its own to view the full list or type in a version to view its specific changes like ***'>changelog 1.1'*** \n" +
+                    "Use >changelog and type in a version to view its specific changes like ***'>changelog 1.1'*** \n" +
                     "Type in ***>changelog latest'*** to view the changelog of the latest version")
                     );
                 await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
@@ -125,6 +125,7 @@ namespace DiscordBotTest.Commands
                     );
 
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.2") 
             {
@@ -140,6 +141,7 @@ namespace DiscordBotTest.Commands
                     );
 
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.2.1") 
             {
@@ -152,6 +154,7 @@ namespace DiscordBotTest.Commands
                     );
 
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.3") 
             {
@@ -169,6 +172,7 @@ namespace DiscordBotTest.Commands
                     );
 
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.3.1") 
             {
@@ -187,6 +191,7 @@ namespace DiscordBotTest.Commands
                     );
 
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.3.2") 
             {
@@ -200,6 +205,7 @@ namespace DiscordBotTest.Commands
                                     "-Fixed any wrong info in the >help section")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.3.3") 
             {
@@ -214,6 +220,7 @@ namespace DiscordBotTest.Commands
                                     "-Added some more characters to >mid list")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.3.4") 
             {
@@ -227,6 +234,7 @@ namespace DiscordBotTest.Commands
                                     "-Started Development for the >passive command (COMING SOON)")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.4")
             {
@@ -241,6 +249,7 @@ namespace DiscordBotTest.Commands
                                     "After 20 seconds the answer will be displayed in an embedded message. Have fun testing your dokkan knowledge!!!!")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.4.1")
             {
@@ -252,6 +261,7 @@ namespace DiscordBotTest.Commands
                                     "-Added some more characters into the >passive command")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.4.2")
             {
@@ -268,6 +278,7 @@ namespace DiscordBotTest.Commands
                                     "Make sure to keep these cooldowns in mind when using the commands until a notification system can be put in place")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.4.3") 
             {
@@ -281,6 +292,7 @@ namespace DiscordBotTest.Commands
                                      "-Added all TURs from range 'A, B, C' into the >passive command")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.4.4")
             {
@@ -296,6 +308,7 @@ namespace DiscordBotTest.Commands
                                      "-Moved all generators to a separate folder in the Bot Project Files")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.4.5")
             {
@@ -316,6 +329,7 @@ namespace DiscordBotTest.Commands
                                     "You cannot use the command but you can do >autolottery on its own to view more info about how the command works")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.4.6")
             {
@@ -330,6 +344,7 @@ namespace DiscordBotTest.Commands
                                      "-Added all the TURs from range 'M, N, O' into the >passive command")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
             if (version == "1.4.7")
             {
@@ -350,13 +365,13 @@ namespace DiscordBotTest.Commands
                                      "***Kaguya-Sama: Love is War***")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.4.8")
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.4.8")
                     .WithTitle("V1.4.8 Changelog")
                     .WithDescription("-Added a new command requested by Coola#5784 ***'>choosetone'***: \n\n" +
                                      "The command is an extension of the alerady existing >watchyourtone command. Instead it is a random selector \n" +
@@ -372,14 +387,40 @@ namespace DiscordBotTest.Commands
                                      "***Haiyore: Nyaruko San***")
                     );
                 await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.4.9")
+                    .WithTitle("V1.4.9 Changelog")
+                    .WithDescription("-Added a new command requested by ***ducky#8786*** with name **>supernova** \n\n" +
+                                     "This is similar to the 8-Ball command from Sandra, but better since the responses are relatable \n" +
+                                     "All you do is do '>changelog YourQuestion' and the bot will give a random response. Have fun using this command!!! \n\n" +
+                                     "-The >choosetone command can now accept plaintext as well as user pings \n" +
+                                     "So users can do **'>choosetone @UserPing1 @UserPing2'** OR they can do **'>choosetone Text1 Text2 Text3'** and it will still work \n\n" +
+                                     "-Increased the cooldown of >fortune to 12 HOURS due to spam/server load and also making it realistic in terms of the context of the fortune \n" +
+                                     "-FOR ADMINS - Changed the >status command so that it can accept text with spaces \n" +
+                                     "-Scrapped the >autolottery command due to little interest")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
             }
 
             else
             {
-                await ctx.Channel.SendMessageAsync("Sorry, I didn't recognise that version... \n" +
-                    "List of versions: \n" +
-                    "1.1/1.2/1.2.1/1.3/1.3.1/1.3.2/1.3.3/1.3.4/1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7 \n" +
-                    "Or >changelog latest for the latest version info");
+                var errorMessage = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("Sorry, I didn't recognise that version")
+                    .WithDescription("List of versions: \n" +
+                    "1.1/1.2/1.2.1 \n 1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n 1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8 \n" +
+                    "Or >changelog latest for the latest version info")
+                    );
+                await ctx.Channel.SendMessageAsync(errorMessage);
             }
         }
     }

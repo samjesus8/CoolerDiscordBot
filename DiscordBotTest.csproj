@@ -167,6 +167,7 @@
   <ItemGroup>
     <Compile Include="Bot.cs" />
     <Compile Include="Builders\CardGenerator.cs" />
+    <Compile Include="Builders\DokkanPassiveCalculator.cs" />
     <Compile Include="Commands\Calculator.cs" />
     <Compile Include="Commands\DokkanSL.cs" />
     <Compile Include="Commands\FunCommands.cs" />
@@ -186,6 +187,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Builders\UserPassivesStorage.json" />
     <None Include="config.json" />
     <None Include="Builders\LRPassives.json" />
     <None Include="packages.config" />

@@ -391,7 +391,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.4.9")
             {
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
@@ -406,6 +406,26 @@ namespace DiscordBotTest.Commands
                                      "-Increased the cooldown of >fortune to 12 HOURS due to spam/server load and also making it realistic in terms of the context of the fortune \n" +
                                      "-FOR ADMINS - Changed the >status command so that it can accept text with spaces \n" +
                                      "-Scrapped the >autolottery command due to little interest")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "***THIS DISCORD BOT NOW SUPPORTS SLASH COMMANDS!!!*** \n\n" +
+                                     "**-Addition of the bot's first ever slash commands /passivecreator & /usepassive** \n\n" +
+                                     "This feature was suggested by Cloud Kazami#0001 with the idea behind concept passive design \n" +
+                                     "This bot takes any passive design you give it and it will generate some stats as to how your unit will perform if it was " +
+                                     "made in real life Dokkan \n" +
+                                     "It is a very useful tool for concept makers and people who just want to experiment with their own ideas for Dokkan Passives \n" +
+                                     "A lot of effort went into this so please try it and enjoy \n\n";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.5.0")
+                    .WithTitle("V1.5.0 Changelog")
+                    .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);
                 return;

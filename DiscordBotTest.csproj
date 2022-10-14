@@ -47,6 +47,9 @@
     <Reference Include="DSharpPlus.Interactivity, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DSharpPlus.Interactivity.4.2.0\lib\netstandard2.0\DSharpPlus.Interactivity.dll</HintPath>
     </Reference>
+    <Reference Include="DSharpPlus.SlashCommands, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\DSharpPlus.SlashCommands.4.2.0\lib\netstandard2.0\DSharpPlus.SlashCommands.dll</HintPath>
+    </Reference>
     <Reference Include="Emzi0767.Common, Version=2.6.2.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\Emzi0767.Common.2.6.2\lib\net45\Emzi0767.Common.dll</HintPath>
     </Reference>
@@ -165,6 +168,7 @@
     <Compile Include="Bot.cs" />
     <Compile Include="Builders\CardGenerator.cs" />
     <Compile Include="Commands\Calculator.cs" />
+    <Compile Include="Commands\DokkanSL.cs" />
     <Compile Include="Commands\FunCommands.cs" />
     <Compile Include="Commands\Games.cs" />
     <Compile Include="Commands\Help.cs" />

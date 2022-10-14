@@ -122,22 +122,22 @@
 		},
 		{
 			"name": "Android 21",
-			"animeName": "DragonBall Z",
+			"animeName": "DragonBall FighterZ",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122370125594784/a21.jpg?width=376&height=669"
 		},
 		{
 			"name": "Caulifla",
-			"animeName": "DragonBall Z",
+			"animeName": "DragonBall Super",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122370435981322/caulifla.png?width=566&height=670"
 		},
 		{
 			"name": "Kale",
-			"animeName": "DragonBall Z",
+			"animeName": "DragonBall Super",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122371052544021/kale.jpg?width=376&height=669"
 		},
 		{
 			"name": "Kefla",
-			"animeName": "DragonBall Z",
+			"animeName": "DragonBall Super",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122371371307088/kefla.jpg?width=502&height=669"
 		},
 		{
@@ -147,7 +147,7 @@
 		},
 		{
 			"name": "Yurin",
-			"animeName": "DragonBall Z",
+			"animeName": "DragonBall Super",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1020122372038213703/yuin.jpg?width=376&height=669"
 		},
 		{
@@ -157,12 +157,12 @@
 		},
 		{
 			"name": "Towa",
-			"animeName": "DragonBall Z",
+			"animeName": "DragonBall Heroes",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021134845386162176/Towa.png?width=348&height=676"
 		},
 		{
 			"name": "Supreme Kai of Time",
-			"animeName": "DragonBall Z",
+			"animeName": "DragonBall Heroes",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1021134844647968768/supremekaioftime.png?width=225&height=300"
 		},
 
@@ -441,6 +441,7 @@
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024735489556750436/yor.jpg?width=541&height=676"
 		},
 
+
 		{
 			"name": "Nino Nakano",
 			"animeName": "The Quintessential Quintuplets",
@@ -590,23 +591,30 @@
 
 		{
 			"name": "Nyaruko",
-			"animeName": "Haiyore Nyaruko San",
+			"animeName": "Haiyore: Nyaruko San",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027931135893844009/Nyaruko.jpg?width=450&height=630"
 		},
 		{
 			"name": "Kuko",
-			"animeName": "Haiyore Nyaruko San",
+			"animeName": "Haiyore: Nyaruko San",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027931135369547826/kuko.jpg?width=478&height=676"
 		},
 		{
 			"name": "Yoriko Yasaka",
-			"animeName": "Haiyore Nyaruko San",
+			"animeName": "Haiyore: Nyaruko San",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027931136174858240/yoriko.jpg?width=450&height=254"
 		},
 		{
 			"name": "Tamao Kurei",
-			"animeName": "Haiyore Nyaruko San",
+			"animeName": "Haiyore: Nyaruko San",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1027931135612817468/kurei.jpg?width=454&height=676"
+		},
+
+
+		{
+			"name": "",
+			"animeName": "",
+			"imageURL": ""
 		}
 	]
 

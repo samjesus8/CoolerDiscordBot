@@ -66,7 +66,9 @@ namespace DiscordBotTest.Commands
                                     ">choosetone -> An extension of the >watchyourtone command requested by Coola#5784. \n" +
                                     "***IMPORTANT: The syntax for this command is '>choosetone @User1 @User2 @User3.....' (You can have as many users as you want)*** \n\n" +
                                     "This command takes your users that you passed in and itll choose one of them at random. The bot will tell that chosen person to watch their tone \n\n" +
-                                    ">fortune -> See if your fate is lucky or will it be hell")
+                                    ">fortune -> See if your fate is lucky or will it be hell \n\n" +
+                                    ">supernova -> Ask the bot a question and it will answer it for you \n" +
+                                    "The Syntax for this command is '>supernova YourQuestion'")
                     );
                 await ctx.Channel.SendMessageAsync(funFunctionMessage);
             }

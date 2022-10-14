@@ -27,7 +27,7 @@ namespace DiscordBotTest.Commands
                 var notAllowed = new DiscordMessageBuilder()
                     .AddEmbed(
                     new DiscordEmbedBuilder()
-                    .WithTitle("You are not @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825 or @Delet#9054 so get denied m8")
+                    .WithTitle("Access Denied")
                     .WithDescription("If you want access to this command ask @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825")
                     );
                 await ctx.Channel.SendMessageAsync(notAllowed);

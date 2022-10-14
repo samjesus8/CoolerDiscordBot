@@ -1,16 +1,15 @@
 ﻿using DiscordBotTest.Commands;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
-using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.CommandsNext.Exceptions;
 using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
+using DSharpPlus.SlashCommands;
 using Newtonsoft.Json;
 using System;
 using System.IO;
-using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -53,12 +52,15 @@ namespace DiscordBotTest
                 EnableDefaultHelp = false,
             };
 
+            var slashCommandsConfig = Client.UseSlashCommands();
+
             Commands = Client.UseCommandsNext(commandsConfig);
             Commands.RegisterCommands<Help>();
             Commands.RegisterCommands<Calculator>();
             Commands.RegisterCommands<FunCommands>();
             Commands.RegisterCommands<Games>();
             Commands.RegisterCommands<Tools>();
+            slashCommandsConfig.RegisterCommands<DokkanSL>();
             Commands.CommandErrored += OnCommandError;
 
             await Client.ConnectAsync();

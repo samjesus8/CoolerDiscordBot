@@ -338,5 +338,11 @@ namespace DiscordBotTest.Commands
                 );
             await ctx.Channel.SendMessageAsync(answer);
         }
+
+        [Command("dksummon")]
+        public async Task DokkanSummon(CommandContext ctx) 
+        {
+            await ctx.Channel.SendMessageAsync("Starting...");
+        }
     }
 }

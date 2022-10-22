@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DSharpPlus;
 using DSharpPlus.Entities;
+using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 
 namespace DiscordBotTest.Commands
@@ -24,6 +25,11 @@ namespace DiscordBotTest.Commands
                                                                     [Option("Support", "Total % Value of Support Buffs from Allies")] long SupportAllies,
                                                                     [Option("Links", "MAX 7 LINKS AND MUST BE SEPARATED BY 1 SPACE")] string Links) 
         {
+            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
+
+            DiscordEmoji[] emojis = { DiscordEmoji.FromName(ctx.Client, ":thumbsup:", true), DiscordEmoji.FromName(ctx.Client, ":thumbsdown:", true) };
+            var interactivity = ctx.Client.GetInteractivity();
+
             var linksFail = new DiscordInteractionResponseBuilder()
                 .AddEmbed(new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Red)
@@ -38,8 +44,12 @@ namespace DiscordBotTest.Commands
             {
                 await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, linksFail);
             }
+            else if (Links == "null") 
+            {
+                Links = "No Links Provided by the user";
+            }
 
-            var passiveMessage = new DiscordInteractionResponseBuilder()
+            var passiveMessage = new DiscordMessageBuilder()
                 .AddEmbed(new DiscordEmbedBuilder()
                 .WithColor(DiscordColor.Azure)
                 .WithTitle("***Passive Generator by 𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
@@ -63,7 +73,46 @@ namespace DiscordBotTest.Commands
                                     "Links: " + Links + "\n\n" +
                                     "**PLEASE CONFIRM YOU WANT TO CREATE A UNIT WITH THESE DETAILS**"));
 
-            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, passiveMessage);                                                                                
+            var confirmation = await ctx.Channel.SendMessageAsync(passiveMessage);
+
+            foreach (var emoji in emojis) 
+            {
+                await confirmation.CreateReactionAsync(emoji);
+            }
+
+            var timeout = TimeSpan.FromMinutes(2);
+            var confirm = await confirmation.WaitForReactionAsync(ctx.User, timeout);
+
+            if (ctx.User == confirm.Result.User && confirm.Result.Emoji == emojis[0])
+            {
+                await ctx.Channel.SendMessageAsync("Storing");
+                //Store the information here
+            }
+            else if (ctx.User == confirm.Result.User && confirm.Result.Emoji == emojis[1]) 
+            {
+                var commandCancelled = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+
+                    .WithColor(DiscordColor.Red)
+                    .WithTitle("Command has been cancelled")
+                    .WithDescription("Please use the command again if you want to rewrite your entry")
+                    );
+
+                await ctx.Channel.SendMessageAsync(commandCancelled);
+            }
+            else
+            {
+                var wrongUserMessage = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+
+                    .WithColor(DiscordColor.Green)
+                    .WithTitle("Sorry, only " + ctx.User.Username + " can do this")
+                    .WithDescription("Other users cannot use an instance of a command that someone else is using \n" +
+                                        "Please call the command yourself to use the functions")
+                    );
+
+                await ctx.Channel.SendMessageAsync(wrongUserMessage);
+            }
         }
 
         [SlashCommand("usepassive", "Use your passive and generate some stats (Must be the SAME NAME)")]

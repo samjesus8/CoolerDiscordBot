@@ -198,7 +198,7 @@
 		},
 		{
 			"name": "Endless Adventure Goku (GT) & Pan (GT) & Trunks (GT)",
-			"passive": "ATK & DEF +77% when performing a Super Attack, plus an additional ATK +77% if it is an Ultra Super Attack; Ki +1 per 'Dragon Ball Seekers' Category ally on the team",
+			"passive": "DEF +77%; ATK & DEF +77% when performing a Super Attack, plus an additional ATK +77% if it is an Ultra Super Attack; Ki +1 and ATK +7% per 'Dragon Ball Seekers' or 'GT Heroes' Category ally on the team (depending on which Category has more members); plus an additional Ki +3 and high chance of performing a critical hit when all allies attacking in the same turn are 'Dragon Ball Seekers' or 'GT Heroes' Category characters",
 			"imageURL": "https://media.discordapp.net/attachments/1020832099068018748/1021515268507320401/LR_INT_GT_Trio.png?width=302&height=676"
 		},
 		{
@@ -660,7 +660,7 @@
 		},
 		{
 			"name": "All-or-nothing Punch: Goku (Youth)",
-			"passive": "ATK & DEF +77%; plus an additional ATK boost by up to 59% (the more HP remaining, the greater the ATK boost) and an additional DEF boost by up to 59% (the less HP remaining, the greater the DEF boost); Ki +1 and ATK & DEF +10% at start of each turn (ATK & DEF up to +59%); performs a critical hit when HP is 59% or less (once only)",
+			"passive": "ATK & DEF +159%; plus an additional ATK boost by up to 59% (the more HP remaining, the greater the ATK boost) and an additional DEF boost by up to 159% (the less HP remaining, the greater the DEF boost); Ki +2 and ATK & DEF +20% at start of each turn (ATK & DEF up to +59%); launches an additional attack that has a high chance of becoming a Super Attack when HP is 59% or more; performs a critical hit when HP is 59% or less; plus an additional ATK +59% when attacking and stuns the attacked enemy (once only) when HP is 59% or less when attacking",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022538080214843513/INT_Kid_Goku.png?width=507&height=676"
 		},
 		{
@@ -2133,7 +2133,7 @@
 		{
 			"name": "Joyful Athleticism: Mr. Buu",
 			"passive": "ATK & DEF +80%; changes INT Ki Spheres and Ki Spheres of another Type to Rainbow Ki Spheres; ATK & DEF +20% and recovers 15000 HP per Rainbow Ki Sphere obtained",
-			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1024705886918299728/STR_GohanFrieza.png?width=507&height=676"
+			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1033506292054106132/TEQ_MR_BUU.png?width=507&height=676"
 		},
 		{
 			"name": "Joint Struggle for Survival: Golden Frieza (Angel) & Ultimate Gohan",
@@ -3872,6 +3872,12 @@
 			"name": "Zealous Offensive: Super Saiyan 3 Goku (GT)",
 			"passive": "ATK & DEF +90% at start of turn",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1028017983118921838/AGL_SSJ3_Goku_GT.png?width=507&height=676"
+		},
+
+		{
+			"name": "Vicious Power Fighter: Bido",
+			"passive": "STR and PHY Type ATK +10%",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1030059425077149726/bido.png?width=383&height=511"
 		}
 	]
 }

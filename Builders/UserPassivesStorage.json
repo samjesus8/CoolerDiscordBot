@@ -1,6 +1,18 @@
 ﻿{
   "userPassiveStorage": "Storage for user created passives using /passivecreator",
   "members": [
-
+	  {
+		  "userName": "User",
+		  "passiveName": "TEQ Trunks",
+		  "leaderName": "TestLeader",
+		  "unitHP": 17350,
+		  "unitATK": 17000,
+		  "unitDEF": 12000,
+		  "leaderValue": 200,
+		  "passiveATK": 200,
+		  "passiveDEF": 200,
+		  "supportBuff": 30,
+		  "links": "null",
+	  }
   ]
 }

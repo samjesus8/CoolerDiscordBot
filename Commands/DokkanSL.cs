@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DiscordBotTest.Builders;
 using DSharpPlus;
 using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
+using System;
+using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
 {
@@ -67,10 +65,10 @@ namespace DiscordBotTest.Commands
                                     "**Passive Details** \n\n" +
                                     "TOTAL ATK Buff (%): " + ATKPassive + "\n" +
                                     "TOTAL DEF Buff (%): " + DEFPassive + "\n" +
-                                    "TOTAL DMG REDUCTION (%): " + DMGReductionValue + "\n\n" +
+                                    "TOTAL DMG REDUCTION (%): " + "CURRENTLY UNDER DEVELOPMENT" + "\n\n" +
                                     "**Optional Buffs** \n\n" +
                                     "Support Buffs from allies (%): " + SupportAllies + "\n" +
-                                    "Links: " + Links + "\n\n" +
+                                    "Links: " + "CURRENTLY UNDER DEVELOPMENT" + "\n\n" +
                                     "**PLEASE CONFIRM YOU WANT TO CREATE A UNIT WITH THESE DETAILS**"));
 
             var confirmation = await ctx.Channel.SendMessageAsync(passiveMessage);
@@ -86,7 +84,9 @@ namespace DiscordBotTest.Commands
             if (ctx.User == confirm.Result.User && confirm.Result.Emoji == emojis[0])
             {
                 await ctx.Channel.SendMessageAsync("Storing");
-                //Store the information here
+                var storage = new DokkanUserPassiveBuilder(ctx.User.Username, PassiveName, (int)BaseHPValue, (int)BaseATKValue, (int)BaseDEFValue, LeaderSkillName, (int)LeaderSkillValue, (int)ATKPassive, (int)DEFPassive, (int)SupportAllies, Links);
+                storage.StoreUserPassives(storage);
+                
             }
             else if (ctx.User == confirm.Result.User && confirm.Result.Emoji == emojis[1]) 
             {
@@ -118,7 +118,26 @@ namespace DiscordBotTest.Commands
         [SlashCommand("usepassive", "Use your passive and generate some stats (Must be the SAME NAME)")]
         public async Task UsePassive(InteractionContext ctx, [Option("PassiveName", "Your PassiveName that you used in /passivecreate")] string PassiveName) 
         {
-            await ctx.Channel.SendMessageAsync("poo");
+            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
+
+            var info = new DokkanUserPassiveBuilder(PassiveName); //Getting passive from provided name
+
+            var calculator = new DokkanPassiveCalculator(info.UnitHP, info.UnitATK, info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveATK, info.UnitPassiveDEF);
+
+            var ATK = calculator.GetATK(info.UnitATK, info.UnitLeaderSkill, info.UnitPassiveATK);
+            var DEF = calculator.GetDEF(info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveDEF);
+
+            var message = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithTitle("Your Stats for " + info.PassiveName)
+                .WithDescription("**Main Stats** \n\n" +
+                                 "ATK Stat When supering: " + ATK + "\n" +
+                                 "DEF Pre Super: " + DEF.Item1 + "\n\n" +
+                                 DEF.Item2)
+                );
+
+            await ctx.Channel.SendMessageAsync(message);
         }
 
         [SlashCommand("passivelist", "View a list of your passives that you created")]

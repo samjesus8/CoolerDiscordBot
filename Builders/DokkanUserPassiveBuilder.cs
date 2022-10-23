@@ -1,12 +1,16 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace DiscordBotTest.Builders
 {
     internal class DokkanUserPassiveBuilder
     {
+        public int Count = 0;
+
         public string UserName { get; set; }
         public string PassiveName { get; set; }
 
@@ -43,6 +47,8 @@ namespace DiscordBotTest.Builders
             ReadJSONFile(name);
         }
 
+        public DokkanUserPassiveBuilder() { }
+
         private void ReadJSONFile(string nameSearch) 
         {
             List<object> Passives = new List<object>();
@@ -55,20 +61,18 @@ namespace DiscordBotTest.Builders
 
                     Passives.Add(jsonObject);
 
-                    var random = new Random();
-                    var data = jsonObject.members[random.Next(0, jsonObject.members.Length)];
-
-                    this.UserName = data.userName;
-                    this.PassiveName = data.passiveName;
-                    this.UnitHP = data.unitHP;
-                    this.UnitATK = data.unitATK;
-                    this.UnitDEF = data.unitDEF;
-                    this.UnitLeaderName = data.leaderName;
-                    this.UnitLeaderSkill = data.leaderValue;
-                    this.UnitPassiveATK = data.passiveATK;
-                    this.UnitPassiveDEF = data.passiveDEF;
-                    this.Support = data.supportBuff;
-                    this.Links = data.links;
+                    for (int i = 0; i < jsonObject.members.Length; i++)
+                    {
+                        if (i < jsonObject.members.Length)
+                        {
+                            var data = jsonObject.members[i];
+                            Passives.Add(data);
+                        }
+                        else
+                        {
+                            Console.Write("Error");
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -77,19 +81,25 @@ namespace DiscordBotTest.Builders
             }
         }
 
-        public void StoreUserPassives(DokkanUserPassiveBuilder classObj) 
+        public void StoreUserPassives(DokkanUserPassiveBuilder classObj)
         {
-            using (StreamWriter sw = new StreamWriter("UserPassivesStorage.json", true))
+            try
             {
-                var members = new List<DokkanUserPassiveBuilder> { classObj };
-                var data = new Members
-                {
-                    passiveName = classObj.PassiveName
-                };
+                var path = @"D:\Visual Studio Projects\DiscordBotTest\bin\Debug\UserPassivesStorage.json";
+                var json = File.ReadAllText(path);
 
-                string json = JsonConvert.SerializeObject(data, Formatting.Indented);
-                sw.WriteLine(json);
-                sw.Close();
+                var jsonObj = JObject.Parse(json);
+
+                var members = jsonObj["members"].ToObject<List<DokkanUserPassiveBuilder>>();
+                members.Add(classObj);
+
+                jsonObj["members"] = JArray.FromObject(members);
+
+                File.WriteAllText(path, jsonObj.ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
             }
         }
     }
@@ -102,16 +112,16 @@ namespace DiscordBotTest.Builders
 
     class Members 
     {
-        public string userName { get; set; }
-        public string passiveName { get; set; }
-        public string leaderName { get; set; }
-        public int unitHP { get; set; }
-        public int unitATK { get; set; }
-        public int unitDEF { get; set; }
-        public int leaderValue { get; set; }
-        public int passiveATK { get; set; }
-        public int passiveDEF { get; set; }
-        public int supportBuff { get; set; }
-        public string links { get; set; }
+        public string UserName { get; set; }
+        public string PassiveName { get; set; }
+        public string UnitLeaderName { get; set; }
+        public int UnitHP { get; set; }
+        public int UnitATK { get; set; }
+        public int UnitDEF { get; set; }
+        public int UnitLeaderSkill { get; set; }
+        public int UnitPassiveATK { get; set; }
+        public int UnitPassiveDEF { get; set; }
+        public int Support { get; set; }
+        public string Links { get; set; }
     }
 }

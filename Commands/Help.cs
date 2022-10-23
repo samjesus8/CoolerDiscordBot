@@ -419,15 +419,11 @@ namespace DiscordBotTest.Commands
                                      "made in real life Dokkan \n" +
                                      "It is a very useful tool for concept makers and people who just want to experiment with their own ideas for Dokkan Passives \n" +
                                      "A lot of effort went into this so please try it and enjoy. More info about the commands can be found by doing **'>help DokkanSlashCommands'** \n\n" +
-                                     "**Addition of a new command '>dksummon':** \n\n" +
-                                     "This is a Summoning Simulator for Dokkan, all you need to do is call the command and the bot will perform a 50 stone multi for you \n" +
-                                     "Good Luck with this command!! \n\n" +
                                      "**-Updated the >passive command information:** \n\n" +
                                      "Updated INT GT Trio's passive to their Post-EZA passive \n" +
                                      "Updated INT Kid Goku's passive to his Post-EZA passive \n" +
                                      "Added R Bido to the list \n" +
                                      "Changed the photo of 'Joyful Athleticism: Mr. Buu' to the correct photo for display \n" +
-                                     "Updated all Baba Shop TURs to their Post-EZA passive \n\n" +
                                      "**-Added characters from the following shows into the >mid command:** \n\n";
 
                 var message = new DiscordMessageBuilder()

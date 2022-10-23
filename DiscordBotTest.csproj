@@ -191,6 +191,7 @@
     <None Include="Builders\UserPassivesStorage.json" />
     <None Include="config.json" />
     <None Include="Builders\LRPassives.json" />
+    <None Include="InfoFiles\PassiveSlashCommands.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

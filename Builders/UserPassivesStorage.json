@@ -1,18 +1,31 @@
-﻿{
+{
   "userPassiveStorage": "Storage for user created passives using /passivecreator",
   "members": [
-	  {
-		  "userName": "User",
-		  "passiveName": "TEQ Trunks",
-		  "leaderName": "TestLeader",
-		  "unitHP": 17350,
-		  "unitATK": 17000,
-		  "unitDEF": 12000,
-		  "leaderValue": 200,
-		  "passiveATK": 200,
-		  "passiveDEF": 200,
-		  "supportBuff": 30,
-		  "links": "null",
-	  }
+    {
+      "UserName": "𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠",
+      "PassiveName": "TEQ Gogeta",
+      "UnitHP": 19199,
+      "UnitATK": 20744,
+      "UnitDEF": 10909,
+      "UnitLeaderName": "Fusion",
+      "UnitLeaderSkill": 170,
+      "UnitPassiveATK": 200,
+      "UnitPassiveDEF": 200,
+      "Support": 0,
+      "Links": "No Links Provided by the user"
+    },
+    {
+      "UserName": "𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠",
+      "PassiveName": "AGL Gogeta",
+      "UnitHP": 15745,
+      "UnitATK": 16492,
+      "UnitDEF": 11088,
+      "UnitLeaderName": "Movie Heroes",
+      "UnitLeaderSkill": 170,
+      "UnitPassiveATK": 100,
+      "UnitPassiveDEF": 100,
+      "Support": 0,
+      "Links": "No Links Provided by the user"
+    }
   ]
 }

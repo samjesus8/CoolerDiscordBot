@@ -4,6 +4,7 @@ using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -83,7 +84,16 @@ namespace DiscordBotTest.Commands
 
             if (ctx.User == confirm.Result.User && confirm.Result.Emoji == emojis[0])
             {
-                await ctx.Channel.SendMessageAsync("Storing");
+                var storingMessage = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+
+                    .WithColor(DiscordColor.Green)
+                    .WithTitle("Storing your passive")
+                    .WithDescription("You can now use '/usepassive " + PassiveName + " to test your passive \n" +
+                                     "Or you can view the list of passives you have created by using '/passivelist' ")
+                    );
+                await ctx.Channel.SendMessageAsync(storingMessage);
+
                 var storage = new DokkanUserPassiveBuilder(ctx.User.Username, PassiveName, (int)BaseHPValue, (int)BaseATKValue, (int)BaseDEFValue, LeaderSkillName, (int)LeaderSkillValue, (int)ATKPassive, (int)DEFPassive, (int)SupportAllies, Links);
                 storage.StoreUserPassives(storage);
                 
@@ -118,26 +128,43 @@ namespace DiscordBotTest.Commands
         [SlashCommand("usepassive", "Use your passive and generate some stats (Must be the SAME NAME)")]
         public async Task UsePassive(InteractionContext ctx, [Option("PassiveName", "Your PassiveName that you used in /passivecreate")] string PassiveName) 
         {
-            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
-
             var info = new DokkanUserPassiveBuilder(PassiveName); //Getting passive from provided name
+            try
+            {
+                await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
 
-            var calculator = new DokkanPassiveCalculator(info.UnitHP, info.UnitATK, info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveATK, info.UnitPassiveDEF);
+                var calculator = new DokkanPassiveCalculator(info.UnitHP, info.UnitATK, info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveATK, info.UnitPassiveDEF);
 
-            var ATK = calculator.GetATK(info.UnitATK, info.UnitLeaderSkill, info.UnitPassiveATK);
-            var DEF = calculator.GetDEF(info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveDEF);
+                var ATK = calculator.GetATK(info.UnitATK, info.UnitLeaderSkill, info.UnitPassiveATK);
+                var DEF = calculator.GetDEF(info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveDEF);
 
-            var message = new DiscordMessageBuilder()
-                .AddEmbed(new DiscordEmbedBuilder()
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
 
-                .WithTitle("Your Stats for " + info.PassiveName)
-                .WithDescription("**Main Stats** \n\n" +
-                                 "ATK Stat When supering: " + ATK + "\n" +
-                                 "DEF Pre Super: " + DEF.Item1 + "\n\n" +
-                                 DEF.Item2)
-                );
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("Your Stats for " + info.PassiveName)
+                    .WithDescription("**Main Stats** \n\n" +
+                                     "ATK Stat When supering: " + ATK + "\n" +
+                                     "DEF Pre Super: " + DEF.Item1 + "\n\n" +
+                                     DEF.Item2)
+                    );
 
-            await ctx.Channel.SendMessageAsync(message);
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            catch (Exception ex)
+            {
+                var errorMessage = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+
+                    .WithColor(DiscordColor.Red)
+                    .WithTitle("Error")
+                    .WithDescription(info.Error + "\n\n" +
+                                     "Error in Code: \n\n" + ex.Message)
+                    );
+
+                await ctx.Channel.SendMessageAsync(errorMessage);
+            }
+
         }
 
         [SlashCommand("passivelist", "View a list of your passives that you created")]
@@ -145,26 +172,57 @@ namespace DiscordBotTest.Commands
                                                                   [Option("PassiveName", "Name of Passive to view or type 'null' for the list")] string PassiveName) 
         {
             string discordUserName = user.Username.ToString();
+            var check = new DokkanUserPassiveBuilder(discordUserName, PassiveName);
+
+            string[] tempList = new string[check.membersJSONList.Count];
+            string output;
 
             if (PassiveName == "null")
             {
+                for (int i = 0; i < check.membersJSONList.Count; i++) 
+                {
+                    tempList[i] = check.membersJSONList[i].PassiveName.ToString();
+                }
+                output = string.Join("\n", tempList);
+
                 var userPassiveListMSG = new DiscordInteractionResponseBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
 
                     .WithColor(DiscordColor.Azure)
-                    .WithTitle("Passive List for User " + discordUserName)
+                    .WithTitle("Passive List for User " + discordUserName + "\n\n" +
+                               output)
                     );
 
                 await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, userPassiveListMSG);
             }
             else 
             {
+                check.GetSpecificPassive(PassiveName);
+
                 var passiveDetailsMSG = new DiscordInteractionResponseBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
 
                     .WithColor(DiscordColor.Azure)
                     .WithAuthor("You are viewing a passive that was made by " + discordUserName)
                     .WithTitle("Passive Details for " + "**" + PassiveName + "**")
+                    .WithDescription("**GENERAL DETAILS** \n\n" +
+                                    "Passive Name: " + check.PassiveName + "\n\n" +
+                                    "Passive Author: " + check.UserName + "\n\n" +
+                                    "**Base Card Values** \n\n" +
+                                    "Base HP: " + check.UnitHP + "\n" +
+                                    "Base ATK: " + check.UnitATK + "\n" +
+                                    "Base DEF: " + check.UnitDEF + "\n\n" +
+                                    "**Leader Skill** \n\n" +
+                                    "Leader Skill Name: " + check.UnitLeaderName + "\n" +
+                                    "Leader Skill Buff (%): " + check.UnitLeaderSkill + "\n\n" +
+                                    "**Passive Details** \n\n" +
+                                    "TOTAL ATK Buff (%): " + check.UnitPassiveATK + "\n" +
+                                    "TOTAL DEF Buff (%): " + check.UnitPassiveDEF + "\n" +
+                                    "TOTAL DMG REDUCTION (%): " + "CURRENTLY UNDER DEVELOPMENT" + "\n\n" +
+                                    "**Optional Buffs** \n\n" +
+                                    "Support Buffs from allies (%): " + check.Support + "\n" +
+                                    "Links: " + "CURRENTLY UNDER DEVELOPMENT")
+
                     );
 
                 await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, passiveDetailsMSG);

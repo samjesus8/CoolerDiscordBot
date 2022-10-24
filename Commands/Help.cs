@@ -40,12 +40,12 @@ namespace DiscordBotTest.Commands
                     .AddEmbed(
                     new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithTitle("Basic Calculator Functions | **Imagine Cooler trying to do maths seriously!!!**")
-                    .WithDescription(">add -> Add 2 numbers together | E.g: >add 2 2, returns 4 \n\n " +
-                                    ">subtract -> Subtract 2 numbers together | E.g: >subtract 4 3, returns 1 \n\n " +
-                                    ">multiply -> Multiply 2 numbers together | E.g: >multiply 6 4, returns 24 \n\n " +
-                                    ">divide -> Divide 2 numbers together | E.g: >divide 5 2, returns 2.5 \n\n " +
-                                    ">circlearea -> Gives you the area of a circle with any radius | E.g: >circlearea 2, returns 12.57")
+                    .WithTitle("**Basic Calculator Functions | Imagine Cooler trying to do maths seriously!!!**")
+                    .WithDescription("**>add** -> Add 2 numbers together | E.g: >add 2 2, returns 4 \n\n " +
+                                    "**>subtract** -> Subtract 2 numbers together | E.g: >subtract 4 3, returns 1 \n\n " +
+                                    "**>multiply** -> Multiply 2 numbers together | E.g: >multiply 6 4, returns 24 \n\n " +
+                                    "**>divide** -> Divide 2 numbers together | E.g: >divide 5 2, returns 2.5 \n\n " +
+                                    "**>circlearea** -> Gives you the area of a circle with any radius | E.g: >circlearea 2, returns 12.57")
                     );
                 await ctx.Channel.SendMessageAsync(basicFunctionMessage);
             }
@@ -56,18 +56,18 @@ namespace DiscordBotTest.Commands
                     .AddEmbed(
                     new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithTitle("Fun Commands")
-                    .WithDescription(">ducky -> Tell Ducky to shut the fuck up \n\n" +
-                                    ">tory -> Slander the torys \n\n" +
-                                    ">delet -> Prove that everything is mid with this one command \n\n " +
-                                    ">dialogue -> The bot will send you a DM, type anything random to send it back to the channel where you used the command \n\n" +
-                                    ">watchyourtone -> Tell someone to watch their tone \n **Syntax: >watchyourtone @User OR RandomText** \n" +
+                    .WithTitle("**Fun Commands**")
+                    .WithDescription("**>ducky** -> Tell Ducky to shut the fuck up \n\n" +
+                                    "**>tory** -> Slander the torys \n\n" +
+                                    "**>delet** -> Prove that everything is mid with this one command \n\n " +
+                                    "**>dialogue** -> The bot will send you a DM, type anything random to send it back to the channel where you used the command \n\n" +
+                                    "**>watchyourtone** -> Tell someone to watch their tone \n **Syntax: >watchyourtone @User OR RandomText** \n" +
                                     "You can ping someone or use plaintext in the command \n\n" +
-                                    ">choosetone -> An extension of the >watchyourtone command requested by Coola#5784. \n" +
+                                    "**>choosetone** -> An extension of the >watchyourtone command requested by Coola#5784. \n" +
                                     "***IMPORTANT: The syntax for this command is '>choosetone @User1 @User2 @User3.....' (You can have as many users as you want)*** \n\n" +
                                     "This command takes your users that you passed in and itll choose one of them at random. The bot will tell that chosen person to watch their tone \n\n" +
-                                    ">fortune -> See if your fate is lucky or will it be hell \n\n" +
-                                    ">supernova -> Ask the bot a question and it will answer it for you \n" +
+                                    "**>fortune** -> See if your fate is lucky or will it be hell \n\n" +
+                                    "**>supernova** -> Ask the bot a question and it will answer it for you \n" +
                                     "The Syntax for this command is '>supernova YourQuestion'")
                     );
                 await ctx.Channel.SendMessageAsync(funFunctionMessage);
@@ -79,14 +79,14 @@ namespace DiscordBotTest.Commands
                     .AddEmbed(
                     new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithTitle("Game Commands")
-                    .WithDescription(">cardgame -> A simple card game. If you draw higher than the bot, you win the game \n\n " +
-                                    ">lottery -> Play the lottery, pick 5 numbers from 1-100 and test your luck \n" +
+                    .WithTitle("**Game Commands**")
+                    .WithDescription("**>cardgame** -> A simple card game. If you draw higher than the bot, you win the game \n\n " +
+                                    "**>lottery** -> Play the lottery, pick 5 numbers from 1-100 and test your luck \n" +
                                     "Syntax: >lottery num1 num2 num3 num4 num5 \n " +
                                     "Do >lottery on its own to view the instructions \n\n" +
-                                    ">mid -> Play a game of Mid or Not Mid. A girl will show up on the screen \n" +
+                                    "**>mid** -> Play a game of Mid or Not Mid. A girl will show up on the screen \n" +
                                     "Server Members can vote if they think the girl is mid or not mid. After the time period, the most votes wins that round \n\n " +
-                                    ">passive -> Play a game of guess the Passive. A Dokkan Passive skill will be shown on screen. If you guess who the unit is correctly you win")
+                                    "**>passive** -> Play a game of guess the Passive. A Dokkan Passive skill will be shown on screen. If you guess who the unit is correctly you win")
                     );
                 await ctx.Channel.SendMessageAsync(gamesFunctionMessage);
             }
@@ -97,16 +97,38 @@ namespace DiscordBotTest.Commands
                     .AddEmbed(
                     new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithTitle("Tools Commands")
-                    .WithDescription(">timestamp -> After using this command, the next message you send the bot will return the exact time and date you sent it \n\n " +
-                    ">status -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text \n\n " +
-                    ">invite -> Generates an invite link for the bot, use it to add it to other servers of your choice \n\n" +
-                    ">server -> Generated an invite link to join the Official Discord server for this bot \n\n" +
-                    ">changelog -> View the bot changelog. Shows what changed in every update \n\n" +
+                    .WithTitle("**Tools Commands**")
+                    .WithDescription("**>timestamp** -> After using this command, the next message you send the bot will return the exact time and date you sent it \n\n " +
+                    "**>status** -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text \n\n " +
+                    "**>invite** -> Generates an invite link for the bot, use it to add it to other servers of your choice \n\n" +
+                    "**>server** -> Generated an invite link to join the Official Discord server for this bot \n\n" +
+                    "**>changelog** -> View the bot changelog. Shows what changed in every update \n\n" +
                     "Use >changelog and type in a version to view its specific changes like ***'>changelog 1.1'*** \n" +
                     "Type in ***>changelog latest'*** to view the changelog of the latest version")
                     );
                 await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
+            }
+
+            if (helpType == "DokkanSlashCommands" || helpType == "dokkanslashcommands" || helpType == "dokkanpassive") 
+            {
+                string description = "**You can also click on the title to view the 'PassiveSlashCommands.md' file which contains similar information** \n\n" +
+                                     "**/passivecreate** -> This command allows a user to create their own passive. You have to fill out each parameter that it asks you to \n" +
+                                     "Once you press enter you will recieve a confirmation message with your details and will be asked if all of it is correct and there are no issues. You will have to react" +
+                                     "with a thumbs up or thumbs down if you want to save or not \n\n" +
+                                     "**/usepassive** -> This command allows you to use your passive and generate some stats. Think of it as a Dokkan simulator where you can use your unit and see how hard it will hit \n" +
+                                     "The bot will generate an ATK stat when supering and some other stats such as defense, or ATK with support, links, different leaders and many other kinds of buffs \n\n" +
+                                     "**/passivelist** -> This command allows you to view a list of passives for any user including yourself which is done by typing 'null' into PassiveCreate to get a list of passive names. \n " +
+                                     "Not only this, you can also view details of a specific passive by specfying the passive name";
+
+                var slashFunctionMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("**Dokkan Passive Generator - Slash Commands**")
+                    .WithDescription(description)
+                    .WithUrl("https://github.com/samjesus8/CoolerDiscordBot/blob/master/InfoFiles/PassiveSlashCommands.md")
+                    );
+                await ctx.Channel.SendMessageAsync(slashFunctionMessage);
             }
         }
 
@@ -423,8 +445,7 @@ namespace DiscordBotTest.Commands
                                      "Updated INT GT Trio's passive to their Post-EZA passive \n" +
                                      "Updated INT Kid Goku's passive to his Post-EZA passive \n" +
                                      "Added R Bido to the list \n" +
-                                     "Changed the photo of 'Joyful Athleticism: Mr. Buu' to the correct photo for display \n" +
-                                     "**-Added characters from the following shows into the >mid command:** \n\n";
+                                     "Changed the photo of 'Joyful Athleticism: Mr. Buu' to the correct photo for display";
 
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()

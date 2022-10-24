@@ -13,22 +13,29 @@ This is Step 1 into using the command. As you start writing the command, Discord
 > **Command Parameters**
 
 PassiveName - Give your Passive a name, it can be anything you want
+
 HP - The base HP value of your card
+
 ATK - The base ATK of your card
+
 DEF - The base DEF of your card
 
 Leader Skill Name - Give your leader skill a name, this can be anything you want. It dosent have to be one from Dokkan like Pure Saiyans
+
 Leader Skill Value - This has to be a % value, most popular ones are 150, 170, 200 (DO NOT INCLUDE THE %, JUST TYPE IN THE NUMBER)
 
 PassiveATK - This is the TOTAL ATK% buff of your passive so if you have multiple buffs please add them up and put the final value here (DO NOT INCLUDE THE %, JUST THE NUMBER)
+
 PassiveDEF - This is the TOTAL DEF% buff of your passive so if you have multiple buffs please add them up and put the final value here (DO NOT INCLUDE THE %, JUST THE NUMBER)
 
 DMGReduction - This is the % buff of damage reduction your passive includes
+
 Support - This is the total % buff of support from allies
 
 Links - There has to be 7 links separated with ONE SPACE
 
 E.g: Link1 Link2 Link3 Link4 Link5 Link6 Link7
+
 If you dont want to add any links please type in "null"
 
 > **Confirmation**
@@ -47,3 +54,27 @@ The bot will then take your inputs and run it through the maths. It will then ge
 
 ![image](https://user-images.githubusercontent.com/98812930/197412774-6d8db776-b2c5-4bbc-b64a-70083a6cce8c.png)
 
+## Step 3 - "/passivelist"
+
+This is the 3rd addition of the whole Dokkan Passive creator, this final command allows you to view the list of passives that you or another user have created
+
+**The parameters of this command are**
+User - This is the username you are trying to search for
+
+PassiveName - If you just want a list of passives type in 'null'. Else you have to type the name of their passive to view its details
+
+This following input where PassiveName = "null", shows the list of Passives you created
+
+![image](https://user-images.githubusercontent.com/98812930/197633259-fb346456-7186-4d70-94e2-9eb7df5437b4.png)
+
+
+The following input where PassiveName = "YourPassiveName" shows details about the name of the passive you entered
+
+Step 1: 
+
+![image](https://user-images.githubusercontent.com/98812930/197633306-69eddf51-a810-4fb7-8f70-81bcf1b9f57c.png)
+
+
+Step 2: 
+
+![image](https://user-images.githubusercontent.com/98812930/197633614-2aec638a-6fab-4c65-ab3c-e80f29771166.png)

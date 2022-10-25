@@ -114,7 +114,7 @@ namespace DiscordBotTest.Commands
                 string description = "**You can also click on the title to view the 'PassiveSlashCommands.md' file which contains similar information** \n\n" +
                                      "**/passivecreate** -> This command allows a user to create their own passive. You have to fill out each parameter that it asks you to \n" +
                                      "Once you press enter you will recieve a confirmation message with your details and will be asked if all of it is correct and there are no issues. You will have to react" +
-                                     "with a thumbs up or thumbs down if you want to save or not \n\n" +
+                                     " with a thumbs up or thumbs down if you want to save or not \n\n" +
                                      "**/usepassive** -> This command allows you to use your passive and generate some stats. Think of it as a Dokkan simulator where you can use your unit and see how hard it will hit \n" +
                                      "The bot will generate an ATK stat when supering and some other stats such as defense, or ATK with support, links, different leaders and many other kinds of buffs \n\n" +
                                      "**/passivelist** -> This command allows you to view a list of passives for any user including yourself which is done by typing 'null' into PassiveCreate to get a list of passive names. \n " +

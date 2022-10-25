@@ -184,7 +184,7 @@ namespace DiscordBotTest.Builders
         {
             try
             {
-                var path = @"D:\Visual Studio Projects\DiscordBotTest\bin\Debug\UserPassivesStorage.json";
+                var path = @"C:\Users\samue\Documents\Bot\bin\Debug\UserPassivesStorage.json";
                 var json = File.ReadAllText(path);
 
                 var jsonObj = JObject.Parse(json);

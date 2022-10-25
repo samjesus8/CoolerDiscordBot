@@ -175,6 +175,11 @@ namespace DiscordBotTest.Builders
             }
         }
 
+        public void DeleteSpecificPassive(string passiveName) 
+        {
+
+        }
+
         public void StoreUserPassives(DokkanUserPassiveBuilder classObj)
         {
             try

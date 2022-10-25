@@ -445,7 +445,10 @@ namespace DiscordBotTest.Commands
                                      "Updated INT GT Trio's passive to their Post-EZA passive \n" +
                                      "Updated INT Kid Goku's passive to his Post-EZA passive \n" +
                                      "Added R Bido to the list \n" +
-                                     "Changed the photo of 'Joyful Athleticism: Mr. Buu' to the correct photo for display";
+                                     "Changed the photo of 'Joyful Athleticism: Mr. Buu' to the correct photo for display \n\n" +
+                                     "**-Redesigned the whole >fortune command to reduce workload: \n\n" +
+                                     "The command still does the same thing, however all the fortunes have been moved into a class in order to reduce " +
+                                     "workload in the actual command function";
 
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
@@ -466,7 +469,7 @@ namespace DiscordBotTest.Commands
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("Sorry, I didn't recognise that version")
                     .WithDescription("List of versions: \n" +
-                    "1.1/1.2/1.2.1 \n 1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n 1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8 \n" +
+                    "1.1/1.2/1.2.1 \n 1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n 1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8/1.4.9 \n 1.5.0 \n" +
                     "Or >changelog latest for the latest version info")
                     );
                 await ctx.Channel.SendMessageAsync(errorMessage);

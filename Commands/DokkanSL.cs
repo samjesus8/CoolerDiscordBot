@@ -4,7 +4,6 @@ using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 using System;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -39,13 +38,13 @@ namespace DiscordBotTest.Commands
             string user = ctx.User.Username.ToString();
             string[] linksList = Links.Split(' ');
 
-            if (linksList.Length > 7) //Check to see if user has provided exactly 7 Links
+            if (linksList.Length > 7) //Check to see if user has provided at least 7 Links
             {
                 await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, linksFail);
             }
             else if (Links == "null") 
             {
-                Links = "No Links Provided by the user";
+                Links = "No active Links";
             }
 
             var passiveMessage = new DiscordMessageBuilder()
@@ -66,10 +65,10 @@ namespace DiscordBotTest.Commands
                                     "**Passive Details** \n\n" +
                                     "TOTAL ATK Buff (%): " + ATKPassive + "\n" +
                                     "TOTAL DEF Buff (%): " + DEFPassive + "\n" +
-                                    "TOTAL DMG REDUCTION (%): " + "CURRENTLY UNDER DEVELOPMENT" + "\n\n" +
+                                    "TOTAL DMG REDUCTION (%): " + DMGReductionValue + "\n\n" +
                                     "**Optional Buffs** \n\n" +
                                     "Support Buffs from allies (%): " + SupportAllies + "\n" +
-                                    "Links: " + "CURRENTLY UNDER DEVELOPMENT" + "\n\n" +
+                                    "Links: " + Links + "\n\n" +
                                     "**PLEASE CONFIRM YOU WANT TO CREATE A UNIT WITH THESE DETAILS**"));
 
             var confirmation = await ctx.Channel.SendMessageAsync(passiveMessage);
@@ -89,8 +88,8 @@ namespace DiscordBotTest.Commands
 
                     .WithColor(DiscordColor.Green)
                     .WithTitle("Storing your passive")
-                    .WithDescription("You can now use '/usepassive " + PassiveName + " to test your passive \n" +
-                                     "Or you can view the list of passives you have created by using '/passivelist' ")
+                    .WithDescription("You can now use **'/usepassive " + PassiveName + "'** to test your passive \n" +
+                                     "Or you can view the list of passives you have created by using **'/passivelist'** ")
                     );
                 await ctx.Channel.SendMessageAsync(storingMessage);
 
@@ -135,18 +134,15 @@ namespace DiscordBotTest.Commands
 
                 var calculator = new DokkanPassiveCalculator(info.UnitHP, info.UnitATK, info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveATK, info.UnitPassiveDEF);
 
-                var ATK = calculator.GetATK(info.UnitATK, info.UnitLeaderSkill, info.UnitPassiveATK);
-                var DEF = calculator.GetDEF(info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveDEF);
-
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
 
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("Your Stats for " + info.PassiveName)
                     .WithDescription("**Main Stats** \n\n" +
-                                     "ATK Stat When supering: " + ATK + "\n" +
-                                     "DEF Pre Super: " + DEF.Item1 + "\n\n" +
-                                     DEF.Item2)
+                                     "ATK Stat When supering: ***" + calculator.ResultATK.ToString("N0") + "*** \n" +
+                                     "DEF Pre Super: ***" + calculator.ResultDEF.Item1 + "*** \n\n" +
+                                     calculator.ResultDEF.Item2)
                     );
 
                 await ctx.Channel.SendMessageAsync(message);
@@ -164,7 +160,6 @@ namespace DiscordBotTest.Commands
 
                 await ctx.Channel.SendMessageAsync(errorMessage);
             }
-
         }
 
         [SlashCommand("passivelist", "View a list of your passives that you created")]
@@ -221,7 +216,7 @@ namespace DiscordBotTest.Commands
                                     "TOTAL DMG REDUCTION (%): " + "CURRENTLY UNDER DEVELOPMENT" + "\n\n" +
                                     "**Optional Buffs** \n\n" +
                                     "Support Buffs from allies (%): " + check.Support + "\n" +
-                                    "Links: " + "CURRENTLY UNDER DEVELOPMENT")
+                                    "Links: " + check.Links)
 
                     );
 

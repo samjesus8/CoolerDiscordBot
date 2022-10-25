@@ -27,11 +27,12 @@ namespace DiscordBotTest.Builders
 
         //Result Variables
         public long ResultATK { get; set; }
-        public long ResultDEF { get; set; }
+        public (double, string) ResultDEF { get; set; }
 
         public DokkanPassiveCalculator(int hP, int aTK, int dEF, double leaderSkill, double passiveATK, long passiveDEF)
         {
             this.ResultATK = (long)GetATK(aTK, leaderSkill, passiveATK);
+            this.ResultDEF = GetDEF(dEF, leaderSkill, passiveATK);
         }
 
         public double GetATK(double ATK, double Lead, double passiveATK) 
@@ -67,9 +68,9 @@ namespace DiscordBotTest.Builders
             double DEFMassive = resultPreSuper * MassiveDEFRaise;
 
             resultPostSuper = "**DEF Values in Set Conditions** \n\n" +
-                              "Raises DEF for 1 Turn - " + DEFNormal + "\n" +
-                              "Greatly Raises DEF for 1 Turn - " + DEFGreat + "\n" +
-                              "Massively Raises DEF for 1 turn - " + DEFMassive + "\n";
+                              "Raises DEF for 1 Turn - ***" + DEFNormal + "*** \n" +
+                              "Greatly Raises DEF for 1 Turn - ***" + DEFGreat + "*** \n" +
+                              "Massively Raises DEF for 1 turn - ***" + DEFMassive + "*** \n";
 
             return (resultPreSuper, resultPostSuper);
         }

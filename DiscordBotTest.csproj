@@ -167,6 +167,7 @@
   <ItemGroup>
     <Compile Include="Bot.cs" />
     <Compile Include="InternalBuilders\CardGenerator.cs" />
+    <Compile Include="InternalBuilders\DokkanLinks.cs" />
     <Compile Include="InternalBuilders\DokkanPassiveCalculator.cs" />
     <Compile Include="Builders\DokkanUserPassiveBuilder.cs" />
     <Compile Include="InternalBuilders\FortuneStorage.cs" />

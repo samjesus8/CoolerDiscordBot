@@ -418,7 +418,6 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.4.9")
                     .WithTitle("V1.4.9 Changelog")
                     .WithDescription("-Added a new command requested by ***ducky#8786*** with name **>supernova** \n\n" +
                                      "This is similar to the 8-Ball command from Sandra, but better since the responses are relatable \n" +
@@ -432,7 +431,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.5.0" || version == "1.5")
             {
                 string description = "***THIS DISCORD BOT NOW SUPPORTS SLASH COMMANDS!!!*** \n\n" +
                                      "**-Addition of the bot's first ever slash commands /passivecreator, /usepassive AND /passivelist:** \n\n" +
@@ -453,8 +452,36 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.5.0")
                     .WithTitle("V1.5.0 Changelog")
+                    .WithDescription(description)
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "***Discord Passive Generator - Slash Commands*** \n\n" +
+                                     "**-Fixed the formatting of the way numbers are shown when doing /usepassive:** \n" +
+                                     "Instead of 1000000, the number has been formatted to show 1,000,000 \n\n" +
+                                     "**-The Damage Reduction & Support parameters now work: ** \n" +
+                                     "You can now add in Damage Reduction & Support buffs for your units. When using /usepassive it will show the stats of your " +
+                                     "unit with/without those buffs \n\n" +
+                                     "**-Added a NEW parameter 'Rarity':** \n" +
+                                     "You can now specify if you want your unit to be an LR or a TUR. LR means you can view your stats at 12 KI or Max 24 KI \n" +
+                                     "So far this is all the bot has, the next step is to add the option for EZA units which have a higher Ki & SA Multiplier \n\n" +
+                                     "***>mid Command Additions*** \n\n" +
+                                     "**The following Titles have been added to the bot with their associated characters:** \n\n" +
+                                     "**Genshin Impact -> Yae Miko, Yoimiya, Diona** \n" +
+                                     "**Don't Toy with me, Miss Nagatoro** \n" +
+                                     "**Hatsune Miku** \n" +
+                                     "**Komi Can't Communicate** \n" +
+                                     "**Lycoris Recoil**";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.5.1")
+                    .WithTitle("V1.5.1 Changelog")
                     .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);

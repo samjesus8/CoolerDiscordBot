@@ -12,6 +12,7 @@ namespace DiscordBotTest.Commands
     {
         [SlashCommand("passivecreate", "A Dokkan Passive Creator tool")]
         public async Task DokkanPassiveGen(InteractionContext ctx, [Option("PassiveName", "Give your passive a name")] string PassiveName,
+                                                                    [Option("Rarity", "Is your unit an LR/TUR???")] string Rarity,
                                                                     [Option("HP", "Base HP Value of your Card")] long BaseHPValue,
                                                                     [Option("ATK", "Base ATK Value of your Card")] long BaseATKValue,
                                                                     [Option("DEF", "Base DEF Value of your Card")] long BaseDEFValue,
@@ -53,8 +54,9 @@ namespace DiscordBotTest.Commands
                 .WithTitle("***Passive Generator by 𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825***")
                 .WithDescription("Your entry is as following: \n" +
                                     "**GENERAL DETAILS** \n\n" +
-                                    "Passive Name: " + PassiveName + "\n\n" +
-                                    "Passive Author: " + user + "\n\n" +
+                                    "Passive Name: " + PassiveName + "\n" +
+                                    "Passive Author: " + user + "\n" +
+                                    "Rarity: " + Rarity + "\n\n" +
                                     "**Base Card Values** \n\n" +
                                     "Base HP: " + BaseHPValue + "\n" +
                                     "Base ATK: " + BaseATKValue + "\n" +
@@ -93,7 +95,7 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(storingMessage);
 
-                var storage = new DokkanUserPassiveBuilder(ctx.User.Username, PassiveName, (int)BaseHPValue, (int)BaseATKValue, (int)BaseDEFValue, LeaderSkillName, (int)LeaderSkillValue, (int)ATKPassive, (int)DEFPassive, (int)SupportAllies, Links);
+                var storage = new DokkanUserPassiveBuilder(ctx.User.Username, PassiveName, Rarity, (int)BaseHPValue, (int)BaseATKValue, (int)BaseDEFValue, LeaderSkillName, (int)LeaderSkillValue, (int)ATKPassive, (int)DEFPassive,(int)DMGReductionValue, (int)SupportAllies, Links);
                 storage.StoreUserPassives(storage);
                 
             }
@@ -132,17 +134,16 @@ namespace DiscordBotTest.Commands
             {
                 await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
 
-                var calculator = new DokkanPassiveCalculator(info.UnitHP, info.UnitATK, info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveATK, info.UnitPassiveDEF);
+                var calculator = new DokkanPassiveCalculator(info.Rarity, info.UnitHP, info.UnitATK, info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveATK, info.UnitPassiveDEF, info.Support, info.DmgReduction);
 
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
 
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("Your Stats for " + info.PassiveName)
-                    .WithDescription("**Main Stats** \n\n" +
-                                     "ATK Stat When supering: ***" + calculator.ResultATK.ToString("N0") + "*** \n" +
-                                     "DEF Pre Super: ***" + calculator.ResultDEF.Item1 + "*** \n\n" +
-                                     calculator.ResultDEF.Item2)
+                    .WithDescription("**ATK Stats** \n\n" +
+                                     calculator.ResultATK + "\n\n" +
+                                     calculator.ResultDEF)
                     );
 
                 await ctx.Channel.SendMessageAsync(message);
@@ -201,8 +202,9 @@ namespace DiscordBotTest.Commands
                     .WithAuthor("You are viewing a passive that was made by " + discordUserName)
                     .WithTitle("Passive Details for " + "**" + PassiveName + "**")
                     .WithDescription("**GENERAL DETAILS** \n\n" +
-                                    "Passive Name: " + check.PassiveName + "\n\n" +
-                                    "Passive Author: " + check.UserName + "\n\n" +
+                                    "Passive Name: " + check.PassiveName + "\n" +
+                                    "Passive Author: " + check.UserName + "\n" +
+                                    "Rarity: " + check.Rarity + "\n\n" +
                                     "**Base Card Values** \n\n" +
                                     "Base HP: " + check.UnitHP + "\n" +
                                     "Base ATK: " + check.UnitATK + "\n" +
@@ -212,9 +214,9 @@ namespace DiscordBotTest.Commands
                                     "Leader Skill Buff (%): " + check.UnitLeaderSkill + "\n\n" +
                                     "**Passive Details** \n\n" +
                                     "TOTAL ATK Buff (%): " + check.UnitPassiveATK + "\n" +
-                                    "TOTAL DEF Buff (%): " + check.UnitPassiveDEF + "\n" +
-                                    "TOTAL DMG REDUCTION (%): " + "CURRENTLY UNDER DEVELOPMENT" + "\n\n" +
+                                    "TOTAL DEF Buff (%): " + check.UnitPassiveDEF + "\n\n" +
                                     "**Optional Buffs** \n\n" +
+                                    "Damage Reduction (%): " + check.DmgReduction + "\n" +
                                     "Support Buffs from allies (%): " + check.Support + "\n" +
                                     "Links: " + check.Links)
 

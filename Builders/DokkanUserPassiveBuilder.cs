@@ -3,9 +3,6 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Reactive;
-using System.Xml.Linq;
 
 namespace DiscordBotTest.Builders
 {
@@ -15,6 +12,7 @@ namespace DiscordBotTest.Builders
 
         public string UserName { get; set; }
         public string PassiveName { get; set; }
+        public string Rarity { get; set; }
 
         public int UnitHP { get; set; }
         public int UnitATK { get; set; }
@@ -26,22 +24,25 @@ namespace DiscordBotTest.Builders
         public int UnitPassiveATK { get; set; }
         public int UnitPassiveDEF { get; set; }
 
+        public int DmgReduction { get; set; }
         public int Support { get; set; }
         public string Links { get; set; }
 
         private Members Json { get; set; }
         public List<Members> membersJSONList = new List<Members>();
 
-        public DokkanUserPassiveBuilder(string user, string Name, int unitHP, int unitATK, int unitDEF, string leaderName, int unitLeaderSkill, int unitPassiveATK, int unitPassiveDEF, int support, string links)
+        public DokkanUserPassiveBuilder(string user, string Name, string rarity, int unitHP, int unitATK, int unitDEF, string leaderName, int unitLeaderSkill, int unitPassiveATK, int unitPassiveDEF, int dmgReduction, int support, string links)
         {
             UserName = user;
             PassiveName = Name;
+            Rarity = rarity;
             UnitHP = unitHP;
             UnitATK = unitATK;
             UnitDEF = unitDEF;
             UnitLeaderName = leaderName;
             UnitLeaderSkill = unitLeaderSkill;
             UnitPassiveATK = unitPassiveATK;
+            DmgReduction = dmgReduction;
             UnitPassiveDEF = unitPassiveDEF;
             Support = support;
             Links = links;
@@ -59,6 +60,7 @@ namespace DiscordBotTest.Builders
                 ReadJSONFile(name);
                 UserName = Json.UserName;
                 PassiveName = Json.PassiveName;
+                Rarity = Json.Rarity;
                 UnitHP = Json.UnitHP;
                 UnitATK = Json.UnitATK;
                 UnitDEF = Json.UnitDEF;
@@ -66,6 +68,7 @@ namespace DiscordBotTest.Builders
                 UnitLeaderSkill = Json.UnitLeaderSkill;
                 UnitPassiveATK = Json.UnitPassiveATK;
                 UnitPassiveDEF = Json.UnitPassiveDEF;
+                DmgReduction = Json.DMGReduction;
                 Support = Json.Support;
                 Links = Json.Links;
             }
@@ -159,6 +162,7 @@ namespace DiscordBotTest.Builders
                             UnitLeaderSkill = member.UnitLeaderSkill;
                             UnitPassiveATK = member.UnitPassiveATK;
                             UnitPassiveDEF = member.UnitPassiveDEF;
+                            DmgReduction = member.DMGReduction;
                             Support = member.Support;
                             Links = member.Links;
                         }
@@ -184,7 +188,8 @@ namespace DiscordBotTest.Builders
         {
             try
             {
-                var path = @"C:\Users\samue\Documents\Bot\bin\Debug\UserPassivesStorage.json";
+                //var path = @"C:\Users\samue\Documents\Bot\bin\Debug\UserPassivesStorage.json";
+                var path = @"D:\Visual Studio Projects\DiscordBotTest\bin\Debug\UserPassivesStorage.json";
                 var json = File.ReadAllText(path);
 
                 var jsonObj = JObject.Parse(json);
@@ -213,6 +218,7 @@ namespace DiscordBotTest.Builders
     {
         public string UserName { get; set; }
         public string PassiveName { get; set; }
+        public string Rarity { get; set; }
         public string UnitLeaderName { get; set; }
         public int UnitHP { get; set; }
         public int UnitATK { get; set; }
@@ -220,6 +226,7 @@ namespace DiscordBotTest.Builders
         public int UnitLeaderSkill { get; set; }
         public int UnitPassiveATK { get; set; }
         public int UnitPassiveDEF { get; set; }
+        public int DMGReduction { get; set; }
         public int Support { get; set; }
         public string Links { get; set; }
     }

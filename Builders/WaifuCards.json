@@ -371,6 +371,22 @@
 			"animeName": "Genshin Impact",
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1024736224562389204/hu_tao_twintail.png?width=447&height=676"
 		},
+		{
+			"name": "Yae Miko",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034897740754321650/yae_miko.jpg?width=459&height=676",
+		},
+		{
+			"name": "Yoimiya",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034897741148602410/yoimiya.jpg?width=333&height=675",
+		},
+		{
+			"name": "Diona",
+			"animeName": "Genshin Impact",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034897740267802694/diona.png?width=270&height=382",
+		},
+
 
 		{
 			"name": "Walter White",
@@ -612,10 +628,88 @@
 
 
 		{
+			"name": "Hayase Nagatoro",
+			"animeName": "Don't Toy With Me, Miss Nagatoro",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034900293919453265/nagatoro.png?width=452&height=675"
+		},
+		{
+			"name": "Maki Gamou",
+			"animeName": "Don't Toy With Me, Miss Nagatoro",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034900293516808312/gamo.png?width=451&height=676"
+		},
+		{
+			"name": "Yoshi",
+			"animeName": "Don't Toy With Me, Miss Nagatoro",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034900294489866351/yoshi.png?width=418&height=649"
+		},
+		{
+			"name": "Sana Sunomiya - President",
+			"animeName": "Don't Toy With Me, Miss Nagatoro",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034900294271770654/president.jpg?width=412&height=676"
+		},
+
+
+		{
+			"name": "Hatsune Miku",
+			"animeName": "Vocaloid",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034901283154432121/hatsune_miku.jpg?width=455&height=676"
+		},
+
+
+		{
+			"name": "Komi Shouko",
+			"animeName": "Komi Can't Communicate",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034904515771641936/komi.png?width=542&height=676"
+		},
+		{
+			"name": "Najimi Osana",
+			"animeName": "Komi Can't Communicate",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034904516237213707/najimi.png?width=457&height=676"
+		},
+		{
+			"name": "Nakanaka Omoharu",
+			"animeName": "Komi Can't Communicate",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034904516656631941/Nakanaka_Omoharu.jpg?width=478&height=676"
+		},
+		{
+			"name": "Netsuno Chika",
+			"animeName": "Komi Can't Communicate",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034904516925083678/Netsuno_Chika.jpg?width=611&height=616"
+		},
+		{
+			"name": "Onemine Nene",
+			"animeName": "Komi Can't Communicate",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034904517193515008/Onemine_Nene.jpeg?width=525&height=676"
+		},
+		{
+			"name": "Yadano Makeru",
+			"animeName": "Komi Can't Communicate",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034904517478715424/Yadano_Makeru.jpg?width=648&height=648"
+		},
+		{
+			"name": "Yamai Ren",
+			"animeName": "Komi Can't Communicate",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1034904517763936266/Yamai_Ren.jpg?width=501&height=676"
+		},
+
+
+		{
+			"name": "Chisato Nishikigi",
+			"animeName": "Lycoris Recoil",
+			"imageURL": ""
+		},
+		{
+			"name": "Takina Inoue",
+			"animeName": "Lycoris Recoil",
+			"imageURL": ""
+		},
+
+
+		{
 			"name": "",
 			"animeName": "",
 			"imageURL": ""
-		}
+		},
 	]
 
 }

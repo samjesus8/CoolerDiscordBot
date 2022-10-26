@@ -1,31 +1,39 @@
 {
   "userPassiveStorage": "Storage for user created passives using /passivecreator",
   "members": [
-    {
+	 {
+      "membersJSONList": [],
+      "Error": null,
       "UserName": "𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠",
-      "PassiveName": "TEQ Gogeta",
-      "UnitHP": 19199,
-      "UnitATK": 20744,
-      "UnitDEF": 10909,
-      "UnitLeaderName": "Fusion",
+      "PassiveName": "TestTUR",
+      "Rarity": "TUR",
+      "UnitHP": 10000,
+      "UnitATK": 19234,
+      "UnitDEF": 14235,
+      "UnitLeaderName": "A TUR Passive",
+      "UnitLeaderSkill": 200,
+      "UnitPassiveATK": 250,
+      "UnitPassiveDEF": 150,
+      "DmgReduction": 30,
+      "Support": 30,
+      "Links": "No active Links"
+    },
+    {
+      "membersJSONList": [],
+      "Error": null,
+      "UserName": "𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠",
+      "PassiveName": "TEQ Jiren",
+      "Rarity": "LR",
+      "UnitHP": 20863,
+      "UnitATK": 21525,
+      "UnitDEF": 14338,
+      "UnitLeaderName": "Universe 11",
       "UnitLeaderSkill": 170,
       "UnitPassiveATK": 200,
       "UnitPassiveDEF": 200,
+      "DmgReduction": 30,
       "Support": 0,
-      "Links": "No Links Provided by the user"
-    },
-    {
-      "UserName": "𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠",
-      "PassiveName": "AGL Gogeta",
-      "UnitHP": 15745,
-      "UnitATK": 16492,
-      "UnitDEF": 11088,
-      "UnitLeaderName": "Movie Heroes",
-      "UnitLeaderSkill": 170,
-      "UnitPassiveATK": 100,
-      "UnitPassiveDEF": 100,
-      "Support": 0,
-      "Links": "No Links Provided by the user"
+      "Links": "No active Links"
     }
   ]
 }

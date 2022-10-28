@@ -225,5 +225,56 @@ namespace DiscordBotTest.Commands
                 await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, passiveDetailsMSG);
             }
         }
+
+        [SlashCommand("deletepassive", "Delete a passive from your list")]
+        public async Task DeletePassive(InteractionContext ctx, [Option("PassiveName", "Name of the passive you want to delete")] string PassiveName) 
+        {
+            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
+            var PassiveDetails = new DokkanUserPassiveBuilder();
+            PassiveDetails.GetSpecificPassive(PassiveName);
+
+            var failedMessage = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Red)
+                .WithTitle("The command failed")
+                .WithDescription("You cannot delete someone else's passive \n" +
+                                 "Owner of Passive '" + PassiveDetails.UserName + "' is not equal to '" + ctx.User.Username + "'")
+                );
+
+
+            if (PassiveDetails.UserName == ctx.User.Username) 
+            {
+                bool action = PassiveDetails.DeleteSpecificPassive(PassiveDetails);
+
+                if (action == true) 
+                {
+                    var successMsg = new DiscordMessageBuilder()
+                        .AddEmbed(new DiscordEmbedBuilder()
+                        
+                        .WithColor(DiscordColor.Green)
+                        .WithTitle("Success")
+                        .WithDescription("Your passive was deleted")
+                        );
+                    await ctx.Channel.SendMessageAsync(successMsg);
+                }
+                else 
+                {
+                    var failedMsg = new DiscordMessageBuilder()
+                        .AddEmbed(new DiscordEmbedBuilder()
+
+                        .WithColor(DiscordColor.Red)
+                        .WithTitle("Error")
+                        .WithDescription("Your passive was not deleted \n" +
+                                         "Error Message: " + PassiveDetails.Error)
+                        );
+                    await ctx.Channel.SendMessageAsync(failedMsg);
+                }
+            }
+            else 
+            {
+                await ctx.Channel.SendMessageAsync(failedMessage);
+            }
+        }
     }
 }

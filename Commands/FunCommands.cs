@@ -8,6 +8,7 @@ using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Security.Policy;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -194,6 +195,36 @@ namespace DiscordBotTest.Commands
                 .WithColor(DiscordColor.Blue)
                 );
             await ctx.Channel.SendMessageAsync(fortuneMessage);
+        }
+
+        [Command("cooler")]
+        [Cooldown(10, 60, CooldownBucketType.User)]
+        public async Task CoolerInsultMachine(CommandContext ctx) 
+        {
+            var random = new Random();
+
+            List<string> coolerInsults = new List<string>();
+
+            coolerInsults.Add("你这个臭黑鬼，一直叫叫叫，笨黑鬼去自杀");
+            coolerInsults.Add("You are a fucking idiot");
+            coolerInsults.Add("Make sure to watch your tone");
+            coolerInsults.Add("闭嘴黑鬼 没有人跟你讲话 不要打嘴");
+            coolerInsults.Add("You will get shafted in Legends");
+            coolerInsults.Add("How is that Red LF Cooler doing eh. He must like getting raped by Beast Gohan");
+            coolerInsults.Add("You can't do maths mfer");
+            coolerInsults.Add("Watch your tone shitface");
+            coolerInsults.Add("");
+            int index = random.Next(1, coolerInsults.Count);
+
+            var message = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Azure)
+                .WithTitle("**Coola#5784**")
+                .WithDescription(coolerInsults[index])
+                );
+
+            await ctx.Channel.SendMessageAsync(message);
         }
     }
 }

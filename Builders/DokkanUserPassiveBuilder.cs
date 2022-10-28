@@ -3,6 +3,7 @@ using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace DiscordBotTest.Builders
 {
@@ -78,7 +79,10 @@ namespace DiscordBotTest.Builders
             }
         }
 
-        public DokkanUserPassiveBuilder() { }
+        public DokkanUserPassiveBuilder() 
+        {
+
+        }
 
         private void ReadJSONFile(string nameSearch) 
         {
@@ -155,6 +159,7 @@ namespace DiscordBotTest.Builders
                         {
                             UserName = member.UserName;
                             PassiveName = member.PassiveName;
+                            Rarity = member.Rarity;
                             UnitHP = member.UnitHP;
                             UnitATK = member.UnitATK;
                             UnitDEF = member.UnitDEF;
@@ -179,9 +184,38 @@ namespace DiscordBotTest.Builders
             }
         }
 
-        public void DeleteSpecificPassive(string passiveName) 
+        public bool DeleteSpecificPassive(DokkanUserPassiveBuilder classObj)
         {
+            try 
+            {
+                //var path = @"C:\Users\samue\Documents\Bot\bin\Debug\UserPassivesStorage.json";
+                var path = @"D:\Visual Studio Projects\DiscordBotTest\bin\Debug\UserPassivesStorage.json";
+                var json = File.ReadAllText(path);
 
+                var jsonObj = JObject.Parse(json);
+
+                var members = jsonObj["members"].ToObject<List<DokkanUserPassiveBuilder>>();
+
+                var found = members.FirstOrDefault(m => m.PassiveName == classObj.PassiveName);
+                if (found != null)
+                {
+                    members.Remove(found);
+                    jsonObj["members"] = JArray.FromObject(members);
+
+                    File.WriteAllText(path, jsonObj.ToString());
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex) 
+            {
+                Console.WriteLine(ex);
+                Error = ex.ToString();
+                return false;
+            }
         }
 
         public void StoreUserPassives(DokkanUserPassiveBuilder classObj)

@@ -79,5 +79,34 @@ namespace DiscordBotTest.Commands
             var message = await interactivity.WaitForMessageAsync(x => x.Channel == ctx.Channel);
             await ctx.Channel.SendMessageAsync("Your message was sent at: " + message.Result.Timestamp.ToString());
         }
+
+        [Command("avatar")]
+        public async Task GetUserAvatar(CommandContext ctx, DiscordUser user) 
+        {
+            var userAvatar = user.AvatarUrl;
+            var message = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Azure)
+                .WithTitle("Avatar for " + user.Username)
+                .WithImageUrl(userAvatar)
+                );
+
+            await ctx.Channel.SendMessageAsync(message);
+        }
+
+        [Command("membercount")]
+        public async Task GetServerMemberCount(CommandContext ctx) 
+        {
+            var message = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Azure)
+                .WithTitle("Server Member Count for " + ctx.Guild.Name.ToString())
+                .WithDescription(ctx.Guild.MemberCount.ToString())
+                );
+
+            await ctx.Channel.SendMessageAsync(message);
+        }
     }
 }

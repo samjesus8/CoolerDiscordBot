@@ -24,7 +24,8 @@ namespace DiscordBotTest.Commands
                                         "**Calculator Help -> '>help Calculator'** \n" +
                                         "**Fun Commands Help -> '>help Fun'** \n" +
                                         "**Games Help -> '>help Games'** \n" +
-                                        "**Tools/Utility Help -> '>help Tools'**")
+                                        "**Tools/Utility Help -> '>help Tools'** \n" +
+                                        "**Dokkan Passive Generator -> '>help dokkanpassive'**")
                 .WithImageUrl("https://media.discordapp.net/attachments/969707624784338995/1017188281819086940/unknown.png?width=479&height=268")
                 .WithFooter("The day Cooler left Discord for good")
                 );
@@ -104,7 +105,8 @@ namespace DiscordBotTest.Commands
                     "**>server** -> Generated an invite link to join the Official Discord server for this bot \n\n" +
                     "**>changelog** -> View the bot changelog. Shows what changed in every update \n\n" +
                     "Use >changelog and type in a version to view its specific changes like ***'>changelog 1.1'*** \n" +
-                    "Type in ***>changelog latest'*** to view the changelog of the latest version")
+                    "Type in ***>changelog latest'*** to view the changelog of the latest version \n\n" +
+                    "**>avatar** -> View the avatar of any user you specify. Simply type in >avatar and then @UserName you want to view")
                     );
                 await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
             }
@@ -118,7 +120,8 @@ namespace DiscordBotTest.Commands
                                      "**/usepassive** -> This command allows you to use your passive and generate some stats. Think of it as a Dokkan simulator where you can use your unit and see how hard it will hit \n" +
                                      "The bot will generate an ATK stat when supering and some other stats such as defense, or ATK with support, links, different leaders and many other kinds of buffs \n\n" +
                                      "**/passivelist** -> This command allows you to view a list of passives for any user including yourself which is done by typing 'null' into PassiveCreate to get a list of passive names. \n " +
-                                     "Not only this, you can also view details of a specific passive by specfying the passive name";
+                                     "Not only this, you can also view details of a specific passive by specfying the passive name \n\n" +
+                                     "**/deletepassive** -> Deletes a passive from the name you specify. Please bear in mind you can only delete passives that were made by yourself and not others";
 
                 var slashFunctionMessage = new DiscordMessageBuilder()
                     .AddEmbed(
@@ -458,9 +461,9 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.5.1")
             {
-                string description = "***Discord Passive Generator - Slash Commands*** \n\n" +
+                string description = "***Dokkan Passive Generator - Slash Commands*** \n\n" +
                                      "**-Fixed the formatting of the way numbers are shown when doing /usepassive:** \n" +
                                      "Instead of 1000000, the number has been formatted to show 1,000,000 \n\n" +
                                      "**-The Damage Reduction & Support parameters now work: ** \n" +
@@ -480,8 +483,31 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.5.1")
                     .WithTitle("V1.5.1 Changelog")
+                    .WithDescription(description)
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "***Dokkan Passive Generator - Slash Commands*** \n\n" +
+                                     "**Added a new command '/deletepassive':** \n" +
+                                     "Users can now delete their own passives from the system. This command is neccesary as some users " +
+                                     "may want to delete passives that may have mistakes in them such as the wrong name or wrong amount of ATK \n\n" +
+                                     "***Other Additions*** \n\n" +
+                                     "**Added a new command >avatar:** \n" +
+                                     "Users can now view the Profile Picture of any user they specify.\n Simply type '>avatar @UserName' \n\n" +
+                                     "**Added a new command >cooler:** \n" +
+                                     "This command is designed to specifically insult Coola#5784. No other description needed \n\n" +
+                                     "**Added a new command >membercount:** \n" +
+                                     "This command displays how many members are in your server";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.5.2")
+                    .WithTitle("V1.5.2 Changelog")
                     .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);

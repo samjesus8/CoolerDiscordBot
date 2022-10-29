@@ -8,11 +8,27 @@ namespace DiscordBotTest.InternalBuilders
 {
     internal class DokkanLinks
     {
-        public Dictionary<string, double> Links = new Dictionary<string, double>();
+        public Dictionary<string, Tuple> Links = new Dictionary<string, Tuple>();
 
         public DokkanLinks() 
         {
-            
+            Links.Add("Link1", new Tuple(1, 2));
+        }
+
+        public void StoreLinks() 
+        {
+
+        }
+    }
+
+    public class Tuple 
+    {
+        public int ATK { get; set; }
+        public int DEF { get; set; }
+        public Tuple(int aTK, int dEF)
+        {
+            ATK = aTK;
+            DEF = dEF;
         }
     }
 }

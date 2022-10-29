@@ -1,5 +1,7 @@
 ﻿using DiscordBotTest.Builders;
+using DiscordBotTest.InternalBuilders;
 using DSharpPlus;
+using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
@@ -22,7 +24,7 @@ namespace DiscordBotTest.Commands
                                                                     [Option("PassiveDEF", "Total % DEF in passive")] long DEFPassive,
                                                                     [Option("DMGReduction", "% Value of Damage Reduction")] long DMGReductionValue,
                                                                     [Option("Support", "Total % Value of Support Buffs from Allies")] long SupportAllies,
-                                                                    [Option("Links", "MAX 7 LINKS AND MUST BE SEPARATED BY 1 SPACE")] string Links) 
+                                                                    [Option("Links", "MAX 7 LINKS AND MUST BE SEPARATED BY 1 SPACE")] string Links)
         {
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
 
@@ -43,7 +45,7 @@ namespace DiscordBotTest.Commands
             {
                 await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, linksFail);
             }
-            else if (Links == "null") 
+            else if (Links == "null")
             {
                 Links = "No active Links";
             }
@@ -75,7 +77,7 @@ namespace DiscordBotTest.Commands
 
             var confirmation = await ctx.Channel.SendMessageAsync(passiveMessage);
 
-            foreach (var emoji in emojis) 
+            foreach (var emoji in emojis)
             {
                 await confirmation.CreateReactionAsync(emoji);
             }
@@ -95,11 +97,11 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(storingMessage);
 
-                var storage = new DokkanUserPassiveBuilder(ctx.User.Username, PassiveName, Rarity, (int)BaseHPValue, (int)BaseATKValue, (int)BaseDEFValue, LeaderSkillName, (int)LeaderSkillValue, (int)ATKPassive, (int)DEFPassive,(int)DMGReductionValue, (int)SupportAllies, Links);
+                var storage = new DokkanUserPassiveBuilder(ctx.User.Username, PassiveName, Rarity, (int)BaseHPValue, (int)BaseATKValue, (int)BaseDEFValue, LeaderSkillName, (int)LeaderSkillValue, (int)ATKPassive, (int)DEFPassive, (int)DMGReductionValue, (int)SupportAllies, Links);
                 storage.StoreUserPassives(storage);
-                
+
             }
-            else if (ctx.User == confirm.Result.User && confirm.Result.Emoji == emojis[1]) 
+            else if (ctx.User == confirm.Result.User && confirm.Result.Emoji == emojis[1])
             {
                 var commandCancelled = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
@@ -127,7 +129,7 @@ namespace DiscordBotTest.Commands
         }
 
         [SlashCommand("usepassive", "Use your passive and generate some stats (Must be the SAME NAME)")]
-        public async Task UsePassive(InteractionContext ctx, [Option("PassiveName", "Your PassiveName that you used in /passivecreate")] string PassiveName) 
+        public async Task UsePassive(InteractionContext ctx, [Option("PassiveName", "Your PassiveName that you used in /passivecreate")] string PassiveName)
         {
             var info = new DokkanUserPassiveBuilder(PassiveName); //Getting passive from provided name
             try
@@ -165,7 +167,7 @@ namespace DiscordBotTest.Commands
 
         [SlashCommand("passivelist", "View a list of your passives that you created")]
         public async Task ViewPassiveList(InteractionContext ctx, [Option("User", "Specify the user you want to view the list for")] DiscordUser user,
-                                                                  [Option("PassiveName", "Name of Passive to view or type 'null' for the list")] string PassiveName) 
+                                                                  [Option("PassiveName", "Name of Passive to view or type 'null' for the list")] string PassiveName)
         {
             string discordUserName = user.Username.ToString();
             var check = new DokkanUserPassiveBuilder(discordUserName, PassiveName);
@@ -175,7 +177,7 @@ namespace DiscordBotTest.Commands
 
             if (PassiveName == "null")
             {
-                for (int i = 0; i < check.membersJSONList.Count; i++) 
+                for (int i = 0; i < check.membersJSONList.Count; i++)
                 {
                     tempList[i] = check.membersJSONList[i].PassiveName.ToString();
                 }
@@ -191,7 +193,7 @@ namespace DiscordBotTest.Commands
 
                 await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, userPassiveListMSG);
             }
-            else 
+            else
             {
                 check.GetSpecificPassive(PassiveName);
 
@@ -227,7 +229,7 @@ namespace DiscordBotTest.Commands
         }
 
         [SlashCommand("deletepassive", "Delete a passive from your list")]
-        public async Task DeletePassive(InteractionContext ctx, [Option("PassiveName", "Name of the passive you want to delete")] string PassiveName) 
+        public async Task DeletePassive(InteractionContext ctx, [Option("PassiveName", "Name of the passive you want to delete")] string PassiveName)
         {
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
             var PassiveDetails = new DokkanUserPassiveBuilder();
@@ -243,22 +245,22 @@ namespace DiscordBotTest.Commands
                 );
 
 
-            if (PassiveDetails.UserName == ctx.User.Username) 
+            if (PassiveDetails.UserName == ctx.User.Username)
             {
                 bool action = PassiveDetails.DeleteSpecificPassive(PassiveDetails);
 
-                if (action == true) 
+                if (action == true)
                 {
                     var successMsg = new DiscordMessageBuilder()
                         .AddEmbed(new DiscordEmbedBuilder()
-                        
+
                         .WithColor(DiscordColor.Green)
                         .WithTitle("Success")
                         .WithDescription("Your passive was deleted")
                         );
                     await ctx.Channel.SendMessageAsync(successMsg);
                 }
-                else 
+                else
                 {
                     var failedMsg = new DiscordMessageBuilder()
                         .AddEmbed(new DiscordEmbedBuilder()
@@ -271,10 +273,26 @@ namespace DiscordBotTest.Commands
                     await ctx.Channel.SendMessageAsync(failedMsg);
                 }
             }
-            else 
+            else
             {
                 await ctx.Channel.SendMessageAsync(failedMessage);
             }
+        }
+
+        [SlashCommand("viewlinks", "View a list of avalible links to use or search for a specific link")]
+        public async Task LinksBrowser(InteractionContext ctx, [Option("LinkName", "Specify the Link you want to search for. Leave 'null' for the whole list")] string LinkName)
+        {
+            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
+            var LinkList = new DokkanLinks();
+            Console.WriteLine(LinkList.Links.TryGetValue("Link1", out var Link));
+            Console.WriteLine(Link.ATK + " " + Link.DEF);
+        }
+
+        [SlashCommand("addlink", "Add link to system")]
+        [RequireOwner]
+        public async Task LinksAdd(InteractionContext ctx, [Option("LinkName", "Name of Link to add")] string LinkName) 
+        {
+            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
         }
     }
 }

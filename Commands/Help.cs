@@ -490,7 +490,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.5.2")
             {
                 string description = "***Dokkan Passive Generator - Slash Commands*** \n\n" +
                                      "**Added a new command '/deletepassive':** \n" +
@@ -507,8 +507,22 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.5.2")
                     .WithTitle("V1.5.2 Changelog")
+                    .WithDescription(description)
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "***Dokkan Passive Generator - Slash Commands*** \n\n" +
+                    "";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.5.3")
+                    .WithTitle("V1.5.3 Changelog")
                     .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);

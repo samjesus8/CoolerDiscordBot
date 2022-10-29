@@ -190,14 +190,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Builders\UserPassivesStorage.json" />
+    <None Include="JSONFiles\Links.json" />
+    <None Include="JSONFiles\UserPassivesStorage.json" />
     <None Include="config.json" />
-    <None Include="Builders\LRPassives.json" />
+    <None Include="JSONFiles\LRPassives.json" />
     <None Include="InfoFiles\PassiveSlashCommands.md" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Builders\WaifuCards.json" />
+    <None Include="JSONFiles\WaifuCards.json" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <ProjectExtensions />

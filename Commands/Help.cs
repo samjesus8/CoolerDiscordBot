@@ -106,7 +106,8 @@ namespace DiscordBotTest.Commands
                     "**>changelog** -> View the bot changelog. Shows what changed in every update \n\n" +
                     "Use >changelog and type in a version to view its specific changes like ***'>changelog 1.1'*** \n" +
                     "Type in ***>changelog latest'*** to view the changelog of the latest version \n\n" +
-                    "**>avatar** -> View the avatar of any user you specify. Simply type in >avatar and then @UserName you want to view")
+                    "**>avatar** -> View the avatar of any user you specify. Simply type in >avatar and then @UserName you want to view \n\n" +
+                    "**>membercount** -> View the member count of the server you are in")
                     );
                 await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
             }

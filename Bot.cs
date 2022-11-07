@@ -7,11 +7,14 @@ using DSharpPlus.EventArgs;
 using DSharpPlus.Interactivity;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
+using DSharpPlus.Lavalink;
+using DSharpPlus.Net;
 using Newtonsoft.Json;
 using System;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.InteropServices.ComTypes;
 
 namespace DiscordBotTest
 {
@@ -60,10 +63,25 @@ namespace DiscordBotTest
             Commands.RegisterCommands<FunCommands>();
             Commands.RegisterCommands<Games>();
             Commands.RegisterCommands<Tools>();
+            Commands.RegisterCommands<MusicPlayer>();
             slashCommandsConfig.RegisterCommands<DokkanSL>();
             Commands.CommandErrored += OnCommandError;
 
+            var endpoint = new ConnectionEndpoint
+            {
+                Hostname = "127.0.0.1",
+                Port = 2333
+            };
+            var lavaLinkConfig = new LavalinkConfiguration
+            {
+                Password = "1234",
+                RestEndpoint = endpoint,
+                SocketEndpoint = endpoint,
+            };
+            var lavalink = Client.UseLavalink();
+
             await Client.ConnectAsync();
+            await lavalink.ConnectAsync(lavaLinkConfig);
             await Task.Delay(-1);
         }
 

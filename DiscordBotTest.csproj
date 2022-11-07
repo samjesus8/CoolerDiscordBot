@@ -47,6 +47,9 @@
     <Reference Include="DSharpPlus.Interactivity, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DSharpPlus.Interactivity.4.2.0\lib\netstandard2.0\DSharpPlus.Interactivity.dll</HintPath>
     </Reference>
+    <Reference Include="DSharpPlus.Lavalink, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\DSharpPlus.Lavalink.4.2.0\lib\netstandard2.0\DSharpPlus.Lavalink.dll</HintPath>
+    </Reference>
     <Reference Include="DSharpPlus.SlashCommands, Version=4.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DSharpPlus.SlashCommands.4.2.0\lib\netstandard2.0\DSharpPlus.SlashCommands.dll</HintPath>
     </Reference>
@@ -166,6 +169,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bot.cs" />
+    <Compile Include="Commands\MusicPlayer.cs" />
     <Compile Include="InternalBuilders\CardGenerator.cs" />
     <Compile Include="InternalBuilders\DokkanLinks.cs" />
     <Compile Include="InternalBuilders\DokkanPassiveCalculator.cs" />

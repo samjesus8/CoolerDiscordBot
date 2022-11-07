@@ -1,34 +1,93 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.IO;
 
 namespace DiscordBotTest.InternalBuilders
 {
-    internal class DokkanLinks
+    internal class DokkanLinks : LinksStorage
     {
-        public Dictionary<string, Tuple> Links = new Dictionary<string, Tuple>();
+        public string LinkName { get; set; }
+        public double ATK { get; set; }
+        public double DEF { get; set; }
+
+        public string Error { get; set; }
 
         public DokkanLinks() 
         {
-            Links.Add("Link1", new Tuple(1, 2));
+
         }
 
-        public void StoreLinks() 
+        public DokkanLinks(string linkName, double atk, double def)
         {
+            LinkName = linkName;
+            ATK = atk;
+            DEF = def;
+        }
+
+        public bool LoadLinks() 
+        {
+            try 
+            {
+                using (StreamReader sr = new StreamReader("Links.json"))
+                {
+                    string json = sr.ReadToEnd();
+                    JSONObjectLinks obj = JsonConvert.DeserializeObject<JSONObjectLinks>(json);
+
+                    for (int i = 0; i < obj.members.Length; i++)
+                    {
+                        Links.Add(obj.members[i].LinkName, new Tuple(obj.members[i].ATK, obj.members[i].DEF));
+                    }
+                    return true;
+                }
+            }
+            catch(Exception ex) 
+            {
+                Error = ex.ToString();
+                return false;
+            }
+
+        }
+
+        public bool StoreLinks(DokkanLinks LinkObj) 
+        {
+            try 
+            {
+                //var path = @"C:\Users\samue\Documents\Bot\bin\Debug\Links.json";
+                var path = @"D:\Visual Studio Projects\DiscordBotTest\bin\Debug\Links.json";
+                var json = File.ReadAllText(path);
+
+                var jsonObj = JObject.Parse(json);
+                var members = jsonObj["members"].ToObject<List<DokkanLinks>>();
+
+                members.Add(LinkObj);
+
+                jsonObj["members"] = JArray.FromObject(members);
+
+                File.WriteAllText(path, jsonObj.ToString());
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Error = ex.ToString();
+                Console.WriteLine(ex);
+                return false;
+            }
 
         }
     }
 
-    public class Tuple 
+    public class JSONObjectLinks 
     {
-        public int ATK { get; set; }
-        public int DEF { get; set; }
-        public Tuple(int aTK, int dEF)
-        {
-            ATK = aTK;
-            DEF = dEF;
-        }
+        public string LinksCategory { get; set; }
+        public Members[] members { get; set; }
+    }
+
+    public class Members 
+    {
+        public string LinkName { get; set; }
+        public double ATK { get; set; }
+        public double DEF { get; set; }
     }
 }

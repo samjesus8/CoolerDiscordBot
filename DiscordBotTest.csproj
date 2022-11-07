@@ -184,6 +184,7 @@
     <Compile Include="Handlers\Dialogue\Steps\IDialogueStep.cs" />
     <Compile Include="Handlers\Dialogue\Steps\TextStep.cs" />
     <Compile Include="Builders\NumberGenerator.cs" />
+    <Compile Include="InternalBuilders\LinksStorage.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Builders\WaifuCardBuilder.cs" />

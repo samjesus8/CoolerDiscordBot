@@ -6,6 +6,8 @@ using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -284,15 +286,84 @@ namespace DiscordBotTest.Commands
         {
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
             var LinkList = new DokkanLinks();
-            Console.WriteLine(LinkList.Links.TryGetValue("Link1", out var Link));
-            Console.WriteLine(Link.ATK + " " + Link.DEF);
+            var loadLinks = LinkList.LoadLinks();
+            string[] tempList = new string[LinkList.Links.Count];
+
+            if (loadLinks == true)
+            {
+                if (LinkName != "null")
+                {
+                    //Search for specific link
+                }
+                else if (LinkName == "null")
+                {
+                    var output = string.Join("\n", LinkList.Links.Select(pair => String.Format("{0} = {1}, {2}", pair.Key.ToString(), pair.Value.ATK.ToString(), pair.Value.DEF.ToString())));
+
+                    var listMsg = new DiscordMessageBuilder()
+                        .AddEmbed(new DiscordEmbedBuilder()
+
+                        .WithColor(DiscordColor.Azure)
+                        .WithTitle("List of Avalible links to use in the bot \n\n**Name = ATK, DEF (In % Values)**")
+                        .WithDescription(output)
+                        );
+                    await ctx.Channel.SendMessageAsync(listMsg);
+                }
+            }
+            else
+            {
+                var failedMsg = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+
+                    .WithColor(DiscordColor.Red)
+                    .WithTitle("Error")
+                    .WithDescription("Links failed to load \n" +
+                                     "Error Message: " + LinkList.Error)
+                    );
+                await ctx.Channel.SendMessageAsync(failedMsg);
+            }
         }
 
         [SlashCommand("addlink", "Add link to system")]
         [RequireOwner]
-        public async Task LinksAdd(InteractionContext ctx, [Option("LinkName", "Name of Link to add")] string LinkName) 
+        [Hidden]
+        public async Task LinksAdd(InteractionContext ctx, [Option("LinkName", "Name of Link to add")] string LinkName,
+                                                           [Option("ATK", "Value of ATK Buff")] long ATK,
+                                                           [Option("DEF", "Value of DEF Buff")] long DEF) 
         {
-            await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
+            if (ctx.User.Id == 572877986223751188) 
+            {
+                await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
+                var LinksList = new DokkanLinks(LinkName, ATK, DEF);
+                bool action = LinksList.StoreLinks(LinksList);
+
+                if (action == true)
+                {
+                    var successMsg = new DiscordMessageBuilder()
+                        .AddEmbed(new DiscordEmbedBuilder()
+
+                        .WithColor(DiscordColor.Green)
+                        .WithTitle("Success")
+                        .WithDescription("Link Stored")
+                        );
+                    await ctx.Channel.SendMessageAsync(successMsg);
+                }
+                else
+                {
+                    var failedMsg = new DiscordMessageBuilder()
+                        .AddEmbed(new DiscordEmbedBuilder()
+
+                        .WithColor(DiscordColor.Red)
+                        .WithTitle("Error")
+                        .WithDescription("Link Failed to store \n" +
+                                         "Error Message: " + LinksList.Error)
+                        );
+                    await ctx.Channel.SendMessageAsync(failedMsg);
+                }
+            }
+            else 
+            {
+                await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Only the owner can use this command"));
+            }
         }
     }
 }

@@ -92,14 +92,20 @@ namespace DiscordBotTest.Builders
         {
             double resultPreSuper = 0;
             double DEFWReduction = 0;
+            double resultSupport = 0;
+
             string finalMSG;
 
             Lead = Lead / 100;
             passiveDEF = passiveDEF / 100;
+            support = support / 100;
 
-            resultPreSuper = DEF * (1 + Lead + Lead); //Multiplying DEF by Leader Skill x2
+            var step1 = DEF * (1 + Lead + Lead); //Multiplying DEF by Leader Skill x2
+            resultPreSuper = step1 * (1 + PassiveDEF); //Final DEF value with Leader & Passive
 
             //Optional Support Buffs go here
+
+            resultSupport = resultPreSuper * (1 + Support);
 
             double DEFNormal = resultPreSuper * DEFRaise;
             double DEFGreat = resultPreSuper * GreatDEFRaise;
@@ -118,6 +124,7 @@ namespace DiscordBotTest.Builders
 
             finalMSG = "**DEF Values in Set Conditions** \n\n" +
                               "DEF Pre Super - ***" + resultPreSuper.ToString("N0") + "*** \n" +
+                              "DEF With Support - ***" + resultSupport.ToString("N0") + "*** ( " + (support * 100) + "% Support) \n" +
                               "DEF with DMG Reduction - ***" + DEFWReduction.ToString("N0") + "*** (" + (DMGReduction * 100) + "% Reduction) \n\n" +
                               "**DEF - Super Attack Raises** \n\n" +
                               "Raises DEF for 1 Turn - ***" + DEFNormal.ToString("N0") + "*** \n" +
@@ -181,14 +188,19 @@ namespace DiscordBotTest.Builders
         public string GetDEFLR(double DEF, double Lead, double passiveDEF, double support, double DMGReduction) 
         {
             double resultPreSuper = 0;
+            double resultSupport = 0;
             string finalMSG;
 
             Lead = Lead / 100;
             passiveDEF = passiveDEF / 100;
+            support = support / 100;
 
-            resultPreSuper = DEF * (1 + Lead + Lead); //Multiplying DEF by Leader Skill x2
+            var step1 = DEF * (1 + Lead + Lead); //Multiplying DEF by Leader Skill x2
+            resultPreSuper = step1 * (1 + passiveDEF); //Final DEF Value with Both Lead & Passive Buffs
 
             //Optional Support Buffs go here
+
+            resultSupport = resultPreSuper * (1 + support);
 
             double DEFNormal = resultPreSuper * DEFRaise;
             double DEFWReduction = DEFNormal * (1 + DMGReduction);
@@ -208,6 +220,7 @@ namespace DiscordBotTest.Builders
 
             finalMSG = "**DEF Values in Set Conditions** \n\n" +
                               "DEF Pre Super - ***" + resultPreSuper.ToString("N0") + "*** \n" +
+                              "DEF With Support - ***" + resultSupport.ToString("N0") + "*** ( " + (support * 100) + "% Support) \n" +
                               "DEF with DMG Reduction - ***" + DEFWReduction.ToString("N0") + "*** (" + (DMGReduction * 100) + "% Reduction) \n\n" +
                               "**DEF - Super Attack Raises** \n\n" +
                               "Raises DEF for 1 Turn - ***" + DEFNormal.ToString("N0") + "*** \n" +

@@ -75,6 +75,8 @@ namespace DiscordBotTest.Builders
                                 "plus an additional ATK +40% within the same turn when guard is activated");
             Fortunes.Add("If u get this fortune, tell Coola#5784 to watch his damn tone for maining LoE");
             Fortunes.Add("If you get this fortune then Coola#5784 should watch his tone");
+            Fortunes.Add("Vein will get VT and INT Zamasu");
+            Fortunes.Add("If u get this fortune, tell Joku that Coola wanted to do VC with him");
 
             //Sigma Quotes
 

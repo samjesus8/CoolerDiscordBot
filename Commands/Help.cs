@@ -152,7 +152,7 @@ namespace DiscordBotTest.Commands
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("**Music Player - Commands**")
                     .WithDescription(description)
-                    .WithUrl("https://github.com/samjesus8/CoolerDiscordBot/blob/master/InfoFiles/PassiveSlashCommands.md")
+                    .WithUrl("https://github.com/samjesus8/CoolerDiscordBot/blob/master/InfoFiles/MusicPlayerCommands.md")
                     );
                 await ctx.Channel.SendMessageAsync(musicMSG);
             }
@@ -539,8 +539,18 @@ namespace DiscordBotTest.Commands
             {
                 string description = "***NEW - Music Commands*** \n\n" +
                                      "The Bot can now play music in a Voice Channel. Simply give it a YouTube URL or search for what you want to play \n" +
-                                     ">Addition of the >join, >leave, >play and additional commands. More info can be found using '>help Music' \n\n" +
-                                     "";
+                                     "Addition of the >join, >leave, >play and additional commands. More info can be found using **'>help Music'** \n\n" +
+                                     "***Dokkan Passive Generator*** \n\n" +
+                                     "Addressed an Issue with the DEF stat as it was reported as being too low \n" +
+                                     "The Bot should now take into account all of the Buffs including Leader Skill, Passive Skill and any other buffs when calculating DEF \n\n" +
+                                     "***>fortune Command*** \n\n" +
+                                     "Added any requested fortunes into the Bot \n\n" +
+                                     "***>passive Command Changes*** \n\n" +
+                                     "Updated the Passives of the following units: \n **(These units have either been reported as Wrong or have recieved an EZA)** \n\n" +
+                                     "-STR Namek Goku (SSJ Form) -> EZA Passive \n" +
+                                     "-TEQ TF Frieza (2nd Form) -> Changed from Pre-EZA to EZAd passive \n" +
+                                     "-PHY Giant Ape Kid Goku -> EZA Passive \n" +
+                                     "-Baba Shop TURs -> EZA Passive";
 
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()

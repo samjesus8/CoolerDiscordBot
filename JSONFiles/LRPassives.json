@@ -827,7 +827,7 @@
 		},
 		{
 			"name": "Back on the Front Line: Krillin",
-			"passive": "TEQ Type Ki +2; great chance of ATK & DEF +30%",
+			"passive": "ATK & DEF +120% when performing a Super Attack; ATK & DEF +30% and recovers 10% HP at end of turn with 3 or more Ki Spheres obtained; plus an additional ATK & DEF +50% with 5 or more Ki Spheres obtained; TEQ Type Ki +2 and ATK & DEF +30%; TEQ Type ATK & DEF +10% in addition with 3 or more TEQ Ki Spheres obtained",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1022552805539586079/TEQ_Krillin.png?width=507&height=676"
 		},
 		{
@@ -1326,7 +1326,7 @@
 		},
 		{
 			"name": "Diabolical Strike: Nappa",
-			"passive": "PHY Type Ki +2; great chance of ATK & DEF +30%",
+			"passive": "ATK & DEF +120% when performing a Super Attack; ATK & DEF +30% and high chance of performing a critical hit with 3 or more Ki Spheres obtained; plus an additional ATK & DEF +50% with 5 or more Ki Spheres obtained; PHY Type Ki +2 and ATK & DEF +30%; PHY Type ATK & DEF +10% in addition with 3 or more PHY Ki Spheres obtained",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1023299678462292039/PHY_Nappa.png?width=507&height=676"
 		},
 		{
@@ -1832,7 +1832,7 @@
 		},
 		{
 			"name": "Glacial Prestige: Frieza (2nd Form)",
-			"passive": "ATK +90% and DEF +60%; recovers 12% HP at start of turn; Transform when conditions are met",
+			"passive": "ATK & DEF +120%; Ki +3 plus an additional ATK +20% and DEF +30% when attacking Super Class enemies; recovers 12% HP at start of turn; Transforms when conditions are met",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1024658261678510090/TEQ_2nd_Form_Frieza.png?width=507&height=676"
 		},
 		{
@@ -2388,7 +2388,7 @@
 		},
 		{
 			"name": "Max Power Technique: Master Roshi (Max Power)",
-			"passive": "STR Type Ki +2; great chance of ATK & DEF +30%",
+			"passive": "ATK & DEF +120% when performing a Super Attack; ATK & DEF +30% and medium chance of guarding all attacks with 3 or more Ki Spheres obtained; plus an additional ATK & DEF +50% with 5 or more Ki Spheres obtained; STR Type Ki +2 and ATK & DEF +30%; STR Type ATK & DEF +10% in addition with 3 or more STR Ki Spheres obtained",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1025430578662735992/STR_Roshi.png?width=507&height=676"
 		},
 		{
@@ -2577,7 +2577,7 @@
 		},
 		{
 			"name": "Outcome of Hardship: Goku (Youth) (Giant Ape)",
-			"passive": "ATK +80% at start of turn; turns into Giant Ape when conditions are met",
+			"passive": "ATK & DEF +80%; plus an additional ATK & DEF +80% when performing a super attack; medium chance of performing an additional super attack when HP is 80% or less; transforms into Great Ape when conditions are met",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1025440405950574632/PHY_Ape_Goku.png?width=507&height=676"
 		},
 		{
@@ -2619,7 +2619,7 @@
 		},
 		{
 			"name": "Passion for Peace: Great Saiyaman",
-			"passive": "AGL Type Ki +2; great chance of ATK & DEF +30%",
+			"passive": "ATK & DEF +120% when performing a Super Attack; ATK & DEF +30% and medium chance of evading enemy's attack (including Super Attack) with 3 or more Ki Spheres obtained; plus an additional ATK & DEF +50% with 5 or more Ki Spheres obtained; AGL Type Ki +2 and ATK & DEF +30%; AGL Type ATK & DEF +10% in addition with 3 or more AGL Ki Spheres obtained",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1026214688813502566/AGL_Saiyaman.png?width=507&height=676"
 		},
 		{
@@ -2649,7 +2649,7 @@
 		},
 		{
 			"name": "Pinnacle of Fury: Super Saiyan Goku",
-			"passive": "ATK & DEF +80%; ATK +59% for the rest of battle after receiving attack; medium chance of guarding all attacks; guard activated against all attacks and high chance of performing a critical hit for 3 turns when guard is activated",
+			"passive": "Ki +3 and ATK & DEF +180%; plus an additional DEF +59% when HP is 77% or less; plus an additional ATK +59% for the rest of battle after receiving an attack; medium chance of guarding all attacks; guard activated against all attacks and high chance of performing a critical hit for 4 turns when guard is activated",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1026214691795648662/STR_Nameku_SSJ.png?width=507&height=676"
 		},
 		{
@@ -3230,7 +3230,7 @@
 		},
 		{
 			"name": "Strike From on High: Dabura",
-			"passive": "INT Type Ki +2; great chance of ATK & DEF +30%",
+			"passive": "ATK & DEF +120% when performing a Super Attack; ATK & DEF +30% and high chance of stunning the attacked enemy with 3 or more Ki Spheres obtained; plus an additional ATK & DEF +50% with 5 or more Ki Spheres obtained; INT Type Ki +2 and ATK & DEF +30%; INT Type ATK & DEF +10% in addition with 3 or more INT Ki Spheres obtained",
 			"imageURL": "https://media.discordapp.net/attachments/1022527938115145829/1027967846166315108/INT_Dabura.png?width=507&height=676"
 		},
 		{

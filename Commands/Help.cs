@@ -134,6 +134,28 @@ namespace DiscordBotTest.Commands
                     );
                 await ctx.Channel.SendMessageAsync(slashFunctionMessage);
             }
+
+            if (helpType == "Music" || helpType == "music") 
+            {
+                string description = "**You can also click on the title to view the 'MusicPlayerCommands.md' file which contains similar information** \n\n" +
+                                     "**>play** - You have to specify the VC you are in and the name of the song you want to play \n" +
+                                     "Example - '>play The-Blacks Troll Song' \n\n" +
+                                     "**>pause** - Pauses the current track \n\n" +
+                                     "**>resume** - Resumes playback of the current track \n\n" +
+                                     "**>stop** - Stops all playback and leaves the VC \n\n" +
+                                     "**>join** - Joins a specific Voice Channel that you specify \n\n" +
+                                     "**>leave** - Leaves a specific Voice Channel that you specify";
+
+                var musicMSG = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("**Music Player - Commands**")
+                    .WithDescription(description)
+                    .WithUrl("https://github.com/samjesus8/CoolerDiscordBot/blob/master/InfoFiles/PassiveSlashCommands.md")
+                    );
+                await ctx.Channel.SendMessageAsync(musicMSG);
+            }
         }
 
         [Command("changelog")]
@@ -515,8 +537,10 @@ namespace DiscordBotTest.Commands
             }
             if (version == "Latest" || version == "latest")
             {
-                string description = "***Dokkan Passive Generator - Slash Commands*** \n\n" +
-                    "";
+                string description = "***NEW - Music Commands*** \n\n" +
+                                     "The Bot can now play music in a Voice Channel. Simply give it a YouTube URL or search for what you want to play \n" +
+                                     ">Addition of the >join, >leave, >play and additional commands. More info can be found using '>help Music' \n\n" +
+                                     "";
 
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
@@ -537,7 +561,7 @@ namespace DiscordBotTest.Commands
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("Sorry, I didn't recognise that version")
                     .WithDescription("List of versions: \n" +
-                    "1.1/1.2/1.2.1 \n 1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n 1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8/1.4.9 \n 1.5.0 \n" +
+                    "1.1/1.2/1.2.1 \n 1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n 1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8/1.4.9 \n 1.5.0/1.5.1/1.5.2 \n" +
                     "Or >changelog latest for the latest version info")
                     );
                 await ctx.Channel.SendMessageAsync(errorMessage);

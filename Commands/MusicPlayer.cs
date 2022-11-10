@@ -65,7 +65,7 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("play")]
-        public async Task PlayMusic(CommandContext ctx, [RemainingText] string search) 
+        public async Task PlayMusic(CommandContext ctx, DiscordChannel channel, [RemainingText] string search) 
         {
             if (ctx.Member.VoiceState == null || ctx.Member.VoiceState.Channel == null) //Checking to see if user is in a VC
             {
@@ -74,7 +74,23 @@ namespace DiscordBotTest.Commands
             }
 
             var lavaInstance = ctx.Client.GetLavalink(); //Getting instance of LavaLink
+
+            if (!lavaInstance.ConnectedNodes.Any()) //Check if the bot is connected to LavaLink
+            {
+                await ctx.RespondAsync("Connection is not Established");
+                return;
+            }
+
             var node = lavaInstance.ConnectedNodes.Values.First();
+
+            if (channel.Type != ChannelType.Voice) //Check if the Bot is in a valid Voice Channel
+            {
+                await ctx.RespondAsync("Invalid Voice Channel");
+                return;
+            }
+
+            await node.ConnectAsync(channel); //Connect to the channel
+
             var conn = node.GetGuildConnection(ctx.Member.VoiceState.Guild);
 
             if (conn == null) //If the Bot failed to connect
@@ -93,7 +109,20 @@ namespace DiscordBotTest.Commands
             var track = loadResult.Tracks.First(); //Get the first entry in the search as it is the most accurate
 
             await conn.PlayAsync(track); //Play the track
-            await ctx.RespondAsync($"Playing {track.Title}");
+
+            var MusicMSG = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Azure)
+                .WithAuthor("𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠's Music System")
+                .WithTitle("Joined Channel " + channel.Name)
+                .WithDescription("Now Playing: " + track.Title + "\n" +
+                                 "Author: " + track.Author + "\n" +
+                                 "URL: " + track.Uri)
+                .WithFooter("Please use >pause & >resume and not >play when Pausing and Replaying the track")
+                );
+
+            await ctx.RespondAsync(MusicMSG);
         }
 
         [Command("pause")]
@@ -121,7 +150,15 @@ namespace DiscordBotTest.Commands
                 return;
             }
 
+            var PausedMSG = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Yellow)
+                .WithTitle("Paused")
+                );
+
             await conn.PauseAsync();
+            await ctx.RespondAsync(PausedMSG);
         }
 
         [Command("resume")]
@@ -150,6 +187,14 @@ namespace DiscordBotTest.Commands
             }
 
             await conn.ResumeAsync();
+            var ResumedMSG = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Green)
+                .WithTitle("Resumed")
+                );
+
+            await ctx.RespondAsync(ResumedMSG);
         }
 
         [Command("stop")]
@@ -171,13 +216,19 @@ namespace DiscordBotTest.Commands
                 return;
             }
 
-            if (conn.CurrentState.CurrentTrack == null) //Check to see if there is anything playing
-            {
-                await ctx.RespondAsync("There are no tracks loaded.");
-                return;
-            }
 
             await conn.StopAsync();
+            await conn.DisconnectAsync();
+
+            var StopMSG = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+                
+                .WithColor(DiscordColor.Red)
+                .WithTitle("Stopped Track")
+                .WithDescription("Track has now stopped and the Bot has left the Voice Channel")
+                );
+
+            await ctx.RespondAsync(StopMSG);
         }
     }
 }

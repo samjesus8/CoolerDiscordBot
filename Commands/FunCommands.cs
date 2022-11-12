@@ -1,14 +1,11 @@
 ﻿using DiscordBotTest.Builders;
 using DiscordBotTest.Handlers.Dialogue;
 using DiscordBotTest.Handlers.Dialogue.Steps;
-using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
-using DSharpPlus.Interactivity.Extensions;
 using System;
 using System.Collections.Generic;
-using System.Security.Policy;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -213,7 +210,6 @@ namespace DiscordBotTest.Commands
             coolerInsults.Add("How is that Red LF Cooler doing eh. He must like getting raped by Beast Gohan");
             coolerInsults.Add("You can't do maths mfer");
             coolerInsults.Add("Watch your tone shitface");
-            coolerInsults.Add("");
             int index = random.Next(1, coolerInsults.Count);
 
             var message = new DiscordMessageBuilder()

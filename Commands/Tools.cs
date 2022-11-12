@@ -108,5 +108,20 @@ namespace DiscordBotTest.Commands
 
             await ctx.Channel.SendMessageAsync(message);
         }
+
+        [Command("version")]
+        public async Task VersionShow(CommandContext ctx) 
+        {
+            var MSG = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Azure)
+                .WithTitle("Current Version")
+                .WithDescription("**V1.5.4**")
+                .WithFooter("For more information on this version, type in '>changelog latest'")
+                );
+
+            await ctx.Channel.SendMessageAsync(MSG);
+        }
     }
 }

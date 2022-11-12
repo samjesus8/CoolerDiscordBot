@@ -1,8 +1,6 @@
-﻿using DSharpPlus;
-using DSharpPlus.CommandsNext;
+﻿using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
-using System;
 using System.Threading.Tasks;
 
 namespace DiscordBotTest.Commands
@@ -535,7 +533,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.5.3")
             {
                 string description = "***NEW - Music Commands*** \n\n" +
                                      "The Bot can now play music in a Voice Channel. Simply give it a YouTube URL or search for what you want to play \n" +
@@ -555,8 +553,31 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.5.3")
                     .WithTitle("V1.5.3 Changelog")
+                    .WithDescription(description)
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "***New Commands*** \n\n" +
+                                     ">version - Displays the Current version of the Bot \n\n" +
+                                     "***>mid Command - Additions*** \n\n" +
+                                     "Added the following Titles into the Bot: \n" +
+                                     "Lycoris Recoil (Added the IMG URLs) \n" +
+                                     "My Dress Up Darling \n" +
+                                     "Darling in the FRANXX \n" +
+                                     "Testament of a Sister New Devil \n\n" +
+                                     "***Music Player*** \n\n" +
+                                     "Fixed the issue with the playback being extremely laggy \n" +
+                                     "When playing a song it should not crackle or stutter now";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.5.4")
+                    .WithTitle("V1.5.4 Changelog")
                     .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);
@@ -571,7 +592,7 @@ namespace DiscordBotTest.Commands
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("Sorry, I didn't recognise that version")
                     .WithDescription("List of versions: \n" +
-                    "1.1/1.2/1.2.1 \n 1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n 1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8/1.4.9 \n 1.5.0/1.5.1/1.5.2 \n" +
+                    "1.1/1.2/1.2.1 \n 1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n 1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8/1.4.9 \n 1.5.0/1.5.1/1.5.2/1.5.3 \n" +
                     "Or >changelog latest for the latest version info")
                     );
                 await ctx.Channel.SendMessageAsync(errorMessage);

@@ -696,20 +696,101 @@
 		{
 			"name": "Chisato Nishikigi",
 			"animeName": "Lycoris Recoil",
-			"imageURL": ""
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1040643273456353310/Chisato.jpg?width=474&height=670"
 		},
 		{
 			"name": "Takina Inoue",
 			"animeName": "Lycoris Recoil",
-			"imageURL": ""
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1040643273846439946/takins.jpg?width=429&height=670"
 		},
 
 
 		{
-			"name": "",
-			"animeName": "",
-			"imageURL": ""
+			"name": "Marin Kitagawa",
+			"animeName": "My Dress Up Darling",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041113234956091515/marin-normal.jpg?width=335&height=670"
 		},
-	]
+		{
+			"name": "Marin Kitagawa",
+			"animeName": "My Dress Up Darling",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041113234733809664/marin-cosplayer.jpeg?width=151&height=270"
+		},
+		{
+			"name": "Marin Kitagawa",
+			"animeName": "My Dress Up Darling",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041113235182604338/marin-succubus.jpg?width=449&height=279"
+		},
+		{
+			"name": "Nowa Sugaya",
+			"animeName": "My Dress Up Darling",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041113235392315483/nowa_sugaya.jpeg?width=166&height=247"
+		},
+		{
+			"name": "Sajuna Inui",
+			"animeName": "My Dress Up Darling",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041113235593625792/sajuna_inui.png?width=546&height=671"
+		},
+		{
+			"name": "Shinju Inui",
+			"animeName": "My Dress Up Darling",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041113236247957674/shinju_inui.jpg?width=433&height=671"
+		},
 
+
+		{
+			"name": "ZeroTwo",
+			"animeName": "Darling in the FRANXX",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041115007758372905/zerotwo.png?width=474&height=670"
+		},
+		{
+			"name": "Ichigo",
+			"animeName": "Darling in the FRANXX",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041115007137624166/ichigo.png?width=484&height=670"
+		},
+		{
+			"name": "Kokoro",
+			"animeName": "Darling in the FRANXX",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041115007435427850/kokoro.png?width=559&height=671"
+		},
+
+
+		{
+			"name": "Hana Uzaki",
+			"animeName": "Uzaki Chan wants to Hang Out",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041115827740618845/hana_uzaki.jpg?width=365&height=671"
+		},
+		{
+			"name": "Tsuki Uzaki",
+			"animeName": "Uzaki Chan wants to Hang Out",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041115827996475442/tsuki_uzaki.jpeg?width=165&height=247"
+		},
+
+
+		{
+			"name": "Mio Naruse",
+			"animeName": "Testament of a Sister New Devil",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041118129956339753/mio_naruse.jpg?width=270&height=405"
+		},		
+		{
+			"name": "Chisato Hasegawa",
+			"animeName": "Testament of a Sister New Devil",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041118129104896111/Hasegawa.Chisato.full.3412176.png?width=1192&height=670"
+		},
+		{
+			"name": "Kurumi Nonaka",
+			"animeName": "Testament of a Sister New Devil",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041118129427861636/kurumi_nonaka.jpg?width=947&height=670"
+		},		
+		{
+			"name": "Maria Naruse",
+			"animeName": "Testament of a Sister New Devil",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041118129713062029/maria_naruse.jpg?width=202&height=315"
+		},
+		{
+			"name": "Yuki Nonaka",
+			"animeName": "Testament of a Sister New Devil",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041118130157670572/yuki_nonaka.jpg?width=464&height=670"
+		},
+
+	]
 }

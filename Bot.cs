@@ -36,7 +36,7 @@ namespace DiscordBotTest
             {
                 Token = configJson.Token,
                 TokenType = TokenType.Bot,
-                AutoReconnect = true,
+                AutoReconnect = true
             };
 
             Client = new DiscordClient(config);
@@ -68,14 +68,15 @@ namespace DiscordBotTest
 
             var endpoint = new ConnectionEndpoint
             {
-                Hostname = "127.0.0.1",
-                Port = 2333
+                Hostname = "lavalink.oops.wtf",
+                Port = 443,
+                Secured = true
             };
             var lavaLinkConfig = new LavalinkConfiguration
             {
-                Password = "1234",
+                Password = "www.freelavalink.ga",
                 RestEndpoint = endpoint,
-                SocketEndpoint = endpoint,
+                SocketEndpoint = endpoint
             };
             var lavalink = Client.UseLavalink();
 

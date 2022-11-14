@@ -6,6 +6,8 @@ using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 using System;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -319,6 +321,17 @@ namespace DiscordBotTest.Commands
                                      "Error Message: " + LinkList.Error)
                     );
                 await ctx.Channel.SendMessageAsync(failedMsg);
+            }
+
+            //Writing to .txt file
+
+            using(StreamWriter file = new StreamWriter(@"D:\Visual Studio Projects\DiscordBotTest\InfoFiles\Links.txt")) 
+            {
+                foreach (var link in LinkList.Links) 
+                {
+                    file.WriteLine("{0} - {1}, {2}", link.Key, link.Value.ATK, link.Value.DEF);
+                }
+                file.Close();
             }
         }
 

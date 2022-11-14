@@ -65,26 +65,26 @@ The following links are not implemented into the bot because they may not posses
 
 **Name - Reason**
 
-Golden Warrior - Debuff Link
-Evil Autocrats - Debuff Link
-Flee - Evasion Link
-Telekinesis - Debuff Link
-Telepathy - Crit Link
-Coward - Crit Link
-Attack of the Clones - Evasion Link
-Mechanical Menaces - DMG Reduction Link
-Champion's Strength - DMG Reduction Link
-Battlefield Diva - Evasion Link
-Dismal Future - Crit Link
-Loyalty - DMG Reduction Link
-Energy Absorption - HP Link
-Strength In Unity - HP Link
-Strongest Clan In Space - Debuff Link
-Cooler's Underling - Crit Link
-Team Turles - Crit Link
-Auto Regeneration - HP Link
-Fusion Failure - HP Link
-Fear & Faith - Debuff Link
-Blazing Battle - Rampage Debuff Link
-Golden Z-Fighter - Crit Link
+- Golden Warrior - Debuff Link
+- Evil Autocrats - Debuff Link
+- Flee - Evasion Link
+- Telekinesis - Debuff Link
+- Telepathy - Crit Link
+- Coward - Crit Link
+- Attack of the Clones - Evasion Link
+- Mechanical Menaces - DMG Reduction Link
+- Champion's Strength - DMG Reduction Link
+- Battlefield Diva - Evasion Link
+- Dismal Future - Crit Link
+- Loyalty - DMG Reduction Link
+- Energy Absorption - HP Link
+- Strength In Unity - HP Link
+- Strongest Clan In Space - Debuff Link
+- Cooler's Underling - Crit Link
+- Team Turles - Crit Link
+- Auto Regeneration - HP Link
+- Fusion Failure - HP Link
+- Fear & Faith - Debuff Link
+- Blazing Battle - Rampage Debuff Link
+- Golden Z-Fighter - Crit Link
 

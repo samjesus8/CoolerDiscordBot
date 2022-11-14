@@ -57,7 +57,9 @@ If you would like to create this passive with NO ACTIVE links, you have to type 
 
 TO view the list of avalible links, navigate to the Links.txt file in the InfoFiles folder
 
-OR go to this link -> ADD LINK HERE
+OR go to this link -> https://github.com/samjesus8/CoolerDiscordBot/blob/master/InfoFiles/Links.txt
+
+*CoolerDiscordBot/InfoFiles/Links.txt*
 
 ### Unavailable Links
 

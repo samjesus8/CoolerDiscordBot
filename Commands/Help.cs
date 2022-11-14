@@ -584,17 +584,25 @@ namespace DiscordBotTest.Commands
             }
             if (version == "Latest" || version == "latest")
             {
-                string description = "**>avatar Command** \n" +
+                string description = "***>avatar Command*** \n\n" +
                                      "Changed the way the command works. If a user is provided such as '>avatar @Cooler', it will get the avatar of that user. \n" +
                                      "If >avatar is done on its own it'll just get the avatar of the user who called it \n\n" +
-                                     "";
+                                     "***Dokkan Passive Generator - INTRODUCING THE LINK SYSTEM*** \n\n" +
+                                     "I'm proud to announce that the world's first Dokkan Passive Generator is now 100% complete with the addition of the Link System \n\n" +
+                                     "This whole project took around a whole month to plan and design the whole system to create custom, user-made Dokkan Passives. Everything " +
+                                     "from the maths behind the ATK/DEF calculations and the way its all displayed in Discord \n\n" +
+                                     "The Link System now completes the whole project and makes the Stats look more realistic in an actual Dokkan gameplay situation, as they account for a major" +
+                                     "portion of damage dealt by the units as well as tanking \n\n" +
+                                     "***HOW TO USE -> PLEASE CLICK ON THE TITLE WHERE YOU WILL BE REDIRECTED TO A USER MANUAL ON HOW TO CREATE A PASSIVE WITH LINKS!!!!*** \n" +
+                                     "You can also view this file by going to the GitHub project and navigating to '\\CoolerDiscordBot\\InfoFiles\\UsingLinks.md'";
 
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
                     .WithAuthor("The latest version is 1.5.5")
-                    .WithTitle("V1.5.5 Changelog")
+                    .WithTitle("V1.5.5 Changelog - **(Press here to view the UsingLinks.md File)**")
                     .WithDescription(description)
+                    .WithUrl("https://github.com/samjesus8/CoolerDiscordBot/blob/master/InfoFiles/PassiveGenerator-UsingLinks.md")
                     );
                 await ctx.Channel.SendMessageAsync(message);
                 return;

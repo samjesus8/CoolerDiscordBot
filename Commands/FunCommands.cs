@@ -210,6 +210,8 @@ namespace DiscordBotTest.Commands
             coolerInsults.Add("How is that Red LF Cooler doing eh. He must like getting raped by Beast Gohan");
             coolerInsults.Add("You can't do maths mfer");
             coolerInsults.Add("Watch your tone shitface");
+            coolerInsults.Add("You are a cunt");
+            coolerInsults.Add("You are a twat");
             int index = random.Next(1, coolerInsults.Count);
 
             var message = new DiscordMessageBuilder()

@@ -196,6 +196,7 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="InfoFiles\MusicPlayerCommands.md" />
+    <None Include="InfoFiles\PassiveGenerator-UsingLinks.md" />
     <None Include="JSONFiles\Links.json" />
     <None Include="JSONFiles\UserPassivesStorage.json" />
     <None Include="config.json" />

@@ -137,7 +137,7 @@ namespace DiscordBotTest.Commands
             {
                 await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
 
-                var calculator = new DokkanPassiveCalculator(info.Rarity, info.UnitHP, info.UnitATK, info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveATK, info.UnitPassiveDEF, info.Support, info.DmgReduction);
+                var calculator = new DokkanPassiveCalculator(info.Rarity, info.UnitHP, info.UnitATK, info.UnitDEF, info.UnitLeaderSkill, info.UnitPassiveATK, info.UnitPassiveDEF, info.Support, info.DmgReduction, info.Links);
 
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()

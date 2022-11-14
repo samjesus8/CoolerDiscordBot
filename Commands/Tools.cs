@@ -81,18 +81,35 @@ namespace DiscordBotTest.Commands
         }
 
         [Command("avatar")]
-        public async Task GetUserAvatar(CommandContext ctx, DiscordUser user) 
+        public async Task GetUserAvatar(CommandContext ctx, DiscordUser user = null) 
         {
-            var userAvatar = user.AvatarUrl;
-            var message = new DiscordMessageBuilder()
-                .AddEmbed(new DiscordEmbedBuilder()
+            if (user == null) //If no user is provided, show the avatar of the user who executed it
+            {
+                var nullAvatar = ctx.User.AvatarUrl;
 
-                .WithColor(DiscordColor.Azure)
-                .WithTitle("Avatar for " + user.Username)
-                .WithImageUrl(userAvatar)
-                );
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
 
-            await ctx.Channel.SendMessageAsync(message);
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("Avatar for " + ctx.User.Username)
+                    .WithImageUrl(nullAvatar)
+                    );
+
+                await ctx.Channel.SendMessageAsync(message);
+            }
+            else 
+            {
+                var userAvatar = user.AvatarUrl;
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+
+                    .WithColor(DiscordColor.Azure)
+                    .WithTitle("Avatar for " + user.Username)
+                    .WithImageUrl(userAvatar)
+                    );
+
+                await ctx.Channel.SendMessageAsync(message);
+            }
         }
 
         [Command("membercount")]
@@ -117,7 +134,7 @@ namespace DiscordBotTest.Commands
 
                 .WithColor(DiscordColor.Azure)
                 .WithTitle("Current Version")
-                .WithDescription("**V1.5.4**")
+                .WithDescription("**V1.5.5**")
                 .WithFooter("For more information on this version, type in '>changelog latest'")
                 );
 

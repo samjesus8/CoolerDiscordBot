@@ -1,6 +1,782 @@
-﻿{
-	"LinksCategory": "Full List of Links",
-	"members": [
-
-	]
+{
+  "LinksCategory": "Full List of Links",
+  "members": [
+    {
+      "Links": {},
+      "LinkName": "HighCompatibility",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Courage",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "TheStudents",
+      "ATK": 0.0,
+      "DEF": 30.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "TheInnocents",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "CraneSchool",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "DemonicWays",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "DemonicPower",
+      "ATK": 20.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Braniacs",
+      "ATK": 15.0,
+      "DEF": 15.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "MoneyMoneyMoney",
+      "ATK": 0.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "MoreThanMeetsTheEye",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Hero",
+      "ATK": 0.0,
+      "DEF": 25.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SupremeWarrior",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Gentleman",
+      "ATK": 0.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "BrutalBeatdown",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "MessengerFromTheFuture",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "WorldTournamentReborn",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "New",
+      "ATK": 20.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SaiyanWarriorRace",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "AllInTheFamily",
+      "ATK": 0.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Respect",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Prodigies",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "WorldTouramentChampion",
+      "ATK": 0.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Metamorphisis",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SuperSaiyan",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "ExperiencedFighters",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "TwinTerrors",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SaiyanLineage",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "AndroidAssault",
+      "ATK": 0.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "TurtleSchool",
+      "ATK": 20.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SolidSupport",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "ColdJudgement",
+      "ATK": 0.0,
+      "DEF": 25.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "RoyalLineage",
+      "ATK": 5.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "GinyuForce",
+      "ATK": 25.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Infighter",
+      "ATK": 25.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "FriezasMinion",
+      "ATK": 20.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "ZFighters",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "DodonRay",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Kamehameha",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Namekians",
+      "ATK": 7.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Beserker",
+      "ATK": 30.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "BigBadBosses",
+      "ATK": 25.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "FriezasArmy",
+      "ATK": 10.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "ToughAsNails",
+      "ATK": 0.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SpeedyRetribution",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "TagTeamOfTerror",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "RRArmy",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "GazeOfRespect",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Bombardment",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Over9000",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "UniversesMostMalevolent",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "ShockingSpeed",
+      "ATK": 0.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "FamilyTies",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "TeamBardock",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SaiyanPride",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Revival",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "OrganicUpgrade",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "ResurrectionF",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Patrol",
+      "ATK": 0.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "WarriorGods",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SuperGodCombat",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "NewFriezaArmy",
+      "ATK": 25.0,
+      "DEF": 25.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "UnbreakableBond",
+      "ATK": 0.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "GalacticVisitor",
+      "ATK": 0.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "MasterOfMagic",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "MajinResurrectionPlan",
+      "ATK": 0.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Connoisseur",
+      "ATK": 0.0,
+      "DEF": 7.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "GodlyPower",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "BuddingWarrior",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Majin",
+      "ATK": 15.0,
+      "DEF": 15.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "ThirstForConquest",
+      "ATK": 15.0,
+      "DEF": 15.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "HeraClan",
+      "ATK": 5.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "GalacticWarriors",
+      "ATK": 20.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "OverInAFlash",
+      "ATK": 7.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "IncredibleAdventure",
+      "ATK": 7.0,
+      "DEF": 7.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "CoolersArmoredSquad",
+      "ATK": 25.0,
+      "DEF": 25.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "HeroOfJustice",
+      "ATK": 25.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SignaturePose",
+      "ATK": 7.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "GT",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "InfiniteRegeneration",
+      "ATK": 0.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "PreparedForBattle",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "DestroyerOfTheUniverse",
+      "ATK": 25.0,
+      "DEF": 15.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "BabasFighter",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "GuidanceOfTheDragonBalls",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "PowerBestowedByGod",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "HardenedGrudge",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Fusion",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "DeficitBoost",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "UltimateLifeform",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "FierceBattle",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "InfiniteEnergy",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "FormidableEnemy",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "FusedFighter",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Scientist",
+      "ATK": 0.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "HatredOfSaiyans",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "LimitBreakingForm",
+      "ATK": 10.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "FirstAwakened",
+      "ATK": 25.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "ShatteringTheLimit",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Nightmare",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Xenoverse",
+      "ATK": 20.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Super Strike",
+      "ATK": 25.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "Transform",
+      "ATK": 0.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SaiyanRoar",
+      "ATK": 25.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "LegendaryPower",
+      "ATK": 15.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "WarriorsOfUniverse6",
+      "ATK": 6.0,
+      "DEF": 6.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "ShadowDragons",
+      "ATK": 20.0,
+      "DEF": 20.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "PenguinVillageAdventure",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "OtherworldWarriors",
+      "ATK": 20.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "TournamentOfPower",
+      "ATK": 7.0,
+      "DEF": 7.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SoulVSSoul",
+      "ATK": 5.0,
+      "DEF": 5.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "SupremePower",
+      "ATK": 10.0,
+      "DEF": 10.0,
+      "Error": null
+    },
+    {
+      "Links": {},
+      "LinkName": "TheWallStandingTall",
+      "ATK": 20.0,
+      "DEF": 0.0,
+      "Error": null
+    }
+  ]
 }

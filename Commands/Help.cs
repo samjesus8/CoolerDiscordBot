@@ -559,7 +559,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.5.4")
             {
                 string description = "***New Commands*** \n\n" +
                                      ">version - Displays the Current version of the Bot \n\n" +
@@ -576,8 +576,24 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.5.4")
                     .WithTitle("V1.5.4 Changelog")
+                    .WithDescription(description)
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "**>avatar Command** \n" +
+                                     "Changed the way the command works. If a user is provided such as '>avatar @Cooler', it will get the avatar of that user. \n" +
+                                     "If >avatar is done on its own it'll just get the avatar of the user who called it \n\n" +
+                                     "";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.5.5")
+                    .WithTitle("V1.5.5 Changelog")
                     .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);

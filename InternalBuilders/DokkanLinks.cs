@@ -52,6 +52,8 @@ namespace DiscordBotTest.InternalBuilders
 
         public bool StoreLinks(DokkanLinks LinkObj) 
         {
+            Links.Clear(); //This should only be written to when its loading from the JSON File not writing to
+            Error = null;
             try 
             {
                 //var path = @"C:\Users\samue\Documents\Bot\bin\Debug\Links.json";

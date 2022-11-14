@@ -52,3 +52,39 @@ Now that you have created the passive, when you come round to using it, all the 
 If you would like to create this passive with NO ACTIVE links, you have to type in 'null' in the Links parameter like this
 
 ![image](https://user-images.githubusercontent.com/98812930/201786445-5cc09d8b-2b43-43d4-ba8f-e740ad22b2b1.png)
+
+## What Links are avalible
+
+TO view the list of avalible links, navigate to the Links.txt file in the InfoFiles folder
+
+OR go to this link -> ADD LINK HERE
+
+### Unavailable Links
+
+The following links are not implemented into the bot because they may not possess ATK/DEF related buffs:
+
+**Name - Reason**
+
+Golden Warrior - Debuff Link
+Evil Autocrats - Debuff Link
+Flee - Evasion Link
+Telekinesis - Debuff Link
+Telepathy - Crit Link
+Coward - Crit Link
+Attack of the Clones - Evasion Link
+Mechanical Menaces - DMG Reduction Link
+Champion's Strength - DMG Reduction Link
+Battlefield Diva - Evasion Link
+Dismal Future - Crit Link
+Loyalty - DMG Reduction Link
+Energy Absorption - HP Link
+Strength In Unity - HP Link
+Strongest Clan In Space - Debuff Link
+Cooler's Underling - Crit Link
+Team Turles - Crit Link
+Auto Regeneration - HP Link
+Fusion Failure - HP Link
+Fear & Faith - Debuff Link
+Blazing Battle - Rampage Debuff Link
+Golden Z-Fighter - Crit Link
+

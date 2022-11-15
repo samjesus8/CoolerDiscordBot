@@ -10,35 +10,25 @@ This is Step 1 into using the command. As you start writing the command, Discord
 ![image](https://user-images.githubusercontent.com/98812930/197410990-74fae665-ac46-4eda-9a75-1dce15f9f5d7.png)
 
 
-> **Command Parameters**
+### Command Parameters
 
-PassiveName - Give your Passive a name, it can be anything you want
-
-HP - The base HP value of your card
-
-ATK - The base ATK of your card
-
-DEF - The base DEF of your card
-
-Leader Skill Name - Give your leader skill a name, this can be anything you want. It dosent have to be one from Dokkan like Pure Saiyans
-
-Leader Skill Value - This has to be a % value, most popular ones are 150, 170, 200 (DO NOT INCLUDE THE %, JUST TYPE IN THE NUMBER)
-
-PassiveATK - This is the TOTAL ATK% buff of your passive so if you have multiple buffs please add them up and put the final value here (DO NOT INCLUDE THE %, JUST THE NUMBER)
-
-PassiveDEF - This is the TOTAL DEF% buff of your passive so if you have multiple buffs please add them up and put the final value here (DO NOT INCLUDE THE %, JUST THE NUMBER)
-
-DMGReduction - This is the % buff of damage reduction your passive includes
-
-Support - This is the total % buff of support from allies
-
-Links - There has to be 7 links separated with ONE SPACE
+- PassiveName - Give your Passive a name, it can be anything you want
+- HP - The base HP value of your card
+- ATK - The base ATK of your card
+- DEF - The base DEF of your card
+- Leader Skill Name - Give your leader skill a name, this can be anything you want. It dosent have to be one from Dokkan like Pure Saiyans
+- Leader Skill Value - This has to be a % value, most popular ones are 150, 170, 200 (DO NOT INCLUDE THE %, JUST TYPE IN THE NUMBER)
+- PassiveATK - This is the TOTAL ATK% buff of your passive so if you have multiple buffs please add them up and put the final value here (DO NOT INCLUDE THE %, JUST THE NUMBER)
+- PassiveDEF - This is the TOTAL DEF% buff of your passive so if you have multiple buffs please add them up and put the final value here (DO NOT INCLUDE THE %, JUST THE NUMBER)
+- DMGReduction - This is the % buff of damage reduction your passive includes
+- Support - This is the total % buff of support from allies
+- Links - There has to be a Maximum of 7 links separated with ONE SPACE, you do not have to provide 7 links as you only need to provide ones that you know will be active
 
 E.g: Link1 Link2 Link3 Link4 Link5 Link6 Link7
 
 If you dont want to add any links please type in "null"
 
-> **Confirmation**
+## Confirmation
 
 Once you have pressed ENTER after filling out your details you will recieve a confirmation message with all your details, you must react with a :thumbsup: if you want the passive to be created, :thumbsdown:  if you want to cancel the command
 
@@ -52,11 +42,13 @@ YOU MUST SPECIFY THE EXACT SAME NAME YOU USED IN /passivecreate WHEN FILLING OUT
 
 The bot will then take your inputs and run it through the maths. It will then generate a Embed with your stats such as ATK stat when supering, DEF when it was Massively raised
 
-![image](https://user-images.githubusercontent.com/98812930/197412774-6d8db776-b2c5-4bbc-b64a-70083a6cce8c.png)
+Example of AGL Gohan's passive being used:
 
-## Step 3 - "/passivelist"
+![image](https://user-images.githubusercontent.com/98812930/201941392-77fce7d3-33db-422e-8f15-04f6550c0049.png)
 
-This is the 3rd addition of the whole Dokkan Passive creator, this final command allows you to view the list of passives that you or another user have created
+## /passivelist Command
+
+This command allows users to view the list of passives they have created and its details. You can also use this command to view the passives of another user and its details
 
 **The parameters of this command are**
 User - This is the username you are trying to search for
@@ -78,3 +70,45 @@ Step 1:
 Step 2: 
 
 ![image](https://user-images.githubusercontent.com/98812930/197633614-2aec638a-6fab-4c65-ab3c-e80f29771166.png)
+
+## /deletepassive Command
+
+This command allows users to delete any passives that ONLY they have created. You cannot delete another user's passive
+
+Simply provide the name of the passive you want to delete and it will remove it from the system
+
+### Step 1 - Look at the passive you want to delete
+
+In this example we will be deleting the "PHY Bardock" passive from the list of stored passives for this user:
+
+![image](https://user-images.githubusercontent.com/98812930/201942410-cff1b3cd-8903-4ba6-923c-dab5d31a8d7c.png)
+
+### Step 2 - Use /deletepassive
+
+So to delete the PHY Bardock passive all we do is /deletepassive and provide the exact same name:
+
+![image](https://user-images.githubusercontent.com/98812930/201942833-33bf8ff7-a91c-4f62-89ec-8487374b47a9.png)
+
+Executing the command:
+
+![image](https://user-images.githubusercontent.com/98812930/201942933-a60f3642-a993-4e8d-8a62-19ba53a36d3d.png)
+
+### Step 3 - Check if it was Deleted
+
+To check if the passive was deleted, run /passivelist again and check your list of passives:
+
+![image](https://user-images.githubusercontent.com/98812930/201943130-9382af38-d6a6-45d1-b9cc-f6e088464623.png)
+
+And as you can see, PHY Bardock is no longer in the list for this user
+
+# Additional Support - Links to help pages
+
+If any of these commands return an error, please ping 𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825 in Discord, ask for help in the support server or submit an issue here specifying what went wrong with screenshots of the error, what you did to get that error and we will try and help
+
+- For people struggling to input Links when creating a passive please visit this link -> https://github.com/samjesus8/CoolerDiscordBot/blob/master/InfoFiles/PassiveGenerator-UsingLinks.md
+
+- For a list of Links please visit this link -> https://github.com/samjesus8/CoolerDiscordBot/blob/master/InfoFiles/Links.txt
+(Each link shows its ATK/DEF Buffs respectively)
+
+
+

@@ -1,6 +1,7 @@
 ﻿using DiscordBotTest.Commands;
 using DSharpPlus;
 using DSharpPlus.CommandsNext;
+using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.CommandsNext.Exceptions;
 using DSharpPlus.Entities;
 using DSharpPlus.EventArgs;
@@ -92,14 +93,25 @@ namespace DiscordBotTest
 
         private async Task OnCommandError(CommandsNextExtension sender, CommandErrorEventArgs e)
         {
-            if (e.Exception is ChecksFailedException) 
+            if (e.Exception is ChecksFailedException) //Checking if its a failed command 
             {
+                var cast = (ChecksFailedException)e.Exception; //Converting the exception into type ChecksFailedException
+                string timeLeftCooldown = ""; //Variable to store cooldown remaining time
+
+                foreach (var check in cast.FailedChecks) //Checking for any Cooldown Related errors
+                {
+                    var cooldown = (CooldownAttribute)check; //Casting as a Cooldown Attribute
+                    TimeSpan timeLeft = cooldown.GetRemainingCooldown(e.Context); //Getting remaining cooldown
+                    timeLeftCooldown = timeLeft.ToString(@"hh\:mm\:ss");
+                }
+
                 Console.Error.WriteLine("Error " + e.Exception);
 
-                var cooldownErrorMessage = new DiscordMessageBuilder()
+                var cooldownErrorMessage = new DiscordMessageBuilder() //Message to send when this exception is thrown
                     .AddEmbed(new DiscordEmbedBuilder()
-                    .WithColor(DiscordColor.Azure)
-                    .WithTitle("You must wait for the cooldown to end")
+                    .WithColor(DiscordColor.DarkRed)
+                    .WithTitle("You must wait for the cooldown to end!!")
+                    .WithDescription("Remaining Time (HH:MM:SS) -> " + timeLeftCooldown)
                     );
 
                 await e.Context.Channel.SendMessageAsync(cooldownErrorMessage);

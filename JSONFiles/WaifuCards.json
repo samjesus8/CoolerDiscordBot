@@ -792,5 +792,32 @@
 			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1041118130157670572/yuki_nonaka.jpg?width=464&height=670"
 		},
 
+		{
+			"name": "Tania",
+			"animeName": "Beast Tamer",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1045762609284132885/tania.png?width=1192&height=670",
+		},
+		{
+			"name": "Kanade",
+			"animeName": "Beast Tamer",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1045762608596267038/Kanade.jpg?width=397&height=670",
+		},
+		{
+			"name": "Nina",
+			"animeName": "Beast Tamer",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1045762608944390285/nina.jpg?width=372&height=576",
+		},
+
+		{
+			"name": "Lilith",
+			"animeName": "The Maid I Hired Recently Is Mysterious",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1045763548384596089/lilith.png?width=377&height=670",
+		},
+		{
+			"name": "Natsume Nakashima",
+			"animeName": "The Maid I Hired Recently Is Mysterious",
+			"imageURL": "https://media.discordapp.net/attachments/1020110665161113610/1045763548707573900/Natsume_Nakashima.jpg?width=486&height=517",
+		},
+
 	]
 }

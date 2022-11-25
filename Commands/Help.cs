@@ -582,7 +582,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.5.5")
             {
                 string description = "***>avatar Command*** \n\n" +
                                      "Changed the way the command works. If a user is provided such as '>avatar @Cooler', it will get the avatar of that user. \n" +
@@ -599,10 +599,32 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.5.5")
                     .WithTitle("V1.5.5 Changelog - **(Press here to view the UsingLinks.md File)**")
                     .WithDescription(description)
                     .WithUrl("https://github.com/samjesus8/CoolerDiscordBot/blob/master/InfoFiles/PassiveGenerator-UsingLinks.md")
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "***Dokkan Passive Generator*** \n" +
+                                     "-The **'/viewlinks'** slash command now works properly. With this command you can search up a Dokkan Link and view its buffs \n\n" +
+                                     "**Cooldowns** \n" +
+                                     "-When a Cooldown for a command is activated, users can finally see the time remaining on the cooldown which makes " +
+                                     "users more notified when they can use a command again \n" +
+                                     "-The >fortune command has been changed to have a cooldown of 12 hours \n\n" +
+                                     "**>mid Command - Additions** \n" +
+                                     "Added the following Animes to the command \n\n" +
+                                     "**-Beast Tamer** \n" +
+                                     "**-The Maid I Hired Recently Is Mysterious**";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The latest version is 1.5.6")
+                    .WithTitle("V1.5.6 Changelog")
+                    .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);
                 return;
@@ -616,7 +638,10 @@ namespace DiscordBotTest.Commands
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("Sorry, I didn't recognise that version")
                     .WithDescription("List of versions: \n" +
-                    "1.1/1.2/1.2.1 \n 1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n 1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8/1.4.9 \n 1.5.0/1.5.1/1.5.2/1.5.3 \n" +
+                    "1.1/1.2/1.2.1 \n " +
+                    "1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n " +
+                    "1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8/1.4.9 \n " +
+                    "1.5.0/1.5.1/1.5.2/1.5.3/1.5.4/1.5.5 \n" +
                     "Or >changelog latest for the latest version info")
                     );
                 await ctx.Channel.SendMessageAsync(errorMessage);

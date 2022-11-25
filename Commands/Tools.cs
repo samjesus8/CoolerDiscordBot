@@ -134,7 +134,7 @@ namespace DiscordBotTest.Commands
 
                 .WithColor(DiscordColor.Azure)
                 .WithTitle("Current Version")
-                .WithDescription("**V1.5.5**")
+                .WithDescription("**V1.5.6**")
                 .WithFooter("For more information on this version, type in '>changelog latest'")
                 );
 

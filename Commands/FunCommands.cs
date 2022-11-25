@@ -77,6 +77,7 @@ namespace DiscordBotTest.Commands
             var toneMessage = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Azure)
                 .WithTitle("To " + user.Username)
                 .WithDescription("WATCH YOUR FUCKING TONE MFER")
                 .WithImageUrl("https://cdn.discordapp.com/emojis/1001335925655212062.png?size=1024")
@@ -92,6 +93,7 @@ namespace DiscordBotTest.Commands
             var toneMessage = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Azure)
                 .WithTitle("To " + user)
                 .WithDescription("WATCH YOUR FUCKING TONE MFER")
                 .WithImageUrl("https://cdn.discordapp.com/emojis/1001335925655212062.png?size=1024")
@@ -116,6 +118,7 @@ namespace DiscordBotTest.Commands
 
             var toneMessage = new DiscordMessageBuilder()
                 .AddEmbed(new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Azure)
                 .WithTitle("Tone Chooser")
                 .WithColor(DiscordColor.Azure)
                 .WithDescription("Out of all the mfers that " + ctx.User.Username + " chose \n\n" + "***" + userList[index].Username + "***" + " should watch their tone!!!")

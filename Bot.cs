@@ -111,7 +111,7 @@ namespace DiscordBotTest
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.DarkRed)
                     .WithTitle("You must wait for the cooldown to end!!")
-                    .WithDescription("Remaining Time (HH:MM:SS) -> " + timeLeftCooldown)
+                    .WithDescription("Remaining Time (HH:MM:SS) -> ***" + timeLeftCooldown + "***")
                     );
 
                 await e.Context.Channel.SendMessageAsync(cooldownErrorMessage);

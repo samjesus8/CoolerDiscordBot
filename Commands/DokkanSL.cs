@@ -288,13 +288,35 @@ namespace DiscordBotTest.Commands
             await ctx.CreateResponseAsync(InteractionResponseType.ChannelMessageWithSource, new DiscordInteractionResponseBuilder().WithContent("Starting..."));
             var LinkList = new DokkanLinks();
             var loadLinks = LinkList.LoadLinks();
-            string[] tempList = new string[LinkList.Links.Count];
 
             if (loadLinks == true)
             {
                 if (LinkName != "null")
                 {
                     //Search for specific link
+                    var linkToSearch = LinkList.Links.TryGetValue(LinkName, out var link);
+                    if (linkToSearch == true) 
+                    {
+                        var linkMsg = new DiscordMessageBuilder()
+                            .AddEmbed(new DiscordEmbedBuilder()
+
+                            .WithColor(DiscordColor.Azure)
+                            .WithTitle("Link Details for: " + LinkName)
+                            .WithDescription("ATK - " + link.ATK + "% \n" +
+                                             "DEF - " + link.DEF + "%")
+                            );
+                        await ctx.Channel.SendMessageAsync(linkMsg);
+                    }
+                    else 
+                    {
+                        var linkFailedMsg = new DiscordMessageBuilder()
+                            .AddEmbed(new DiscordEmbedBuilder()
+
+                            .WithTitle($"Failed to get link with name '{LinkName}'")
+                            .WithDescription("Please refer to the file in the GitHub repo 'CoolerDiscordBot/InfoFiles/Links.txt' for a list of avalible links")
+                            );
+                        await ctx.Channel.SendMessageAsync(linkFailedMsg);
+                    }
                 }
                 else if (LinkName == "null")
                 {
@@ -321,17 +343,6 @@ namespace DiscordBotTest.Commands
                                      "Error Message: " + LinkList.Error)
                     );
                 await ctx.Channel.SendMessageAsync(failedMsg);
-            }
-
-            //Writing to .txt file
-
-            using(StreamWriter file = new StreamWriter(@"D:\Visual Studio Projects\DiscordBotTest\InfoFiles\Links.txt")) 
-            {
-                foreach (var link in LinkList.Links) 
-                {
-                    file.WriteLine("{0} - {1}, {2}", link.Key, link.Value.ATK, link.Value.DEF);
-                }
-                file.Close();
             }
         }
 

@@ -140,5 +140,37 @@ namespace DiscordBotTest.Commands
 
             await ctx.Channel.SendMessageAsync(MSG);
         }
+
+        [Command("github")]
+        public async Task GitHub(CommandContext ctx) 
+        {
+            var msg = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Azure)
+                .WithTitle("GitHub Repository for the Bot")
+                .WithDescription("Click the title to access the GitHub repository for this bot")
+                .WithUrl("https://github.com/samjesus8/CoolerDiscordBot")
+                .WithImageUrl("https://media.discordapp.net/attachments/1020110665161113610/1046892445209731132/monke_middle_finger.jpg?width=518&height=670")
+                );
+            await ctx.Channel.SendMessageAsync(msg);
+        }
+
+        [Command("dokkanwindows")]
+        public async Task GitHubDokkan(CommandContext ctx) 
+        {
+            var msg = new DiscordMessageBuilder()
+                .AddEmbed(new DiscordEmbedBuilder()
+
+                .WithColor(DiscordColor.Azure)
+                .WithTitle("GitHub Repository for the **Dokkan Passive Generator - Windows Version**")
+                .WithDescription("Click the title to access the GitHub repository for the Windows Edition of the Dokkan Passive Generator" +
+                " featured in this bot. This application is based off the Generator but in a Windows Forms style application with an easy-to-use GUI \n\n" +
+                "To download this application go to the **'Releases'** area and download the Setup.exe of the latest version")
+                .WithUrl("https://github.com/samjesus8/DokkanPassiveGenerator")
+                .WithImageUrl("https://media.discordapp.net/attachments/1020110665161113610/1046892807241093211/85b85dd4-55f1-455c-bc5a-e5df541598bb.png?width=115&height=115")
+                );
+            await ctx.Channel.SendMessageAsync(msg);
+        }
     }
 }

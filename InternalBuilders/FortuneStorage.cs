@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DiscordBotTest.Builders
 {
@@ -14,6 +11,11 @@ namespace DiscordBotTest.Builders
                                         "AGL Super Vegito", "PHY Vegito Blue", "AGL Pan", "AGL SSJ3 Goku" };
 
         public FortuneStorage() 
+        {
+
+        }
+
+        public void AddFortunesTheInfiniteUniverse() 
         {
             var random = new Random();
             int badUnitsIndex = random.Next(badUnits.Length);
@@ -78,6 +80,51 @@ namespace DiscordBotTest.Builders
             Fortunes.Add("Vein will get VT and INT Zamasu");
             Fortunes.Add("If u get this fortune, tell Joku that Coola wanted to do VC with him");
 
+            //Sigma Quotes
+
+            Fortunes.Add("Instead of trying to blend in, Stand out and never blend in");
+            Fortunes.Add("Confuse them with your silence. Shock them with your actions");
+            Fortunes.Add("80% of boys have Girlfriends, the rest have a brain. Separate yourself from society and you will be above them");
+            Fortunes.Add("A true man denies society's standards and expectations");
+            Fortunes.Add("People say you can’t live without love… I think oxygen is more important!");
+            Fortunes.Add("Don’t avoid them when they’re angry. They’ll run to you when the temperature rises");
+            Fortunes.Add("You are already a king. It’s simply a matter of finding out the nature of your kingdom");
+            Fortunes.Add("Put more of your energy into listening than talking");
+            Fortunes.Add("Always be true to who you are, and ignore what other people have to say about you");
+            Fortunes.Add("Until his dream comes true, a man cannot relax");
+            Fortunes.Add("Never Fear Anyone, Never Trust Anyone, Never Depend On anyone");
+            Fortunes.Add("The future depends on what we do in the present");
+            Fortunes.Add("Don't Quit. Suffer now and live the rest of your life above those who made you suffer");
+            Fortunes.Add("Education wil make you a living. Self Education makes you a fortune");
+            Fortunes.Add("The worst thing for a rich person to have: \n\n A wife");
+            Fortunes.Add("The less we deserve good fortune, the more we hope for it");
+            Fortunes.Add("Never do things for the earth's pleasure. Do it for yourself");
+            Fortunes.Add("The day you disband yourself from today's society, you separate yourself from confinement into the truth");
+            Fortunes.Add("The best way out is always through");
+            Fortunes.Add("In a gentle way, you can shake the world. You don't have to be famous, or have a world changing idea");
+            Fortunes.Add("Today is the only day. Yesterday is gone");
+            Fortunes.Add("Give light and people will find the way");
+            Fortunes.Add("Believe in living today. Not in yesterday, nor in tomorrow");
+            Fortunes.Add("When deeds speak, words are nothing");
+            Fortunes.Add("Silence is the last thing the world will ever hear from you");
+            Fortunes.Add("We would accomplish many more things if we did not think of them as impossible");
+            Fortunes.Add("'I can't do it' never yet accomplished anything, 'I will try' has performed wonders");
+            Fortunes.Add("Start by doing what's necessary, then what's possible, and suddenly you are doing the impossible");
+            Fortunes.Add("If not us, who? If not now, when?");
+            Fortunes.Add("Knowing too much of your future is never a good thing");
+            Fortunes.Add("Once you make a decision, the universe conspires to make it happen");
+            Fortunes.Add("No one saves us but ourselves. No one can and no one may. We ourselves must walk the path");
+            Fortunes.Add("Learn as if you will live forever, live like you will die tomorrow");
+            Fortunes.Add("When you give joy to other people, you get more joy in return. You should give a good thought to happiness that you can give out");
+            Fortunes.Add("When you change your thoughts, remember to also change your world");
+            Fortunes.Add("It is only when we take chances, when our lives improve. The initial and the most difficult risk that we need to take is to become honest");
+            Fortunes.Add("The road to success and the road to failure are almost exactly the same");
+            Fortunes.Add("Develop success from failures. Discouragement and failure are two of the surest stepping stones to success");
+            Fortunes.Add("Experience is a hard teacher because she gives the test first, the lesson afterwards.");
+        }
+
+        public void AddFortunesGlobalServers() 
+        {
             //Sigma Quotes
 
             Fortunes.Add("Instead of trying to blend in, Stand out and never blend in");

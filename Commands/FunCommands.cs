@@ -181,20 +181,60 @@ namespace DiscordBotTest.Commands
         [Cooldown(5, 43200, CooldownBucketType.User)]
         public async Task FortuneTeller(CommandContext ctx) 
         {
-            var random = new Random();
-            var FortuneList = new FortuneStorage();
+            if (ctx.Guild.Id == 922382235334750259) //Checks if it was called from The Infinite Universe
+            {
+                var random = new Random();
+                var FortuneList = new FortuneStorage();
+                FortuneList.AddFortunesTheInfiniteUniverse();
 
-            var fortuneList = FortuneList.Fortunes;
-            int index = random.Next(fortuneList.Count);
+                var fortuneList = FortuneList.Fortunes;
+                int index = random.Next(fortuneList.Count);
 
-            var fortuneMessage = new DiscordMessageBuilder()
-                .AddEmbed(
-                new DiscordEmbedBuilder()
-                .WithTitle("***Cooler's Daily Fortunes for " + ctx.User.Username.ToString() + "***")
-                .WithDescription("***" + fortuneList[index] + "***")
-                .WithColor(DiscordColor.Blue)
-                );
-            await ctx.Channel.SendMessageAsync(fortuneMessage);
+                var fortuneMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("***Cooler's Daily Fortunes for " + ctx.User.Username.ToString() + "***")
+                    .WithDescription("***" + fortuneList[index] + "***")
+                    .WithColor(DiscordColor.Blue)
+                    );
+                await ctx.Channel.SendMessageAsync(fortuneMessage);
+            }
+            else if (ctx.Guild.Id == 1015010557591572560) 
+            {
+                var random = new Random();
+                var FortuneList = new FortuneStorage();
+                FortuneList.AddFortunesTheInfiniteUniverse();
+
+                var fortuneList = FortuneList.Fortunes;
+                int index = random.Next(fortuneList.Count);
+
+                var fortuneMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("***Cooler's Daily Fortunes for " + ctx.User.Username.ToString() + "***")
+                    .WithDescription("***" + fortuneList[index] + "***")
+                    .WithColor(DiscordColor.Blue)
+                    );
+                await ctx.Channel.SendMessageAsync(fortuneMessage);
+            }
+            else //Post normal fortunes for other servers
+            {
+                var random = new Random();
+                var FortuneList = new FortuneStorage();
+                FortuneList.AddFortunesGlobalServers();
+
+                var fortuneList = FortuneList.Fortunes;
+                int index = random.Next(fortuneList.Count);
+
+                var fortuneMessage = new DiscordMessageBuilder()
+                    .AddEmbed(
+                    new DiscordEmbedBuilder()
+                    .WithTitle("***Cooler's Daily Fortunes for " + ctx.User.Username.ToString() + "***")
+                    .WithDescription("***" + fortuneList[index] + "***")
+                    .WithColor(DiscordColor.Blue)
+                    );
+                await ctx.Channel.SendMessageAsync(fortuneMessage);
+            }
         }
 
         [Command("cooler")]

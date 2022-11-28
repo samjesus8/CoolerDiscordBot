@@ -6,8 +6,6 @@ using DSharpPlus.Entities;
 using DSharpPlus.Interactivity.Extensions;
 using DSharpPlus.SlashCommands;
 using System;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -17,7 +15,7 @@ namespace DiscordBotTest.Commands
     {
         [SlashCommand("passivecreate", "A Dokkan Passive Creator tool")]
         public async Task DokkanPassiveGen(InteractionContext ctx, [Option("PassiveName", "Give your passive a name")] string PassiveName,
-                                                                    [Option("Rarity", "Is your unit an LR/TUR???")] string Rarity,
+                                                                    [Option("Rarity", "Is your unit an TUR/LR/TUR(EZA)/ LR(EZA)")] string Rarity,
                                                                     [Option("HP", "Base HP Value of your Card")] long BaseHPValue,
                                                                     [Option("ATK", "Base ATK Value of your Card")] long BaseATKValue,
                                                                     [Option("DEF", "Base DEF Value of your Card")] long BaseDEFValue,
@@ -145,9 +143,10 @@ namespace DiscordBotTest.Commands
                     .AddEmbed(new DiscordEmbedBuilder()
 
                     .WithColor(DiscordColor.Azure)
-                    .WithTitle("Your Stats for " + info.PassiveName)
-                    .WithDescription("**ATK Stats** \n\n" +
-                                     calculator.ResultATK + "\n\n" +
+                    .WithTitle("***Your Stats for " + info.PassiveName + "***")
+                    .WithDescription("***PLEASE NOTE THAT ALL PASSIVES ARE CALCULATED ASSUMING THAT THE UNIT IS AT \n" +
+                                     "Rainbow, Supreme DMG(TURs), 12/24 KI (Colossal/Mega-Colossal DMG for LRs)*** \n\n" +
+                                     calculator.ResultATK + "\n" +
                                      calculator.ResultDEF)
                     );
 

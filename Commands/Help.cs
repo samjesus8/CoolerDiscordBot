@@ -606,7 +606,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.5.6")
             {
                 string description = "***Dokkan Passive Generator*** \n" +
                                      "-The **'/viewlinks'** slash command now works properly. With this command you can search up a Dokkan Link and view its buffs \n\n" +
@@ -622,8 +622,34 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The latest version is 1.5.6")
                     .WithTitle("V1.5.6 Changelog")
+                    .WithDescription(description)
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "***Dokkan Passive Generator - MASSIVE OVERHAUL*** \n" +
+                                     "-Added EZA Rarities for both TUR & LR to the bot. You can now make EZA Passives and generate stats at that level. " +
+                                     "The EZA passives are calculated at SA LV 15 and at Supreme Damage on the Super Attack \n" +
+                                     "-Changed the TUR Super Attack multipliers from **'Immense'** to **'Supreme'** as that is the more realistic scenario \n" +
+                                     "-Added the Raise ATK effect on Super Attack. ATK stats will be calculated when supering, not before as that makes no sense. \n" +
+                                     "ALL attacks will also be shown under different types of raises (Normal, Great, Massive Raises) to get different scenarios. \n\n" +
+                                     "***New Command - >github*** \n" +
+                                     "-This command allows users to view the GitHub repository for this bot, providing easier access to users who want " +
+                                     "to submit issues or view the code for this bot. \n" +
+                                     "This command also has a sub-command '>dokkanwindows' which provides the link to the Windows version of the Dokkan Passive Generator \n\n" +
+                                     "***Fortune Command - Changes*** \n" +
+                                     "-As per request, the commmand now filters between certain servers: \n" +
+                                     "IF the command was called in the **'The Infinite Universe'** server, the fortunes will be normal for members in that server \n" +
+                                     "IF the command was called in any other Discord Server, fortunes will be different and will be more realistic";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The Latest version is 1.5.7")
+                    .WithTitle("***V1.5.7 Changelog***")
                     .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);
@@ -641,7 +667,7 @@ namespace DiscordBotTest.Commands
                     "1.1/1.2/1.2.1 \n " +
                     "1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n " +
                     "1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8/1.4.9 \n " +
-                    "1.5.0/1.5.1/1.5.2/1.5.3/1.5.4/1.5.5 \n" +
+                    "1.5.0/1.5.1/1.5.2/1.5.3/1.5.4/1.5.5/1.5.6 \n" +
                     "Or >changelog latest for the latest version info")
                     );
                 await ctx.Channel.SendMessageAsync(errorMessage);

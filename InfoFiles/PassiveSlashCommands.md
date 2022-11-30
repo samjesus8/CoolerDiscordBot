@@ -6,13 +6,13 @@ Welcome to the Passive Creator application released in V1.5 of the discord bot. 
 This is Step 1 into using the command. As you start writing the command, Discord automatically shows you each parameter of the command that you need to fill in such as the Base Attack value or the Leader Skill name, please take your time and fill out all the details it asks you to
 
 ### Parameters
-![image](https://user-images.githubusercontent.com/98812930/197410885-bf175a6b-5810-4e5f-ab9b-7703312764a1.png)
-![image](https://user-images.githubusercontent.com/98812930/197410990-74fae665-ac46-4eda-9a75-1dce15f9f5d7.png)
+![image](https://user-images.githubusercontent.com/98812930/204794571-8c8e0da0-5736-4604-84d0-eae0608fffd7.png)
 
 
 ### Command Parameters
 
 - PassiveName - Give your Passive a name, it can be anything you want
+- Rarity - Is your card a "TUR", "LR", "TUR(EZA)" or "LR(EZA)". When typing this in it has to be the exact same name as listed. You cannot put this in lower case or else the bot won't recognise it
 - HP - The base HP value of your card
 - ATK - The base ATK of your card
 - DEF - The base DEF of your card
@@ -32,7 +32,7 @@ If you dont want to add any links please type in "null"
 
 Once you have pressed ENTER after filling out your details you will recieve a confirmation message with all your details, you must react with a :thumbsup: if you want the passive to be created, :thumbsdown:  if you want to cancel the command
 
-![image](https://user-images.githubusercontent.com/98812930/197412658-71dd8b35-f00d-4339-9ff3-310999e91035.png)
+![image](https://user-images.githubusercontent.com/98812930/204795023-2a8dd770-90c0-401d-97d1-064b2cb05cdd.png)
 
 
 ## Step 2 - "/usepassive"
@@ -42,9 +42,11 @@ YOU MUST SPECIFY THE EXACT SAME NAME YOU USED IN /passivecreate WHEN FILLING OUT
 
 The bot will then take your inputs and run it through the maths. It will then generate a Embed with your stats such as ATK stat when supering, DEF when it was Massively raised
 
-Example of AGL Gohan's passive being used:
+Example of INT LR Vegeta & Trunks being used:
 
-![image](https://user-images.githubusercontent.com/98812930/201941392-77fce7d3-33db-422e-8f15-04f6550c0049.png)
+![image](https://user-images.githubusercontent.com/98812930/204795375-83569631-3fcf-4a61-a29e-643e72db5c20.png)
+
+![image](https://user-images.githubusercontent.com/98812930/204795216-b5936182-891c-475b-a6b6-0347b54b6035.png)
 
 ## /passivelist Command
 

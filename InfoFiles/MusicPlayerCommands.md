@@ -1,7 +1,9 @@
 ﻿# Music Player Commands
 
 This page contains all the commands you need in order to use the Music Player system implemented into the Bot
+
 Release Date - 10/11/2022
+
 Released on Version - 1.5.3
 
 ## Commands

@@ -56,14 +56,16 @@ namespace DiscordBotTest
             };
 
             var slashCommandsConfig = Client.UseSlashCommands();
-
             Commands = Client.UseCommandsNext(commandsConfig);
+
             Commands.RegisterCommands<Help>();
             Commands.RegisterCommands<Calculator>();
             Commands.RegisterCommands<FunCommands>();
             Commands.RegisterCommands<Games>();
             Commands.RegisterCommands<Tools>();
             Commands.RegisterCommands<MusicPlayer>();
+            Commands.RegisterCommands<TheInfiniteUniverse>();
+
             slashCommandsConfig.RegisterCommands<DokkanSL>();
             Commands.CommandErrored += OnCommandError;
 

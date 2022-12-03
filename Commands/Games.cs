@@ -17,6 +17,7 @@ namespace DiscordBotTest.Commands
             var yourCard = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Green)
                 .WithTitle("Your Card")
                 .WithDescription("You drew a: " + cardGen.cardHit)
                 );
@@ -28,6 +29,7 @@ namespace DiscordBotTest.Commands
             var botCard = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Gold)
                 .WithTitle("The bot drew a: ")
                 .WithDescription(botCardGen.cardHit)
                 );
@@ -39,6 +41,7 @@ namespace DiscordBotTest.Commands
                 var winner = new DiscordMessageBuilder()
                     .AddEmbed(
                     new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Green)
                     .WithTitle("YOU WIN")
                     );
 
@@ -50,6 +53,7 @@ namespace DiscordBotTest.Commands
                 var lose = new DiscordMessageBuilder()
                     .AddEmbed(
                     new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Red)
                     .WithTitle("YOU LOSE")
                     );
 
@@ -64,6 +68,7 @@ namespace DiscordBotTest.Commands
             var rulesMessage = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Azure)
                 .WithTitle("Welcome to the Lottery!!")
                 .WithColor(DiscordColor.Azure)
                 .WithDescription("Pick any 5 numbers from 1-100 and test your luck. For example: >lottery 1 2 3 4 5 \n " +
@@ -337,12 +342,6 @@ namespace DiscordBotTest.Commands
                 .WithImageUrl(passivesList[index][2])//ImageURL
                 );
             await ctx.Channel.SendMessageAsync(answer);
-        }
-
-        [Command("dksummon")]
-        public async Task DokkanSummon(CommandContext ctx) 
-        {
-            await ctx.Channel.SendMessageAsync("Starting...");
         }
     }
 }

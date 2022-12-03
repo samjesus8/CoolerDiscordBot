@@ -121,6 +121,8 @@ namespace DiscordBotTest.Builders
             Fortunes.Add("The road to success and the road to failure are almost exactly the same");
             Fortunes.Add("Develop success from failures. Discouragement and failure are two of the surest stepping stones to success");
             Fortunes.Add("Experience is a hard teacher because she gives the test first, the lesson afterwards.");
+            Fortunes.Add("If u get this Fortune, leave this server or ask a nearby mod to kick u out");
+            Fortunes.Add("If u manage to get this fortune, you have to use whip command on @Coola at least 100 times");
         }
 
         public void AddFortunesGlobalServers() 

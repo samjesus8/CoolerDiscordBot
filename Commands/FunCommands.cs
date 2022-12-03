@@ -30,16 +30,11 @@ namespace DiscordBotTest.Commands
             var builder1 = new DiscordMessageBuilder()
                 .AddEmbed(
                 new DiscordEmbedBuilder()
+                .WithColor(DiscordColor.Azure)
                 .WithTitle("Shut The Fuck Up " + UserName)
                 .WithDescription("I dont recall the universe ever asking bozo ffs")
                 );
             await ctx.Channel.SendMessageAsync(builder1);
-        }
-
-        [Command("tory")]
-        public async Task Tory(CommandContext ctx)
-        {
-            await ctx.Channel.SendMessageAsync("Fuck boris, fuck the opps, fuck dem man, fuck flippin rishi sunak the dirkhead, fuck liz, fuck every man in that government");
         }
 
         [Command("delet")]
@@ -157,7 +152,8 @@ namespace DiscordBotTest.Commands
             responses.Add("Are u retarded");
             responses.Add("Never in the history of the world");
             responses.Add("Instead of answering you, imma tell u to WATCH YOUR TONE!!!!");
-            responses.Add("If its about Cooler, no");
+            responses.Add("If its about Cooler, No");
+            responses.Add("If its about Cooler, Yes");
             responses.Add("If Coola#5784 is mentionned here, then the answer is never");
             responses.Add("Maybe");
             responses.Add("In 2 weeks, Yes");
@@ -266,44 +262,6 @@ namespace DiscordBotTest.Commands
                 );
 
             await ctx.Channel.SendMessageAsync(message);
-        }
-
-        [Command("whip")]
-        public async Task WhippingTask(CommandContext ctx, DiscordUser user) 
-        {
-            if (ctx.Guild.Id == 922382235334750259) //ONLY USED IN THE INFINITE UNIVERSE SERVER
-            {
-                var whipMSG = new DiscordMessageBuilder()
-                    .AddEmbed(new DiscordEmbedBuilder()
-
-                    .WithColor(DiscordColor.Azure)
-                    .WithTitle(ctx.User.Username + " whipped " + user.Username)
-                    .WithImageUrl("https://cdn.discordapp.com/attachments/1020110665161113610/1047277797237854218/toby-kunta-kinte.gif")
-                    );
-                await ctx.Channel.SendMessageAsync(whipMSG);
-            }
-            else if (ctx.Guild.Id == 1015010557591572560) 
-            {
-                var whipMSG = new DiscordMessageBuilder()
-                    .AddEmbed(new DiscordEmbedBuilder()
-
-                    .WithColor(DiscordColor.Azure)
-                    .WithTitle(ctx.User.Username + " whipped " + user.Username)
-                    .WithImageUrl("https://cdn.discordapp.com/attachments/1020110665161113610/1047277797237854218/toby-kunta-kinte.gif")
-                    );
-                await ctx.Channel.SendMessageAsync(whipMSG);
-            }
-            else 
-            {
-                var deniedMSG = new DiscordMessageBuilder()
-                    .AddEmbed(new DiscordEmbedBuilder()
-
-                    .WithColor(DiscordColor.Red)
-                    .WithTitle("Sorry but you cannot use this command in this server \n" +
-                               "This can only be used in 'The Infinite Universe'")
-                    );
-                await ctx.Channel.SendMessageAsync(deniedMSG);
-            }
         }
     }
 }

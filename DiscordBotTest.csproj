@@ -170,6 +170,7 @@
   <ItemGroup>
     <Compile Include="Bot.cs" />
     <Compile Include="Commands\MusicPlayer.cs" />
+    <Compile Include="Commands\TheInfiniteUniverse.cs" />
     <Compile Include="InternalBuilders\CardGenerator.cs" />
     <Compile Include="InternalBuilders\DokkanLinks.cs" />
     <Compile Include="InternalBuilders\DokkanPassiveCalculator.cs" />
@@ -189,6 +190,7 @@
     <Compile Include="Handlers\Dialogue\Steps\TextStep.cs" />
     <Compile Include="Builders\NumberGenerator.cs" />
     <Compile Include="InternalBuilders\LinksStorage.cs" />
+    <Compile Include="InternalBuilders\NSFWGif.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Builders\WaifuCardBuilder.cs" />

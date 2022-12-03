@@ -57,7 +57,6 @@ namespace DiscordBotTest.Commands
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("**Fun Commands**")
                     .WithDescription("**>ducky** -> Tell Ducky to shut the fuck up \n\n" +
-                                    "**>tory** -> Slander the torys \n\n" +
                                     "**>delet** -> Prove that everything is mid with this one command \n\n " +
                                     "**>dialogue** -> The bot will send you a DM, type anything random to send it back to the channel where you used the command \n\n" +
                                     "**>watchyourtone** -> Tell someone to watch their tone \n **Syntax: >watchyourtone @User OR RandomText** \n" +
@@ -628,7 +627,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.5.7")
             {
                 string description = "***Dokkan Passive Generator - MASSIVE OVERHAUL*** \n" +
                                      "-Added EZA Rarities for both TUR & LR to the bot. You can now make EZA Passives and generate stats at that level. " +
@@ -648,8 +647,29 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The Latest version is 1.5.7")
                     .WithTitle("***V1.5.7 Changelog***")
+                    .WithDescription(description)
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "***The Infinite Universe - Changes*** \n" +
+                                     "-All commands associated with this server have been put in a separate class library in code to make things easier \n" +
+                                     "-Introduced a new command **>fuck**. I don't need to explain this as it speaks for itself and it can only be used in NSFW channels \n" +
+                                     "-Added any requested fortunes to the **>fortune** command for this server \n\n" +
+                                     "***>supernova Changes (GLOBAL)*** \n" +
+                                     "-Altered some of the responses to make more sense \n" +
+                                     "-Added some more responses to the command \n\n" +
+                                     "***Command Deletions (GLOBAL)*** \n" +
+                                     "-Removed the **>tory** command as it is not used that much";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The Latest version is 1.5.8")
+                    .WithTitle("***V1.5.8 Changelog***")
                     .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);

@@ -71,7 +71,7 @@ namespace DiscordBotTest
 
             var endpoint = new ConnectionEndpoint
             {
-                Hostname = "lavalink.oops.wtf",
+                Hostname = "ssl.freelavalink.ga",
                 Port = 443,
                 Secured = true
             };

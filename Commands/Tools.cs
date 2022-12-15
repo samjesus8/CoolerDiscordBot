@@ -20,6 +20,16 @@ namespace DiscordBotTest.Commands
 
                 activity.Name = finalMessage;
                 await discord.UpdateStatusAsync(activity);
+
+                var successMSG = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    
+                    .WithColor(DiscordColor.Green)
+                    .WithTitle("Success")
+                    .WithDescription("Changed Status to \n" + "**" + finalMessage + "**")
+                    );
+                await ctx.Channel.SendMessageAsync(successMSG);
+
                 return;
             }
             else 
@@ -27,6 +37,7 @@ namespace DiscordBotTest.Commands
                 var notAllowed = new DiscordMessageBuilder()
                     .AddEmbed(
                     new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Red)
                     .WithTitle("Access Denied")
                     .WithDescription("If you want access to this command ask @𝕤𝕒𝕞.𝕛𝕖𝕤𝕦𝕤𝟠#6825")
                     );
@@ -134,7 +145,7 @@ namespace DiscordBotTest.Commands
 
                 .WithColor(DiscordColor.Azure)
                 .WithTitle("Current Version")
-                .WithDescription("**V1.5.8**")
+                .WithDescription("**V1.5.9**")
                 .WithFooter("For more information on this version, type in '>changelog latest'")
                 );
 

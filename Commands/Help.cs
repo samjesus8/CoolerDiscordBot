@@ -23,7 +23,8 @@ namespace DiscordBotTest.Commands
                                         "**Fun Commands Help -> '>help Fun'** \n" +
                                         "**Games Help -> '>help Games'** \n" +
                                         "**Tools/Utility Help -> '>help Tools'** \n" +
-                                        "**Dokkan Passive Generator -> '>help dokkanpassive'**")
+                                        "**Dokkan Passive Generator -> '>help dokkanpassive OR dokkanslashcommands'** \n" +
+                                        "**Music Player -> '>help Music'**")
                 .WithImageUrl("https://media.discordapp.net/attachments/969707624784338995/1017188281819086940/unknown.png?width=479&height=268")
                 .WithFooter("The day Cooler left Discord for good")
                 );
@@ -56,7 +57,8 @@ namespace DiscordBotTest.Commands
                     new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("**Fun Commands**")
-                    .WithDescription("**>ducky** -> Tell Ducky to shut the fuck up \n\n" +
+                    .WithDescription("**>ducky** -> Tell Ducky to STFU \n\n" +
+                                    "**>stfu** -> Tell a random user to STFU. You can ping someone or just provide any form of text \n\n" +
                                     "**>delet** -> Prove that everything is mid with this one command \n\n " +
                                     "**>dialogue** -> The bot will send you a DM, type anything random to send it back to the channel where you used the command \n\n" +
                                     "**>watchyourtone** -> Tell someone to watch their tone \n **Syntax: >watchyourtone @User OR RandomText** \n" +
@@ -66,7 +68,8 @@ namespace DiscordBotTest.Commands
                                     "This command takes your users that you passed in and itll choose one of them at random. The bot will tell that chosen person to watch their tone \n\n" +
                                     "**>fortune** -> See if your fate is lucky or will it be hell \n\n" +
                                     "**>supernova** -> Ask the bot a question and it will answer it for you \n" +
-                                    "The Syntax for this command is '>supernova YourQuestion'")
+                                    "The Syntax for this command is '>supernova YourQuestion' \n\n" +
+                                    "**>cooler** -> Insult Coola#5784 with this command")
                     );
                 await ctx.Channel.SendMessageAsync(funFunctionMessage);
             }
@@ -97,14 +100,17 @@ namespace DiscordBotTest.Commands
                     .WithColor(DiscordColor.Azure)
                     .WithTitle("**Tools Commands**")
                     .WithDescription("**>timestamp** -> After using this command, the next message you send the bot will return the exact time and date you sent it \n\n " +
-                    "**>status** -> Only Sam and Delet can use this command. Sets the 'Playing' status of the bot to any text \n\n " +
+                    "**>status** -> (ADMIN ONLY). Sets the 'Playing' status of the bot to any text \n\n " +
                     "**>invite** -> Generates an invite link for the bot, use it to add it to other servers of your choice \n\n" +
                     "**>server** -> Generated an invite link to join the Official Discord server for this bot \n\n" +
                     "**>changelog** -> View the bot changelog. Shows what changed in every update \n\n" +
-                    "Use >changelog and type in a version to view its specific changes like ***'>changelog 1.1'*** \n" +
+                    "Use >changelog and type in a version to view its specific changes \n like ***'>changelog 1.1'*** \n" +
                     "Type in ***>changelog latest'*** to view the changelog of the latest version \n\n" +
                     "**>avatar** -> View the avatar of any user you specify. Simply type in >avatar and then @UserName you want to view \n\n" +
-                    "**>membercount** -> View the member count of the server you are in")
+                    "**>membercount** -> View the member count of the server you are in \n\n" +
+                    "**>version** -> Views the current version of this bot \n\n" +
+                    "**>github** -> View the GitHub repository for this bot \n\n" +
+                    "**>dokkanwindows** -> Download the Windows version of the Dokkan Passive Generator used in this bot")
                     );
                 await ctx.Channel.SendMessageAsync(toolsFunctionMessage);
             }
@@ -119,7 +125,9 @@ namespace DiscordBotTest.Commands
                                      "The bot will generate an ATK stat when supering and some other stats such as defense, or ATK with support, links, different leaders and many other kinds of buffs \n\n" +
                                      "**/passivelist** -> This command allows you to view a list of passives for any user including yourself which is done by typing 'null' into PassiveCreate to get a list of passive names. \n " +
                                      "Not only this, you can also view details of a specific passive by specfying the passive name \n\n" +
-                                     "**/deletepassive** -> Deletes a passive from the name you specify. Please bear in mind you can only delete passives that were made by yourself and not others";
+                                     "**/deletepassive** -> Deletes a passive from the name you specify. Please bear in mind you can only delete passives that were made by yourself and not others \n\n" +
+                                     "**/viewlinks** -> Use this command to search up links that exist in Dokkan. This will help you input links when creating a passive as you can confirm if a link " +
+                                     "exists or not";
 
                 var slashFunctionMessage = new DiscordMessageBuilder()
                     .AddEmbed(
@@ -653,7 +661,7 @@ namespace DiscordBotTest.Commands
                 await ctx.Channel.SendMessageAsync(message);
                 return;
             }
-            if (version == "Latest" || version == "latest")
+            if (version == "1.5.8")
             {
                 string description = "***The Infinite Universe - Changes*** \n" +
                                      "-All commands associated with this server have been put in a separate class library in code to make things easier \n" +
@@ -668,8 +676,29 @@ namespace DiscordBotTest.Commands
                 var message = new DiscordMessageBuilder()
                     .AddEmbed(new DiscordEmbedBuilder()
                     .WithColor(DiscordColor.Azure)
-                    .WithAuthor("The Latest version is 1.5.8")
                     .WithTitle("***V1.5.8 Changelog***")
+                    .WithDescription(description)
+                    );
+                await ctx.Channel.SendMessageAsync(message);
+                return;
+            }
+            if (version == "Latest" || version == "latest")
+            {
+                string description = "***The Infinite Universe - Changes*** \n" +
+                                     "-Added an API to the '>fuck' command. There will be much more GIFs than usual and the server can enjoy doing their things which " +
+                                     "I don't need to talk about \n\n" +
+                                     "***Other Fixes (GLOBAL)*** \n" +
+                                     "-Fixed an issue with the bot causing it to crash every few seconds after start-up. This was an issue " +
+                                     "with the media player not being able to connect to the music servers \n" +
+                                     "-The >status command (ADMINS ONLY) now displays a confirmation message whenever you execute the command sucessfully \n" +
+                                     "-The >help command has gone through a major revision. All the avalible commands are displayed with its associated description and any obsolete " +
+                                     "commands have been removed to prevent confusion";
+
+                var message = new DiscordMessageBuilder()
+                    .AddEmbed(new DiscordEmbedBuilder()
+                    .WithColor(DiscordColor.Azure)
+                    .WithAuthor("The Latest version is 1.5.9")
+                    .WithTitle("***V1.5.9 Changelog***")
                     .WithDescription(description)
                     );
                 await ctx.Channel.SendMessageAsync(message);
@@ -687,7 +716,7 @@ namespace DiscordBotTest.Commands
                     "1.1/1.2/1.2.1 \n " +
                     "1.3/1.3.1/1.3.2/1.3.3/1.3.4 \n " +
                     "1.4/1.4.1/1.4.2/1.4.3/1.4.4/1.4.5/1.4.6/1.4.7/1.4.8/1.4.9 \n " +
-                    "1.5.0/1.5.1/1.5.2/1.5.3/1.5.4/1.5.5/1.5.6 \n" +
+                    "1.5.0/1.5.1/1.5.2/1.5.3/1.5.4/1.5.5/1.5.6/1.5.7/1.5.8 \n" +
                     "Or >changelog latest for the latest version info")
                     );
                 await ctx.Channel.SendMessageAsync(errorMessage);

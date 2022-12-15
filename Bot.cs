@@ -71,13 +71,13 @@ namespace DiscordBotTest
 
             var endpoint = new ConnectionEndpoint
             {
-                Hostname = "lavalink.oops.wtf",
+                Hostname = "jp-lava.islantay.tk",
                 Port = 443,
                 Secured = true
             };
             var lavaLinkConfig = new LavalinkConfiguration
             {
-                Password = "www.freelavalink.ga",
+                Password = "AmeliaWatsonisTheBest**!",
                 RestEndpoint = endpoint,
                 SocketEndpoint = endpoint
             };

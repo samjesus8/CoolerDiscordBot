@@ -78,7 +78,7 @@ namespace DiscordBotTest.Commands
 
                     .WithColor(DiscordColor.DarkRed)
                     .WithTitle(ctx.User.Username + " fucked " + user.Username)
-                    .WithDescription("Hope you had a good time")
+                    .WithDescription("Hope you had a good time getting railed")
                     .WithImageUrl(GIF.gifLinks[index])
                     );
                 await ctx.Channel.SendMessageAsync(msg);
